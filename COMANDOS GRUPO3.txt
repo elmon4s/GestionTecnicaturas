@@ -1,0 +1,147 @@
+USE GRUPO3_TPI
+GO
+
+CREATE TABLE Usuarios(
+id_usuarios int IDENTITY(1,1),
+usuario varchar(90),
+contraseña varchar(255)
+CONSTRAINT pk_usuarios PRIMARY KEY(id_usuarios));
+
+CREATE PROCEDURE SP_CHECK_USER
+@usuario varchar(30)= 'default',
+@contraseña varchar(20) = 'default'
+AS
+BEGIN
+SELECT *
+FROM Usuarios
+WHERE usuario=@usuario
+AND contraseña=@contraseña
+END;
+
+CREATE PROCEDURE PA_TRAER_BARRIOS
+AS
+BEGIN
+SELECT id_barrio,barrio,c.id_ciudad,ciudad
+FROM Barrios b JOIN Ciudades c
+ON b.id_ciudad=c.id_ciudad
+END
+
+CREATE PROCEDURE PA_TRAER_TITULOS
+AS
+BEGIN
+SELECT * FROM Titulos
+END
+
+ALTER TABLE Docentes
+ADD fecha_baja datetime
+
+CREATE PROCEDURE PA_INSERTAR_DOCENTE
+@id_docente int,
+@nom_docente varchar(30),
+@ape_docente varchar(30),
+@direccion varchar(30),
+@altura int,
+@nro_tel varchar(30),
+@email varchar(60),
+@titulo int,
+@barrio int
+AS
+BEGIN
+INSERT INTO Docentes(id_docente,nom_docente,ape_docente,direccion,altura,nro_tel,email,id_titulo,id_barrio)
+VALUES(@id_docente,@nom_docente,@ape_docente,@direccion,@altura,@nro_tel,@email,@titulo,@barrio)
+END
+
+CREATE PROCEDURE PA_ACTUALIZAR_DOCENTE
+@id_docente int,
+@nom_docente varchar(30),
+@ape_docente varchar(30),
+@direccion varchar(30),
+@altura int,
+@nro_tel varchar(30),
+@email varchar(60),
+@titulo int,
+@barrio int
+AS
+BEGIN
+UPDATE Docentes
+SET nom_docente=@nom_docente,
+ape_docente= @ape_docente,
+direccion=@direccion,
+altura=@altura,
+nro_tel=@nro_tel,
+email=@email,
+id_titulo=@titulo,
+id_barrio=@barrio
+WHERE id_docente=@id_docente
+END
+
+CREATE PROCEDURE PA_BORRAR_DOCENTE
+@id_docente int
+AS
+BEGIN
+UPDATE Docentes
+SET fecha_baja=getdate()
+WHERE id_docente=@id_docente
+END
+
+CREATE PROCEDURE PA_CONSULTAR_DOCENTES
+@titulo int,
+@barrio int,
+@nombre varchar(30)
+AS
+BEGIN
+SELECT id_docente,nom_docente,ape_docente,direccion,altura,nro_tel,email,t.id_titulo,t.titulo,b.id_barrio,b.barrio,c.id_ciudad,c.ciudad 
+	FROM Docentes D JOIN Titulos T ON D.id_titulo=T.id_titulo
+	JOIN Barrios B ON B.id_barrio=D.id_barrio
+	JOIN Ciudades C ON C.id_ciudad=B.id_ciudad
+WHERE d.id_titulo=@titulo
+AND d.id_barrio=@barrio
+AND nom_docente LIKE '%'+@nombre+'%'
+END
+
+CREATE PROCEDURE PA_CONSULTAR_DOCENTE
+@docente int
+AS
+BEGIN
+SELECT id_docente,nom_docente,ape_docente,direccion,altura,nro_tel,email,t.id_titulo,t.titulo,b.id_barrio,b.barrio,c.id_ciudad,c.ciudad 
+	FROM Docentes D JOIN Titulos T ON D.id_titulo=T.id_titulo
+	JOIN Barrios B ON B.id_barrio=D.id_barrio
+	JOIN Ciudades C ON C.id_ciudad=B.id_ciudad
+WHERE d.id_docente=@docente
+END
+
+CREATE PROCEDURE PA_CONSULTAR_DOCENTES_MATERIA
+@materia int
+AS
+BEGIN
+SELECT d.id_docente,nom_docente,ape_docente,direccion,altura,nro_tel,email,t.id_titulo,t.titulo,b.id_barrio,b.barrio,c.id_ciudad,c.ciudad 
+	FROM Docentes D JOIN Titulos T ON D.id_titulo=T.id_titulo
+	JOIN Barrios B ON B.id_barrio=D.id_barrio
+	JOIN Ciudades C ON C.id_ciudad=B.id_ciudad
+	JOIN Detalle_materias_comisiones  dmc ON dmc.id_docente=d.id_docente
+	WHERE dmc.id_materia=@materia
+END
+
+CREATE PROCEDURE PA_CONSULTAR_MATERIAS
+AS
+BEGIN
+SELECT m.id_materia, nom_materia, t.id_tecnicatura, nom_tecnicatura 
+FROM Materias m JOIN Tecnicaturas t ON m.id_tecnicatura=t.id_tecnicatura
+END
+
+CREATE PROCEDURE PA_CONSULTAR_ALUMNOS_EXAMEN
+@id_materia int
+AS
+BEGIN 
+SELECT nom_alumno,ape_alumno,direccion,altura,email,a.id_barrio, barrio, a.id_estado_civil,estado_civil,a.id_situacion_laboral,situacion_laboral
+FROM Alumnos a JOIN Detalles_alumnos_materias dam
+	ON a.id_alumno=dam.id_alumno
+	JOIN Detalle_materias_comisiones dmc 
+	ON dmc.id_detalle_materia_comision=dam.id_detalle_materia_comision
+	JOIN Barrios b ON b.id_barrio=a.id_barrio
+	JOIN Situaciones_laborales s ON s.id_situacion_laboral=a.id_situacion_laboral
+	JOIN Estados_civiles ec ON ec.id_estado_civil=a.id_estado_civil
+WHERE dam.id_estado_academico=3
+AND dmc.id_materia=2
+AND DATEDIFF(year,fecha_estado,getdate())<=3
+END
