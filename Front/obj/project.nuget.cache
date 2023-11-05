@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Do/Fa8nODRqEY5GqImTcbcJ0ZZt6bPO+17Ntwj5gbePh7HGYhV/HGGApnjNLXcX8NymQ6ZP1AaY/sLX84/NCLg==",
+  "success": true,
+  "projectFilePath": "D:\\Code\\GestionTecnicaturas\\Front\\Front.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\danie\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
