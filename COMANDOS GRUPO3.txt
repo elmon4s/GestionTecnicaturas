@@ -18,6 +18,15 @@ WHERE usuario=@usuario
 AND contraseña=@contraseña
 END;
 
+CREATE PROCEDURE SP_NUEVO_USER
+@usuario varchar(90),
+@contraseña varchar(255)
+AS
+BEGIN
+INSERT INTO Usuarios(usuario,contraseña)
+VALUES(@usuario,@contraseña)
+END
+
 CREATE PROCEDURE PA_TRAER_BARRIOS
 AS
 BEGIN
@@ -97,6 +106,7 @@ SELECT id_docente,nom_docente,ape_docente,direccion,altura,nro_tel,email,t.id_ti
 WHERE d.id_titulo=@titulo
 AND d.id_barrio=@barrio
 AND nom_docente LIKE '%'+@nombre+'%'
+AND fecha_baja IS NULL
 END
 
 CREATE PROCEDURE PA_CONSULTAR_DOCENTE
@@ -108,6 +118,7 @@ SELECT id_docente,nom_docente,ape_docente,direccion,altura,nro_tel,email,t.id_ti
 	JOIN Barrios B ON B.id_barrio=D.id_barrio
 	JOIN Ciudades C ON C.id_ciudad=B.id_ciudad
 WHERE d.id_docente=@docente
+AND fecha_baja IS NULL
 END
 
 CREATE PROCEDURE PA_CONSULTAR_DOCENTES_MATERIA
@@ -120,6 +131,7 @@ SELECT d.id_docente,nom_docente,ape_docente,direccion,altura,nro_tel,email,t.id_
 	JOIN Ciudades C ON C.id_ciudad=B.id_ciudad
 	JOIN Detalle_materias_comisiones  dmc ON dmc.id_docente=d.id_docente
 	WHERE dmc.id_materia=@materia
+AND fecha_baja IS NULL
 END
 
 CREATE PROCEDURE PA_CONSULTAR_MATERIAS
@@ -127,6 +139,7 @@ AS
 BEGIN
 SELECT m.id_materia, nom_materia, t.id_tecnicatura, nom_tecnicatura 
 FROM Materias m JOIN Tecnicaturas t ON m.id_tecnicatura=t.id_tecnicatura
+AND fecha_baja IS NULL
 END
 
 CREATE PROCEDURE PA_CONSULTAR_ALUMNOS_EXAMEN
@@ -143,5 +156,215 @@ FROM Alumnos a JOIN Detalles_alumnos_materias dam
 	JOIN Estados_civiles ec ON ec.id_estado_civil=a.id_estado_civil
 WHERE dam.id_estado_academico=3
 AND dmc.id_materia=2
-AND DATEDIFF(year,fecha_estado,getdate())<=3
+AND DATEDIFF(month,fecha_estado,getdate())<=18
+AND fecha_baja IS NULL
+END
+
+
+CREATE PROCEDURE PA_INSERTAR_EXAMEN
+@fecha datetime,
+@id_materia int,
+@id_docente int,
+@proxExamen int output
+AS
+BEGIN
+INSERT INTO Examenes(fecha_examen,id_materia,id_docente) VALUES (@fecha,@id_materia,@id_docente)
+SET @proxExamen = SCOPE_IDENTITY()
+END;
+
+CREATE PROCEDURE PA_INSERTAR_DETALLE_EXAMEN
+@id_examen int,
+@id_alumno int,
+@nota int
+AS
+BEGIN
+INSERT INTO Detalle_alumnos_examenes(id_examen,id_alumno,nota)
+VALUES(@id_examen,@id_alumno,@nota)
+END;
+
+CREATE PROCEDURE PA_CONSULTAR_EXAMENES
+@id_docente int,
+@id_materia int
+AS
+BEGIN
+SELECT id_examen,fecha_examen,e.id_docente,nom_docente,e.id_materia
+FROM Examenes e JOIN Docentes d
+	ON e.id_docente=d.id_docente
+	JOIN Materias M
+	ON m.id_materia=e.id_materia
+WHERE e.id_docente=@id_docente
+AND e.id_materia=@id_materia
+AND fecha_baja IS NULL
+END
+
+CREATE PROCEDURE PA_CONSULTAR_EXAMEN
+@id_examen int
+AS
+BEGIN
+SELECT id_examen,fecha_examen,e.id_docente,nom_docente,d.ape_docente,e.id_materia
+FROM Examenes e JOIN Docentes d
+	ON e.id_docente=d.id_docente
+	JOIN Materias M
+	ON m.id_materia=e.id_materia
+WHERE e.id_examen=@id_examen
+AND fecha_baja IS NULL
+END
+
+CREATE PROCEDURE PA_CONSULTAR_DETALLES_EXAMEN
+@id_examen int
+AS 
+BEGIN
+SELECT id_detalle_alumno_examen,dae.nota,dae.id_alumno,nom_alumno,ape_alumno
+FROM Detalle_alumnos_examenes dae JOIN Alumnos a
+	ON dae.id_alumno=a.id_alumno
+END
+
+CREATE PROCEDURE PA_ACTUALIZAR_EXAMEN
+@id_examen int,
+@fecha datetime,
+@id_materia int,
+@id_docente int
+AS
+BEGIN
+UPDATE Examenes
+SET fecha_examen=@fecha,
+id_materia=@id_materia,
+id_docente=@id_docente
+WHERE id_examen=@id_examen
+--Borrado de detalles
+DELETE Detalle_alumnos_examenes
+WHERE id_examen=@id_examen
+END
+
+ALTER TABLE Examenes
+ADD Fecha_baja Datetime
+
+CREATE PROCEDURE PA_BORRAR_EXAMEN
+@id_examen int = null
+AS
+BEGIN
+UPDATE Examenes
+SET Fecha_baja = getdate()
+WHERE id_examen=@id_examen
+END
+
+CREATE PROCEDURE PA_INSERTAR_ALUMNO
+@id_alumno int,
+@nom_alumno varchar(30),
+@ape_alumno varchar(30),
+@direccion varchar(40),
+@altura int,
+@nro_tel varchar(30),
+@email varchar(50),
+@id_barrio int,
+@id_situacion_laboral int,
+@id_estado_civil int
+AS
+BEGIN
+INSERT INTO Alumnos(id_alumno,nom_alumno,ape_alumno,direccion,altura,nro_tel,email,id_barrio,id_situacion_laboral,id_estado_civil)
+VALUES(@id_alumno,@nom_alumno,@ape_alumno,@direccion,@altura,@nro_tel,@email,@id_barrio,@id_situacion_laboral,@id_estado_civil)
+END
+
+CREATE PROCEDURE PA_INSERTAR_DETALLE_ALUMNO
+@id_alumno int,
+@id_detalle_mat_com int,
+@id_estado_acad int,
+@fecha_inscr datetime,
+@fecha_estado datetime
+AS
+BEGIN
+INSERT INTO Detalles_alumnos_materias(id_alumno,id_detalle_materia_comision,id_estado_academico,fecha_inscripcion,fecha_estado)
+VALUES (@id_alumno,@id_detalle_mat_com,@id_estado_acad,@fecha_inscr,@fecha_estado)
+END
+
+ALTER TABLE Alumnos
+ADD fecha_baja Datetime
+
+CREATE PROCEDURE PA_CONSULTAR_ALUMNOS
+@situacion_lab int,
+@estado_civil int,
+@nombre varchar(30)
+AS
+BEGIN
+SELECT id_alumno,nom_alumno,ape_alumno,direccion,altura,nro_tel,email,ec.id_estado_civil,ec.estado_civil,sl.id_situacion_laboral,sl.situacion_laboral,b.id_barrio,b.barrio,c.id_ciudad,c.ciudad 
+	FROM Alumnos A JOIN Estados_civiles ec
+	ON a.id_estado_civil=ec.id_estado_civil
+	JOIN Situaciones_laborales sl
+	ON sl.id_situacion_laboral=a.id_situacion_laboral
+	JOIN Barrios B ON B.id_barrio=A.id_barrio
+	JOIN Ciudades C ON C.id_ciudad=B.id_ciudad
+WHERE a.id_situacion_laboral=@situacion_lab
+AND a.id_estado_civil=@estado_civil
+AND nom_alumno LIKE '%'+@nombre+'%'
+AND fecha_baja IS NULL
+END
+
+CREATE PROCEDURE PA_CONSULTAR_ALUMNO
+@id_alumno int
+AS
+BEGIN
+SELECT id_alumno,nom_alumno,ape_alumno,direccion,altura,nro_tel,email,ec.id_estado_civil,ec.estado_civil,sl.id_situacion_laboral,sl.situacion_laboral,b.id_barrio,b.barrio,c.id_ciudad,c.ciudad 
+	FROM Alumnos A JOIN Estados_civiles ec
+	ON a.id_estado_civil=ec.id_estado_civil
+	JOIN Situaciones_laborales sl
+	ON sl.id_situacion_laboral=a.id_situacion_laboral
+	JOIN Barrios B ON B.id_barrio=A.id_barrio
+	JOIN Ciudades C ON C.id_ciudad=B.id_ciudad
+WHERE a.id_alumno=@id_alumno
+AND fecha_baja IS NULL
+END
+
+CREATE PROCEDURE PA_ACTUALIZAR_ALUMNO
+@id_alumno int,
+@nom_alumno varchar(30),
+@ape_alumno varchar(30),
+@direccion varchar(40),
+@altura int,
+@nro_tel varchar(30),
+@email varchar(50),
+@id_barrio int,
+@id_situacion_laboral int,
+@id_estado_civil int
+AS
+BEGIN
+UPDATE Alumnos
+SET nom_alumno=@nom_alumno,
+ape_alumno=@ape_alumno,
+direccion=@direccion,
+altura=@altura,
+nro_tel=@nro_tel,
+email=@email,
+id_barrio=@id_barrio,
+id_situacion_laboral=@id_situacion_laboral,
+id_estado_civil=@id_estado_civil
+WHERE id_alumno=@id_alumno
+--Borrado de detalles
+DELETE Detalles_alumnos_materias
+WHERE id_alumno=@id_alumno
+END
+
+CREATE PROCEDURE PA_BORRAR_ALUMNO
+@id_alumno int
+AS
+BEGIN
+UPDATE Alumnos
+SET fecha_baja=getdate()
+WHERE id_alumno=@id_alumno
+END
+
+ALTER TABLE Materias
+ADD fecha_baja Datetime
+
+ALTER PROCEDURE PA_CONSULTAR_MATERIAS_ALUMNO
+@id_alumno int
+AS
+BEGIN
+SELECT M.id_materia,M.nom_materia,t.id_tecnicatura,t.nom_tecnicatura,t.titulo_tecnicatura
+FROM Materias M JOIN Tecnicaturas t
+	ON t.id_tecnicatura=m.id_materia
+WHERE @id_alumno NOT IN (SELECT dam.id_alumno FROM Detalle_materias_comisiones dmc
+	JOIN Detalles_alumnos_materias dam
+	ON dam.id_detalle_materia_comision=dmc.id_detalle_materia_comision
+)
+AND m.fecha_baja IS NULL
 END
