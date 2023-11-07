@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Back.Dominio
 {
-    internal class Ciudad
+    public class Ciudad
     {
         public int IdCiudad { get; set; }
         public string NombreCiudad { get; set; }

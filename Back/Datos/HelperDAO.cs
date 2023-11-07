@@ -11,7 +11,7 @@ namespace Back.Datos
     internal class HelperDAO
     {
         private SqlConnection conexion;
-        private static HelperDAO instancia;
+        private static HelperDAO? instancia;
         private HelperDAO()
         {
             conexion = new SqlConnection();//stringConexion);

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Back.Dominio
 {
-    internal class Examen
+    public class Examen
     {
         public int IdExamen { get; set; }
         public DateTime FechaExamen { get; set; }

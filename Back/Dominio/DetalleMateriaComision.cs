@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Back.Dominio
 {
-    internal class DetalleMateriaComision
+    public class DetalleMateriaComision
     {
         public int IdDetalleMateriaComision { get; set; }
         public Docente DocenteMateriaComision { get; set; }

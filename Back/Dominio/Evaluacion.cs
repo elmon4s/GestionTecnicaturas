@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Back.Dominio
 {
-    internal class Evaluacion
+    public class Evaluacion
     {
         public int IdEvaluacion { get; set; }
         public DateTime FechaEvaluacion { get; set; }

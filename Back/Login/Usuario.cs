@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Back.Login
 {
-    internal class Usuario
+    public class Usuario
     {
         public string NomUsuario { get; set; }
         public string ContUsuario { get; set; }
