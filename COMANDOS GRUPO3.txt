@@ -1,6 +1,36 @@
 USE GRUPO3_TPI
 GO
 
+--SP Reporte
+
+create PROC SP_REPORTE_ALUMNOS
+@fecha_desde datetime = '1/1/2000',
+@fecha_hasta datetime = '1/1/2030',
+@tec varchar(200) = 'T%'
+as
+BEGIN
+
+	set @tec = concat(@tec, '%')
+	
+	SELECT a.id_alumno 'ID',
+		   ape_alumno+', '+nom_alumno 'Nombre',
+		   direccion+' - Nro: '+str(altura)+' - Barrio: '+b.barrio 'Direccion',
+		   nro_tel 'Nro_Teléfono',
+		   email 'Email',
+		   fecha_inscripcion 'Fecha de Inscripción',
+		   t.nom_tecnicatura 'Tecnicatura'
+	  FROM Detalles_alumnos_materias Dam 
+		   join Detalle_materias_comisiones Dmc
+		   on Dam.id_detalle_materia_comision=Dmc.id_detalle_materia_comision
+		   join Materias m on Dmc.id_materia=m.id_materia
+		   join Tecnicaturas t on t.id_tecnicatura=m.id_materia
+		   join Alumnos a on a.id_alumno = Dam.id_alumno
+	       join Barrios b on a.id_barrio=b.id_barrio
+	 where fecha_inscripcion between @fecha_desde and @fecha_hasta
+		   and t.nom_tecnicatura = @tec
+END;
+
+--Fin SP Reporte
 CREATE TABLE Usuarios(
 id_usuarios int IDENTITY(1,1),
 usuario varchar(90),
