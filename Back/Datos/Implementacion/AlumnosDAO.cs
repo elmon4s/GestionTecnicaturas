@@ -142,6 +142,7 @@ namespace Back.Datos.Implementacion
             }
             return aux;
         }
+
         public Alumno TraerAlumno(int nroAlumno)
         {
             Alumno oAlumno = new Alumno();
@@ -174,39 +175,64 @@ namespace Back.Datos.Implementacion
                 auxBarrio.CiudadBarrio = auxCiudad;
                 oAlumno.Barrio = auxBarrio;
             }
+            List<Parametro> lParamDet = new List<Parametro>();
+            lParamDet.Add(new Parametro("@id_alumno",oAlumno.IdAlumno));
+            DataTable tablaDet = HelperDAO.ObtenerInstancia().Consultar("PA_CONSULTAR_DETALLES_ALUMNO", lParamDet);
+            foreach(DataRow filaDet in tablaDet.Rows)
+            {
+                DetalleAlumnoMateria det = new DetalleAlumnoMateria();
+                det.IdDetalleAlumnoMateria = int.Parse(filaDet["id_detalle_alumno_materia"].ToString());
+                det.FechaInscripcionDetalle = Convert.ToDateTime(filaDet["fecha_inscripcion"].ToString());
+                det.FechaEstadoDetalle = Convert.ToDateTime(filaDet["fecha_estado"].ToString());
+                EstadoAcademico auxEst = new EstadoAcademico();
+                auxEst.IdEstadoAcademico = int.Parse(filaDet["id_estado_academico"].ToString());
+                auxEst.DescEstadoAcademico = filaDet["estado_academico"].ToString();
+                det.EstadoDetalle = auxEst;
+                DetalleMateriaComision auxDetMC = new DetalleMateriaComision();
+                auxDetMC.IdDetalleMateriaComision = int.Parse(filaDet["id_detalle_materia_comision"].ToString());
+                auxDetMC.MateriaDetalle.IdMateria = int.Parse(filaDet["id_materia"].ToString());
+                auxDetMC.MateriaDetalle.NombreMateria = filaDet["nom_materia"].ToString();
+                auxDetMC.ComisionDetalle.IdComision = int.Parse(filaDet["id_comision"].ToString());
+                auxDetMC.ComisionDetalle.DescripcionComision = filaDet["descripcion_comision"].ToString();
+                det.DetalleMateriaComision = auxDetMC;
+                oAlumno.DetallesAlumno.Add(det);
+            }
             return oAlumno;
         }
         public List<Alumno> TraerAlumnos(List<Parametro> lParam)
         {
             List<Alumno> lAlumnos = new List<Alumno>();
             DataTable tabla = HelperDAO.ObtenerInstancia().Consultar("PA_CONSULTAR_ALUMNOS", lParam);
-            foreach (DataRow fila in tabla.Rows)
+            if (tabla.Rows.Count != 0)
             {
-                int id = int.Parse(fila["id_alumno"].ToString());
-                string nom = fila["nom_alumno"].ToString();
-                string ape = fila["ape_alumno"].ToString();
-                string dir = fila["direccion"].ToString();
-                int alt = int.Parse(fila["altura"].ToString());
-                string tel = fila["nro_tel"].ToString();
-                string mail = fila["email"].ToString();
-                Alumno oAlumno = new Alumno(id, new SituacionLaboral(), new EstadoCivil(), new List<DetalleAlumnoMateria>(), nom, ape, dir, alt, tel, mail, new Barrio());
-                int idEst = int.Parse(fila["id_estado_civil"].ToString());
-                string est = fila["estado_civil"].ToString();
-                EstadoCivil auxEstado = new EstadoCivil(idEst,est);
-                oAlumno.EstadoCivilAlumno = auxEstado;
-                int idSit = int.Parse(fila["id_situacion_laboral"].ToString());
-                string sit = fila["situacion_laboral"].ToString();
-                SituacionLaboral auxSituacion = new SituacionLaboral(idSit, sit);
-                oAlumno.SituacionAlumno = auxSituacion;
-                int idBar = int.Parse(fila["id_barrio"].ToString());
-                string bar = fila["barrio"].ToString();
-                Barrio auxBarrio = new Barrio(idBar, bar, new Ciudad());
-                int idCiud = int.Parse(fila["id_ciudad"].ToString());
-                string ciud = fila["ciudad"].ToString();
-                Ciudad auxCiudad = new Ciudad(idCiud, ciud);
-                auxBarrio.CiudadBarrio = auxCiudad;
-                oAlumno.Barrio = auxBarrio;
-                lAlumnos.Add(oAlumno);
+                foreach (DataRow fila in tabla.Rows)
+                {
+                    int id = int.Parse(fila["id_alumno"].ToString());
+                    string nom = fila["nom_alumno"].ToString();
+                    string ape = fila["ape_alumno"].ToString();
+                    string dir = fila["direccion"].ToString();
+                    int alt = int.Parse(fila["altura"].ToString());
+                    string tel = fila["nro_tel"].ToString();
+                    string mail = fila["email"].ToString();
+                    Alumno oAlumno = new Alumno(id, new SituacionLaboral(), new EstadoCivil(), new List<DetalleAlumnoMateria>(), nom, ape, dir, alt, tel, mail, new Barrio());
+                    int idEst = int.Parse(fila["id_estado_civil"].ToString());
+                    string est = fila["estado_civil"].ToString();
+                    EstadoCivil auxEstado = new EstadoCivil(idEst, est);
+                    oAlumno.EstadoCivilAlumno = auxEstado;
+                    int idSit = int.Parse(fila["id_situacion_laboral"].ToString());
+                    string sit = fila["situacion_laboral"].ToString();
+                    SituacionLaboral auxSituacion = new SituacionLaboral(idSit, sit);
+                    oAlumno.SituacionAlumno = auxSituacion;
+                    int idBar = int.Parse(fila["id_barrio"].ToString());
+                    string bar = fila["barrio"].ToString();
+                    Barrio auxBarrio = new Barrio(idBar, bar, new Ciudad());
+                    int idCiud = int.Parse(fila["id_ciudad"].ToString());
+                    string ciud = fila["ciudad"].ToString();
+                    Ciudad auxCiudad = new Ciudad(idCiud, ciud);
+                    auxBarrio.CiudadBarrio = auxCiudad;
+                    oAlumno.Barrio = auxBarrio;
+                    lAlumnos.Add(oAlumno);
+                }
             }
             return lAlumnos;
         }
@@ -258,11 +284,19 @@ namespace Back.Datos.Implementacion
         {
             List<DetalleMateriaComision> lDetalles = new List<DetalleMateriaComision>();
             DataTable tabla = HelperDAO.ObtenerInstancia().Consultar("PA_CONSULTAR_DMC_ALUMNOS",lParam);
-            foreach (DataRow fila in tabla.Rows)
+            if (tabla.Rows.Count != 0)
             {
-                DetalleMateriaComision oDetalle = new DetalleMateriaComision();
-
-                lDetalles.Add(oDetalle);
+                foreach (DataRow fila in tabla.Rows)
+                {
+                    DetalleMateriaComision oDetalle = new DetalleMateriaComision();
+                    int id = int.Parse(fila["id_detalle_materia_comision"].ToString());
+                    int year = int.Parse(fila["año_lectivo"].ToString());
+                    int idMat = int.Parse(fila["id_materia"].ToString());
+                    string mat = fila["nom_materia"].ToString();
+                    int idCom = int.Parse(fila["id_comision"].ToString());
+                    string com = fila["descripcion_comision"].ToString();
+                    lDetalles.Add(oDetalle);
+                }
             }
             return lDetalles;
         }
