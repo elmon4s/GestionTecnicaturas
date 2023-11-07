@@ -19,6 +19,7 @@ namespace Back.Datos.Implementacion
             SqlConnection conexion = HelperDAO.ObtenerInstancia().ObtenerConexion();
             try
             {
+                conexion.Open();
                 transaccion = conexion.BeginTransaction();
                 SqlCommand comando = new SqlCommand("PA_INSERTAR_DOCENTE", conexion, transaccion);
                 comando.CommandType = CommandType.StoredProcedure;
@@ -57,6 +58,7 @@ namespace Back.Datos.Implementacion
             SqlConnection conexion = HelperDAO.ObtenerInstancia().ObtenerConexion();
             try
             {
+                conexion.Open();
                 transaccion = conexion.BeginTransaction();
                 SqlCommand comando = new SqlCommand("PA_ACTUALIZAR_DOCENTE", conexion, transaccion);
                 comando.CommandType = CommandType.StoredProcedure;
@@ -95,6 +97,7 @@ namespace Back.Datos.Implementacion
             SqlConnection conexion = HelperDAO.ObtenerInstancia().ObtenerConexion();
             try
             {
+                conexion.Open();
                 transaccion = conexion.BeginTransaction();
                 SqlCommand comando = new SqlCommand("PA_BORRAR_DOCENTE", conexion, transaccion);
                 comando.CommandType = CommandType.StoredProcedure;
