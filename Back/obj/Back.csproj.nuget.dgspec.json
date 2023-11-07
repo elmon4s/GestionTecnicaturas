@@ -11,7 +11,7 @@
         "projectName": "Back",
         "projectPath": "C:\\Users\\esteb\\source\\repos\\GestionTecnicaturas\\Back\\Back.csproj",
         "packagesPath": "C:\\Users\\esteb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\esteb\\Source\\Repos\\GestionTecnicaturas\\Back\\obj\\",
+        "outputPath": "C:\\Users\\esteb\\source\\repos\\GestionTecnicaturas\\Back\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\esteb\\AppData\\Roaming\\NuGet\\NuGet.Config",
