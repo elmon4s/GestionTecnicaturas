@@ -2,16 +2,12 @@ USE GRUPO3_TPI
 GO
 
 --SP Reporte
-
-create PROC SP_REPORTE_ALUMNOS
+create procedure SP_REPORTE_ALUMNOS
 @fecha_desde datetime = '1/1/2000',
 @fecha_hasta datetime = '1/1/2030',
 @tec varchar(200) = 'T%'
 as
 BEGIN
-
-	set @tec = concat(@tec, '%')
-	
 	SELECT a.id_alumno 'ID',
 		   ape_alumno+', '+nom_alumno 'Nombre',
 		   direccion+' - Nro: '+str(altura)+' - Barrio: '+b.barrio 'Direccion',
