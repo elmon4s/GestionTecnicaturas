@@ -117,13 +117,20 @@ namespace WebApi.Controllers
         }
 
         [HttpGet("/docentesExamen")]
-        public IActionResult GetDocentesExamenes([FromQuery]List<Parametro> lParam)
+        public IActionResult GetDocentesExamenes([FromQuery(Name = "materia")] int idMateria)
         {
             try
             {
+                List<Parametro> lParam = new List<Parametro>
+                {
+                    new Parametro { Nombre = "@materia", Valor = idMateria }
+                };
+
                 if (lParam == null)
                     return BadRequest("Se deben ingresar parámetros");
-                return Ok(app.GetDocentesExamen(lParam));
+
+                var docentes = app.GetDocentesExamen(lParam);
+                return Ok(docentes);
             }
             catch
             {
@@ -132,10 +139,14 @@ namespace WebApi.Controllers
         }
 
         [HttpGet("/alumnosexamen")]
-        public IActionResult GetAlumnosExamenes([FromQuery]List<Parametro> lParam)
+        public IActionResult GetAlumnosExamenes([FromQuery(Name = "materia")] int idMateria)
         {
             try
             {
+                List<Parametro> lParam = new List<Parametro>
+                {
+                    new Parametro { Nombre = "@materia", Valor = idMateria }
+                };
                 if (lParam == null)
                     return BadRequest("Se deben ingresar parámetros");
                 return Ok(app.GetAlumnosExamen(lParam));
