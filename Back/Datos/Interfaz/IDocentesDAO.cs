@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Back.Datos.Interfaz
 {
-    internal interface IDocentesDAO
+    public interface IDocentesDAO
     {
         public bool CrearDocente(Docente oDocente);
         public bool ActualizarDocente(Docente oDocente);

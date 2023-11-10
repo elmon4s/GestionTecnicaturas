@@ -100,19 +100,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\esteb\\.nuget\\packages\\": {}
+    "C:\\Users\\ronim\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\esteb\\source\\repos\\GestionTecnicaturas\\Front\\Front.csproj",
+      "projectUniqueName": "C:\\Users\\ronim\\OneDrive\\Escritorio\\Grupo11(Repo a subir)\\GestionTecnicaturas\\Front\\Front.csproj",
       "projectName": "Front",
-      "projectPath": "C:\\Users\\esteb\\source\\repos\\GestionTecnicaturas\\Front\\Front.csproj",
-      "packagesPath": "C:\\Users\\esteb\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\esteb\\source\\repos\\GestionTecnicaturas\\Front\\obj\\",
+      "projectPath": "C:\\Users\\ronim\\OneDrive\\Escritorio\\Grupo11(Repo a subir)\\GestionTecnicaturas\\Front\\Front.csproj",
+      "packagesPath": "C:\\Users\\ronim\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ronim\\OneDrive\\Escritorio\\Grupo11(Repo a subir)\\GestionTecnicaturas\\Front\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\esteb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ronim\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -166,7 +166,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

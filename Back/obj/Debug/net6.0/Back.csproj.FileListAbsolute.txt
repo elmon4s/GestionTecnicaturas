@@ -1,0 +1,12 @@
+D:\Code\GestionTecnicaturas\Back\bin\Debug\net6.0\Back.deps.json
+D:\Code\GestionTecnicaturas\Back\bin\Debug\net6.0\Back.dll
+D:\Code\GestionTecnicaturas\Back\bin\Debug\net6.0\Back.pdb
+D:\Code\GestionTecnicaturas\Back\obj\Debug\net6.0\Back.csproj.AssemblyReference.cache
+D:\Code\GestionTecnicaturas\Back\obj\Debug\net6.0\Back.GeneratedMSBuildEditorConfig.editorconfig
+D:\Code\GestionTecnicaturas\Back\obj\Debug\net6.0\Back.AssemblyInfoInputs.cache
+D:\Code\GestionTecnicaturas\Back\obj\Debug\net6.0\Back.AssemblyInfo.cs
+D:\Code\GestionTecnicaturas\Back\obj\Debug\net6.0\Back.csproj.CoreCompileInputs.cache
+D:\Code\GestionTecnicaturas\Back\obj\Debug\net6.0\Back.dll
+D:\Code\GestionTecnicaturas\Back\obj\Debug\net6.0\refint\Back.dll
+D:\Code\GestionTecnicaturas\Back\obj\Debug\net6.0\Back.pdb
+D:\Code\GestionTecnicaturas\Back\obj\Debug\net6.0\ref\Back.dll
