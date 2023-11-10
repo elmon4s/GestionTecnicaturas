@@ -42,6 +42,12 @@
             nuevoAlumnoToolStripMenuItem = new ToolStripMenuItem();
             consultarAlumnosToolStripMenuItem = new ToolStripMenuItem();
             reportesToolStripMenuItem = new ToolStripMenuItem();
+            acercaDeToolStripMenuItem = new ToolStripMenuItem();
+            galloMateoToolStripMenuItem = new ToolStripMenuItem();
+            maseraGustavoMartínToolStripMenuItem = new ToolStripMenuItem();
+            monasterioMateoToolStripMenuItem = new ToolStripMenuItem();
+            paredesEstebanToolStripMenuItem = new ToolStripMenuItem();
+            romeroBeskowJoaquinToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -58,7 +64,7 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { inicioToolStripMenuItem, docentesToolStripMenuItem, examenesToolStripMenuItem, alumnosToolStripMenuItem, reportesToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { inicioToolStripMenuItem, docentesToolStripMenuItem, examenesToolStripMenuItem, alumnosToolStripMenuItem, reportesToolStripMenuItem, acercaDeToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(708, 24);
@@ -83,12 +89,14 @@
             nuevoDocenteToolStripMenuItem.Name = "nuevoDocenteToolStripMenuItem";
             nuevoDocenteToolStripMenuItem.Size = new Size(177, 22);
             nuevoDocenteToolStripMenuItem.Text = "Nuevo Docente";
+            nuevoDocenteToolStripMenuItem.Click += nuevoDocenteToolStripMenuItem_Click;
             // 
             // consultarDocentesToolStripMenuItem
             // 
             consultarDocentesToolStripMenuItem.Name = "consultarDocentesToolStripMenuItem";
             consultarDocentesToolStripMenuItem.Size = new Size(177, 22);
             consultarDocentesToolStripMenuItem.Text = "Consultar Docentes";
+            consultarDocentesToolStripMenuItem.Click += consultarDocentesToolStripMenuItem_Click;
             // 
             // examenesToolStripMenuItem
             // 
@@ -102,12 +110,14 @@
             nueToolStripMenuItem.Name = "nueToolStripMenuItem";
             nueToolStripMenuItem.Size = new Size(181, 22);
             nueToolStripMenuItem.Text = "Nuevo Examen";
+            nueToolStripMenuItem.Click += nueToolStripMenuItem_Click;
             // 
             // consultarExamenesToolStripMenuItem
             // 
             consultarExamenesToolStripMenuItem.Name = "consultarExamenesToolStripMenuItem";
             consultarExamenesToolStripMenuItem.Size = new Size(181, 22);
             consultarExamenesToolStripMenuItem.Text = "Consultar Examenes";
+            consultarExamenesToolStripMenuItem.Click += consultarExamenesToolStripMenuItem_Click;
             // 
             // alumnosToolStripMenuItem
             // 
@@ -119,20 +129,59 @@
             // nuevoAlumnoToolStripMenuItem
             // 
             nuevoAlumnoToolStripMenuItem.Name = "nuevoAlumnoToolStripMenuItem";
-            nuevoAlumnoToolStripMenuItem.Size = new Size(176, 22);
+            nuevoAlumnoToolStripMenuItem.Size = new Size(180, 22);
             nuevoAlumnoToolStripMenuItem.Text = "Nuevo Alumno";
+            nuevoAlumnoToolStripMenuItem.Click += nuevoAlumnoToolStripMenuItem_Click;
             // 
             // consultarAlumnosToolStripMenuItem
             // 
             consultarAlumnosToolStripMenuItem.Name = "consultarAlumnosToolStripMenuItem";
-            consultarAlumnosToolStripMenuItem.Size = new Size(176, 22);
+            consultarAlumnosToolStripMenuItem.Size = new Size(180, 22);
             consultarAlumnosToolStripMenuItem.Text = "Consultar Alumnos";
+            consultarAlumnosToolStripMenuItem.Click += consultarAlumnosToolStripMenuItem_Click;
             // 
             // reportesToolStripMenuItem
             // 
             reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             reportesToolStripMenuItem.Size = new Size(65, 20);
             reportesToolStripMenuItem.Text = "Reportes";
+            // 
+            // acercaDeToolStripMenuItem
+            // 
+            acercaDeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { galloMateoToolStripMenuItem, maseraGustavoMartínToolStripMenuItem, monasterioMateoToolStripMenuItem, paredesEstebanToolStripMenuItem, romeroBeskowJoaquinToolStripMenuItem });
+            acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
+            acercaDeToolStripMenuItem.Size = new Size(71, 20);
+            acercaDeToolStripMenuItem.Text = "Acerca de";
+            // 
+            // galloMateoToolStripMenuItem
+            // 
+            galloMateoToolStripMenuItem.Name = "galloMateoToolStripMenuItem";
+            galloMateoToolStripMenuItem.Size = new Size(203, 22);
+            galloMateoToolStripMenuItem.Text = "Gallo Mateo";
+            // 
+            // maseraGustavoMartínToolStripMenuItem
+            // 
+            maseraGustavoMartínToolStripMenuItem.Name = "maseraGustavoMartínToolStripMenuItem";
+            maseraGustavoMartínToolStripMenuItem.Size = new Size(203, 22);
+            maseraGustavoMartínToolStripMenuItem.Text = "Masera Gustavo Martín";
+            // 
+            // monasterioMateoToolStripMenuItem
+            // 
+            monasterioMateoToolStripMenuItem.Name = "monasterioMateoToolStripMenuItem";
+            monasterioMateoToolStripMenuItem.Size = new Size(203, 22);
+            monasterioMateoToolStripMenuItem.Text = "Monasterio Mateo";
+            // 
+            // paredesEstebanToolStripMenuItem
+            // 
+            paredesEstebanToolStripMenuItem.Name = "paredesEstebanToolStripMenuItem";
+            paredesEstebanToolStripMenuItem.Size = new Size(203, 22);
+            paredesEstebanToolStripMenuItem.Text = "Paredes Esteban";
+            // 
+            // romeroBeskowJoaquinToolStripMenuItem
+            // 
+            romeroBeskowJoaquinToolStripMenuItem.Name = "romeroBeskowJoaquinToolStripMenuItem";
+            romeroBeskowJoaquinToolStripMenuItem.Size = new Size(203, 22);
+            romeroBeskowJoaquinToolStripMenuItem.Text = "Romero Beskow Joaquin";
             // 
             // FrmPrincipal
             // 
@@ -168,5 +217,11 @@
         private ToolStripMenuItem nuevoAlumnoToolStripMenuItem;
         private ToolStripMenuItem consultarAlumnosToolStripMenuItem;
         private ToolStripMenuItem reportesToolStripMenuItem;
+        private ToolStripMenuItem acercaDeToolStripMenuItem;
+        private ToolStripMenuItem galloMateoToolStripMenuItem;
+        private ToolStripMenuItem maseraGustavoMartínToolStripMenuItem;
+        private ToolStripMenuItem monasterioMateoToolStripMenuItem;
+        private ToolStripMenuItem paredesEstebanToolStripMenuItem;
+        private ToolStripMenuItem romeroBeskowJoaquinToolStripMenuItem;
     }
 }

@@ -28,4 +28,8 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Presentacion\Reportes\" />
+  </ItemGroup>
+
 </Project>

@@ -12,6 +12,7 @@ namespace Front
 {
     public partial class FrmRegistro : Form
     {
+        //TODO: Implementar lógica
         public FrmRegistro()
         {
             InitializeComponent();

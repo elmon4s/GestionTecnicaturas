@@ -8,11 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Front
+namespace Front.Presentacion.Examenes
 {
-    public partial class FrmLogin : Form
+    public partial class FrmGestorExamen : Form
     {
-        public FrmLogin()
+        //TODO: Completar Forumlario
+        public FrmGestorExamen(int codExamen)
         {
             InitializeComponent();
         }

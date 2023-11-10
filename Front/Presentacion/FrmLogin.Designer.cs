@@ -104,6 +104,7 @@
             btnIngresar.TabIndex = 6;
             btnIngresar.Text = "Ingresar";
             btnIngresar.UseVisualStyleBackColor = true;
+            btnIngresar.Click += btnIngresar_Click;
             // 
             // btnCancelar
             // 
@@ -124,6 +125,7 @@
             btnRegistro.TabIndex = 8;
             btnRegistro.Text = "Registro";
             btnRegistro.UseVisualStyleBackColor = true;
+            btnRegistro.Click += btnRegistro_Click;
             // 
             // FrmLogin
             // 
