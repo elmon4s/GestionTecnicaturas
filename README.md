@@ -1,11 +1,11 @@
 - Proyecto del Grupo 11
-- Tema: Gestion de Tecnicaturas de la UTN FRC
+Tema: Gestion de Tecnicaturas de la UTN FRC
 - Integrantes:
-- Gallo, Mateo (404947)
-- Masera, Gustavo Martin (405153)
-- Monasterio, Mateo (404888)
-- Paredes, Esteban (405226)
-- Romero Beskow, Joaquin (405632)
+Gallo, Mateo (404947)
+Masera, Gustavo Martin (405153)
+Monasterio, Mateo (404888)
+Paredes, Esteban (405226)
+Romero Beskow, Joaquin (405632)
 - Implementaciones del Proyecto:
 1. ABMC Docentes
 2. Transaccion de Examen con Detalle Examen
