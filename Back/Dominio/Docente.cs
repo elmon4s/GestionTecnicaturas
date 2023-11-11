@@ -23,5 +23,10 @@ namespace Back.Dominio
             IdDocente = id;
             TituloDocente = titulo;
         }
+
+        public override string ToString()
+        {
+            return "Docente: "+Nombre+ " "+Apellido;
+        }
     }
 }

@@ -31,6 +31,9 @@ namespace Back.Dominio
             DetallesAlumno = lDetalles;
         }
 
-
+        public override string ToString()
+        {
+            return Nombre+ " "+Apellido;
+        }
     }
 }

@@ -32,5 +32,10 @@ namespace Back.Dominio
             ComisionDetalle = com;
             AñoLectivoDetalle = año;
         }
+
+        public override string ToString()
+        {
+            return MateriaDetalle.NombreMateria+ " - "+ComisionDetalle.DescripcionComision+ AñoLectivoDetalle;
+        }
     }
 }

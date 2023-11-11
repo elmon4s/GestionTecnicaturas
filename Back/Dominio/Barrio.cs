@@ -28,7 +28,7 @@ namespace Back.Dominio
 
         public override string ToString()
         {
-            return NombreBarrio;
+            return NombreBarrio+" - "+CiudadBarrio.NombreCiudad;
         }
     }
 }

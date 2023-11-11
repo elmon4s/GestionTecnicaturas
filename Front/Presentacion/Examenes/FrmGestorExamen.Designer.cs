@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGestorExamen));
             cboMaterias = new ComboBox();
             lblFecha = new Label();
             lblMateria = new Label();
@@ -115,7 +116,7 @@
             // 
             btnAceptar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnAceptar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAceptar.Location = new Point(34, 376);
+            btnAceptar.Location = new Point(211, 376);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new Size(79, 29);
             btnAceptar.TabIndex = 0;
@@ -176,7 +177,7 @@
             // 
             btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnCancelar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCancelar.Location = new Point(115, 376);
+            btnCancelar.Location = new Point(357, 376);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(79, 29);
             btnCancelar.TabIndex = 8;
@@ -216,6 +217,7 @@
             // nudNota
             // 
             nudNota.Location = new Point(317, 50);
+            nudNota.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             nudNota.Name = "nudNota";
             nudNota.Size = new Size(78, 25);
             nudNota.TabIndex = 13;
@@ -244,6 +246,7 @@
             // 
             // pnlExamen
             // 
+            pnlExamen.BackColor = SystemColors.ActiveCaption;
             pnlExamen.Controls.Add(lblDocente);
             pnlExamen.Controls.Add(cboDocentes);
             pnlExamen.Controls.Add(btnAgregar);
@@ -272,6 +275,7 @@
             Controls.Add(btnAceptar);
             Controls.Add(dtpFecha);
             Controls.Add(lblMateria);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmGestorExamen";
             Text = "Examen";
             Load += ExamenFrm_Load;
