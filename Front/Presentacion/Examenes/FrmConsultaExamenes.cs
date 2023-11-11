@@ -17,5 +17,10 @@ namespace Front.Presentacion.Examenes
         {
             InitializeComponent();
         }
+
+        private void FrmConsultaExamenes_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

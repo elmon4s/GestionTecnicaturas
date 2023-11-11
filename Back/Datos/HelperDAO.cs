@@ -14,7 +14,7 @@ namespace Back.Datos
         private static HelperDAO? instancia;
         private HelperDAO()
         {
-            conexion = new SqlConnection();//stringConexion);
+            conexion = new SqlConnection(Properties.Resources.CadenaConexion);//stringConexion);
         }
 
         public static HelperDAO ObtenerInstancia()
@@ -63,18 +63,24 @@ namespace Back.Datos
 
         internal DataTable Consultar(string nombreSP, List<Parametro> lParams)
         {
-            conexion.Open();
-            SqlCommand comando = new SqlCommand();
-            comando.Connection = conexion;
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.CommandText = nombreSP;
-            foreach (Parametro p in lParams)
-            {
-                comando.Parameters.AddWithValue(p.Nombre, p.Valor);
-            }
             DataTable tabla = new DataTable();
-            tabla.Load(comando.ExecuteReader());
-            conexion.Close();
+            try
+            {
+                conexion.Open();
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = conexion;
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandText = nombreSP;
+                foreach (Parametro p in lParams)
+                {
+                    comando.Parameters.AddWithValue(p.Nombre, p.Valor);
+                }
+                tabla.Load(comando.ExecuteReader());
+            }
+            finally
+            {
+                conexion.Close();
+            }
             return tabla;
         }
     }

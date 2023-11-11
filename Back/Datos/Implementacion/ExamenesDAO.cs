@@ -46,6 +46,8 @@ namespace Back.Datos.Implementacion
                     //Programar trigger del estado academico
                     comandoDet.ExecuteNonQuery();
                 }
+
+                transaccion.Commit();
             }
             catch
             {
@@ -208,9 +210,9 @@ namespace Back.Datos.Implementacion
             foreach (DataRow fila in tabla.Rows)
             {
                 Docente oDocente = new Docente();
-                int id = int.Parse(fila["id_docente"].ToString());
-                string nom = fila["nom_docente"].ToString();
-                string ape = fila["ape_docente"].ToString();
+                oDocente.IdDocente = int.Parse(fila["id_docente"].ToString());
+                oDocente.Nombre = fila["nom_docente"].ToString();
+                oDocente.Apellido = fila["ape_docente"].ToString();
                 int idTit = int.Parse(fila["id_titulo"].ToString());
                 string tit = fila["titulo"].ToString();
                 Titulo auxTitulo = new Titulo(idTit, tit);
@@ -228,9 +230,9 @@ namespace Back.Datos.Implementacion
                 foreach (DataRow fila in tabla.Rows)
                 {
                     Alumno oAlumno = new Alumno();
-                    int id = int.Parse(fila["id_alumno"].ToString());
-                    string nom = fila["nom_alumno"].ToString();
-                    string ape = fila["ape_alumno"].ToString();
+                    oAlumno.IdAlumno = int.Parse(fila["id_alumno"].ToString());
+                    oAlumno.Nombre = fila["nom_alumno"].ToString();
+                    oAlumno.Apellido = fila["ape_alumno"].ToString();
                     lAlumnos.Add(oAlumno);
                 }
             }

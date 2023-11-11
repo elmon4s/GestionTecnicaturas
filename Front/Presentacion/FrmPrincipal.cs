@@ -33,7 +33,7 @@ namespace Front
 
         private void nueToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new FrmGestorExamen(0).ShowDialog();
+            new FrmGestorExamen().ShowDialog();
         }
 
         private void consultarExamenesToolStripMenuItem_Click(object sender, EventArgs e)

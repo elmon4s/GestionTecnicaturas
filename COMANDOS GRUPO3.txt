@@ -394,3 +394,35 @@ WHERE @id_alumno NOT IN (SELECT dam.id_alumno FROM Detalle_materias_comisiones d
 )
 AND m.fecha_baja IS NULL
 END
+
+ALTER PROCEDURE [dbo].[PA_CONSULTAR_ALUMNOS_EXAMEN]
+@id_materia int
+AS
+BEGIN 
+SELECT a.id_alumno,nom_alumno,ape_alumno,direccion,altura,email,a.id_barrio, barrio, a.id_estado_civil,estado_civil,a.id_situacion_laboral,situacion_laboral
+FROM Alumnos a JOIN Detalles_alumnos_materias dam
+	ON a.id_alumno=dam.id_alumno
+	JOIN Detalle_materias_comisiones dmc 
+	ON dmc.id_detalle_materia_comision=dam.id_detalle_materia_comision
+	JOIN Barrios b ON b.id_barrio=a.id_barrio
+	JOIN Situaciones_laborales s ON s.id_situacion_laboral=a.id_situacion_laboral
+	JOIN Estados_civiles ec ON ec.id_estado_civil=a.id_estado_civil
+WHERE dam.id_estado_academico=3
+AND dmc.id_materia=@id_materia
+AND DATEDIFF(month,fecha_estado,getdate())<=18
+AND fecha_baja IS NULL
+END
+
+go
+ALTER PROCEDURE [dbo].[PA_CONSULTAR_DOCENTES_MATERIA]
+@materia int
+AS
+BEGIN
+SELECT distinct d.id_docente,nom_docente,ape_docente,direccion,altura,nro_tel,email,t.id_titulo,t.titulo,b.id_barrio,b.barrio,c.id_ciudad,c.ciudad 
+	FROM Docentes D JOIN Titulos T ON D.id_titulo=T.id_titulo
+	JOIN Barrios B ON B.id_barrio=D.id_barrio
+	JOIN Ciudades C ON C.id_ciudad=B.id_ciudad
+	JOIN Detalle_materias_comisiones  dmc ON dmc.id_docente=d.id_docente
+	WHERE dmc.id_materia=@materia
+AND fecha_baja IS NULL
+END

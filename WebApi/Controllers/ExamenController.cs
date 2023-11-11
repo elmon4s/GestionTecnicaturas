@@ -33,16 +33,16 @@ namespace WebApi.Controllers
         [HttpPost("/examen")]
         public IActionResult PostExamen(Examen oExamen)
         {
-            try
-            {
+            //try
+            //{
                 if (oExamen == null)
                     return BadRequest("Se debe ingresar un examen");
                 return Ok(app.SaveExamen(oExamen));
-            }
-            catch
-            {
-                return StatusCode(500, "Error interno. Intente más tarde");
-            }
+            //}
+            //catch
+            //{
+            //    return StatusCode(500, "Error interno. Intente más tarde");
+            //}
         }
 
         [HttpPut("/examen")]
@@ -145,7 +145,7 @@ namespace WebApi.Controllers
             {
                 List<Parametro> lParam = new List<Parametro>
                 {
-                    new Parametro { Nombre = "@materia", Valor = idMateria }
+                    new Parametro { Nombre = "@id_materia", Valor = idMateria }
                 };
                 if (lParam == null)
                     return BadRequest("Se deben ingresar parámetros");
@@ -153,7 +153,7 @@ namespace WebApi.Controllers
             }
             catch
             {
-                return StatusCode(500, "Error interno. Intente más tarde");
+               return StatusCode(500, "Error interno. Intente más tarde");
             }
         }
     }
