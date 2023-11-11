@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ronim\\OneDrive\\Escritorio\\Repositorio real\\GestionTecnicaturas\\Back\\Back.csproj": {}
+    "C:\\Users\\esteb\\Source\\Repos\\GestionTecnicaturas\\Back\\Back.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ronim\\OneDrive\\Escritorio\\Repositorio real\\GestionTecnicaturas\\Back\\Back.csproj": {
+    "C:\\Users\\esteb\\Source\\Repos\\GestionTecnicaturas\\Back\\Back.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ronim\\OneDrive\\Escritorio\\Repositorio real\\GestionTecnicaturas\\Back\\Back.csproj",
+        "projectUniqueName": "C:\\Users\\esteb\\Source\\Repos\\GestionTecnicaturas\\Back\\Back.csproj",
         "projectName": "Back",
-        "projectPath": "C:\\Users\\ronim\\OneDrive\\Escritorio\\Repositorio real\\GestionTecnicaturas\\Back\\Back.csproj",
-        "packagesPath": "C:\\Users\\ronim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ronim\\OneDrive\\Escritorio\\Repositorio real\\GestionTecnicaturas\\Back\\obj\\",
+        "projectPath": "C:\\Users\\esteb\\Source\\Repos\\GestionTecnicaturas\\Back\\Back.csproj",
+        "packagesPath": "C:\\Users\\esteb\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\esteb\\Source\\Repos\\GestionTecnicaturas\\Back\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ronim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\esteb\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +40,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "BCrypt.Net-Core": {
+              "target": "Package",
+              "version": "[1.6.0, )"
+            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.5, )"
@@ -61,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

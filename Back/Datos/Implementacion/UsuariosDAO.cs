@@ -17,6 +17,8 @@ namespace Back.Datos.Implementacion
             bool aux = true;
             SqlTransaction transaccion = null;
             SqlConnection conexion = HelperDAO.ObtenerInstancia().ObtenerConexion();
+            string contHasheada = BCrypt.Net.BCrypt.HashPassword(nuevoUsuario.ContUsuario);
+            nuevoUsuario.ContUsuario = contHasheada;
             try
             {
                 conexion.Open();
@@ -42,18 +44,18 @@ namespace Back.Datos.Implementacion
             return aux;
         }
 
-        public Usuario TraerUsuario(string nombreUsuario)
+
+        public bool ComprobarUsuario(Usuario oUsuario)
         {
-            Usuario oUsuario = new Usuario();
+            bool aux = false;
             List<Parametro> lParam = new List<Parametro>();
-            lParam.Add(new Parametro("@usuario",nombreUsuario));
-            DataTable tabla = HelperDAO.ObtenerInstancia().Consultar("PA_CHECK_USER", lParam);
-            foreach(DataRow fila in tabla.Rows)
+            lParam.Add(new Parametro("@usuario", oUsuario.NomUsuario));
+            DataTable tabla = HelperDAO.ObtenerInstancia().Consultar("SP_CHECK_USER", lParam);
+            foreach (DataRow r in tabla.Rows)
             {
-                oUsuario.NomUsuario = fila["usuario"].ToString();
-                oUsuario.ContUsuario = fila["contraseña"].ToString();
+                aux = BCrypt.Net.BCrypt.Verify(oUsuario.ContUsuario, r["contraseña"].ToString());
             }
-            return oUsuario;
+            return aux;
         }
     }
 }

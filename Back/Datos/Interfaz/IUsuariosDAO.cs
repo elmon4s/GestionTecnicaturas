@@ -10,6 +10,6 @@ namespace Back.Datos.Interfaz
     public interface IUsuariosDAO
     {
         public bool CrearUsuario(Usuario nuevoUsuario);
-        public Usuario TraerUsuario(string nombreUsuario);
+        public bool ComprobarUsuario(Usuario oUsuario);
     }
 }
