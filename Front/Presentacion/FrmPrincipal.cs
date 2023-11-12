@@ -38,7 +38,7 @@ namespace Front
 
         private void consultarExamenesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new FrmConsultaExamenes().ShowDialog();
+            new FrmConsultarExamenes().ShowDialog();
         }
 
         private void nuevoAlumnoToolStripMenuItem_Click(object sender, EventArgs e)

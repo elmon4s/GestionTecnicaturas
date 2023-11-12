@@ -461,10 +461,10 @@ END
 
 go
 ALTER PROCEDURE PA_CONSULTAR_EXAMENES
-    @id_docente INT,
-    @id_materia INT,
-    @fecha_desde DATETIME,
-    @fecha_hasta DATETIME
+    @id_docente INT=null,
+    @id_materia INT=null,
+    @fecha_desde DATETIME=null,
+    @fecha_hasta DATETIME=null
 AS
 BEGIN
     SELECT id_examen, fecha_examen, e.id_docente, nom_docente, ape_docente, e.id_materia

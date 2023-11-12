@@ -13,10 +13,10 @@
     <Compile Update="Presentacion\Docentes\FrmGestorDocente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\Examenes\FrmGestorExamen.cs">
+    <Compile Update="Presentacion\Examenes\FrmConsultarExamenes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\Examenes\FrmConsultaExamenes.cs">
+    <Compile Update="Presentacion\Examenes\FrmGestorExamen.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Presentacion\FrmLogin.cs">

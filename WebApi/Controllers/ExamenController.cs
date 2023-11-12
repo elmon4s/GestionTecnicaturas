@@ -33,16 +33,16 @@ namespace WebApi.Controllers
         [HttpPost("/examen")]
         public IActionResult PostExamen(Examen oExamen)
         {
-            //try
-            //{
+            try
+            {
                 if (oExamen == null)
                     return BadRequest("Se debe ingresar un examen");
                 return Ok(app.SaveExamen(oExamen));
-            //}
-            //catch
-            //{
-            //    return StatusCode(500, "Error interno. Intente más tarde");
-            //}
+            }
+            catch
+            {
+                return StatusCode(500, "Error interno. Intente más tarde");
+            }
         }
 
         [HttpPut("/examen")]
@@ -61,7 +61,7 @@ namespace WebApi.Controllers
         }
 
         [HttpDelete("/examen")]
-        public IActionResult DeleteExamen(int nroExamen)
+        public IActionResult DeleteExamen([FromQuery(Name = "nroExamen")] int nroExamen)
         {
             try
             {

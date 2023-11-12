@@ -124,6 +124,7 @@ namespace Back.Datos.Implementacion
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@id_examen", nroExamen);
                 comando.ExecuteNonQuery();
+                transaccion.Commit();
             }
             catch
             {
