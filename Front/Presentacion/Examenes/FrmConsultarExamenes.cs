@@ -69,8 +69,7 @@ namespace Front.Presentacion.Examenes
             foreach (Examen examen in lstExamenes)
             {
                 dgvExamenes.Rows.Add(new object[] { examen.IdExamen, examen.FechaExamen,
-                    $"{examen.DocenteExamen.Nombre},{examen.DocenteExamen.Apellido}",
-                    examen.CalcularPromedio().ToString(),"Ver Detalle" });
+                    $"{examen.DocenteExamen.Nombre},{examen.DocenteExamen.Apellido}"});
             }
 
         }
@@ -115,9 +114,9 @@ namespace Front.Presentacion.Examenes
                 if (MessageBox.Show("¿Desea borrar este examen? No se pueden deshacer los cambios", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
                 {
                     int nro = Convert.ToInt32(filaSeleccionada.Cells["ColIdExamen"].Value.ToString());
-                    
 
-                    if(await EliminarExamenAsync(nro))
+
+                    if (await EliminarExamenAsync(nro))
                     {
                         MessageBox.Show("Se elimino el examen!!!");
                     }
@@ -140,6 +139,24 @@ namespace Front.Presentacion.Examenes
             var dataJson = await ClienteSingleton.GetInstance().DeleteAsync(url);
 
             return dataJson.Equals("true");
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (dgvExamenes.SelectedRows.Count > 0)
+            {
+                DataGridViewRow filaSeleccionada = dgvExamenes.SelectedRows[0];
+
+                if (MessageBox.Show("¿Desea editar este examen? No se pueden deshacer los cambios", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                {
+                    int nro = Convert.ToInt32(filaSeleccionada.Cells["ColIdExamen"].Value.ToString());
+                    new FrmGestorExamen(nro).ShowDialog();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar una fila", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

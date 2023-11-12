@@ -16,11 +16,19 @@ namespace Front.Presentacion.Examenes
     public partial class FrmGestorExamen : Form
     {
         private Examen nuevoExamen;
+        private int nro;
+
         public FrmGestorExamen()
         {
             InitializeComponent();
             nuevoExamen = new Examen();
             Habilitar(false);
+        }
+
+        public FrmGestorExamen(int nro)
+        {
+            InitializeComponent();
+            this.nro = nro;
         }
 
         private async void ExamenFrm_Load(object sender, EventArgs e)

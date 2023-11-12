@@ -48,7 +48,6 @@
             ColIdExamen = new DataGridViewTextBoxColumn();
             ColFecha = new DataGridViewTextBoxColumn();
             ColDocente = new DataGridViewTextBoxColumn();
-            ColPromedio = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvExamenes).BeginInit();
             grpCriterios.SuspendLayout();
             pnlFechas.SuspendLayout();
@@ -104,7 +103,7 @@
             dgvExamenes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvExamenes.BorderStyle = BorderStyle.Fixed3D;
             dgvExamenes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dgvExamenes.Columns.AddRange(new DataGridViewColumn[] { ColIdExamen, ColFecha, ColDocente, ColPromedio });
+            dgvExamenes.Columns.AddRange(new DataGridViewColumn[] { ColIdExamen, ColFecha, ColDocente });
             dgvExamenes.Location = new Point(44, 161);
             dgvExamenes.MaximumSize = new Size(880, 320);
             dgvExamenes.MultiSelect = false;
@@ -223,6 +222,7 @@
             btnEditar.TabIndex = 24;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnEliminar
             // 
@@ -255,12 +255,6 @@
             ColDocente.HeaderText = "Docente";
             ColDocente.Name = "ColDocente";
             ColDocente.ReadOnly = true;
-            // 
-            // ColPromedio
-            // 
-            ColPromedio.HeaderText = "Nota Promedio";
-            ColPromedio.Name = "ColPromedio";
-            ColPromedio.ReadOnly = true;
             // 
             // FrmConsultarExamenes
             // 
@@ -309,6 +303,5 @@
         private DataGridViewTextBoxColumn ColIdExamen;
         private DataGridViewTextBoxColumn ColFecha;
         private DataGridViewTextBoxColumn ColDocente;
-        private DataGridViewTextBoxColumn ColPromedio;
     }
 }
