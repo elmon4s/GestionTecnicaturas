@@ -38,3 +38,5 @@ C:\Users\ronim\OneDrive\Escritorio\Programacion Trabajo\GestionTecnicaturas\Back
 C:\Users\ronim\OneDrive\Escritorio\Programacion Trabajo\GestionTecnicaturas\Back\obj\Debug\net6.0\refint\Back.dll
 C:\Users\ronim\OneDrive\Escritorio\Programacion Trabajo\GestionTecnicaturas\Back\obj\Debug\net6.0\Back.pdb
 C:\Users\ronim\OneDrive\Escritorio\Programacion Trabajo\GestionTecnicaturas\Back\obj\Debug\net6.0\ref\Back.dll
+D:\Code\GestionTecnicaturas\Back\obj\Debug\net6.0\Back.Properties.Resources.resources
+D:\Code\GestionTecnicaturas\Back\obj\Debug\net6.0\Back.csproj.GenerateResource.cache

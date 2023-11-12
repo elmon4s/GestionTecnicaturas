@@ -119,3 +119,4 @@ C:\Users\ronim\OneDrive\Escritorio\Programacion Trabajo\GestionTecnicaturas\WebA
 C:\Users\ronim\OneDrive\Escritorio\Programacion Trabajo\GestionTecnicaturas\WebApi\obj\Debug\net6.0\WebApi.pdb
 C:\Users\ronim\OneDrive\Escritorio\Programacion Trabajo\GestionTecnicaturas\WebApi\obj\Debug\net6.0\WebApi.genruntimeconfig.cache
 C:\Users\ronim\OneDrive\Escritorio\Programacion Trabajo\GestionTecnicaturas\WebApi\obj\Debug\net6.0\ref\WebApi.dll
+D:\Code\GestionTecnicaturas\WebApi\bin\Debug\net6.0\BCrypt.Net-Core.dll
