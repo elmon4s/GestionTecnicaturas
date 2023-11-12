@@ -88,13 +88,30 @@ namespace WebApi.Controllers
             }
         }
 
-        [HttpGet("/lstexamenes")]
-        public IActionResult GetExamenes([FromQuery]List<Parametro> lParam)
+        [HttpPost("/lstexamenes")]
+        public IActionResult GetExamenes([FromBody] List<Parametro> lParam)
         {
             try
             {
                 if (lParam == null)
                     return BadRequest("Se deben ingresar parámetros");
+
+                foreach (var parametro in lParam)
+                {
+                    if (parametro.Valor != null)
+                    {
+                        if (int.TryParse(parametro.Valor.ToString(), out _))
+                        {
+                            int.TryParse(parametro.Valor.ToString(), out int valorComoInt);
+                            parametro.Valor = valorComoInt;
+                        }
+                        else if (DateTime.TryParse(parametro.Valor.ToString(), out DateTime valorComoDateTime))
+                        {
+                            parametro.Valor = valorComoDateTime.ToString("yyyy-MM-dd");
+                        }
+                    }
+                }
+
                 return Ok(app.GetExamenes(lParam));
             }
             catch
@@ -121,13 +138,15 @@ namespace WebApi.Controllers
         {
             try
             {
+                if (idMateria <= 0)
+                {
+                    return BadRequest("El parámetro 'materia' debe ser un valor positivo.");
+                }
+
                 List<Parametro> lParam = new List<Parametro>
                 {
-                    new Parametro { Nombre = "@materia", Valor = idMateria }
+                     new Parametro { Nombre = "@materia", Valor = idMateria }
                 };
-
-                if (lParam == null)
-                    return BadRequest("Se deben ingresar parámetros");
 
                 var docentes = app.GetDocentesExamen(lParam);
                 return Ok(docentes);
@@ -143,17 +162,21 @@ namespace WebApi.Controllers
         {
             try
             {
+                if (idMateria <= 0)
+                {
+                    return BadRequest("El parámetro 'materia' debe ser un valor positivo.");
+                }
+
                 List<Parametro> lParam = new List<Parametro>
                 {
                     new Parametro { Nombre = "@id_materia", Valor = idMateria }
                 };
-                if (lParam == null)
-                    return BadRequest("Se deben ingresar parámetros");
+
                 return Ok(app.GetAlumnosExamen(lParam));
             }
             catch
             {
-               return StatusCode(500, "Error interno. Intente más tarde");
+                return StatusCode(500, "Error interno. Intente más tarde");
             }
         }
     }
