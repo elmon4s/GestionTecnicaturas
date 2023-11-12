@@ -3,6 +3,7 @@ using Back.Datos.Implementacion;
 using Back.Datos.Interfaz;
 using Back.Dominio;
 using Back.Fachada.Interfaz;
+using Back.Login;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,11 @@ namespace Back.Fachada.Implementacion
             docentesDAO = new DocentesDAO();
             examenesDAO = new ExamenesDAO();
             usuariosDAO = new UsuariosDAO();
+        }
+
+        public bool CheckUsuario(Usuario oUsuario)
+        {
+            return usuariosDAO.ComprobarUsuario(oUsuario);
         }
 
         public bool DeleteAlumno(int nroAlumno)
@@ -129,6 +135,11 @@ namespace Back.Fachada.Implementacion
         public bool SaveExamen(Examen oExamen)
         {
             return examenesDAO.ConfirmarExamen(oExamen);
+        }
+
+        public bool SaveUsuario(Usuario nuevoUsuario)
+        {
+            return usuariosDAO.CrearUsuario(nuevoUsuario);
         }
 
         public bool UpdateAlumno(Alumno oAlumno)

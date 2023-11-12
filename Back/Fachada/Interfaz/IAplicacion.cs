@@ -1,5 +1,6 @@
 ﻿using Back.Datos;
 using Back.Dominio;
+using Back.Login;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,8 +20,10 @@ namespace Back.Fachada.Interfaz
         public List<SituacionLaboral> GetSituacionesLaborales();
         public List<EstadoCivil> GetEstadosCiviles();
         public List<DetalleMateriaComision> GetMateriaComision(List<Parametro> lParam);
+
         //Para Docentes y Alumnos
         public List<Barrio> GetBarrios();
+
         //Examenes
         public int GetProximoExamen();
         public bool SaveExamen(Examen oExamen);
@@ -31,6 +34,7 @@ namespace Back.Fachada.Interfaz
         public List<Materia> GetMaterias();
         public List<Docente> GetDocentesExamen(List<Parametro> lParam);
         public List<Alumno> GetAlumnosExamen(List<Parametro> lParam);
+
         //Docentes
         public bool SaveDocente(Docente oDocente);
         public bool UpdateDocente(Docente oDocente);
@@ -38,5 +42,10 @@ namespace Back.Fachada.Interfaz
         public List<Docente> GetDocentes(List<Parametro> lParam);
         public Docente GetDocente(int nroDocente);
         public List<Titulo> GetTitulos();
+
+        //Usuarios
+
+        public bool SaveUsuario(Usuario nuevoUsuario);
+        public bool CheckUsuario(Usuario oUsuario);
     }
 }
