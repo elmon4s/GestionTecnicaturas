@@ -43,11 +43,11 @@
             grpCriterios = new GroupBox();
             ckbActivar = new CheckBox();
             pnlFechas = new Panel();
-            btnEditar = new Button();
             btnEliminar = new Button();
             ColIdExamen = new DataGridViewTextBoxColumn();
             ColFecha = new DataGridViewTextBoxColumn();
             ColDocente = new DataGridViewTextBoxColumn();
+            ColAcciones = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)dgvExamenes).BeginInit();
             grpCriterios.SuspendLayout();
             pnlFechas.SuspendLayout();
@@ -103,7 +103,7 @@
             dgvExamenes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvExamenes.BorderStyle = BorderStyle.Fixed3D;
             dgvExamenes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dgvExamenes.Columns.AddRange(new DataGridViewColumn[] { ColIdExamen, ColFecha, ColDocente });
+            dgvExamenes.Columns.AddRange(new DataGridViewColumn[] { ColIdExamen, ColFecha, ColDocente, ColAcciones });
             dgvExamenes.Location = new Point(44, 161);
             dgvExamenes.MaximumSize = new Size(880, 320);
             dgvExamenes.MultiSelect = false;
@@ -112,6 +112,7 @@
             dgvExamenes.RowTemplate.Height = 25;
             dgvExamenes.Size = new Size(632, 244);
             dgvExamenes.TabIndex = 17;
+            dgvExamenes.CellContentClick += dgvExamenes_CellContentClick;
             // 
             // lblFechaDesde
             // 
@@ -212,23 +213,11 @@
             pnlFechas.Size = new Size(344, 28);
             pnlFechas.TabIndex = 30;
             // 
-            // btnEditar
-            // 
-            btnEditar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnEditar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEditar.Location = new Point(44, 411);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(79, 29);
-            btnEditar.TabIndex = 24;
-            btnEditar.Text = "Editar";
-            btnEditar.UseVisualStyleBackColor = true;
-            btnEditar.Click += btnEditar_Click;
-            // 
             // btnEliminar
             // 
             btnEliminar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnEliminar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEliminar.Location = new Point(129, 411);
+            btnEliminar.Location = new Point(512, 411);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(79, 29);
             btnEliminar.TabIndex = 23;
@@ -256,13 +245,20 @@
             ColDocente.Name = "ColDocente";
             ColDocente.ReadOnly = true;
             // 
+            // ColAcciones
+            // 
+            ColAcciones.HeaderText = "Acciones";
+            ColAcciones.Name = "ColAcciones";
+            ColAcciones.ReadOnly = true;
+            ColAcciones.Text = "Ver detalles del Examen";
+            ColAcciones.UseColumnTextForButtonValue = true;
+            // 
             // FrmConsultarExamenes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(725, 462);
             Controls.Add(grpCriterios);
-            Controls.Add(btnEditar);
             Controls.Add(btnEliminar);
             Controls.Add(btnSalir);
             Controls.Add(dgvExamenes);
@@ -298,10 +294,10 @@
         private GroupBox groupBox1;
         private Panel pnlFechas;
         private CheckBox ckbActivar;
-        private Button btnEditar;
         private Button btnEliminar;
         private DataGridViewTextBoxColumn ColIdExamen;
         private DataGridViewTextBoxColumn ColFecha;
         private DataGridViewTextBoxColumn ColDocente;
+        private DataGridViewButtonColumn ColAcciones;
     }
 }

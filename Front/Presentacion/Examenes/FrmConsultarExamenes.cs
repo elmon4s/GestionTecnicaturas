@@ -30,6 +30,7 @@ namespace Front.Presentacion.Examenes
             await CargarDatosAsync<Materia>($"{Properties.Resources.URL}/materias", cboMaterias, "NombreMateria", "IdMateria");
         }
 
+        #region Cargar Combos y Acivar/Desactivar fechas
         private async Task CargarDatosAsync<T>(string apiUrl, ComboBox comboBox, string displayMember, string valueMember)
         {
             var resultado = await ClienteSingleton.GetInstance().GetAsync(apiUrl);
@@ -38,40 +39,6 @@ namespace Front.Presentacion.Examenes
             comboBox.DataSource = lst;
             comboBox.DisplayMember = displayMember;
             comboBox.ValueMember = valueMember;
-        }
-        private async void btnConsultar_Click(object sender, EventArgs e)
-        {
-            List<Parametro> lstParametros = new List<Parametro>();
-            if (!(cboMaterias.SelectedIndex == -1))
-                lstParametros.Add(new Parametro("@id_materia", Convert.ToInt32(cboMaterias.SelectedValue.ToString())));
-            if (!(cboDocentes.SelectedIndex == -1))
-                lstParametros.Add(new Parametro("@id_docente", Convert.ToInt32(cboDocentes.SelectedValue.ToString())));
-            if (pnlFechas.Enabled)
-            {
-                lstParametros.Add(new Parametro("@fecha_desde", dtpFechaDesde.Value.ToString("yyyy-MM-dd")));
-                lstParametros.Add(new Parametro("@fecha_hasta", dtpFechaHasta.Value.ToString("yyyy-MM-dd")));
-            }
-
-            if (lstParametros.Count == 0)
-            {
-                MessageBox.Show("Debe seleccionar una al menos una condicion de búsqueda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            string url = $"{Properties.Resources.URL}/lstexamenes";
-            string lstParametrosJson = JsonConvert.SerializeObject(lstParametros);
-            var dataJson = await ClienteSingleton.GetInstance().PostAsync(url, lstParametrosJson);
-
-            lstExamenes.Clear();
-            lstExamenes = JsonConvert.DeserializeObject<List<Examen>>(dataJson);
-
-            dgvExamenes.Rows.Clear();
-            foreach (Examen examen in lstExamenes)
-            {
-                dgvExamenes.Rows.Add(new object[] { examen.IdExamen, examen.FechaExamen,
-                    $"{examen.DocenteExamen.Nombre},{examen.DocenteExamen.Apellido}"});
-            }
-
         }
         private async void cboMaterias_SelectionChangeCommitted(object sender, EventArgs e)
         {
@@ -98,13 +65,52 @@ namespace Front.Presentacion.Examenes
                 ckbActivar.Text = "Activar Fechas";
             }
         }
+        #endregion
 
-        private void btnSalir_Click(object sender, EventArgs e)
+        #region Boton Consultar examenes
+        private async void btnConsultar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Esta seguro que desea salir?", "Salir", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
-                this.Dispose();
-        }
+            try
+            {
+                List<Parametro> lstParametros = new List<Parametro>();
+                if (!(cboMaterias.SelectedIndex == -1))
+                    lstParametros.Add(new Parametro("@id_materia", Convert.ToInt32(cboMaterias.SelectedValue.ToString())));
+                if (!(cboDocentes.SelectedIndex == -1))
+                    lstParametros.Add(new Parametro("@id_docente", Convert.ToInt32(cboDocentes.SelectedValue.ToString())));
+                if (pnlFechas.Enabled)
+                {
+                    lstParametros.Add(new Parametro("@fecha_desde", dtpFechaDesde.Value.ToString("yyyy-MM-dd")));
+                    lstParametros.Add(new Parametro("@fecha_hasta", dtpFechaHasta.Value.ToString("yyyy-MM-dd")));
+                }
 
+                if (lstParametros.Count == 0)
+                {
+                    MessageBox.Show("Debe seleccionar una al menos una condicion de búsqueda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                string endpoint = $"{Properties.Resources.URL}/lstexamenes";
+                string lstParametrosJson = JsonConvert.SerializeObject(lstParametros);
+                var dataJson = await ClienteSingleton.GetInstance().PostAsync(endpoint, lstParametrosJson);
+
+                lstExamenes.Clear();
+                lstExamenes = JsonConvert.DeserializeObject<List<Examen>>(dataJson) ?? new List<Examen>();
+
+                dgvExamenes.Rows.Clear();
+                foreach (Examen examen in lstExamenes)
+                {
+                    dgvExamenes.Rows.Add(new object[] { examen.IdExamen, examen.FechaExamen,
+                    $"{examen.DocenteExamen.Nombre},{examen.DocenteExamen.Apellido}"});
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al realizar la consulta: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        #endregion
+
+        #region Boton eliminar examenes
         private async void btnEliminar_Click(object sender, EventArgs e)
         {
             if (dgvExamenes.SelectedRows.Count > 0)
@@ -140,23 +146,34 @@ namespace Front.Presentacion.Examenes
 
             return dataJson.Equals("true");
         }
+        #endregion
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        #region Editar examenes
+        private async void dgvExamenes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvExamenes.SelectedRows.Count > 0)
+            if (dgvExamenes.CurrentCell.ColumnIndex == 3)
             {
-                DataGridViewRow filaSeleccionada = dgvExamenes.SelectedRows[0];
-
-                if (MessageBox.Show("¿Desea editar este examen? No se pueden deshacer los cambios", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
-                {
-                    int nro = Convert.ToInt32(filaSeleccionada.Cells["ColIdExamen"].Value.ToString());
-                    new FrmGestorExamen(nro).ShowDialog();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Debe seleccionar una fila", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                int nro = Convert.ToInt32(dgvExamenes.CurrentRow.Cells["ColIdExamen"].Value.ToString());
+                Examen oExamen = await TraerExamenAsync(nro);
+                new FrmGestorExamen(oExamen).ShowDialog();         
             }
         }
+
+        private async Task<Examen> TraerExamenAsync(int nro)
+        {
+            var url = $"{Properties.Resources.URL}/examen/{nro}";
+            var resultado = await ClienteSingleton.GetInstance().GetAsync(url);
+            Examen e = JsonConvert.DeserializeObject<Examen>(resultado) ?? new Examen();
+            return e;
+        }
+        #endregion
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Esta seguro que desea salir?", "Salir", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                this.Dispose();
+        }
+
+
     }
 }
