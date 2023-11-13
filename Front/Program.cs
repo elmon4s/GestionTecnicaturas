@@ -1,3 +1,5 @@
+using Front.Presentacion.Alumnos;
+
 namespace Front
 {
     internal static class Program
@@ -12,10 +14,12 @@ namespace Front
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            FrmLogin loginForm = new FrmLogin();
-            Application.Run(loginForm);
-            if (loginForm.CredencialesValidas)
-                Application.Run(new FrmPrincipal());
+            Application.Run(new FrmGestorAlumno(0));
+
+            //FrmLogin loginForm = new FrmLogin();
+            //Application.Run(loginForm);
+            //if (loginForm.CredencialesValidas)
+                //Application.Run(new FrmPrincipal());
         }
     }
 }

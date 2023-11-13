@@ -10,15 +10,11 @@ using System.Windows.Forms;
 
 namespace Front.Presentacion.Alumnos
 {
-    public partial class FrmGestorAlumno : Form
+    public partial class FrmConsultarDetalleMateriaComision : Form
     {
-        //TODO: Completar Forumlario
-        public FrmGestorAlumno(int codAlumno)
+        public FrmConsultarDetalleMateriaComision()
         {
             InitializeComponent();
-            numId.Controls[0].Visible = false;
-            numAltura.Controls[0].Visible = false;
-            numTelefono.Controls[0].Visible = false;
         }
     }
 }

@@ -3,7 +3,6 @@ D:\Code\GestionTecnicaturas\Front\bin\Debug\net6.0-windows\Front.deps.json
 D:\Code\GestionTecnicaturas\Front\bin\Debug\net6.0-windows\Front.runtimeconfig.json
 D:\Code\GestionTecnicaturas\Front\bin\Debug\net6.0-windows\Front.dll
 D:\Code\GestionTecnicaturas\Front\bin\Debug\net6.0-windows\Front.pdb
-D:\Code\GestionTecnicaturas\Front\bin\Debug\net6.0-windows\BCrypt.Net-Next.dll
 D:\Code\GestionTecnicaturas\Front\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
 D:\Code\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\Front.csproj.AssemblyReference.cache
 D:\Code\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\Front.FrmLogin.resources
@@ -25,7 +24,6 @@ D:\Code\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\Front.Presentacion.Al
 D:\Code\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\Front.Presentacion.Alumnos.FrmGestorAlumno.resources
 D:\Code\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\Front.Presentacion.Docentes.FrmConsultaDocentes.resources
 D:\Code\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\Front.Presentacion.Docentes.FrmGestorDocente.resources
-D:\Code\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\Front.Presentacion.Examenes.FrmConsultaExamenes.resources
 D:\Code\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\Front.Presentacion.Examenes.FrmGestorExamen.resources
 C:\Users\ronim\OneDrive\Escritorio\Repositorio real\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\Front.csproj.AssemblyReference.cache
 C:\Users\ronim\OneDrive\Escritorio\Repositorio real\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\Front.Presentacion.Alumnos.FrmConsultaAlumnos.resources
@@ -101,3 +99,14 @@ C:\Users\ronim\OneDrive\Escritorio\Programacion Trabajo\GestionTecnicaturas\Fron
 C:\Users\ronim\OneDrive\Escritorio\Programacion Trabajo\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\Front.csproj.CopyComplete
 C:\Users\ronim\OneDrive\Escritorio\Programacion Trabajo\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\Front.genruntimeconfig.cache
 C:\Users\ronim\OneDrive\Escritorio\Programacion Trabajo\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\ref\Front.dll
+D:\Code\GestionTecnicaturas\Front\bin\Debug\net6.0-windows\BCrypt.Net-Core.dll
+D:\Code\GestionTecnicaturas\Front\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+D:\Code\GestionTecnicaturas\Front\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+D:\Code\GestionTecnicaturas\Front\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+D:\Code\GestionTecnicaturas\Front\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+D:\Code\GestionTecnicaturas\Front\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Code\GestionTecnicaturas\Front\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Code\GestionTecnicaturas\Front\bin\Debug\net6.0-windows\Back.dll
+D:\Code\GestionTecnicaturas\Front\bin\Debug\net6.0-windows\Back.pdb
+D:\Code\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\Front.Presentacion.Alumnos.FrmConsultarDetalleMateriaComision.resources
+D:\Code\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\Front.Presentacion.Examenes.FrmConsultarExamenes.resources
