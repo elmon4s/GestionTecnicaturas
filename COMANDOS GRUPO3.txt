@@ -544,3 +544,58 @@ BEGIN
 INSERT INTO Detalles_alumnos_materias(id_detalle_alumno_materia,id_alumno,id_detalle_materia_comision,id_estado_academico,fecha_inscripcion,fecha_estado)
 VALUES ((SELECT MAX(id_detalle_alumno_materia) FROM Detalles_alumnos_materias) + 1, @id_alumno,@id_detalle_mat_com,@id_estado_acad,@fecha_inscr,@fecha_estado)
 END
+
+go --Modificacion de la consulta Nro 6 de LCII
+/*6) Listar todos los datos de los alumnos, ademas agregar la Cantidad de Examenes
+Aprobados,
+la Cantidad de Examenes Desaprobados y su Nota Promedio.
+Solo si se inscribieron este año, tienen menos de 5 parciales desaprobados (nota<6) y
+su Nota Promedio es menor que la Nota Promedio General/Global.*/
+alter PROC sp_sentencia6
+AS
+BEGIN
+  SELECT DISTINCT a.id_alumno 'ID',
+		 ape_alumno+', '+nom_alumno 'Nombre',
+		 direccion+' - Nro: '+str(altura)+' - Barrio: '+b.barrio 'Direccion',
+		 nro_tel 'Nro_Teléfono',
+		 email 'Email',
+		 s.situacion_laboral 'Situacion_Laboral',
+		 e.estado_civil 'Estado_Civil',
+		 avg(nota) 'Nota_Promedio',
+		 (SELECT count(*)
+		 FROM Detalle_alumnos_examenes
+		 WHERE id_alumno=a.id_alumno AND nota>5) 'Cant Examenes Aprobados',
+	     (SELECT count(*)
+		    FROM Detalle_alumnos_examenes
+		   WHERE id_alumno=a.id_alumno AND nota<6) 'Cant ExamenesDesaprobados'
+	FROM Alumnos a JOIN Situaciones_laborales s ON
+		 s.id_situacion_laboral=a.id_situacion_laboral
+		 JOIN Detalles_alumnos_materias Dam ON Dam.id_alumno=a.id_alumno
+		 JOIN Detalle_materias_comisiones Dmc ON
+		 Dam.id_detalle_materia_comision=Dmc.id_detalle_materia_comision
+		 JOIN Detalle_alumnos_examenes Dae ON Dae.id_alumno=a.id_alumno
+		 JOIN Materias m ON m.id_materia=dam.id_detalle_materia_comision
+		 JOIN Tecnicaturas t ON t.id_tecnicatura=m.id_tecnicatura
+		 JOIN Barrios b on a.id_barrio=b.id_barrio
+		 JOIN Estados_civiles e on a.id_estado_civil=e.id_estado_civil
+   WHERE 
+		 5 > (SELECT count(*)
+				FROM Detalle_alumnos_examenes
+			   WHERE id_alumno=a.id_alumno AND nota<6)
+	     and 
+		 a.id_alumno IN (SELECT id_alumno
+							   FROM Detalles_alumnos_materias
+							  WHERE datediff(year, fecha_inscripcion, getdate()) = 0 )
+GROUP BY a.id_alumno ,
+		 ape_alumno+', '+nom_alumno,
+		 direccion+' - Nro: '+str(altura)+' - Barrio: '+b.barrio,
+		 nro_tel,
+		 email,
+		 s.situacion_laboral,
+		 e.estado_civil
+  HAVING avg(nota) < (SELECT avg(nota)
+					    FROM Detalle_alumnos_examenes)
+ORDER BY 1, 2
+END;
+
+--EXEC sp_sentencia6
