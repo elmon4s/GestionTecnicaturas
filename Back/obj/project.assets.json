@@ -507,19 +507,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\ronim\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\GitHub-Repositorios\\GestionTecnicaturas\\Back\\Back.csproj",
+      "projectUniqueName": "C:\\Users\\ronim\\OneDrive\\Escritorio\\Porgramacion Trabajo\\GestionTecnicaturas\\Back\\Back.csproj",
       "projectName": "Back",
-      "projectPath": "C:\\GitHub-Repositorios\\GestionTecnicaturas\\Back\\Back.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\GitHub-Repositorios\\GestionTecnicaturas\\Back\\obj\\",
+      "projectPath": "C:\\Users\\ronim\\OneDrive\\Escritorio\\Porgramacion Trabajo\\GestionTecnicaturas\\Back\\Back.csproj",
+      "packagesPath": "C:\\Users\\ronim\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ronim\\OneDrive\\Escritorio\\Porgramacion Trabajo\\GestionTecnicaturas\\Back\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ronim\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -570,7 +570,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

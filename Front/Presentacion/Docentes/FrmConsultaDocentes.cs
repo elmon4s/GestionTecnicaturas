@@ -72,11 +72,19 @@ namespace Front.Presentacion.Docentes
                 {
                     dgvDocentes.Rows.Add(new object[]
                     {
-                 d.IdDocente, d.Nombre, d.Apellido, d.TituloDocente, d.Direccion, d.Altura, d.Barrio, d.Telefono, d.Email, "Gestionar"
+                 d.IdDocente, d.ToString(), d.TituloDocente, d.Telefono, d.Email, "Gestionar"
                     });
                 }
             }
             else MessageBox.Show("No se encontro ningun docente con esas caracteristicas");
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Desea Salir?", "Salir", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                this.Dispose();
+            }
         }
     }
 }

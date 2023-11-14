@@ -33,7 +33,7 @@ namespace Back.Dominio
 
         public override string ToString()
         {
-            return "Docente: "+Nombre+ " "+Apellido;
+            return Nombre + " " + Apellido;
         }
     }
 }

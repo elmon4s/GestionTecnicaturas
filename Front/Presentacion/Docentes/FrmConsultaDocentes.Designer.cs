@@ -29,179 +29,188 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultaDocentes));
-            this.dgvDocentes = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtNom = new System.Windows.Forms.TextBox();
-            this.cboBarrio = new System.Windows.Forms.ComboBox();
-            this.cboTitulo = new System.Windows.Forms.ComboBox();
-            this.btnConsultar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cIdDocente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cNomDocente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cApeDocente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cTitulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cAltura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cBario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cGestionar = new System.Windows.Forms.DataGridViewButtonColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDocentes)).BeginInit();
-            this.SuspendLayout();
+            dgvDocentes = new DataGridView();
+            label1 = new Label();
+            txtNom = new TextBox();
+            cboBarrio = new ComboBox();
+            cboTitulo = new ComboBox();
+            btnConsultar = new Button();
+            label2 = new Label();
+            label3 = new Label();
+            groupBox1 = new GroupBox();
+            btnSalir = new Button();
+            cIdDocente = new DataGridViewTextBoxColumn();
+            cNomDocente = new DataGridViewTextBoxColumn();
+            cTitulo = new DataGridViewTextBoxColumn();
+            cEmail = new DataGridViewTextBoxColumn();
+            cTelefono = new DataGridViewTextBoxColumn();
+            cGestionar = new DataGridViewButtonColumn();
+            ((System.ComponentModel.ISupportInitialize)dgvDocentes).BeginInit();
+            groupBox1.SuspendLayout();
+            SuspendLayout();
             // 
             // dgvDocentes
             // 
-            this.dgvDocentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDocentes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cIdDocente,
-            this.cNomDocente,
-            this.cApeDocente,
-            this.cTitulo,
-            this.cDireccion,
-            this.cAltura,
-            this.cBario,
-            this.cEmail,
-            this.cTelefono,
-            this.cGestionar});
-            this.dgvDocentes.Location = new System.Drawing.Point(75, 153);
-            this.dgvDocentes.Name = "dgvDocentes";
-            this.dgvDocentes.RowTemplate.Height = 25;
-            this.dgvDocentes.Size = new System.Drawing.Size(1045, 198);
-            this.dgvDocentes.TabIndex = 0;
-            this.dgvDocentes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            dgvDocentes.AllowUserToAddRows = false;
+            dgvDocentes.AllowUserToDeleteRows = false;
+            dgvDocentes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDocentes.Columns.AddRange(new DataGridViewColumn[] { cIdDocente, cNomDocente, cTitulo, cEmail, cTelefono, cGestionar });
+            dgvDocentes.Location = new Point(12, 118);
+            dgvDocentes.Name = "dgvDocentes";
+            dgvDocentes.ReadOnly = true;
+            dgvDocentes.RowTemplate.Height = 25;
+            dgvDocentes.Size = new Size(755, 198);
+            dgvDocentes.TabIndex = 0;
+            dgvDocentes.CellContentClick += dataGridView1_CellContentClick;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(327, 63);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Titulo :";
+            label1.AutoSize = true;
+            label1.Location = new Point(12, 33);
+            label1.Name = "label1";
+            label1.Size = new Size(50, 19);
+            label1.TabIndex = 1;
+            label1.Text = "Titulo :";
             // 
             // txtNom
             // 
-            this.txtNom.Location = new System.Drawing.Point(597, 91);
-            this.txtNom.Name = "txtNom";
-            this.txtNom.Size = new System.Drawing.Size(112, 23);
-            this.txtNom.TabIndex = 2;
+            txtNom.Location = new Point(296, 62);
+            txtNom.Name = "txtNom";
+            txtNom.Size = new Size(176, 25);
+            txtNom.TabIndex = 2;
             // 
             // cboBarrio
             // 
-            this.cboBarrio.FormattingEnabled = true;
-            this.cboBarrio.Location = new System.Drawing.Point(445, 91);
-            this.cboBarrio.Name = "cboBarrio";
-            this.cboBarrio.Size = new System.Drawing.Size(121, 23);
-            this.cboBarrio.TabIndex = 3;
+            cboBarrio.FormattingEnabled = true;
+            cboBarrio.Location = new Point(68, 62);
+            cboBarrio.Name = "cboBarrio";
+            cboBarrio.Size = new Size(150, 25);
+            cboBarrio.TabIndex = 3;
             // 
             // cboTitulo
             // 
-            this.cboTitulo.FormattingEnabled = true;
-            this.cboTitulo.Location = new System.Drawing.Point(293, 91);
-            this.cboTitulo.Name = "cboTitulo";
-            this.cboTitulo.Size = new System.Drawing.Size(121, 23);
-            this.cboTitulo.TabIndex = 4;
+            cboTitulo.FormattingEnabled = true;
+            cboTitulo.Location = new Point(68, 30);
+            cboTitulo.Name = "cboTitulo";
+            cboTitulo.Size = new Size(150, 25);
+            cboTitulo.TabIndex = 4;
             // 
             // btnConsultar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(741, 74);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(104, 40);
-            this.btnConsultar.TabIndex = 5;
-            this.btnConsultar.Text = "Consultar";
-            this.btnConsultar.UseVisualStyleBackColor = true;
-            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
+            btnConsultar.Location = new Point(497, 62);
+            btnConsultar.Name = "btnConsultar";
+            btnConsultar.Size = new Size(104, 26);
+            btnConsultar.TabIndex = 5;
+            btnConsultar.Text = "Consultar";
+            btnConsultar.UseVisualStyleBackColor = true;
+            btnConsultar.Click += btnConsultar_Click;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(624, 63);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 15);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Nombre :";
+            label2.AutoSize = true;
+            label2.Location = new Point(224, 65);
+            label2.Name = "label2";
+            label2.Size = new Size(66, 19);
+            label2.TabIndex = 6;
+            label2.Text = "Nombre :";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(480, 63);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 15);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Barrio :";
+            label3.AutoSize = true;
+            label3.Location = new Point(12, 65);
+            label3.Name = "label3";
+            label3.Size = new Size(52, 19);
+            label3.TabIndex = 7;
+            label3.Text = "Barrio :";
+            // 
+            // groupBox1
+            // 
+            groupBox1.BackColor = Color.WhiteSmoke;
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(btnConsultar);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(txtNom);
+            groupBox1.Controls.Add(cboTitulo);
+            groupBox1.Controls.Add(cboBarrio);
+            groupBox1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox1.Location = new Point(12, 12);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(614, 100);
+            groupBox1.TabIndex = 8;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Criterios de Busqueda:";
+            // 
+            // btnSalir
+            // 
+            btnSalir.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSalir.Location = new Point(663, 322);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(104, 26);
+            btnSalir.TabIndex = 8;
+            btnSalir.Text = "Salir";
+            btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
             // 
             // cIdDocente
             // 
-            this.cIdDocente.HeaderText = "ID Docente";
-            this.cIdDocente.Name = "cIdDocente";
+            cIdDocente.HeaderText = "ID Docente";
+            cIdDocente.Name = "cIdDocente";
+            cIdDocente.ReadOnly = true;
+            cIdDocente.Visible = false;
             // 
             // cNomDocente
             // 
-            this.cNomDocente.HeaderText = "Nombre";
-            this.cNomDocente.Name = "cNomDocente";
-            // 
-            // cApeDocente
-            // 
-            this.cApeDocente.HeaderText = "Apellido";
-            this.cApeDocente.Name = "cApeDocente";
+            cNomDocente.HeaderText = "Docente";
+            cNomDocente.Name = "cNomDocente";
+            cNomDocente.ReadOnly = true;
+            cNomDocente.Width = 160;
             // 
             // cTitulo
             // 
-            this.cTitulo.HeaderText = "Titulo";
-            this.cTitulo.Name = "cTitulo";
-            // 
-            // cDireccion
-            // 
-            this.cDireccion.HeaderText = "Direccion";
-            this.cDireccion.Name = "cDireccion";
-            // 
-            // cAltura
-            // 
-            this.cAltura.HeaderText = "Altura";
-            this.cAltura.Name = "cAltura";
-            // 
-            // cBario
-            // 
-            this.cBario.HeaderText = "Barrio";
-            this.cBario.Name = "cBario";
+            cTitulo.HeaderText = "Titulo";
+            cTitulo.Name = "cTitulo";
+            cTitulo.ReadOnly = true;
+            cTitulo.Width = 130;
             // 
             // cEmail
             // 
-            this.cEmail.HeaderText = "Email";
-            this.cEmail.Name = "cEmail";
+            cEmail.HeaderText = "Email";
+            cEmail.Name = "cEmail";
+            cEmail.ReadOnly = true;
+            cEmail.Width = 170;
             // 
             // cTelefono
             // 
-            this.cTelefono.HeaderText = "Telefono";
-            this.cTelefono.Name = "cTelefono";
+            cTelefono.HeaderText = "Telefono";
+            cTelefono.Name = "cTelefono";
+            cTelefono.ReadOnly = true;
+            cTelefono.Width = 130;
             // 
             // cGestionar
             // 
-            this.cGestionar.HeaderText = "Gestionar";
-            this.cGestionar.Name = "cGestionar";
+            cGestionar.HeaderText = "Acciones";
+            cGestionar.Name = "cGestionar";
+            cGestionar.ReadOnly = true;
+            cGestionar.Width = 120;
             // 
             // FrmConsultaDocentes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1397, 450);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnConsultar);
-            this.Controls.Add(this.cboTitulo);
-            this.Controls.Add(this.cboBarrio);
-            this.Controls.Add(this.txtNom);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dgvDocentes);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FrmConsultaDocentes";
-            this.Text = "Consultar Docentes";
-            this.Load += new System.EventHandler(this.FrmConsultaDocentes_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDocentes)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaption;
+            ClientSize = new Size(785, 354);
+            Controls.Add(btnSalir);
+            Controls.Add(groupBox1);
+            Controls.Add(dgvDocentes);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "FrmConsultaDocentes";
+            Text = "Consultar Docentes";
+            Load += FrmConsultaDocentes_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvDocentes).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -214,13 +223,11 @@
         private Button btnConsultar;
         private Label label2;
         private Label label3;
+        private GroupBox groupBox1;
+        private Button btnSalir;
         private DataGridViewTextBoxColumn cIdDocente;
         private DataGridViewTextBoxColumn cNomDocente;
-        private DataGridViewTextBoxColumn cApeDocente;
         private DataGridViewTextBoxColumn cTitulo;
-        private DataGridViewTextBoxColumn cDireccion;
-        private DataGridViewTextBoxColumn cAltura;
-        private DataGridViewTextBoxColumn cBario;
         private DataGridViewTextBoxColumn cEmail;
         private DataGridViewTextBoxColumn cTelefono;
         private DataGridViewButtonColumn cGestionar;
