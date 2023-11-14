@@ -14,7 +14,7 @@ namespace Front
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            Application.Run(new FrmGestorAlumno(0));
+            Application.Run(new FrmPrincipal());
 
             //FrmLogin loginForm = new FrmLogin();
             //Application.Run(loginForm);

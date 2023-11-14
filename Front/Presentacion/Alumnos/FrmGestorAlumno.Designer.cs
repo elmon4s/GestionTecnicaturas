@@ -32,13 +32,21 @@
             numId = new NumericUpDown();
             cboEstadoCivil = new ComboBox();
             cboSituacionLaboral = new ComboBox();
-            dataGridView1 = new DataGridView();
+            dgvMaterias = new DataGridView();
+            IdMateria = new DataGridViewTextBoxColumn();
+            Materia = new DataGridViewTextBoxColumn();
+            FechaInsc = new DataGridViewTextBoxColumn();
+            Estado = new DataGridViewTextBoxColumn();
+            FechaEstado = new DataGridViewTextBoxColumn();
+            Comision = new DataGridViewTextBoxColumn();
+            Docente = new DataGridViewTextBoxColumn();
+            Accion = new DataGridViewButtonColumn();
             lblLegajo = new Label();
             lblSituacionLaboral = new Label();
             lblEstadoCivil = new Label();
             txtNombre = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            txtEmail = new TextBox();
+            txtDireccion = new TextBox();
             txtApellido = new TextBox();
             lblNombre = new Label();
             lblApellido = new Label();
@@ -46,63 +54,130 @@
             lblAltura = new Label();
             lblTelefono = new Label();
             numAltura = new NumericUpDown();
-            numTelefono = new NumericUpDown();
             lblEmail = new Label();
-            comboBox3 = new ComboBox();
+            cboBarrio = new ComboBox();
             lblBarrio = new Label();
-            label11 = new Label();
-            label12 = new Label();
-            button1 = new Button();
-            comboBox4 = new ComboBox();
-            label13 = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            dateTimePicker2 = new DateTimePicker();
-            label14 = new Label();
-            label15 = new Label();
+            lblMateriaComision = new Label();
+            btnMateriaComision = new Button();
+            cboEstado = new ComboBox();
+            lblEstado = new Label();
+            dtpFechaInsc = new DateTimePicker();
+            dtpFechaEstado = new DateTimePicker();
+            lblFechaInsc = new Label();
+            lblFechaEstado = new Label();
+            txtTel = new TextBox();
+            btnAceptar = new Button();
+            btnCancelar = new Button();
+            btnAgregar = new Button();
+            grpMateria = new GroupBox();
+            lblMateriaComSel = new Label();
             ((System.ComponentModel.ISupportInitialize)numId).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvMaterias).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numAltura).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numTelefono).BeginInit();
+            grpMateria.SuspendLayout();
             SuspendLayout();
             // 
             // numId
             // 
             numId.Increment = new decimal(new int[] { 0, 0, 0, 0 });
             numId.InterceptArrowKeys = false;
-            numId.Location = new Point(141, 45);
+            numId.Location = new Point(228, 37);
+            numId.Maximum = new decimal(new int[] { int.MaxValue, 0, 0, 0 });
             numId.Name = "numId";
-            numId.Size = new Size(120, 23);
+            numId.Size = new Size(128, 23);
             numId.TabIndex = 0;
             // 
             // cboEstadoCivil
             // 
+            cboEstadoCivil.DropDownStyle = ComboBoxStyle.DropDownList;
             cboEstadoCivil.FormattingEnabled = true;
-            cboEstadoCivil.Location = new Point(141, 132);
+            cboEstadoCivil.Location = new Point(228, 124);
             cboEstadoCivil.Name = "cboEstadoCivil";
             cboEstadoCivil.Size = new Size(200, 23);
             cboEstadoCivil.TabIndex = 1;
             // 
             // cboSituacionLaboral
             // 
+            cboSituacionLaboral.DropDownStyle = ComboBoxStyle.DropDownList;
             cboSituacionLaboral.FormattingEnabled = true;
-            cboSituacionLaboral.Location = new Point(141, 161);
+            cboSituacionLaboral.Location = new Point(228, 153);
             cboSituacionLaboral.Name = "cboSituacionLaboral";
             cboSituacionLaboral.Size = new Size(200, 23);
             cboSituacionLaboral.TabIndex = 2;
             // 
-            // dataGridView1
+            // dgvMaterias
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(59, 433);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(240, 150);
-            dataGridView1.TabIndex = 3;
+            dgvMaterias.AllowUserToAddRows = false;
+            dgvMaterias.AllowUserToDeleteRows = false;
+            dgvMaterias.AllowUserToResizeColumns = false;
+            dgvMaterias.AllowUserToResizeRows = false;
+            dgvMaterias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMaterias.Columns.AddRange(new DataGridViewColumn[] { IdMateria, Materia, FechaInsc, Estado, FechaEstado, Comision, Docente, Accion });
+            dgvMaterias.Location = new Point(23, 374);
+            dgvMaterias.Name = "dgvMaterias";
+            dgvMaterias.ReadOnly = true;
+            dgvMaterias.RowTemplate.Height = 25;
+            dgvMaterias.Size = new Size(1044, 247);
+            dgvMaterias.TabIndex = 3;
+            dgvMaterias.CellContentClick += dgvMaterias_CellContentClick;
+            // 
+            // IdMateria
+            // 
+            IdMateria.HeaderText = "IdMateria";
+            IdMateria.Name = "IdMateria";
+            IdMateria.ReadOnly = true;
+            IdMateria.Visible = false;
+            // 
+            // Materia
+            // 
+            Materia.HeaderText = "Materia";
+            Materia.Name = "Materia";
+            Materia.ReadOnly = true;
+            Materia.Width = 200;
+            // 
+            // FechaInsc
+            // 
+            FechaInsc.HeaderText = "Fecha Inscripción";
+            FechaInsc.Name = "FechaInsc";
+            FechaInsc.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            Estado.HeaderText = "Estado";
+            Estado.Name = "Estado";
+            Estado.ReadOnly = true;
+            // 
+            // FechaEstado
+            // 
+            FechaEstado.HeaderText = "Fecha Estado";
+            FechaEstado.Name = "FechaEstado";
+            FechaEstado.ReadOnly = true;
+            // 
+            // Comision
+            // 
+            Comision.HeaderText = "Comisión";
+            Comision.Name = "Comision";
+            Comision.ReadOnly = true;
+            // 
+            // Docente
+            // 
+            Docente.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Docente.HeaderText = "Docente";
+            Docente.Name = "Docente";
+            Docente.ReadOnly = true;
+            // 
+            // Accion
+            // 
+            Accion.HeaderText = "Acción";
+            Accion.Name = "Accion";
+            Accion.ReadOnly = true;
+            Accion.Resizable = DataGridViewTriState.True;
+            Accion.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
             // lblLegajo
             // 
             lblLegajo.AutoSize = true;
-            lblLegajo.Location = new Point(34, 47);
+            lblLegajo.Location = new Point(121, 39);
             lblLegajo.Name = "lblLegajo";
             lblLegajo.Size = new Size(45, 15);
             lblLegajo.TabIndex = 4;
@@ -111,7 +186,7 @@
             // lblSituacionLaboral
             // 
             lblSituacionLaboral.AutoSize = true;
-            lblSituacionLaboral.Location = new Point(34, 164);
+            lblSituacionLaboral.Location = new Point(121, 156);
             lblSituacionLaboral.Name = "lblSituacionLaboral";
             lblSituacionLaboral.Size = new Size(101, 15);
             lblSituacionLaboral.TabIndex = 5;
@@ -120,7 +195,7 @@
             // lblEstadoCivil
             // 
             lblEstadoCivil.AutoSize = true;
-            lblEstadoCivil.Location = new Point(34, 135);
+            lblEstadoCivil.Location = new Point(121, 127);
             lblEstadoCivil.Name = "lblEstadoCivil";
             lblEstadoCivil.Size = new Size(71, 15);
             lblEstadoCivil.TabIndex = 6;
@@ -128,28 +203,28 @@
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(141, 74);
+            txtNombre.Location = new Point(228, 66);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(272, 23);
             txtNombre.TabIndex = 7;
             // 
-            // textBox3
+            // txtEmail
             // 
-            textBox3.Location = new Point(518, 161);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(256, 23);
-            textBox3.TabIndex = 9;
+            txtEmail.Location = new Point(717, 153);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(256, 23);
+            txtEmail.TabIndex = 9;
             // 
-            // textBox4
+            // txtDireccion
             // 
-            textBox4.Location = new Point(518, 74);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(256, 23);
-            textBox4.TabIndex = 10;
+            txtDireccion.Location = new Point(717, 66);
+            txtDireccion.Name = "txtDireccion";
+            txtDireccion.Size = new Size(256, 23);
+            txtDireccion.TabIndex = 10;
             // 
             // txtApellido
             // 
-            txtApellido.Location = new Point(141, 103);
+            txtApellido.Location = new Point(228, 95);
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(272, 23);
             txtApellido.TabIndex = 11;
@@ -157,7 +232,7 @@
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(34, 77);
+            lblNombre.Location = new Point(121, 69);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(54, 15);
             lblNombre.TabIndex = 12;
@@ -166,7 +241,7 @@
             // lblApellido
             // 
             lblApellido.AutoSize = true;
-            lblApellido.Location = new Point(34, 106);
+            lblApellido.Location = new Point(121, 98);
             lblApellido.Name = "lblApellido";
             lblApellido.Size = new Size(54, 15);
             lblApellido.TabIndex = 13;
@@ -175,7 +250,7 @@
             // lblDireccion
             // 
             lblDireccion.AutoSize = true;
-            lblDireccion.Location = new Point(452, 77);
+            lblDireccion.Location = new Point(651, 69);
             lblDireccion.Name = "lblDireccion";
             lblDireccion.Size = new Size(60, 15);
             lblDireccion.TabIndex = 14;
@@ -184,7 +259,7 @@
             // lblAltura
             // 
             lblAltura.AutoSize = true;
-            lblAltura.Location = new Point(452, 106);
+            lblAltura.Location = new Point(651, 98);
             lblAltura.Name = "lblAltura";
             lblAltura.Size = new Size(42, 15);
             lblAltura.TabIndex = 15;
@@ -193,7 +268,7 @@
             // lblTelefono
             // 
             lblTelefono.AutoSize = true;
-            lblTelefono.Location = new Point(452, 135);
+            lblTelefono.Location = new Point(651, 127);
             lblTelefono.Name = "lblTelefono";
             lblTelefono.Size = new Size(55, 15);
             lblTelefono.TabIndex = 16;
@@ -201,138 +276,188 @@
             // 
             // numAltura
             // 
-            numAltura.Location = new Point(518, 104);
+            numAltura.Increment = new decimal(new int[] { 0, 0, 0, 0 });
+            numAltura.InterceptArrowKeys = false;
+            numAltura.Location = new Point(717, 96);
+            numAltura.Maximum = new decimal(new int[] { int.MaxValue, 0, 0, 0 });
             numAltura.Name = "numAltura";
-            numAltura.Size = new Size(80, 23);
+            numAltura.Size = new Size(116, 23);
             numAltura.TabIndex = 17;
-            // 
-            // numTelefono
-            // 
-            numTelefono.Location = new Point(518, 133);
-            numTelefono.Name = "numTelefono";
-            numTelefono.Size = new Size(256, 23);
-            numTelefono.TabIndex = 18;
             // 
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(452, 164);
+            lblEmail.Location = new Point(651, 156);
             lblEmail.Name = "lblEmail";
             lblEmail.Size = new Size(39, 15);
             lblEmail.TabIndex = 19;
             lblEmail.Text = "Email:";
             // 
-            // comboBox3
+            // cboBarrio
             // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(518, 44);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(256, 23);
-            comboBox3.TabIndex = 20;
+            cboBarrio.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboBarrio.FormattingEnabled = true;
+            cboBarrio.Location = new Point(717, 36);
+            cboBarrio.Name = "cboBarrio";
+            cboBarrio.Size = new Size(256, 23);
+            cboBarrio.TabIndex = 20;
             // 
             // lblBarrio
             // 
             lblBarrio.AutoSize = true;
-            lblBarrio.Location = new Point(452, 47);
+            lblBarrio.Location = new Point(651, 39);
             lblBarrio.Name = "lblBarrio";
             lblBarrio.Size = new Size(41, 15);
             lblBarrio.TabIndex = 21;
             lblBarrio.Text = "Barrio:";
             // 
-            // label11
+            // lblMateriaComision
             // 
-            label11.AutoSize = true;
-            label11.Location = new Point(23, 281);
-            label11.Name = "label11";
-            label11.Size = new Size(52, 15);
-            label11.TabIndex = 22;
-            label11.Text = "Materias";
+            lblMateriaComision.AutoSize = true;
+            lblMateriaComision.Location = new Point(20, 31);
+            lblMateriaComision.Name = "lblMateriaComision";
+            lblMateriaComision.Size = new Size(113, 15);
+            lblMateriaComision.TabIndex = 24;
+            lblMateriaComision.Text = "Materia y Comisión:";
             // 
-            // label12
+            // btnMateriaComision
             // 
-            label12.AutoSize = true;
-            label12.Location = new Point(22, 310);
-            label12.Name = "label12";
-            label12.Size = new Size(140, 15);
-            label12.TabIndex = 24;
-            label12.Text = "Detalle Materia Comision";
+            btnMateriaComision.Location = new Point(461, 27);
+            btnMateriaComision.Name = "btnMateriaComision";
+            btnMateriaComision.Size = new Size(75, 23);
+            btnMateriaComision.TabIndex = 25;
+            btnMateriaComision.Text = "Establecer";
+            btnMateriaComision.UseVisualStyleBackColor = true;
+            btnMateriaComision.Click += btnMateriaComision_Click;
             // 
-            // button1
+            // cboEstado
             // 
-            button1.Location = new Point(168, 306);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 25;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            cboEstado.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboEstado.FormattingEnabled = true;
+            cboEstado.Location = new Point(152, 85);
+            cboEstado.Name = "cboEstado";
+            cboEstado.Size = new Size(176, 23);
+            cboEstado.TabIndex = 26;
             // 
-            // comboBox4
+            // lblEstado
             // 
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(154, 335);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(121, 23);
-            comboBox4.TabIndex = 26;
+            lblEstado.AutoSize = true;
+            lblEstado.Location = new Point(21, 88);
+            lblEstado.Name = "lblEstado";
+            lblEstado.Size = new Size(45, 15);
+            lblEstado.TabIndex = 27;
+            lblEstado.Text = "Estado:";
             // 
-            // label13
+            // dtpFechaInsc
             // 
-            label13.AutoSize = true;
-            label13.Location = new Point(23, 338);
-            label13.Name = "label13";
-            label13.Size = new Size(42, 15);
-            label13.TabIndex = 27;
-            label13.Text = "Estado";
+            dtpFechaInsc.Location = new Point(152, 56);
+            dtpFechaInsc.Name = "dtpFechaInsc";
+            dtpFechaInsc.Size = new Size(248, 23);
+            dtpFechaInsc.TabIndex = 28;
             // 
-            // dateTimePicker1
+            // dtpFechaEstado
             // 
-            dateTimePicker1.Location = new Point(154, 364);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(200, 23);
-            dateTimePicker1.TabIndex = 28;
+            dtpFechaEstado.Location = new Point(152, 114);
+            dtpFechaEstado.Name = "dtpFechaEstado";
+            dtpFechaEstado.Size = new Size(248, 23);
+            dtpFechaEstado.TabIndex = 29;
             // 
-            // dateTimePicker2
+            // lblFechaInsc
             // 
-            dateTimePicker2.Location = new Point(154, 393);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(200, 23);
-            dateTimePicker2.TabIndex = 29;
+            lblFechaInsc.AutoSize = true;
+            lblFechaInsc.Location = new Point(21, 62);
+            lblFechaInsc.Name = "lblFechaInsc";
+            lblFechaInsc.Size = new Size(102, 15);
+            lblFechaInsc.TabIndex = 30;
+            lblFechaInsc.Text = "Fecha Inscripción:";
             // 
-            // label14
+            // lblFechaEstado
             // 
-            label14.AutoSize = true;
-            label14.Location = new Point(23, 370);
-            label14.Name = "label14";
-            label14.Size = new Size(62, 15);
-            label14.TabIndex = 30;
-            label14.Text = "Fecha Insc";
+            lblFechaEstado.AutoSize = true;
+            lblFechaEstado.Location = new Point(21, 120);
+            lblFechaEstado.Name = "lblFechaEstado";
+            lblFechaEstado.Size = new Size(79, 15);
+            lblFechaEstado.TabIndex = 31;
+            lblFechaEstado.Text = "Fecha Estado:";
             // 
-            // label15
+            // txtTel
             // 
-            label15.AutoSize = true;
-            label15.Location = new Point(23, 399);
-            label15.Name = "label15";
-            label15.Size = new Size(76, 15);
-            label15.TabIndex = 31;
-            label15.Text = "Fecha Estado";
+            txtTel.Location = new Point(717, 124);
+            txtTel.Name = "txtTel";
+            txtTel.Size = new Size(256, 23);
+            txtTel.TabIndex = 32;
+            txtTel.TextChanged += txtTel_TextChanged;
+            // 
+            // btnAceptar
+            // 
+            btnAceptar.Location = new Point(992, 627);
+            btnAceptar.Name = "btnAceptar";
+            btnAceptar.Size = new Size(75, 23);
+            btnAceptar.TabIndex = 33;
+            btnAceptar.Text = "Aceptar";
+            btnAceptar.UseVisualStyleBackColor = true;
+            btnAceptar.Click += btnAceptar_Click;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.Location = new Point(23, 633);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(75, 23);
+            btnCancelar.TabIndex = 34;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
+            // 
+            // btnAgregar
+            // 
+            btnAgregar.Location = new Point(459, 101);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(75, 37);
+            btnAgregar.TabIndex = 35;
+            btnAgregar.Text = "Agregar";
+            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
+            // 
+            // grpMateria
+            // 
+            grpMateria.Controls.Add(lblMateriaComSel);
+            grpMateria.Controls.Add(btnAgregar);
+            grpMateria.Controls.Add(lblFechaEstado);
+            grpMateria.Controls.Add(lblFechaInsc);
+            grpMateria.Controls.Add(dtpFechaEstado);
+            grpMateria.Controls.Add(dtpFechaInsc);
+            grpMateria.Controls.Add(lblEstado);
+            grpMateria.Controls.Add(cboEstado);
+            grpMateria.Controls.Add(btnMateriaComision);
+            grpMateria.Controls.Add(lblMateriaComision);
+            grpMateria.Location = new Point(295, 211);
+            grpMateria.Name = "grpMateria";
+            grpMateria.Size = new Size(542, 157);
+            grpMateria.TabIndex = 36;
+            grpMateria.TabStop = false;
+            grpMateria.Text = "Materia";
+            // 
+            // lblMateriaComSel
+            // 
+            lblMateriaComSel.AutoSize = true;
+            lblMateriaComSel.Location = new Point(152, 31);
+            lblMateriaComSel.Name = "lblMateriaComSel";
+            lblMateriaComSel.Size = new Size(0, 15);
+            lblMateriaComSel.TabIndex = 36;
             // 
             // FrmGestorAlumno
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 605);
-            Controls.Add(label15);
-            Controls.Add(label14);
-            Controls.Add(dateTimePicker2);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(label13);
-            Controls.Add(comboBox4);
-            Controls.Add(button1);
-            Controls.Add(label12);
-            Controls.Add(label11);
+            ClientSize = new Size(1090, 668);
+            ControlBox = false;
+            Controls.Add(grpMateria);
+            Controls.Add(btnCancelar);
+            Controls.Add(btnAceptar);
+            Controls.Add(txtTel);
             Controls.Add(lblBarrio);
-            Controls.Add(comboBox3);
+            Controls.Add(cboBarrio);
             Controls.Add(lblEmail);
-            Controls.Add(numTelefono);
             Controls.Add(numAltura);
             Controls.Add(lblTelefono);
             Controls.Add(lblAltura);
@@ -340,23 +465,30 @@
             Controls.Add(lblApellido);
             Controls.Add(lblNombre);
             Controls.Add(txtApellido);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
+            Controls.Add(txtDireccion);
+            Controls.Add(txtEmail);
             Controls.Add(txtNombre);
             Controls.Add(lblEstadoCivil);
             Controls.Add(lblSituacionLaboral);
             Controls.Add(lblLegajo);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvMaterias);
             Controls.Add(cboSituacionLaboral);
             Controls.Add(cboEstadoCivil);
             Controls.Add(numId);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MaximumSize = new Size(1106, 707);
+            MinimumSize = new Size(1106, 707);
             Name = "FrmGestorAlumno";
+            SizeGripStyle = SizeGripStyle.Hide;
             Text = "Alumno";
+            Load += FrmGestorAlumno_Load;
             ((System.ComponentModel.ISupportInitialize)numId).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvMaterias).EndInit();
             ((System.ComponentModel.ISupportInitialize)numAltura).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numTelefono).EndInit();
+            grpMateria.ResumeLayout(false);
+            grpMateria.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -366,13 +498,13 @@
         private NumericUpDown numId;
         private ComboBox cboEstadoCivil;
         private ComboBox cboSituacionLaboral;
-        private DataGridView dataGridView1;
+        private DataGridView dgvMaterias;
         private Label lblLegajo;
         private Label lblSituacionLaboral;
         private Label lblEstadoCivil;
         private TextBox txtNombre;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private TextBox txtEmail;
+        private TextBox txtDireccion;
         private TextBox txtApellido;
         private Label lblNombre;
         private Label lblApellido;
@@ -380,18 +512,31 @@
         private Label lblAltura;
         private Label lblTelefono;
         private NumericUpDown numAltura;
-        private NumericUpDown numTelefono;
         private Label lblEmail;
-        private ComboBox comboBox3;
+        private ComboBox cboBarrio;
         private Label lblBarrio;
-        private Label label11;
-        private Label label12;
-        private Button button1;
-        private ComboBox comboBox4;
+        private Label lblEstado;
+        private Label lblFechaInsc;
+        private Button btnMateriaComision;
+        private ComboBox cboEstado;
         private Label label13;
-        private DateTimePicker dateTimePicker1;
-        private DateTimePicker dateTimePicker2;
-        private Label label14;
-        private Label label15;
+        private DateTimePicker dtpFechaInsc;
+        private DateTimePicker dtpFechaEstado;
+        private Label lblMateriaComision;
+        private Label lblFechaEstado;
+        private TextBox txtTel;
+        private Button btnAceptar;
+        private Button btnCancelar;
+        private Button btnAgregar;
+        private GroupBox grpMateria;
+        private Label lblMateriaComSel;
+        private DataGridViewTextBoxColumn IdMateria;
+        private DataGridViewTextBoxColumn Materia;
+        private DataGridViewTextBoxColumn FechaInsc;
+        private DataGridViewTextBoxColumn Estado;
+        private DataGridViewTextBoxColumn FechaEstado;
+        private DataGridViewTextBoxColumn Comision;
+        private DataGridViewTextBoxColumn Docente;
+        private DataGridViewButtonColumn Accion;
     }
 }

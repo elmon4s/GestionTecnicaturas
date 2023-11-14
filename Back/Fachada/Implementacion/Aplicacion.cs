@@ -82,6 +82,11 @@ namespace Back.Fachada.Implementacion
             return examenesDAO.TraerDocentesExamen(lParam);
         }
 
+        public List<EstadoAcademico> GetEstadosAcademicos()
+        {
+            return alumnosDAO.TraerEstadosAcademicos();
+        }
+
         public List<EstadoCivil> GetEstadosCiviles()
         {
             return alumnosDAO.TraerEstadosCiviles();
@@ -100,6 +105,11 @@ namespace Back.Fachada.Implementacion
         public List<DetalleMateriaComision> GetMateriaComision(List<Parametro> lParam)
         {
             return alumnosDAO.TraerMateriaComision(lParam);
+        }
+
+        public List<DetalleMateriaComision> GetMateriaComisionFiltrado(List<Parametro> lParam)
+        {
+            return alumnosDAO.TraerMateriaComisionFiltrado(lParam);
         }
 
         public List<Materia> GetMaterias()

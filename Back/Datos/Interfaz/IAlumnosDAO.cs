@@ -18,5 +18,7 @@ namespace Back.Datos.Interfaz
         public List<SituacionLaboral> TraerSituacionesLaborales();
         public List<EstadoCivil> TraerEstadosCiviles();
         public List<DetalleMateriaComision> TraerMateriaComision(List<Parametro> lParam);
+        public List<DetalleMateriaComision> TraerMateriaComisionFiltrado(List<Parametro> lParam);
+        public List<EstadoAcademico> TraerEstadosAcademicos();
     }
 }

@@ -478,3 +478,40 @@ BEGIN
             (@fecha_desde IS NULL AND @fecha_hasta IS NULL) -- Ambas fechas son nulas
             OR (e.fecha_examen >= @fecha_desde AND e.fecha_examen <= @fecha_hasta)); -- Fechas dentro del rango
 END
+
+CREATE PROCEDURE PA_CONSULTAR_DMC_ALUMNOS_FILT
+@docente VARCHAR(60), @materia VARCHAR(60), @comision VARCHAR(50)
+AS 
+BEGIN
+SELECT dmc1.id_detalle_materia_comision,dmc1.año_lectivo,M.id_materia,M.nom_materia,c.id_comision,c.descripcion_comision, d.nom_docente, d.ape_docente
+FROM Materias M JOIN Tecnicaturas t
+	ON t.id_tecnicatura=m.id_materia
+	JOIN Detalle_materias_comisiones dmc1
+	ON dmc1.id_materia=m.id_materia
+	JOIN Comisiones c ON c.id_comision=dmc1.id_comision
+	JOIN Docentes d ON d.id_docente = dmc1.id_docente
+WHERE d.nom_docente + ' ' + d.ape_docente LIKE '%' + @docente + '%'
+AND M.nom_materia LIKE '%' + @materia + '%'
+AND c.descripcion_comision LIKE '%' + @comision + '%'
+AND m.fecha_baja IS NULL
+END
+
+GO
+
+CREATE PROCEDURE PA_TRAER_ESTADOS_ACADEMICOS
+AS
+BEGIN
+SELECT * FROM Estados_academicos
+END
+
+ALTER PROCEDURE PA_INSERTAR_DETALLE_ALUMNO
+@id_alumno int,
+@id_detalle_mat_com int,
+@id_estado_acad int,
+@fecha_inscr datetime,
+@fecha_estado datetime
+AS
+BEGIN
+INSERT INTO Detalles_alumnos_materias(id_detalle_alumno_materia,id_alumno,id_detalle_materia_comision,id_estado_academico,fecha_inscripcion,fecha_estado)
+VALUES ((SELECT MAX(id_detalle_alumno_materia) FROM Detalles_alumnos_materias) + 1, @id_alumno,@id_detalle_mat_com,@id_estado_acad,@fecha_inscr,@fecha_estado)
+END

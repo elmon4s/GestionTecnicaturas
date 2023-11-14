@@ -20,6 +20,8 @@ namespace Back.Fachada.Interfaz
         public List<SituacionLaboral> GetSituacionesLaborales();
         public List<EstadoCivil> GetEstadosCiviles();
         public List<DetalleMateriaComision> GetMateriaComision(List<Parametro> lParam);
+        public List<DetalleMateriaComision> GetMateriaComisionFiltrado(List<Parametro> lParam);
+        public List<EstadoAcademico> GetEstadosAcademicos();
 
         //Para Docentes y Alumnos
         public List<Barrio> GetBarrios();

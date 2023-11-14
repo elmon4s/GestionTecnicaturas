@@ -28,100 +28,194 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultarDetalleMateriaComision));
+            dgvDetalles = new DataGridView();
+            IdMateriaComision = new DataGridViewTextBoxColumn();
+            Docente = new DataGridViewTextBoxColumn();
+            Materia = new DataGridViewTextBoxColumn();
+            Comision = new DataGridViewTextBoxColumn();
+            Acciones = new DataGridViewButtonColumn();
+            lblDocente = new Label();
+            lblComision = new Label();
+            lblMateria = new Label();
+            txtDocente = new TextBox();
+            txtComision = new TextBox();
+            txtMateria = new TextBox();
+            btnCancelar = new Button();
+            btnBuscar = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgvDetalles).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dgvDetalles
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 130);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(240, 150);
-            dataGridView1.TabIndex = 0;
+            dgvDetalles.AllowUserToAddRows = false;
+            dgvDetalles.AllowUserToDeleteRows = false;
+            dgvDetalles.AllowUserToResizeColumns = false;
+            dgvDetalles.AllowUserToResizeRows = false;
+            dgvDetalles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvDetalles.Columns.AddRange(new DataGridViewColumn[] { IdMateriaComision, Docente, Materia, Comision, Acciones });
+            dgvDetalles.Location = new Point(12, 148);
+            dgvDetalles.Name = "dgvDetalles";
+            dgvDetalles.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dgvDetalles.RowTemplate.Height = 25;
+            dgvDetalles.Size = new Size(695, 231);
+            dgvDetalles.TabIndex = 0;
+            dgvDetalles.CellContentClick += dgvDetalles_CellContentClick;
             // 
-            // label1
+            // IdMateriaComision
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(12, 26);
-            label1.Name = "label1";
-            label1.Size = new Size(51, 15);
-            label1.TabIndex = 1;
-            label1.Text = "Docente";
+            IdMateriaComision.HeaderText = "IdMateriaComision";
+            IdMateriaComision.Name = "IdMateriaComision";
+            IdMateriaComision.ReadOnly = true;
+            IdMateriaComision.Visible = false;
             // 
-            // label2
+            // Docente
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(12, 78);
-            label2.Name = "label2";
-            label2.Size = new Size(58, 15);
-            label2.TabIndex = 2;
-            label2.Text = "Comision";
+            Docente.FillWeight = 122.699409F;
+            Docente.HeaderText = "Docente";
+            Docente.Name = "Docente";
+            Docente.ReadOnly = true;
+            Docente.Width = 200;
             // 
-            // label3
+            // Materia
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(12, 54);
-            label3.Name = "label3";
-            label3.Size = new Size(47, 15);
-            label3.TabIndex = 3;
-            label3.Text = "Materia";
+            Materia.FillWeight = 106.988327F;
+            Materia.HeaderText = "Materia";
+            Materia.Name = "Materia";
+            Materia.ReadOnly = true;
+            Materia.Width = 174;
             // 
-            // textBox1
+            // Comision
             // 
-            textBox1.Location = new Point(101, 19);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 4;
+            Comision.FillWeight = 55.505043F;
+            Comision.HeaderText = "Comisión";
+            Comision.Name = "Comision";
+            Comision.ReadOnly = true;
+            Comision.Width = 91;
             // 
-            // textBox2
+            // Acciones
             // 
-            textBox2.Location = new Point(101, 77);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 5;
+            Acciones.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Acciones.FillWeight = 114.807304F;
+            Acciones.HeaderText = "Acciones";
+            Acciones.Name = "Acciones";
+            Acciones.ReadOnly = true;
+            Acciones.Resizable = DataGridViewTriState.True;
+            Acciones.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
-            // textBox3
+            // lblDocente
             // 
-            textBox3.Location = new Point(101, 48);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 6;
+            lblDocente.AutoSize = true;
+            lblDocente.Location = new Point(12, 39);
+            lblDocente.Name = "lblDocente";
+            lblDocente.Size = new Size(54, 15);
+            lblDocente.TabIndex = 1;
+            lblDocente.Text = "Docente:";
+            // 
+            // lblComision
+            // 
+            lblComision.AutoSize = true;
+            lblComision.Location = new Point(12, 91);
+            lblComision.Name = "lblComision";
+            lblComision.Size = new Size(61, 15);
+            lblComision.TabIndex = 2;
+            lblComision.Text = "Comision:";
+            // 
+            // lblMateria
+            // 
+            lblMateria.AutoSize = true;
+            lblMateria.Location = new Point(12, 69);
+            lblMateria.Name = "lblMateria";
+            lblMateria.Size = new Size(50, 15);
+            lblMateria.TabIndex = 3;
+            lblMateria.Text = "Materia:";
+            // 
+            // txtDocente
+            // 
+            txtDocente.Location = new Point(101, 32);
+            txtDocente.MaximumSize = new Size(523, 23);
+            txtDocente.MinimumSize = new Size(523, 23);
+            txtDocente.Name = "txtDocente";
+            txtDocente.Size = new Size(523, 23);
+            txtDocente.TabIndex = 4;
+            // 
+            // txtComision
+            // 
+            txtComision.Location = new Point(101, 90);
+            txtComision.Name = "txtComision";
+            txtComision.Size = new Size(523, 23);
+            txtComision.TabIndex = 5;
+            // 
+            // txtMateria
+            // 
+            txtMateria.Location = new Point(101, 61);
+            txtMateria.Name = "txtMateria";
+            txtMateria.Size = new Size(523, 23);
+            txtMateria.TabIndex = 6;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.Location = new Point(12, 397);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(75, 23);
+            btnCancelar.TabIndex = 7;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
+            // 
+            // btnBuscar
+            // 
+            btnBuscar.Location = new Point(632, 87);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(75, 23);
+            btnBuscar.TabIndex = 8;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // FrmConsultarDetalleMateriaComision
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(dataGridView1);
+            ClientSize = new Size(732, 434);
+            ControlBox = false;
+            Controls.Add(btnBuscar);
+            Controls.Add(btnCancelar);
+            Controls.Add(txtMateria);
+            Controls.Add(txtComision);
+            Controls.Add(txtDocente);
+            Controls.Add(lblMateria);
+            Controls.Add(lblComision);
+            Controls.Add(lblDocente);
+            Controls.Add(dgvDetalles);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MaximumSize = new Size(748, 473);
+            MinimumSize = new Size(748, 473);
             Name = "FrmConsultarDetalleMateriaComision";
-            Text = "FrmConsultarDetalleMateriaComision";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            SizeGripStyle = SizeGripStyle.Hide;
+            Text = "Materia Comision";
+            ((System.ComponentModel.ISupportInitialize)dgvDetalles).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private DataGridView dgvDetalles;
+        private Label lblDocente;
+        private Label lblComision;
+        private Label lblMateria;
+        private TextBox txtDocente;
+        private TextBox txtComision;
+        private TextBox txtMateria;
+        private Button btnCancelar;
+        private Button btnBuscar;
+        private DataGridViewTextBoxColumn IdMateriaComision;
+        private DataGridViewTextBoxColumn Docente;
+        private DataGridViewTextBoxColumn Materia;
+        private DataGridViewTextBoxColumn Comision;
+        private DataGridViewButtonColumn Acciones;
     }
 }
