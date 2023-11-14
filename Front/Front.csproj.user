@@ -4,6 +4,9 @@
     <Compile Update="Presentacion\Alumnos\FrmConsultaAlumnos.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Presentacion\Alumnos\FrmConsultarDetalleMateriaComision.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Presentacion\Alumnos\FrmGestorAlumno.cs">
       <SubType>Form</SubType>
     </Compile>

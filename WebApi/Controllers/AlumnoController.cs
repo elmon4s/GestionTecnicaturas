@@ -74,12 +74,15 @@ namespace WebApi.Controllers
         }
 
         [HttpGet("/lstalumnos")]
-        public IActionResult GetAlumnos([FromQuery]List<Parametro> lParam)
+        public IActionResult GetAlumnos(string? nombre, int situacionLab, int estadoCivil)
         {
             try
             {
-                if (lParam == null)
-                    return BadRequest("Se deben ingresar parámetros");
+                List<Parametro> lParam = new List<Parametro>();
+                lParam.Add(new Parametro("@nombre", nombre ?? ""));
+                lParam.Add(new Parametro("@estado_civil", estadoCivil));
+                lParam.Add(new Parametro("@situacion_lab", situacionLab));
+
                 return Ok(app.GetAlumnos(lParam));
             }
             catch
@@ -111,6 +114,18 @@ namespace WebApi.Controllers
                 return StatusCode(500, "Error interno. Intente más tarde");
             }
         }
+        [HttpGet("/estadosacademicos")]
+        public IActionResult GetEstadosAcademicos()
+        {
+            try
+            {
+                return Ok(app.GetEstadosAcademicos());
+            }
+            catch
+            {
+                return StatusCode(500, "Error interno. Intente más tarde");
+            }
+        }
         [HttpGet("/materiacomision")]
         public IActionResult GetMateriaComision([FromQuery]List<Parametro> lParam)
         {
@@ -119,6 +134,23 @@ namespace WebApi.Controllers
                 if (lParam == null)
                     return BadRequest("Se deben ingresar parámetros");
                 return Ok(app.GetMateriaComision(lParam));
+            }
+            catch
+            {
+                return StatusCode(500, "Error interno. Intente más tarde");
+            }
+        }
+        [HttpGet("/materiacomisionfiltrados")]
+        public IActionResult GetMateriaComisionFiltrado(string? docente, string? comision, string? materia)
+        {
+            try
+            {
+                List<Parametro> lParam = new List<Parametro>();
+                lParam.Add(new Parametro("@docente", docente ?? ""));
+                lParam.Add(new Parametro("@comision", comision ?? ""));
+                lParam.Add(new Parametro("@materia", materia ?? ""));
+
+                return Ok(app.GetMateriaComisionFiltrado(lParam));
             }
             catch
             {

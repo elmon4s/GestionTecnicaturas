@@ -118,6 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CadenaConexion" xml:space="preserve">
-    <value>Data Source=.\sqlexpress;Initial Catalog=GRUPO3_TPI_LCII_1W1;Integrated Security=True</value>
+    <value>Data Source=(localdb)\local;Initial Catalog=GRUPO3_TPI_LCII_1W1;Integrated Security=True</value>
   </data>
 </root>

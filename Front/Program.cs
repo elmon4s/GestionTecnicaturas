@@ -1,3 +1,5 @@
+using Front.Presentacion.Alumnos;
+
 namespace Front
 {
     internal static class Program

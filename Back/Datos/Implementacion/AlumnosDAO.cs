@@ -45,6 +45,7 @@ namespace Back.Datos.Implementacion
                     comandoDet.Parameters.AddWithValue("@fecha_estado", det.FechaEstadoDetalle);
                     comandoDet.ExecuteNonQuery();
                 }
+                transaccion.Commit();
             }
             catch
             {
@@ -96,6 +97,7 @@ namespace Back.Datos.Implementacion
                     comandoDet.Parameters.AddWithValue("@fecha_estado", det.FechaEstadoDetalle);
                     comandoDet.ExecuteNonQuery();
                 }
+                transaccion.Commit();
             }
             catch
             {
@@ -127,6 +129,7 @@ namespace Back.Datos.Implementacion
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@id_alumno", nroAlumno);
                 comando.ExecuteNonQuery();
+                transaccion.Commit(); 
             }
             catch
             {
@@ -151,7 +154,7 @@ namespace Back.Datos.Implementacion
             Alumno oAlumno = new Alumno();
             List<Parametro> lParam = new List<Parametro>();
             lParam.Add(new Parametro("@id_alumno", nroAlumno));
-            DataTable tabla = HelperDAO.ObtenerInstancia().Consultar("PA_CONSULTAR_ALUMNOS", lParam);
+            DataTable tabla = HelperDAO.ObtenerInstancia().Consultar("PA_CONSULTAR_ALUMNO", lParam);
             foreach (DataRow fila in tabla.Rows)
             {
                 oAlumno.IdAlumno = int.Parse(fila["id_alumno"].ToString());
@@ -262,9 +265,11 @@ namespace Back.Datos.Implementacion
             DataTable tabla = HelperDAO.ObtenerInstancia().Consultar("PA_TRAER_SITUACIONES");
             foreach(DataRow fila in tabla.Rows)
             {
-                SituacionLaboral oSituacion = new SituacionLaboral();
                 int id = int.Parse(fila["id_situacion_laboral"].ToString());
                 string sit = fila["situacion_laboral"].ToString();
+
+                SituacionLaboral oSituacion = new SituacionLaboral(id, sit);
+
                 lSituaciones.Add(oSituacion);
             }
             return lSituaciones;
@@ -275,9 +280,11 @@ namespace Back.Datos.Implementacion
             DataTable tabla = HelperDAO.ObtenerInstancia().Consultar("PA_TRAER_ESTADOS_CIVILES");
             foreach (DataRow fila in tabla.Rows)
             {
-                EstadoCivil oEstado = new EstadoCivil();
                 int id = int.Parse(fila["id_estado_civil"].ToString());
                 string est = fila["estado_civil"].ToString();
+
+                EstadoCivil oEstado = new EstadoCivil(id, est);
+
                 lEstados.Add(oEstado);
             }
             return lEstados;
@@ -304,5 +311,50 @@ namespace Back.Datos.Implementacion
             return lDetalles;
         }
 
+        public List<DetalleMateriaComision> TraerMateriaComisionFiltrado(List<Parametro> lParam)
+        {
+            List<DetalleMateriaComision> lDetalles = new List<DetalleMateriaComision>();
+            DataTable tabla = HelperDAO.ObtenerInstancia().Consultar("PA_CONSULTAR_DMC_ALUMNOS_FILT", lParam);
+            if (tabla.Rows.Count != 0)
+            {
+                foreach (DataRow fila in tabla.Rows)
+                {
+                    int id = int.Parse(fila["id_detalle_materia_comision"].ToString());
+                    int year = int.Parse(fila["año_lectivo"].ToString());
+                    int idMat = int.Parse(fila["id_materia"].ToString());
+                    string mat = fila["nom_materia"].ToString();
+                    int idCom = int.Parse(fila["id_comision"].ToString());
+                    string com = fila["descripcion_comision"].ToString();
+                    string nomDocente = fila["nom_docente"].ToString();
+                    string apeDocente = fila["ape_docente"].ToString();
+                    Docente oDocente = new Docente();
+                    oDocente.Nombre = nomDocente;
+                    oDocente.Apellido = apeDocente;
+                    Materia oMateria = new Materia();
+                    oMateria.IdMateria = idMat;
+                    oMateria.NombreMateria = mat;
+                    Comision oComision = new Comision(idCom, com);
+                    DetalleMateriaComision oDetalle = new DetalleMateriaComision(id, oDocente, oMateria, oComision, year);
+                    lDetalles.Add(oDetalle);
+                }
+            }
+            return lDetalles;
+        }
+
+        public List<EstadoAcademico> TraerEstadosAcademicos()
+        {
+            List<EstadoAcademico> lEstados = new List<EstadoAcademico>();
+            DataTable tabla = HelperDAO.ObtenerInstancia().Consultar("PA_TRAER_ESTADOS_ACADEMICOS");
+            foreach (DataRow fila in tabla.Rows)
+            {
+                int id = int.Parse(fila["id_estado_academico"].ToString());
+                string est = fila["estado_academico"].ToString();
+
+                EstadoAcademico oEstado = new EstadoAcademico(id, est);
+
+                lEstados.Add(oEstado);
+            }
+            return lEstados;
+        }
     }
 }
