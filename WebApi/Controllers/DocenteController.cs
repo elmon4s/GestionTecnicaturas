@@ -63,12 +63,15 @@ namespace WebApi.Controllers
         }
 
         [HttpGet("/lstdocentes")]
-        public IActionResult GetDocentes([FromQuery]List<Parametro> lParam)
+        public IActionResult GetDocentes(string? nombre, int barrioId, int tituloId)
         {
             try
             {
-                if (lParam == null)
-                    return BadRequest("Se deben ingresar parametros");
+                List<Parametro> lParam = new List<Parametro>();
+                lParam.Add(new Parametro("@nombre", nombre ?? ""));
+                lParam.Add(new Parametro("@barrio", barrioId));
+                lParam.Add(new Parametro("@titulo", tituloId));
+
                 return Ok(app.GetDocentes(lParam));
             }
             catch

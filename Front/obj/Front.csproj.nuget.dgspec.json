@@ -1,32 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alumno\\Desktop\\PROGII\\GestionTecnicaturas\\Front\\Front.csproj": {}
+    "D:\\Code\\GestionTecnicaturas\\Front\\Front.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alumno\\Desktop\\PROGII\\GestionTecnicaturas\\Back\\Back.csproj": {
+    "D:\\Code\\GestionTecnicaturas\\Back\\Back.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alumno\\Desktop\\PROGII\\GestionTecnicaturas\\Back\\Back.csproj",
+        "projectUniqueName": "D:\\Code\\GestionTecnicaturas\\Back\\Back.csproj",
         "projectName": "Back",
-        "projectPath": "C:\\Users\\alumno\\Desktop\\PROGII\\GestionTecnicaturas\\Back\\Back.csproj",
-        "packagesPath": "C:\\Users\\alumno\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alumno\\Desktop\\PROGII\\GestionTecnicaturas\\Back\\obj\\",
+        "projectPath": "D:\\Code\\GestionTecnicaturas\\Back\\Back.csproj",
+        "packagesPath": "C:\\Users\\danie\\.nuget\\packages\\",
+        "outputPath": "D:\\Code\\GestionTecnicaturas\\Back\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\alumno\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\danie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "D:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
+          "D:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -70,41 +68,39 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "D:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\alumno\\Desktop\\PROGII\\GestionTecnicaturas\\Front\\Front.csproj": {
+    "D:\\Code\\GestionTecnicaturas\\Front\\Front.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alumno\\Desktop\\PROGII\\GestionTecnicaturas\\Front\\Front.csproj",
+        "projectUniqueName": "D:\\Code\\GestionTecnicaturas\\Front\\Front.csproj",
         "projectName": "Front",
-        "projectPath": "C:\\Users\\alumno\\Desktop\\PROGII\\GestionTecnicaturas\\Front\\Front.csproj",
-        "packagesPath": "C:\\Users\\alumno\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alumno\\Desktop\\PROGII\\GestionTecnicaturas\\Front\\obj\\",
+        "projectPath": "D:\\Code\\GestionTecnicaturas\\Front\\Front.csproj",
+        "packagesPath": "C:\\Users\\danie\\.nuget\\packages\\",
+        "outputPath": "D:\\Code\\GestionTecnicaturas\\Front\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\alumno\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\danie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "D:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config"
         ],
         "originalTargetFrameworks": [
           "net6.0-windows"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
+          "D:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\alumno\\Desktop\\PROGII\\GestionTecnicaturas\\Back\\Back.csproj": {
-                "projectPath": "C:\\Users\\alumno\\Desktop\\PROGII\\GestionTecnicaturas\\Back\\Back.csproj"
+              "D:\\Code\\GestionTecnicaturas\\Back\\Back.csproj": {
+                "projectPath": "D:\\Code\\GestionTecnicaturas\\Back\\Back.csproj"
               }
             }
           }
@@ -143,7 +139,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "D:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
