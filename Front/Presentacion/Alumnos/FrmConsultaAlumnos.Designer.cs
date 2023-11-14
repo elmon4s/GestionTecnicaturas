@@ -45,7 +45,9 @@
             lblEstadoCivil = new Label();
             btnBuscar = new Button();
             btnCancelar = new Button();
+            grpCriteriosBusqueda = new GroupBox();
             ((System.ComponentModel.ISupportInitialize)dgvAlumnos).BeginInit();
+            grpCriteriosBusqueda.SuspendLayout();
             SuspendLayout();
             // 
             // dgvAlumnos
@@ -54,13 +56,12 @@
             dgvAlumnos.AllowUserToDeleteRows = false;
             dgvAlumnos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvAlumnos.Columns.AddRange(new DataGridViewColumn[] { IdAlumno, Nombre, Apellido, SituacionLaboral, EstadoCivil, Acciones, Acciones2 });
-            dgvAlumnos.Location = new Point(24, 157);
+            dgvAlumnos.Location = new Point(24, 188);
             dgvAlumnos.Name = "dgvAlumnos";
             dgvAlumnos.ReadOnly = true;
             dgvAlumnos.RowTemplate.Height = 25;
-            dgvAlumnos.Size = new Size(859, 240);
+            dgvAlumnos.Size = new Size(859, 297);
             dgvAlumnos.TabIndex = 0;
-            dgvAlumnos.CellContentClick += dgvAlumnos_CellContentClick;
             // 
             // IdAlumno
             // 
@@ -118,102 +119,121 @@
             // cboSituacionLaboral
             // 
             cboSituacionLaboral.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboSituacionLaboral.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             cboSituacionLaboral.FormattingEnabled = true;
-            cboSituacionLaboral.Location = new Point(151, 62);
+            cboSituacionLaboral.Location = new Point(141, 78);
             cboSituacionLaboral.Name = "cboSituacionLaboral";
-            cboSituacionLaboral.Size = new Size(174, 23);
+            cboSituacionLaboral.Size = new Size(174, 25);
             cboSituacionLaboral.TabIndex = 1;
             // 
             // cboEstadoCivil
             // 
             cboEstadoCivil.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboEstadoCivil.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             cboEstadoCivil.FormattingEnabled = true;
-            cboEstadoCivil.Location = new Point(151, 91);
+            cboEstadoCivil.Location = new Point(141, 113);
             cboEstadoCivil.Name = "cboEstadoCivil";
-            cboEstadoCivil.Size = new Size(174, 23);
+            cboEstadoCivil.Size = new Size(174, 25);
             cboEstadoCivil.TabIndex = 2;
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(151, 33);
+            txtNombre.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNombre.Location = new Point(141, 43);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(612, 23);
+            txtNombre.Size = new Size(551, 25);
             txtNombre.TabIndex = 3;
             // 
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(24, 36);
+            lblNombre.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblNombre.Location = new Point(73, 47);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(54, 15);
+            lblNombre.Size = new Size(62, 19);
             lblNombre.TabIndex = 5;
             lblNombre.Text = "Nombre:";
             // 
             // lblSituacionLab
             // 
             lblSituacionLab.AutoSize = true;
-            lblSituacionLab.Location = new Point(24, 65);
+            lblSituacionLab.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblSituacionLab.Location = new Point(23, 81);
             lblSituacionLab.Name = "lblSituacionLab";
-            lblSituacionLab.Size = new Size(98, 15);
+            lblSituacionLab.Size = new Size(112, 19);
             lblSituacionLab.TabIndex = 6;
             lblSituacionLab.Text = "Situación laboral:";
             // 
             // lblEstadoCivil
             // 
             lblEstadoCivil.AutoSize = true;
-            lblEstadoCivil.Location = new Point(24, 94);
+            lblEstadoCivil.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblEstadoCivil.Location = new Point(56, 116);
             lblEstadoCivil.Name = "lblEstadoCivil";
-            lblEstadoCivil.Size = new Size(69, 15);
+            lblEstadoCivil.Size = new Size(79, 19);
             lblEstadoCivil.TabIndex = 7;
             lblEstadoCivil.Text = "Estado civil:";
             // 
             // btnBuscar
             // 
-            btnBuscar.Location = new Point(787, 36);
+            btnBuscar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnBuscar.Location = new Point(740, 133);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(96, 78);
+            btnBuscar.Size = new Size(79, 31);
             btnBuscar.TabIndex = 8;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
-            btnBuscar.Click += btnBuscar_Click;
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(24, 415);
+            btnCancelar.Location = new Point(24, 491);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(75, 23);
+            btnCancelar.Size = new Size(79, 31);
             btnCancelar.TabIndex = 9;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
-            btnCancelar.Click += btnCancelar_Click;
+            // 
+            // grpCriteriosBusqueda
+            // 
+            grpCriteriosBusqueda.BackColor = Color.WhiteSmoke;
+            grpCriteriosBusqueda.Controls.Add(lblNombre);
+            grpCriteriosBusqueda.Controls.Add(cboSituacionLaboral);
+            grpCriteriosBusqueda.Controls.Add(btnBuscar);
+            grpCriteriosBusqueda.Controls.Add(cboEstadoCivil);
+            grpCriteriosBusqueda.Controls.Add(lblEstadoCivil);
+            grpCriteriosBusqueda.Controls.Add(txtNombre);
+            grpCriteriosBusqueda.Controls.Add(lblSituacionLab);
+            grpCriteriosBusqueda.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            grpCriteriosBusqueda.Location = new Point(43, 12);
+            grpCriteriosBusqueda.Name = "grpCriteriosBusqueda";
+            grpCriteriosBusqueda.Size = new Size(825, 170);
+            grpCriteriosBusqueda.TabIndex = 10;
+            grpCriteriosBusqueda.TabStop = false;
+            grpCriteriosBusqueda.Text = "Criterios de Busqueda";
             // 
             // FrmConsultaAlumnos
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(913, 450);
+            BackColor = SystemColors.ActiveCaption;
+            ClientSize = new Size(913, 540);
             ControlBox = false;
+            Controls.Add(grpCriteriosBusqueda);
             Controls.Add(btnCancelar);
-            Controls.Add(btnBuscar);
-            Controls.Add(lblEstadoCivil);
-            Controls.Add(lblSituacionLab);
-            Controls.Add(lblNombre);
-            Controls.Add(txtNombre);
-            Controls.Add(cboEstadoCivil);
-            Controls.Add(cboSituacionLaboral);
             Controls.Add(dgvAlumnos);
+            Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
-            MaximumSize = new Size(929, 489);
-            MinimumSize = new Size(929, 489);
+            MaximumSize = new Size(929, 579);
+            MinimumSize = new Size(929, 579);
             Name = "FrmConsultaAlumnos";
             SizeGripStyle = SizeGripStyle.Hide;
             Text = "Consultar Alumnos";
-            Load += FrmConsultaAlumnos_Load;
             ((System.ComponentModel.ISupportInitialize)dgvAlumnos).EndInit();
+            grpCriteriosBusqueda.ResumeLayout(false);
+            grpCriteriosBusqueda.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -235,5 +255,6 @@
         private DataGridViewTextBoxColumn EstadoCivil;
         private DataGridViewButtonColumn Acciones;
         private DataGridViewButtonColumn Acciones2;
+        private GroupBox grpCriteriosBusqueda;
     }
 }

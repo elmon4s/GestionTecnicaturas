@@ -29,176 +29,199 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultarDetalleMateriaComision));
-            dgvDetalles = new DataGridView();
-            IdMateriaComision = new DataGridViewTextBoxColumn();
-            Docente = new DataGridViewTextBoxColumn();
-            Materia = new DataGridViewTextBoxColumn();
-            Comision = new DataGridViewTextBoxColumn();
-            Acciones = new DataGridViewButtonColumn();
-            lblDocente = new Label();
-            lblComision = new Label();
-            lblMateria = new Label();
-            txtDocente = new TextBox();
-            txtComision = new TextBox();
-            txtMateria = new TextBox();
-            btnCancelar = new Button();
-            btnBuscar = new Button();
-            ((System.ComponentModel.ISupportInitialize)dgvDetalles).BeginInit();
-            SuspendLayout();
+            this.dgvDetalles = new System.Windows.Forms.DataGridView();
+            this.IdMateriaComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Docente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Comision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Acciones = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.lblDocente = new System.Windows.Forms.Label();
+            this.lblComision = new System.Windows.Forms.Label();
+            this.lblMateria = new System.Windows.Forms.Label();
+            this.txtDocente = new System.Windows.Forms.TextBox();
+            this.txtComision = new System.Windows.Forms.TextBox();
+            this.txtMateria = new System.Windows.Forms.TextBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.grbCriteriosBusqueda = new System.Windows.Forms.GroupBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalles)).BeginInit();
+            this.grbCriteriosBusqueda.SuspendLayout();
+            this.SuspendLayout();
             // 
             // dgvDetalles
             // 
-            dgvDetalles.AllowUserToAddRows = false;
-            dgvDetalles.AllowUserToDeleteRows = false;
-            dgvDetalles.AllowUserToResizeColumns = false;
-            dgvDetalles.AllowUserToResizeRows = false;
-            dgvDetalles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvDetalles.Columns.AddRange(new DataGridViewColumn[] { IdMateriaComision, Docente, Materia, Comision, Acciones });
-            dgvDetalles.Location = new Point(12, 148);
-            dgvDetalles.Name = "dgvDetalles";
-            dgvDetalles.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dgvDetalles.RowTemplate.Height = 25;
-            dgvDetalles.Size = new Size(695, 231);
-            dgvDetalles.TabIndex = 0;
-            dgvDetalles.CellContentClick += dgvDetalles_CellContentClick;
+            this.dgvDetalles.AllowUserToAddRows = false;
+            this.dgvDetalles.AllowUserToDeleteRows = false;
+            this.dgvDetalles.AllowUserToResizeColumns = false;
+            this.dgvDetalles.AllowUserToResizeRows = false;
+            this.dgvDetalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvDetalles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdMateriaComision,
+            this.Docente,
+            this.Materia,
+            this.Comision,
+            this.Acciones});
+            this.dgvDetalles.Location = new System.Drawing.Point(33, 178);
+            this.dgvDetalles.Name = "dgvDetalles";
+            this.dgvDetalles.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvDetalles.RowTemplate.Height = 25;
+            this.dgvDetalles.Size = new System.Drawing.Size(669, 295);
+            this.dgvDetalles.TabIndex = 0;
             // 
             // IdMateriaComision
             // 
-            IdMateriaComision.HeaderText = "IdMateriaComision";
-            IdMateriaComision.Name = "IdMateriaComision";
-            IdMateriaComision.ReadOnly = true;
-            IdMateriaComision.Visible = false;
+            this.IdMateriaComision.HeaderText = "IdMateriaComision";
+            this.IdMateriaComision.Name = "IdMateriaComision";
+            this.IdMateriaComision.ReadOnly = true;
+            this.IdMateriaComision.Visible = false;
             // 
             // Docente
             // 
-            Docente.FillWeight = 122.699409F;
-            Docente.HeaderText = "Docente";
-            Docente.Name = "Docente";
-            Docente.ReadOnly = true;
-            Docente.Width = 200;
+            this.Docente.FillWeight = 122.6994F;
+            this.Docente.HeaderText = "Docente";
+            this.Docente.Name = "Docente";
+            this.Docente.ReadOnly = true;
+            this.Docente.Width = 200;
             // 
             // Materia
             // 
-            Materia.FillWeight = 106.988327F;
-            Materia.HeaderText = "Materia";
-            Materia.Name = "Materia";
-            Materia.ReadOnly = true;
-            Materia.Width = 174;
+            this.Materia.FillWeight = 106.9883F;
+            this.Materia.HeaderText = "Materia";
+            this.Materia.Name = "Materia";
+            this.Materia.ReadOnly = true;
+            this.Materia.Width = 174;
             // 
             // Comision
             // 
-            Comision.FillWeight = 55.505043F;
-            Comision.HeaderText = "Comisión";
-            Comision.Name = "Comision";
-            Comision.ReadOnly = true;
-            Comision.Width = 91;
+            this.Comision.FillWeight = 55.50504F;
+            this.Comision.HeaderText = "Comisión";
+            this.Comision.Name = "Comision";
+            this.Comision.ReadOnly = true;
+            this.Comision.Width = 91;
             // 
             // Acciones
             // 
-            Acciones.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Acciones.FillWeight = 114.807304F;
-            Acciones.HeaderText = "Acciones";
-            Acciones.Name = "Acciones";
-            Acciones.ReadOnly = true;
-            Acciones.Resizable = DataGridViewTriState.True;
-            Acciones.SortMode = DataGridViewColumnSortMode.Automatic;
+            this.Acciones.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Acciones.FillWeight = 114.8073F;
+            this.Acciones.HeaderText = "Acciones";
+            this.Acciones.Name = "Acciones";
+            this.Acciones.ReadOnly = true;
+            this.Acciones.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Acciones.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // lblDocente
             // 
-            lblDocente.AutoSize = true;
-            lblDocente.Location = new Point(12, 39);
-            lblDocente.Name = "lblDocente";
-            lblDocente.Size = new Size(54, 15);
-            lblDocente.TabIndex = 1;
-            lblDocente.Text = "Docente:";
+            this.lblDocente.AutoSize = true;
+            this.lblDocente.Location = new System.Drawing.Point(27, 42);
+            this.lblDocente.Name = "lblDocente";
+            this.lblDocente.Size = new System.Drawing.Size(63, 19);
+            this.lblDocente.TabIndex = 1;
+            this.lblDocente.Text = "Docente:";
             // 
             // lblComision
             // 
-            lblComision.AutoSize = true;
-            lblComision.Location = new Point(12, 91);
-            lblComision.Name = "lblComision";
-            lblComision.Size = new Size(61, 15);
-            lblComision.TabIndex = 2;
-            lblComision.Text = "Comision:";
+            this.lblComision.AutoSize = true;
+            this.lblComision.Location = new System.Drawing.Point(21, 115);
+            this.lblComision.Name = "lblComision";
+            this.lblComision.Size = new System.Drawing.Size(69, 19);
+            this.lblComision.TabIndex = 2;
+            this.lblComision.Text = "Comision:";
             // 
             // lblMateria
             // 
-            lblMateria.AutoSize = true;
-            lblMateria.Location = new Point(12, 69);
-            lblMateria.Name = "lblMateria";
-            lblMateria.Size = new Size(50, 15);
-            lblMateria.TabIndex = 3;
-            lblMateria.Text = "Materia:";
+            this.lblMateria.AutoSize = true;
+            this.lblMateria.Location = new System.Drawing.Point(31, 79);
+            this.lblMateria.Name = "lblMateria";
+            this.lblMateria.Size = new System.Drawing.Size(59, 19);
+            this.lblMateria.TabIndex = 3;
+            this.lblMateria.Text = "Materia:";
             // 
             // txtDocente
             // 
-            txtDocente.Location = new Point(101, 32);
-            txtDocente.MaximumSize = new Size(523, 23);
-            txtDocente.MinimumSize = new Size(523, 23);
-            txtDocente.Name = "txtDocente";
-            txtDocente.Size = new Size(523, 23);
-            txtDocente.TabIndex = 4;
+            this.txtDocente.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtDocente.Location = new System.Drawing.Point(96, 42);
+            this.txtDocente.MaximumSize = new System.Drawing.Size(523, 23);
+            this.txtDocente.Name = "txtDocente";
+            this.txtDocente.Size = new System.Drawing.Size(347, 23);
+            this.txtDocente.TabIndex = 4;
             // 
             // txtComision
             // 
-            txtComision.Location = new Point(101, 90);
-            txtComision.Name = "txtComision";
-            txtComision.Size = new Size(523, 23);
-            txtComision.TabIndex = 5;
+            this.txtComision.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtComision.Location = new System.Drawing.Point(96, 112);
+            this.txtComision.Name = "txtComision";
+            this.txtComision.Size = new System.Drawing.Size(347, 26);
+            this.txtComision.TabIndex = 5;
             // 
             // txtMateria
             // 
-            txtMateria.Location = new Point(101, 61);
-            txtMateria.Name = "txtMateria";
-            txtMateria.Size = new Size(523, 23);
-            txtMateria.TabIndex = 6;
+            this.txtMateria.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtMateria.Location = new System.Drawing.Point(96, 75);
+            this.txtMateria.Name = "txtMateria";
+            this.txtMateria.Size = new System.Drawing.Size(347, 26);
+            this.txtMateria.TabIndex = 6;
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(12, 397);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(75, 23);
-            btnCancelar.TabIndex = 7;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
-            btnCancelar.Click += btnCancelar_Click;
+            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCancelar.Location = new System.Drawing.Point(33, 479);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(79, 35);
+            this.btnCancelar.TabIndex = 7;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // btnBuscar
             // 
-            btnBuscar.Location = new Point(632, 87);
-            btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(75, 23);
-            btnBuscar.TabIndex = 8;
-            btnBuscar.Text = "Buscar";
-            btnBuscar.UseVisualStyleBackColor = true;
-            btnBuscar.Click += btnBuscar_Click;
+            this.btnBuscar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnBuscar.Location = new System.Drawing.Point(552, 109);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(79, 35);
+            this.btnBuscar.TabIndex = 8;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // grbCriteriosBusqueda
+            // 
+            this.grbCriteriosBusqueda.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.grbCriteriosBusqueda.Controls.Add(this.txtDocente);
+            this.grbCriteriosBusqueda.Controls.Add(this.btnBuscar);
+            this.grbCriteriosBusqueda.Controls.Add(this.lblDocente);
+            this.grbCriteriosBusqueda.Controls.Add(this.lblComision);
+            this.grbCriteriosBusqueda.Controls.Add(this.txtMateria);
+            this.grbCriteriosBusqueda.Controls.Add(this.lblMateria);
+            this.grbCriteriosBusqueda.Controls.Add(this.txtComision);
+            this.grbCriteriosBusqueda.Location = new System.Drawing.Point(51, 14);
+            this.grbCriteriosBusqueda.Name = "grbCriteriosBusqueda";
+            this.grbCriteriosBusqueda.Size = new System.Drawing.Size(637, 158);
+            this.grbCriteriosBusqueda.TabIndex = 9;
+            this.grbCriteriosBusqueda.TabStop = false;
+            this.grbCriteriosBusqueda.Text = "Criterios de Busqueda";
             // 
             // FrmConsultarDetalleMateriaComision
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(732, 434);
-            ControlBox = false;
-            Controls.Add(btnBuscar);
-            Controls.Add(btnCancelar);
-            Controls.Add(txtMateria);
-            Controls.Add(txtComision);
-            Controls.Add(txtDocente);
-            Controls.Add(lblMateria);
-            Controls.Add(lblComision);
-            Controls.Add(lblDocente);
-            Controls.Add(dgvDetalles);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
-            Icon = (Icon)resources.GetObject("$this.Icon");
-            MaximizeBox = false;
-            MaximumSize = new Size(748, 473);
-            MinimumSize = new Size(748, 473);
-            Name = "FrmConsultarDetalleMateriaComision";
-            SizeGripStyle = SizeGripStyle.Hide;
-            Text = "Materia Comision";
-            ((System.ComponentModel.ISupportInitialize)dgvDetalles).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(732, 521);
+            this.ControlBox = false;
+            this.Controls.Add(this.grbCriteriosBusqueda);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.dgvDetalles);
+            this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(748, 560);
+            this.MinimumSize = new System.Drawing.Size(748, 560);
+            this.Name = "FrmConsultarDetalleMateriaComision";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.Text = "Materia Comision";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalles)).EndInit();
+            this.grbCriteriosBusqueda.ResumeLayout(false);
+            this.grbCriteriosBusqueda.PerformLayout();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
@@ -217,5 +240,6 @@
         private DataGridViewTextBoxColumn Materia;
         private DataGridViewTextBoxColumn Comision;
         private DataGridViewButtonColumn Acciones;
+        private GroupBox grbCriteriosBusqueda;
     }
 }

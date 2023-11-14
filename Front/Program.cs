@@ -14,9 +14,9 @@ namespace Front
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            FrmLogin loginForm = new FrmLogin();
-            Application.Run(loginForm);
-            if (loginForm.CredencialesValidas)
+            //FrmLogin loginForm = new FrmLogin();
+            //Application.Run(loginForm);
+            //if (loginForm.CredencialesValidas)
                 Application.Run(new FrmPrincipal());
         }
     }

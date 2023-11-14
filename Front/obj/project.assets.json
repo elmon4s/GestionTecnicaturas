@@ -569,38 +569,34 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\danie\\.nuget\\packages\\": {},
-    "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\ronim\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Code\\GestionTecnicaturas\\Front\\Front.csproj",
+      "projectUniqueName": "C:\\Users\\ronim\\OneDrive\\Escritorio\\Porgramacion Trabajo\\GestionTecnicaturas\\Front\\Front.csproj",
       "projectName": "Front",
-      "projectPath": "D:\\Code\\GestionTecnicaturas\\Front\\Front.csproj",
-      "packagesPath": "C:\\Users\\danie\\.nuget\\packages\\",
-      "outputPath": "D:\\Code\\GestionTecnicaturas\\Front\\obj\\",
+      "projectPath": "C:\\Users\\ronim\\OneDrive\\Escritorio\\Porgramacion Trabajo\\GestionTecnicaturas\\Front\\Front.csproj",
+      "packagesPath": "C:\\Users\\ronim\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ronim\\OneDrive\\Escritorio\\Porgramacion Trabajo\\GestionTecnicaturas\\Front\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\danie\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "D:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config"
+        "C:\\Users\\ronim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0-windows"
       ],
       "sources": {
-        "D:\\Program Files\\dotnet\\library-packs": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "D:\\Code\\GestionTecnicaturas\\Back\\Back.csproj": {
-              "projectPath": "D:\\Code\\GestionTecnicaturas\\Back\\Back.csproj"
+            "C:\\Users\\ronim\\OneDrive\\Escritorio\\Porgramacion Trabajo\\GestionTecnicaturas\\Back\\Back.csproj": {
+              "projectPath": "C:\\Users\\ronim\\OneDrive\\Escritorio\\Porgramacion Trabajo\\GestionTecnicaturas\\Back\\Back.csproj"
             }
           }
         }
@@ -639,7 +635,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "D:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
