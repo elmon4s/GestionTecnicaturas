@@ -951,19 +951,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\esteb\\.nuget\\packages\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\esteb\\Downloads\\GestionTecnicaturas\\GestionTecnicaturas\\WebApi\\WebApi.csproj",
+      "projectUniqueName": "C:\\GitHub-Repositorios\\GestionTecnicaturas\\WebApi\\WebApi.csproj",
       "projectName": "WebApi",
-      "projectPath": "C:\\Users\\esteb\\Downloads\\GestionTecnicaturas\\GestionTecnicaturas\\WebApi\\WebApi.csproj",
-      "packagesPath": "C:\\Users\\esteb\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\esteb\\Downloads\\GestionTecnicaturas\\GestionTecnicaturas\\WebApi\\obj\\",
+      "projectPath": "C:\\GitHub-Repositorios\\GestionTecnicaturas\\WebApi\\WebApi.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\GitHub-Repositorios\\GestionTecnicaturas\\WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\esteb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -977,8 +977,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\esteb\\Downloads\\GestionTecnicaturas\\GestionTecnicaturas\\Back\\Back.csproj": {
-              "projectPath": "C:\\Users\\esteb\\Downloads\\GestionTecnicaturas\\GestionTecnicaturas\\Back\\Back.csproj"
+            "C:\\GitHub-Repositorios\\GestionTecnicaturas\\Back\\Back.csproj": {
+              "projectPath": "C:\\GitHub-Repositorios\\GestionTecnicaturas\\Back\\Back.csproj"
             }
           }
         }

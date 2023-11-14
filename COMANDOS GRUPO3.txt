@@ -459,6 +459,9 @@ SELECT distinct d.id_docente,nom_docente,ape_docente,direccion,altura,nro_tel,em
 AND fecha_baja IS NULL
 END
 
+
+--Hasta aca llega el archivo: ScriptBD-(CON Sentencias LCII(en formato SP) y COMANDOS GRUPO3.txt (Hr.21_02 - 11_11_2023))
+
 go
 ALTER PROCEDURE PA_CONSULTAR_EXAMENES
     @id_docente INT=null,

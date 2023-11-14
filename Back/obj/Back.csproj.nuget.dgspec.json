@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\esteb\\Downloads\\GestionTecnicaturas\\GestionTecnicaturas\\Back\\Back.csproj": {}
+    "C:\\GitHub-Repositorios\\GestionTecnicaturas\\Back\\Back.csproj": {}
   },
   "projects": {
-    "C:\\Users\\esteb\\Downloads\\GestionTecnicaturas\\GestionTecnicaturas\\Back\\Back.csproj": {
+    "C:\\GitHub-Repositorios\\GestionTecnicaturas\\Back\\Back.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\esteb\\Downloads\\GestionTecnicaturas\\GestionTecnicaturas\\Back\\Back.csproj",
+        "projectUniqueName": "C:\\GitHub-Repositorios\\GestionTecnicaturas\\Back\\Back.csproj",
         "projectName": "Back",
-        "projectPath": "C:\\Users\\esteb\\Downloads\\GestionTecnicaturas\\GestionTecnicaturas\\Back\\Back.csproj",
-        "packagesPath": "C:\\Users\\esteb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\esteb\\Downloads\\GestionTecnicaturas\\GestionTecnicaturas\\Back\\obj\\",
+        "projectPath": "C:\\GitHub-Repositorios\\GestionTecnicaturas\\Back\\Back.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\GitHub-Repositorios\\GestionTecnicaturas\\Back\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\esteb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
