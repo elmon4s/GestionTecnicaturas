@@ -155,7 +155,7 @@ namespace Front.Presentacion.Examenes
             {
                 int nro = Convert.ToInt32(dgvExamenes.CurrentRow.Cells["ColIdExamen"].Value.ToString());
                 Examen oExamen = await TraerExamenAsync(nro);
-                new FrmGestorExamen(oExamen).ShowDialog();         
+                new FrmGestorExamen(oExamen).ShowDialog();
             }
         }
 

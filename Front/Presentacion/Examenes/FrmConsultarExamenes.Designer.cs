@@ -34,6 +34,10 @@
             dtpFechaDesde = new DateTimePicker();
             btnSalir = new Button();
             dgvExamenes = new DataGridView();
+            ColIdExamen = new DataGridViewTextBoxColumn();
+            ColFecha = new DataGridViewTextBoxColumn();
+            ColDocente = new DataGridViewTextBoxColumn();
+            ColAcciones = new DataGridViewButtonColumn();
             lblFechaDesde = new Label();
             lblFechaHasta = new Label();
             cboMaterias = new ComboBox();
@@ -44,10 +48,6 @@
             ckbActivar = new CheckBox();
             pnlFechas = new Panel();
             btnEliminar = new Button();
-            ColIdExamen = new DataGridViewTextBoxColumn();
-            ColFecha = new DataGridViewTextBoxColumn();
-            ColDocente = new DataGridViewTextBoxColumn();
-            ColAcciones = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)dgvExamenes).BeginInit();
             grpCriterios.SuspendLayout();
             pnlFechas.SuspendLayout();
@@ -101,7 +101,6 @@
             dgvExamenes.AllowUserToDeleteRows = false;
             dgvExamenes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvExamenes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvExamenes.BorderStyle = BorderStyle.Fixed3D;
             dgvExamenes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dgvExamenes.Columns.AddRange(new DataGridViewColumn[] { ColIdExamen, ColFecha, ColDocente, ColAcciones });
             dgvExamenes.Location = new Point(44, 161);
@@ -113,6 +112,34 @@
             dgvExamenes.Size = new Size(632, 244);
             dgvExamenes.TabIndex = 17;
             dgvExamenes.CellContentClick += dgvExamenes_CellContentClick;
+            // 
+            // ColIdExamen
+            // 
+            ColIdExamen.FillWeight = 25F;
+            ColIdExamen.HeaderText = "ColId";
+            ColIdExamen.Name = "ColIdExamen";
+            ColIdExamen.ReadOnly = true;
+            ColIdExamen.Visible = false;
+            // 
+            // ColFecha
+            // 
+            ColFecha.HeaderText = "Fecha del Examen";
+            ColFecha.Name = "ColFecha";
+            ColFecha.ReadOnly = true;
+            // 
+            // ColDocente
+            // 
+            ColDocente.HeaderText = "Docente";
+            ColDocente.Name = "ColDocente";
+            ColDocente.ReadOnly = true;
+            // 
+            // ColAcciones
+            // 
+            ColAcciones.HeaderText = "Acciones";
+            ColAcciones.Name = "ColAcciones";
+            ColAcciones.ReadOnly = true;
+            ColAcciones.Text = "Ver detalles del Examen";
+            ColAcciones.UseColumnTextForButtonValue = true;
             // 
             // lblFechaDesde
             // 
@@ -176,6 +203,7 @@
             // 
             // grpCriterios
             // 
+            grpCriterios.BackColor = Color.WhiteSmoke;
             grpCriterios.Controls.Add(ckbActivar);
             grpCriterios.Controls.Add(pnlFechas);
             grpCriterios.Controls.Add(cboMaterias);
@@ -189,7 +217,7 @@
             grpCriterios.Size = new Size(595, 126);
             grpCriterios.TabIndex = 31;
             grpCriterios.TabStop = false;
-            grpCriterios.Text = "Criterios de Búsqueda";
+            grpCriterios.Text = "Criterios de Búsqueda:";
             // 
             // ckbActivar
             // 
@@ -225,38 +253,11 @@
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += btnEliminar_Click;
             // 
-            // ColIdExamen
-            // 
-            ColIdExamen.FillWeight = 25F;
-            ColIdExamen.HeaderText = "ColId";
-            ColIdExamen.Name = "ColIdExamen";
-            ColIdExamen.ReadOnly = true;
-            ColIdExamen.Visible = false;
-            // 
-            // ColFecha
-            // 
-            ColFecha.HeaderText = "Fecha del Examen";
-            ColFecha.Name = "ColFecha";
-            ColFecha.ReadOnly = true;
-            // 
-            // ColDocente
-            // 
-            ColDocente.HeaderText = "Docente";
-            ColDocente.Name = "ColDocente";
-            ColDocente.ReadOnly = true;
-            // 
-            // ColAcciones
-            // 
-            ColAcciones.HeaderText = "Acciones";
-            ColAcciones.Name = "ColAcciones";
-            ColAcciones.ReadOnly = true;
-            ColAcciones.Text = "Ver detalles del Examen";
-            ColAcciones.UseColumnTextForButtonValue = true;
-            // 
             // FrmConsultarExamenes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(725, 462);
             Controls.Add(grpCriterios);
             Controls.Add(btnEliminar);
