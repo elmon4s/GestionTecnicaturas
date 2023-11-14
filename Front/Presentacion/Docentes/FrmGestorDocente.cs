@@ -23,7 +23,7 @@ namespace Front
         {
             InitializeComponent();
             dao = new DocentesDAO();
-            if(codDocente != 0)
+            if (codDocente != 0)
             {
                 lblABM.Text = "Modificar Docente";
                 d = new Docente(codDocente);
@@ -50,7 +50,7 @@ namespace Front
             cboBarrio.DataSource = lBarrio;
             cboBarrio.ValueMember = "IdBarrio";
             cboBarrio.DisplayMember = "NombreBarrio";
-            
+
         }
         private async void CargarTitulos()
         {
@@ -64,8 +64,8 @@ namespace Front
 
         private bool Validar()
         {
-            bool x = true; 
-            if (txtApe.Text == string.Empty) 
+            bool x = true;
+            if (txtApe.Text == string.Empty)
             { x = false; MessageBox.Show("Deve indicar un apellido"); txtApe.Focus(); }
             if (txtNom.Text == string.Empty)
             { x = false; MessageBox.Show("Deve indicar un Nombre"); txtNom.Focus(); }
@@ -77,9 +77,9 @@ namespace Front
             { x = false; MessageBox.Show("Deve indicar número de Telefono valido"); txtTel.Focus(); }
             if (txtAlt.Text == string.Empty || EsInt(txtAlt.Text) == false)
             { x = false; MessageBox.Show("Deve indicar una Altura valida"); txtAlt.Focus(); }
-            if(cboBarrio.SelectedIndex == -1)
+            if (cboBarrio.SelectedIndex == -1)
             { x = false; MessageBox.Show("Deve seleccionar un barrio"); cboBarrio.Focus(); }
-            if(cboTitulo.SelectedIndex == -1)
+            if (cboTitulo.SelectedIndex == -1)
             { x = false; MessageBox.Show("Deve seleccionar un titulo"); cboTitulo.Focus(); }
             return x;
         }
@@ -127,7 +127,7 @@ namespace Front
 
         private void btnAceptar_Click_1(object sender, EventArgs e)
         {
-            if(lblABM.Text == "Creando Docente")
+            if (lblABM.Text == "Creando Docente")
             {
                 if (Validar() == true)
                 {
@@ -187,11 +187,11 @@ namespace Front
             d.Apellido = txtApe.Text;
             d.Direccion = txtDirec.Text;
             d.Altura = int.Parse(txtAlt.Text);
-           // d.IdDocente = int.Parse(txtId.Text);
+            //d.IdDocente = int.Parse(txtId.Text);
             d.Telefono = txtTel.Text;
             d.Email = txtMail.Text;
-            d.Barrio.IdBarrio = int.Parse(cboBarrio.SelectedIndex.ToString()); 
-            d.TituloDocente.IdTitulo = int.Parse(cboTitulo.SelectedIndex.ToString()); 
+            d.Barrio.IdBarrio = int.Parse(cboBarrio.SelectedIndex.ToString());
+            d.TituloDocente.IdTitulo = int.Parse(cboTitulo.SelectedIndex.ToString());
             return d;
         }
         private async Task<bool> CrearDocenteAsync(Docente d)
