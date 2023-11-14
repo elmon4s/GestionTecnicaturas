@@ -93,6 +93,7 @@ namespace Back.Datos.Implementacion
                     //Programar trigger del estado academico
                     comandoDet.ExecuteNonQuery();
                 }
+                transaccion.Commit();
             }
             catch
             {
@@ -155,6 +156,7 @@ namespace Back.Datos.Implementacion
                 oExamen.FechaExamen = DateTime.Parse(fila["fecha_examen"].ToString());
                 oExamen.DocenteExamen.IdDocente = int.Parse(fila["id_docente"].ToString());
                 oExamen.DocenteExamen.Nombre = fila["nom_docente"].ToString();
+                oExamen.DocenteExamen.Apellido = fila["ape_docente"].ToString();
                 oExamen.MateriaExamen.IdMateria = int.Parse(fila["id_materia"].ToString());
                 oExamen.MateriaExamen.NombreMateria = fila["nom_materia"].ToString();
             }

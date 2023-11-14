@@ -32,7 +32,6 @@
             cboMaterias = new ComboBox();
             lblFecha = new Label();
             lblMateria = new Label();
-            lblDocente = new Label();
             dtpFecha = new DateTimePicker();
             cboDocentes = new ComboBox();
             btnAceptar = new Button();
@@ -42,7 +41,6 @@
             ColApellido = new DataGridViewTextBoxColumn();
             ColNota = new DataGridViewTextBoxColumn();
             ColAcciones = new DataGridViewButtonColumn();
-            btnCancelar = new Button();
             lblAlumno = new Label();
             cboAlumnos = new ComboBox();
             lblNota = new Label();
@@ -50,6 +48,9 @@
             btnAgregar = new Button();
             btnConfirmar = new Button();
             pnlExamen = new Panel();
+            lblDocente = new Label();
+            btnEditar = new Button();
+            btnSalir = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvDetalles).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudNota).BeginInit();
             pnlExamen.SuspendLayout();
@@ -59,7 +60,7 @@
             // 
             cboMaterias.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             cboMaterias.FormattingEnabled = true;
-            cboMaterias.Location = new Point(101, 60);
+            cboMaterias.Location = new Point(88, 53);
             cboMaterias.Name = "cboMaterias";
             cboMaterias.Size = new Size(161, 25);
             cboMaterias.TabIndex = 1;
@@ -68,7 +69,7 @@
             // 
             lblFecha.AutoSize = true;
             lblFecha.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            lblFecha.Location = new Point(57, 28);
+            lblFecha.Location = new Point(47, 21);
             lblFecha.Name = "lblFecha";
             lblFecha.Size = new Size(44, 19);
             lblFecha.TabIndex = 2;
@@ -78,36 +79,26 @@
             // 
             lblMateria.AutoSize = true;
             lblMateria.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            lblMateria.Location = new Point(48, 64);
+            lblMateria.Location = new Point(35, 57);
             lblMateria.Name = "lblMateria";
             lblMateria.Size = new Size(56, 19);
             lblMateria.TabIndex = 3;
             lblMateria.Text = "Materia";
             // 
-            // lblDocente
-            // 
-            lblDocente.AutoSize = true;
-            lblDocente.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            lblDocente.Location = new Point(43, 10);
-            lblDocente.Name = "lblDocente";
-            lblDocente.Size = new Size(60, 19);
-            lblDocente.TabIndex = 4;
-            lblDocente.Text = "Docente";
-            // 
             // dtpFecha
             // 
             dtpFecha.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             dtpFecha.Format = DateTimePickerFormat.Short;
-            dtpFecha.Location = new Point(101, 22);
+            dtpFecha.Location = new Point(91, 15);
             dtpFecha.Name = "dtpFecha";
-            dtpFecha.Size = new Size(161, 25);
+            dtpFecha.Size = new Size(104, 25);
             dtpFecha.TabIndex = 5;
             // 
             // cboDocentes
             // 
             cboDocentes.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             cboDocentes.FormattingEnabled = true;
-            cboDocentes.Location = new Point(103, 10);
+            cboDocentes.Location = new Point(90, 17);
             cboDocentes.Name = "cboDocentes";
             cboDocentes.Size = new Size(161, 25);
             cboDocentes.TabIndex = 6;
@@ -116,7 +107,7 @@
             // 
             btnAceptar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnAceptar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAceptar.Location = new Point(211, 376);
+            btnAceptar.Location = new Point(357, 376);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new Size(79, 29);
             btnAceptar.TabIndex = 0;
@@ -173,23 +164,11 @@
             ColAcciones.Text = "Quitar";
             ColAcciones.UseColumnTextForButtonValue = true;
             // 
-            // btnCancelar
-            // 
-            btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnCancelar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCancelar.Location = new Point(357, 376);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(79, 29);
-            btnCancelar.TabIndex = 8;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
-            btnCancelar.Click += btnCancelar_Click;
-            // 
             // lblAlumno
             // 
             lblAlumno.AutoSize = true;
             lblAlumno.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            lblAlumno.Location = new Point(36, 51);
+            lblAlumno.Location = new Point(27, 51);
             lblAlumno.Name = "lblAlumno";
             lblAlumno.Size = new Size(57, 19);
             lblAlumno.TabIndex = 9;
@@ -208,7 +187,7 @@
             // 
             lblNota.AutoSize = true;
             lblNota.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            lblNota.Location = new Point(272, 53);
+            lblNota.Location = new Point(282, 51);
             lblNota.Name = "lblNota";
             lblNota.Size = new Size(39, 19);
             lblNota.TabIndex = 12;
@@ -236,9 +215,9 @@
             // 
             btnConfirmar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnConfirmar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnConfirmar.Location = new Point(268, 55);
+            btnConfirmar.Location = new Point(255, 50);
             btnConfirmar.Name = "btnConfirmar";
-            btnConfirmar.Size = new Size(84, 33);
+            btnConfirmar.Size = new Size(84, 29);
             btnConfirmar.TabIndex = 15;
             btnConfirmar.Text = "Confirmar";
             btnConfirmar.UseVisualStyleBackColor = true;
@@ -261,15 +240,50 @@
             pnlExamen.Size = new Size(635, 281);
             pnlExamen.TabIndex = 16;
             // 
+            // lblDocente
+            // 
+            lblDocente.AutoSize = true;
+            lblDocente.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblDocente.Location = new Point(27, 20);
+            lblDocente.Name = "lblDocente";
+            lblDocente.Size = new Size(60, 19);
+            lblDocente.TabIndex = 15;
+            lblDocente.Text = "Docente";
+            // 
+            // btnEditar
+            // 
+            btnEditar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnEditar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEditar.Location = new Point(442, 376);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(79, 29);
+            btnEditar.TabIndex = 17;
+            btnEditar.Text = "Editar";
+            btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
+            // 
+            // btnSalir
+            // 
+            btnSalir.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnSalir.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSalir.Location = new Point(525, 376);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(79, 29);
+            btnSalir.TabIndex = 18;
+            btnSalir.Text = "Salir";
+            btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
+            // 
             // FrmGestorExamen
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AliceBlue;
             ClientSize = new Size(634, 417);
+            Controls.Add(btnSalir);
+            Controls.Add(btnEditar);
             Controls.Add(pnlExamen);
             Controls.Add(btnConfirmar);
-            Controls.Add(btnCancelar);
             Controls.Add(lblFecha);
             Controls.Add(cboMaterias);
             Controls.Add(btnAceptar);
@@ -292,12 +306,10 @@
         private ComboBox cboMaterias;
         private Label lblFecha;
         private Label lblMateria;
-        private Label lblDocente;
         private DateTimePicker dtpFecha;
         private ComboBox cboDocentes;
         private Button btnAceptar;
         private DataGridView dgvDetalles;
-        private Button btnCancelar;
         private Label lblAlumno;
         private ComboBox cboAlumnos;
         private Label lblNota;
@@ -310,5 +322,8 @@
         private DataGridViewTextBoxColumn ColApellido;
         private DataGridViewTextBoxColumn ColNota;
         private DataGridViewButtonColumn ColAcciones;
+        private Button btnEditar;
+        private Label lblDocente;
+        private Button btnSalir;
     }
 }

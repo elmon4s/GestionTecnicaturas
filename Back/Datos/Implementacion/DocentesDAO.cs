@@ -33,7 +33,7 @@ namespace Back.Datos.Implementacion
                 comando.Parameters.AddWithValue("@titulo", oDocente.TituloDocente.IdTitulo);
                 comando.Parameters.AddWithValue("@barrio", oDocente.Barrio.IdBarrio);
                 comando.ExecuteNonQuery();
-            }
+             }
             catch
             {
                 if (transaccion != null)

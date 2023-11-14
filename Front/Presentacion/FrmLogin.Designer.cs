@@ -94,6 +94,7 @@
             chkMostrarContraseña.TabIndex = 5;
             chkMostrarContraseña.Text = "Mostrar Contraseña";
             chkMostrarContraseña.UseVisualStyleBackColor = true;
+            chkMostrarContraseña.CheckedChanged += chkMostrarContraseña_CheckedChanged;
             // 
             // btnIngresar
             // 

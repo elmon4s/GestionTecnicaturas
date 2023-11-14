@@ -73,7 +73,7 @@ namespace WebApi.Controllers
             }
         }
 
-        [HttpGet("/examen")]
+        [HttpGet("/examen/{nroExamen}")]
         public IActionResult GetExamen(int nroExamen)
         {
             try
