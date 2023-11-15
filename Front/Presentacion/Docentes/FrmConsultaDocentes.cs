@@ -57,14 +57,16 @@ namespace Front.Presentacion.Docentes
 
             consultarAsync(lst);
         }
-
+        private string UrlCompleta(string location)
+        {
+            return Properties.Resources.URL + location;
+        }
         private async void consultarAsync(List<Parametro> lst) //ahhhhhhhhhhhh
         {
             int t = int.Parse(cboTitulo.SelectedValue.ToString());
             int b = int.Parse(cboBarrio.SelectedValue.ToString());
             string n = txtNom.Text;
-            string url = "https://localhost:7031/lstdocentes?lParam=%7B%0A%20%20%22titulo%22%3A%20%22titulo%22%2C%0A%20%20%22int%22%3A%20%22" + t + "%22%0A%7D&lParam=%7B%0A%20%20%22barrio%22%3A%20%22barrio%22%2C%0A%20%20%22int%22%3A%20%22" + b + "%22%0A%7D&lParam=%7B%0A%20%20%22nombre%22%3A%20%22nombre%22%2C%0A%20%20%22string%22%3A%20%22" + n + "%22%0A%7D"; //agregar url de api
-            var dtosJson = await ClienteSingleton.GetInstance().GetAsync(url);
+            var dtosJson = await ClienteSingleton.GetInstance().GetAsync(UrlCompleta($"/lstDocentes?nombre={txtNom.Text}&titulo={t}&barrio={b}"));
             List<Docente> lDocente = JsonConvert.DeserializeObject<List<Docente>>(dtosJson);
             if (lDocente != null)
             {
@@ -85,6 +87,11 @@ namespace Front.Presentacion.Docentes
             {
                 this.Dispose();
             }
+        }
+
+        private void FrmConsultaDocentes_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
