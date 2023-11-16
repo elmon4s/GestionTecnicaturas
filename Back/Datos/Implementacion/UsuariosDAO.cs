@@ -23,7 +23,8 @@ namespace Back.Datos.Implementacion
             {
                 conexion.Open();
                 transaccion = conexion.BeginTransaction();
-                SqlCommand comando = new SqlCommand("PA_NUEVO_USER", conexion, transaccion);
+                SqlCommand comando = new SqlCommand("SP_NUEVO_USER", conexion, transaccion);
+                comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@usuario", nuevoUsuario.NomUsuario);
                 comando.Parameters.AddWithValue("@contraseña", nuevoUsuario.ContUsuario);
                 comando.ExecuteNonQuery();

@@ -22,6 +22,9 @@
     <Compile Update="Presentacion\Examenes\FrmGestorExamen.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Presentacion\FrmGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Presentacion\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>

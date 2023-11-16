@@ -86,5 +86,13 @@ namespace Front
             txtContraseña.UseSystemPasswordChar = true;
             txtRepetirContraseña.UseSystemPasswordChar = true;
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Esta seguro que desea cancelar?", "Cancelar", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+            {
+                this.Dispose();
+            }
+        }
     }
 }
