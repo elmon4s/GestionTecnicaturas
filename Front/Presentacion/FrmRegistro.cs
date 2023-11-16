@@ -72,16 +72,19 @@ namespace Front
             if (chkMostrarContraseña.Checked == false)
             {
                 txtContraseña.UseSystemPasswordChar = true;
+                txtRepetirContraseña.UseSystemPasswordChar = true;
             }
             else if (chkMostrarContraseña.Checked)
             {
                 txtContraseña.UseSystemPasswordChar = false;
+                txtRepetirContraseña.UseSystemPasswordChar = false;
             }
         }
 
         private void FrmRegistro_Load(object sender, EventArgs e)
         {
             txtContraseña.UseSystemPasswordChar = true;
+            txtRepetirContraseña.UseSystemPasswordChar = true;
         }
     }
 }
