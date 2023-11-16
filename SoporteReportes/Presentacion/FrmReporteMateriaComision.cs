@@ -76,9 +76,17 @@ namespace SoporteReportes.Presentacion
                 return;
             }
             // TODO: esta línea de código carga datos en la tabla 'dSMateriaComision.PA_REPORTE_MATERIA_COMISION' Puede moverla o quitarla según sea necesario.
-            this.pA_REPORTE_MATERIA_COMISIONTableAdapter.Fill(this.dSMateriaComision.PA_REPORTE_MATERIA_COMISION,auxDesde,auxHasta,1);
+            this.pA_REPORTE_MATERIA_COMISIONTableAdapter.Fill(this.dSMateriaComision.PA_REPORTE_MATERIA_COMISION, auxDesde, auxHasta, 1);
 
             this.rpvMateriaComision.RefreshReport();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Desea Salir?", "Salir", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                this.Dispose();
+            }
         }
     }
 }

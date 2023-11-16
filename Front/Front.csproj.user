@@ -22,16 +22,16 @@
     <Compile Update="Presentacion\Examenes\FrmGestorExamen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\FrmGrupo.cs">
+    <Compile Update="Presentacion\Grupo\FrmGrupo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\FrmLogin.cs">
+    <Compile Update="Presentacion\Login\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Presentacion\FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\FrmRegistro.cs">
+    <Compile Update="Presentacion\Login\FrmRegistro.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

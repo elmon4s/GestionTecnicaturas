@@ -40,6 +40,8 @@ namespace Front
                 btnEliminar.Enabled = true;
                 TraerDocenteAsync();
             }
+            cboBarrio.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboTitulo.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private async void CargarBarrios()
@@ -66,21 +68,21 @@ namespace Front
         {
             bool x = true;
             if (txtApe.Text == string.Empty)
-            { x = false; MessageBox.Show("Deve indicar un apellido"); txtApe.Focus(); }
+            { x = false; MessageBox.Show("Debe ingresar un apellido"); txtApe.Focus(); }
             if (txtNom.Text == string.Empty)
-            { x = false; MessageBox.Show("Deve indicar un Nombre"); txtNom.Focus(); }
+            { x = false; MessageBox.Show("Debe ingresar un Nombre"); txtNom.Focus(); }
             if (txtMail.Text == string.Empty)
-            { x = false; MessageBox.Show("Deve indicar un E-Mail"); txtMail.Focus(); }
+            { x = false; MessageBox.Show("Debe ingresar un E-Mail"); txtMail.Focus(); }
             if (txtDirec.Text == string.Empty)
-            { x = false; MessageBox.Show("Deve indicar una Dirección"); txtApe.Focus(); }
+            { x = false; MessageBox.Show("Debe ingresar una Dirección"); txtApe.Focus(); }
             if (txtTel.Text == string.Empty || EsInt(txtTel.Text) == false)
-            { x = false; MessageBox.Show("Deve indicar número de Telefono valido"); txtTel.Focus(); }
+            { x = false; MessageBox.Show("Debe indicar número de Telefono valido"); txtTel.Focus(); }
             if (txtAlt.Text == string.Empty || EsInt(txtAlt.Text) == false)
-            { x = false; MessageBox.Show("Deve indicar una Altura valida"); txtAlt.Focus(); }
+            { x = false; MessageBox.Show("Debe indicar una Altura valida"); txtAlt.Focus(); }
             if (cboBarrio.SelectedIndex == -1)
-            { x = false; MessageBox.Show("Deve seleccionar un barrio"); cboBarrio.Focus(); }
+            { x = false; MessageBox.Show("Debe seleccionar un barrio"); cboBarrio.Focus(); }
             if (cboTitulo.SelectedIndex == -1)
-            { x = false; MessageBox.Show("Deve seleccionar un titulo"); cboTitulo.Focus(); }
+            { x = false; MessageBox.Show("Debe seleccionar un titulo"); cboTitulo.Focus(); }
             return x;
         }
 
@@ -115,13 +117,13 @@ namespace Front
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("seguro que desea salir", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Seguro que desea salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 this.Close();
         }
 
         private void btnCancelar_Click_1(object sender, EventArgs e)
         {
-            if (MessageBox.Show("si cancela perdera la progrecion", "Cancelar", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Esta seguro que desea cancelar?", "Cancelar", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 this.Close();
         }
 
@@ -146,7 +148,7 @@ namespace Front
 
         private async Task<bool> EditarDocenteAsync(int idDocente)
         {
-            string url = ""; //agregar url de api
+            string url = "https://localhost:7031/docente"; //agregar url de api
             var docenteJson = JsonConvert.SerializeObject(d);
             var dataJson = await ClienteSingleton.GetInstance().PutAsync(url, docenteJson);
             return dataJson.Equals(true);
@@ -154,7 +156,7 @@ namespace Front
 
         private async void TraerDocenteAsync()
         {
-            string url = ""; //agregar url de api
+            string url = "https://localhost:7031/docente"; //agregar url de api
             var dtosJson = await ClienteSingleton.GetInstance().GetAsync(url);
             d = JsonConvert.DeserializeObject<Docente>(dtosJson);
             if (d == null) { MessageBox.Show("Error interno"); }
@@ -178,7 +180,7 @@ namespace Front
             }
             else
             {
-                MessageBox.Show("No Registro el Nuevo Docente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No pudo registrarse el Nuevo Docente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         public Docente CrearDocente()
@@ -204,7 +206,7 @@ namespace Front
 
         private async void btnEliminar_Click(object sender, EventArgs e)
         {
-            string url = ""; //agregar url de api
+            string url = "https://localhost:7031/docente"; //agregar url de api
             var docenteJson = await ClienteSingleton.GetInstance().DeleteAsync(url);
         }
     }

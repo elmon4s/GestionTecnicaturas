@@ -28,6 +28,8 @@ namespace Front.Presentacion.Examenes
             dtpFechaDesde.Value = DateTime.Now.AddYears(-1);
             dtpFechaHasta.Value = DateTime.Now;
             await CargarDatosAsync<Materia>($"{Properties.Resources.URL}/materias", cboMaterias, "NombreMateria", "IdMateria");
+            cboMaterias.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboDocentes.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         #region Cargar Combos y Acivar/Desactivar fechas

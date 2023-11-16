@@ -35,7 +35,7 @@ namespace Front.Presentacion.Docentes
             cboBarrio.DataSource = lBarrio;
             cboBarrio.ValueMember = "IdBarrio";
             cboBarrio.DisplayMember = "NombreBarrio";
-
+            cboBarrio.DropDownStyle = ComboBoxStyle.DropDownList;
         }
         private async void CargarTitulos()
         {
@@ -45,6 +45,7 @@ namespace Front.Presentacion.Docentes
             cboTitulo.DataSource = lTitulo;
             cboTitulo.ValueMember = "IdTitulo";
             cboTitulo.DisplayMember = "DescripcionTitulo";
+            cboTitulo.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
@@ -91,7 +92,8 @@ namespace Front.Presentacion.Docentes
 
         private void FrmConsultaDocentes_Load_1(object sender, EventArgs e)
         {
-
+            cboBarrio.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboTitulo.DropDownStyle = ComboBoxStyle.DropDownList;
         }
     }
 }

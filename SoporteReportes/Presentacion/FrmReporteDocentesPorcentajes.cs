@@ -25,9 +25,17 @@ namespace SoporteReportes.Presentacion
         private void btnGenerarReporte_Click(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'dSDocentesPorcentajes.PA_REPORTE_DOCENTES_PORCENTAJES' Puede moverla o quitarla según sea necesario.
-            this.pA_REPORTE_DOCENTES_PORCENTAJESTableAdapter.Fill(this.dSDocentesPorcentajes.PA_REPORTE_DOCENTES_PORCENTAJES,1);
+            this.pA_REPORTE_DOCENTES_PORCENTAJESTableAdapter.Fill(this.dSDocentesPorcentajes.PA_REPORTE_DOCENTES_PORCENTAJES, 1);
 
             this.rpvDocentes.RefreshReport();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Desea Salir?", "Salir", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                this.Dispose();
+            }
         }
     }
 }

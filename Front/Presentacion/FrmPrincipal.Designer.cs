@@ -43,6 +43,11 @@
             nuevoAlumnoToolStripMenuItem = new ToolStripMenuItem();
             consultarAlumnosToolStripMenuItem = new ToolStripMenuItem();
             reportesToolStripMenuItem = new ToolStripMenuItem();
+            cantidadExamenesAprobadosToolStripMenuItem = new ToolStripMenuItem();
+            cantidadExamenesToolStripMenuItem = new ToolStripMenuItem();
+            alumnosPorInscripcionToolStripMenuItem = new ToolStripMenuItem();
+            docentesPorcentajesLibresYAprobadosToolStripMenuItem = new ToolStripMenuItem();
+            detalleMateriaComisionCon15AlumnosLibrePromocionalORegularToolStripMenuItem = new ToolStripMenuItem();
             acercaDeToolStripMenuItem = new ToolStripMenuItem();
             galloMateoToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -78,7 +83,7 @@
             // salirToolStripMenuItem
             // 
             salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            salirToolStripMenuItem.Size = new Size(180, 22);
+            salirToolStripMenuItem.Size = new Size(96, 22);
             salirToolStripMenuItem.Text = "Salir";
             salirToolStripMenuItem.Click += salirToolStripMenuItem_Click;
             // 
@@ -147,9 +152,45 @@
             // 
             // reportesToolStripMenuItem
             // 
+            reportesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cantidadExamenesAprobadosToolStripMenuItem, cantidadExamenesToolStripMenuItem, alumnosPorInscripcionToolStripMenuItem, docentesPorcentajesLibresYAprobadosToolStripMenuItem, detalleMateriaComisionCon15AlumnosLibrePromocionalORegularToolStripMenuItem });
             reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             reportesToolStripMenuItem.Size = new Size(65, 20);
             reportesToolStripMenuItem.Text = "Reportes";
+            // 
+            // cantidadExamenesAprobadosToolStripMenuItem
+            // 
+            cantidadExamenesAprobadosToolStripMenuItem.Name = "cantidadExamenesAprobadosToolStripMenuItem";
+            cantidadExamenesAprobadosToolStripMenuItem.Size = new Size(355, 22);
+            cantidadExamenesAprobadosToolStripMenuItem.Text = "Cantidad Examenes Aprobados";
+            cantidadExamenesAprobadosToolStripMenuItem.Click += cantidadExamenesAprobadosToolStripMenuItem_Click;
+            // 
+            // cantidadExamenesToolStripMenuItem
+            // 
+            cantidadExamenesToolStripMenuItem.Name = "cantidadExamenesToolStripMenuItem";
+            cantidadExamenesToolStripMenuItem.Size = new Size(355, 22);
+            cantidadExamenesToolStripMenuItem.Text = "Alumnos Examenes Notas";
+            cantidadExamenesToolStripMenuItem.Click += cantidadExamenesToolStripMenuItem_Click;
+            // 
+            // alumnosPorInscripcionToolStripMenuItem
+            // 
+            alumnosPorInscripcionToolStripMenuItem.Name = "alumnosPorInscripcionToolStripMenuItem";
+            alumnosPorInscripcionToolStripMenuItem.Size = new Size(355, 22);
+            alumnosPorInscripcionToolStripMenuItem.Text = "Alumnos Por Inscripcion";
+            alumnosPorInscripcionToolStripMenuItem.Click += alumnosPorInscripcionToolStripMenuItem_Click;
+            // 
+            // docentesPorcentajesLibresYAprobadosToolStripMenuItem
+            // 
+            docentesPorcentajesLibresYAprobadosToolStripMenuItem.Name = "docentesPorcentajesLibresYAprobadosToolStripMenuItem";
+            docentesPorcentajesLibresYAprobadosToolStripMenuItem.Size = new Size(355, 22);
+            docentesPorcentajesLibresYAprobadosToolStripMenuItem.Text = "Docentes Porcentajes Libres y Aprobados";
+            docentesPorcentajesLibresYAprobadosToolStripMenuItem.Click += docentesPorcentajesLibresYAprobadosToolStripMenuItem_Click;
+            // 
+            // detalleMateriaComisionCon15AlumnosLibrePromocionalORegularToolStripMenuItem
+            // 
+            detalleMateriaComisionCon15AlumnosLibrePromocionalORegularToolStripMenuItem.Name = "detalleMateriaComisionCon15AlumnosLibrePromocionalORegularToolStripMenuItem";
+            detalleMateriaComisionCon15AlumnosLibrePromocionalORegularToolStripMenuItem.Size = new Size(355, 22);
+            detalleMateriaComisionCon15AlumnosLibrePromocionalORegularToolStripMenuItem.Text = "Detalle Materia Comision con 15 Alumnos Por Estado";
+            detalleMateriaComisionCon15AlumnosLibrePromocionalORegularToolStripMenuItem.Click += detalleMateriaComisionCon15AlumnosLibrePromocionalORegularToolStripMenuItem_Click;
             // 
             // acercaDeToolStripMenuItem
             // 
@@ -163,6 +204,7 @@
             galloMateoToolStripMenuItem.Name = "galloMateoToolStripMenuItem";
             galloMateoToolStripMenuItem.Size = new Size(180, 22);
             galloMateoToolStripMenuItem.Text = "Grupo";
+            galloMateoToolStripMenuItem.Click += galloMateoToolStripMenuItem_Click;
             // 
             // FrmPrincipal
             // 
@@ -201,5 +243,10 @@
         private ToolStripMenuItem acercaDeToolStripMenuItem;
         private ToolStripMenuItem galloMateoToolStripMenuItem;
         private ToolStripMenuItem salirToolStripMenuItem;
+        private ToolStripMenuItem cantidadExamenesAprobadosToolStripMenuItem;
+        private ToolStripMenuItem cantidadExamenesToolStripMenuItem;
+        private ToolStripMenuItem alumnosPorInscripcionToolStripMenuItem;
+        private ToolStripMenuItem docentesPorcentajesLibresYAprobadosToolStripMenuItem;
+        private ToolStripMenuItem detalleMateriaComisionCon15AlumnosLibrePromocionalORegularToolStripMenuItem;
     }
 }

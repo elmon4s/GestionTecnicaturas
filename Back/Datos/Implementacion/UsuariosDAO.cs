@@ -28,6 +28,7 @@ namespace Back.Datos.Implementacion
                 comando.Parameters.AddWithValue("@usuario", nuevoUsuario.NomUsuario);
                 comando.Parameters.AddWithValue("@contraseña", nuevoUsuario.ContUsuario);
                 comando.ExecuteNonQuery();
+                transaccion.Commit();
             }
             catch
             {
@@ -61,13 +62,13 @@ namespace Back.Datos.Implementacion
 
         public bool ComprobarNombreUsuario(Usuario oUsuario)
         {
-            bool aux = true;
+            bool aux = false;
             List<Parametro> lParam = new List<Parametro>();
             lParam.Add(new Parametro("@usuario", oUsuario.NomUsuario));
             DataTable tabla = HelperDAO.ObtenerInstancia().Consultar("SP_CHECK_USER", lParam);
             if (tabla.Rows.Count == 0)
             {
-                aux = false;
+                aux = true;
             }
             return aux;
         }

@@ -222,7 +222,7 @@
             // btnLimpiar
             // 
             btnLimpiar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnLimpiar.Location = new Point(359, 304);
+            btnLimpiar.Location = new Point(529, 304);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(79, 29);
             btnLimpiar.TabIndex = 21;
@@ -233,7 +233,7 @@
             // btnSalir
             // 
             btnSalir.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnSalir.Location = new Point(444, 304);
+            btnSalir.Location = new Point(12, 304);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(79, 29);
             btnSalir.TabIndex = 22;
@@ -244,7 +244,7 @@
             // btnCancelar
             // 
             btnCancelar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCancelar.Location = new Point(529, 304);
+            btnCancelar.Location = new Point(97, 304);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(79, 29);
             btnCancelar.TabIndex = 23;

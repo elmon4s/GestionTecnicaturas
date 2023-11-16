@@ -33,7 +33,8 @@ namespace Back.Datos.Implementacion
                 comando.Parameters.AddWithValue("@titulo", oDocente.TituloDocente.IdTitulo);
                 comando.Parameters.AddWithValue("@barrio", oDocente.Barrio.IdBarrio);
                 comando.ExecuteNonQuery();
-             }
+                transaccion.Commit();
+            }
             catch
             {
                 if (transaccion != null)
@@ -72,6 +73,7 @@ namespace Back.Datos.Implementacion
                 comando.Parameters.AddWithValue("@titulo", oDocente.TituloDocente.IdTitulo);
                 comando.Parameters.AddWithValue("@barrio", oDocente.Barrio.IdBarrio);
                 comando.ExecuteNonQuery();
+                transaccion.Commit();
             }
             catch
             {
@@ -103,6 +105,7 @@ namespace Back.Datos.Implementacion
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@id_docente", nroDocente);
                 comando.ExecuteNonQuery();
+                transaccion.Commit();
             }
             catch
             {

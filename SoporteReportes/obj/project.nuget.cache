@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "D1WlYcSJ+xLkXHmLrOnrpKy/eed6lqVBELOckmpzJXCoNEarv4CH2giZfoXpGl7PBPq5VPb/WAqkIDVjWjtuAw==",
+  "dgSpecHash": "Z4qrbV5mhQyIfI+UaFg8mQo90OAnKG2IxV4hNyQc75Wn3bzGRHqEYXyTlcxJ0cqKhQp8IKXtXpIrzhSwGx1L/g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\esteb\\Source\\Repos\\GestionTecnicaturas\\SoporteReportes\\SoporteReportes.csproj",
+  "projectFilePath": "C:\\Users\\esteb\\source\\repos\\GestionTecnicaturas\\SoporteReportes\\SoporteReportes.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\esteb\\.nuget\\packages\\bcrypt.net-core\\1.6.0\\bcrypt.net-core.1.6.0.nupkg.sha512",
     "C:\\Users\\esteb\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.2\\microsoft.codeanalysis.analyzers.3.3.2.nupkg.sha512",
     "C:\\Users\\esteb\\.nuget\\packages\\microsoft.codeanalysis.common\\4.0.0\\microsoft.codeanalysis.common.4.0.0.nupkg.sha512",
     "C:\\Users\\esteb\\.nuget\\packages\\microsoft.codeanalysis.visualbasic\\4.0.0\\microsoft.codeanalysis.visualbasic.4.0.0.nupkg.sha512",
@@ -11,6 +12,7 @@
     "C:\\Users\\esteb\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.4\\microsoft.netcore.platforms.3.1.4.nupkg.sha512",
     "C:\\Users\\esteb\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\esteb\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\esteb\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\esteb\\.nuget\\packages\\reportviewercore.netcore\\15.1.18\\reportviewercore.netcore.15.1.18.nupkg.sha512",
     "C:\\Users\\esteb\\.nuget\\packages\\reportviewercore.winforms\\15.1.18\\reportviewercore.winforms.15.1.18.nupkg.sha512",
     "C:\\Users\\esteb\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",

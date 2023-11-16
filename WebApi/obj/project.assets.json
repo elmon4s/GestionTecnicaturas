@@ -957,11 +957,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\esteb\\Source\\Repos\\GestionTecnicaturas\\WebApi\\WebApi.csproj",
+      "projectUniqueName": "C:\\Users\\esteb\\source\\repos\\GestionTecnicaturas\\WebApi\\WebApi.csproj",
       "projectName": "WebApi",
-      "projectPath": "C:\\Users\\esteb\\Source\\Repos\\GestionTecnicaturas\\WebApi\\WebApi.csproj",
+      "projectPath": "C:\\Users\\esteb\\source\\repos\\GestionTecnicaturas\\WebApi\\WebApi.csproj",
       "packagesPath": "C:\\Users\\esteb\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\esteb\\Source\\Repos\\GestionTecnicaturas\\WebApi\\obj\\",
+      "outputPath": "C:\\Users\\esteb\\source\\repos\\GestionTecnicaturas\\WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\DevExpress\\Components\\Offline Packages"
@@ -983,8 +983,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\esteb\\Source\\Repos\\GestionTecnicaturas\\Back\\Back.csproj": {
-              "projectPath": "C:\\Users\\esteb\\Source\\Repos\\GestionTecnicaturas\\Back\\Back.csproj"
+            "C:\\Users\\esteb\\source\\repos\\GestionTecnicaturas\\Back\\Back.csproj": {
+              "projectPath": "C:\\Users\\esteb\\source\\repos\\GestionTecnicaturas\\Back\\Back.csproj"
             }
           }
         }

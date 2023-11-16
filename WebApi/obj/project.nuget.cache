@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ndwmek4sT7MpQv4f5acxUb3poQsS9UAsXtYKj/PjzL+iSjjgPmGY1hrJvublWrHdSAfHtImZvLnQe9dS8hoi/w==",
+  "dgSpecHash": "2mpVNmOPJqhN0MzX/v0IkQLymsRzaC+hWROl8SGzOpg0Q7d8iRzUhcSxhMb4eVev+p41SDvjCCfaqRa6j9nsgA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\esteb\\Source\\Repos\\GestionTecnicaturas\\WebApi\\WebApi.csproj",
+  "projectFilePath": "C:\\Users\\esteb\\source\\repos\\GestionTecnicaturas\\WebApi\\WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\esteb\\.nuget\\packages\\bcrypt.net-core\\1.6.0\\bcrypt.net-core.1.6.0.nupkg.sha512",
     "C:\\Users\\esteb\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "S0DkRda1budsofKwjMDQ3sUgUs2rSqr0Y9/PHniXWISGSfEAoOMNEZjsw6RSacj0nkCoWYoximbOz6EjOBZRag==",
+  "dgSpecHash": "My2s4iUwwlF+EbOMKSiMljQeuFfE41ZUDLuvoT6vPPeBmiMhMt0ys3q1aodVlYzC/omatpBrOsEKIekP5OyquQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\esteb\\Source\\Repos\\GestionTecnicaturas\\Back\\Back.csproj",
+  "projectFilePath": "C:\\Users\\esteb\\source\\repos\\GestionTecnicaturas\\Back\\Back.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\esteb\\.nuget\\packages\\bcrypt.net-core\\1.6.0\\bcrypt.net-core.1.6.0.nupkg.sha512",
     "C:\\Users\\esteb\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",

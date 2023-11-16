@@ -63,3 +63,7 @@ C:\Users\esteb\source\repos\GestionTecnicaturas\SoporteReportes\obj\Debug\net6.0
 C:\Users\esteb\source\repos\GestionTecnicaturas\SoporteReportes\obj\Debug\net6.0-windows\SoporteReportes.pdb
 C:\Users\esteb\source\repos\GestionTecnicaturas\SoporteReportes\obj\Debug\net6.0-windows\SoporteReportes.genruntimeconfig.cache
 C:\Users\esteb\source\repos\GestionTecnicaturas\SoporteReportes\obj\Debug\net6.0-windows\ref\SoporteReportes.dll
+C:\Users\esteb\source\repos\GestionTecnicaturas\SoporteReportes\bin\Debug\net6.0-windows\BCrypt.Net-Core.dll
+C:\Users\esteb\source\repos\GestionTecnicaturas\SoporteReportes\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\esteb\source\repos\GestionTecnicaturas\SoporteReportes\bin\Debug\net6.0-windows\Back.dll
+C:\Users\esteb\source\repos\GestionTecnicaturas\SoporteReportes\bin\Debug\net6.0-windows\Back.pdb

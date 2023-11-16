@@ -28,98 +28,116 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.rpvAlumnos = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dSAlumnosInscripcion = new SoporteReportes.DataSets.DSAlumnosInscripcion();
-            this.pAREPORTEALUMNOSINSCRIPCIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pA_REPORTE_ALUMNOS_INSCRIPCIONTableAdapter = new SoporteReportes.DataSets.DSAlumnosInscripcionTableAdapters.PA_REPORTE_ALUMNOS_INSCRIPCIONTableAdapter();
-            this.PA_REPORTE_ALUMNOS_INSCRIPCIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lblComision = new System.Windows.Forms.Label();
-            this.cboComision = new System.Windows.Forms.ComboBox();
-            this.btnGenerarReporte = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dSAlumnosInscripcion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pAREPORTEALUMNOSINSCRIPCIONBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PA_REPORTE_ALUMNOS_INSCRIPCIONBindingSource)).BeginInit();
-            this.SuspendLayout();
+            PA_REPORTE_ALUMNOS_INSCRIPCIONBindingSource = new System.Windows.Forms.BindingSource(components);
+            dSAlumnosInscripcion = new DataSets.DSAlumnosInscripcion();
+            rpvAlumnos = new Microsoft.Reporting.WinForms.ReportViewer();
+            pAREPORTEALUMNOSINSCRIPCIONBindingSource = new System.Windows.Forms.BindingSource(components);
+            pA_REPORTE_ALUMNOS_INSCRIPCIONTableAdapter = new DataSets.DSAlumnosInscripcionTableAdapters.PA_REPORTE_ALUMNOS_INSCRIPCIONTableAdapter();
+            lblComision = new System.Windows.Forms.Label();
+            cboComision = new System.Windows.Forms.ComboBox();
+            btnGenerarReporte = new System.Windows.Forms.Button();
+            btnSalir = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)PA_REPORTE_ALUMNOS_INSCRIPCIONBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dSAlumnosInscripcion).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pAREPORTEALUMNOSINSCRIPCIONBindingSource).BeginInit();
+            SuspendLayout();
+            // 
+            // PA_REPORTE_ALUMNOS_INSCRIPCIONBindingSource
+            // 
+            PA_REPORTE_ALUMNOS_INSCRIPCIONBindingSource.DataMember = "PA_REPORTE_ALUMNOS_INSCRIPCION";
+            PA_REPORTE_ALUMNOS_INSCRIPCIONBindingSource.DataSource = dSAlumnosInscripcion;
+            // 
+            // dSAlumnosInscripcion
+            // 
+            dSAlumnosInscripcion.DataSetName = "DSAlumnosInscripcion";
+            dSAlumnosInscripcion.Namespace = "http://tempuri.org/DSAlumnosInscripcion.xsd";
+            dSAlumnosInscripcion.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // rpvAlumnos
             // 
             reportDataSource1.Name = "DataSetReportAlumnosInscripcion";
-            reportDataSource1.Value = this.PA_REPORTE_ALUMNOS_INSCRIPCIONBindingSource;
-            this.rpvAlumnos.LocalReport.DataSources.Add(reportDataSource1);
-            this.rpvAlumnos.LocalReport.ReportEmbeddedResource = "SoporteReportes.Reportes.ReportAlumnosInscripcion.rdlc";
-            this.rpvAlumnos.Location = new System.Drawing.Point(12, 58);
-            this.rpvAlumnos.Name = "rpvAlumnos";
-            this.rpvAlumnos.ServerReport.BearerToken = null;
-            this.rpvAlumnos.Size = new System.Drawing.Size(705, 298);
-            this.rpvAlumnos.TabIndex = 0;
-            this.rpvAlumnos.Load += new System.EventHandler(this.reportViewer1_Load);
-            // 
-            // dSAlumnosInscripcion
-            // 
-            this.dSAlumnosInscripcion.DataSetName = "DSAlumnosInscripcion";
-            this.dSAlumnosInscripcion.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            reportDataSource1.Value = PA_REPORTE_ALUMNOS_INSCRIPCIONBindingSource;
+            rpvAlumnos.LocalReport.DataSources.Add(reportDataSource1);
+            rpvAlumnos.LocalReport.ReportEmbeddedResource = "SoporteReportes.Reportes.ReportAlumnosInscripcion.rdlc";
+            rpvAlumnos.Location = new System.Drawing.Point(14, 67);
+            rpvAlumnos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            rpvAlumnos.Name = "rpvAlumnos";
+            rpvAlumnos.ServerReport.BearerToken = null;
+            rpvAlumnos.Size = new System.Drawing.Size(822, 344);
+            rpvAlumnos.TabIndex = 0;
+            rpvAlumnos.Load += reportViewer1_Load;
             // 
             // pAREPORTEALUMNOSINSCRIPCIONBindingSource
             // 
-            this.pAREPORTEALUMNOSINSCRIPCIONBindingSource.DataMember = "PA_REPORTE_ALUMNOS_INSCRIPCION";
-            this.pAREPORTEALUMNOSINSCRIPCIONBindingSource.DataSource = this.dSAlumnosInscripcion;
+            pAREPORTEALUMNOSINSCRIPCIONBindingSource.DataMember = "PA_REPORTE_ALUMNOS_INSCRIPCION";
+            pAREPORTEALUMNOSINSCRIPCIONBindingSource.DataSource = dSAlumnosInscripcion;
             // 
             // pA_REPORTE_ALUMNOS_INSCRIPCIONTableAdapter
             // 
-            this.pA_REPORTE_ALUMNOS_INSCRIPCIONTableAdapter.ClearBeforeFill = true;
-            // 
-            // PA_REPORTE_ALUMNOS_INSCRIPCIONBindingSource
-            // 
-            this.PA_REPORTE_ALUMNOS_INSCRIPCIONBindingSource.DataMember = "PA_REPORTE_ALUMNOS_INSCRIPCION";
-            this.PA_REPORTE_ALUMNOS_INSCRIPCIONBindingSource.DataSource = this.dSAlumnosInscripcion;
+            pA_REPORTE_ALUMNOS_INSCRIPCIONTableAdapter.ClearBeforeFill = true;
             // 
             // lblComision
             // 
-            this.lblComision.AutoSize = true;
-            this.lblComision.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblComision.Location = new System.Drawing.Point(174, 15);
-            this.lblComision.Name = "lblComision";
-            this.lblComision.Size = new System.Drawing.Size(65, 17);
-            this.lblComision.TabIndex = 1;
-            this.lblComision.Text = "Comision:";
+            lblComision.AutoSize = true;
+            lblComision.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblComision.Location = new System.Drawing.Point(22, 15);
+            lblComision.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblComision.Name = "lblComision";
+            lblComision.Size = new System.Drawing.Size(65, 17);
+            lblComision.TabIndex = 1;
+            lblComision.Text = "Comision:";
             // 
             // cboComision
             // 
-            this.cboComision.FormattingEnabled = true;
-            this.cboComision.Location = new System.Drawing.Point(245, 13);
-            this.cboComision.Name = "cboComision";
-            this.cboComision.Size = new System.Drawing.Size(142, 21);
-            this.cboComision.TabIndex = 2;
+            cboComision.FormattingEnabled = true;
+            cboComision.Location = new System.Drawing.Point(105, 13);
+            cboComision.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cboComision.Name = "cboComision";
+            cboComision.Size = new System.Drawing.Size(165, 23);
+            cboComision.TabIndex = 2;
             // 
             // btnGenerarReporte
             // 
-            this.btnGenerarReporte.Location = new System.Drawing.Point(400, 12);
-            this.btnGenerarReporte.Name = "btnGenerarReporte";
-            this.btnGenerarReporte.Size = new System.Drawing.Size(124, 23);
-            this.btnGenerarReporte.TabIndex = 3;
-            this.btnGenerarReporte.Text = "GenerarReporte";
-            this.btnGenerarReporte.UseVisualStyleBackColor = true;
+            btnGenerarReporte.Location = new System.Drawing.Point(286, 12);
+            btnGenerarReporte.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnGenerarReporte.Name = "btnGenerarReporte";
+            btnGenerarReporte.Size = new System.Drawing.Size(145, 27);
+            btnGenerarReporte.TabIndex = 3;
+            btnGenerarReporte.Text = "Generar Reporte";
+            btnGenerarReporte.UseVisualStyleBackColor = true;
+            // 
+            // btnSalir
+            // 
+            btnSalir.Location = new System.Drawing.Point(739, 15);
+            btnSalir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new System.Drawing.Size(100, 27);
+            btnSalir.TabIndex = 4;
+            btnSalir.Text = "Salir";
+            btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
             // 
             // FrmReporteAlumnosInscripcion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(730, 368);
-            this.Controls.Add(this.btnGenerarReporte);
-            this.Controls.Add(this.cboComision);
-            this.Controls.Add(this.lblComision);
-            this.Controls.Add(this.rpvAlumnos);
-            this.Name = "FrmReporteAlumnosInscripcion";
-            this.Text = "FrmReporteAlumnosInscripcion";
-            this.Load += new System.EventHandler(this.FrmReporteAlumnosInscripcion_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dSAlumnosInscripcion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pAREPORTEALUMNOSINSCRIPCIONBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PA_REPORTE_ALUMNOS_INSCRIPCIONBindingSource)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(852, 425);
+            Controls.Add(btnSalir);
+            Controls.Add(btnGenerarReporte);
+            Controls.Add(cboComision);
+            Controls.Add(lblComision);
+            Controls.Add(rpvAlumnos);
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Name = "FrmReporteAlumnosInscripcion";
+            Text = "FrmReporteAlumnosInscripcion";
+            Load += FrmReporteAlumnosInscripcion_Load;
+            ((System.ComponentModel.ISupportInitialize)PA_REPORTE_ALUMNOS_INSCRIPCIONBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dSAlumnosInscripcion).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pAREPORTEALUMNOSINSCRIPCIONBindingSource).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -132,5 +150,6 @@
         private System.Windows.Forms.Label lblComision;
         private System.Windows.Forms.ComboBox cboComision;
         private System.Windows.Forms.Button btnGenerarReporte;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

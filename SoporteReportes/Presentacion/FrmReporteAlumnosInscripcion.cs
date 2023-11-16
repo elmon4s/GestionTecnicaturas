@@ -25,9 +25,17 @@ namespace SoporteReportes.Presentacion
         private void reportViewer1_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'dSAlumnosInscripcion.PA_REPORTE_ALUMNOS_INSCRIPCION' Puede moverla o quitarla según sea necesario.
-            this.pA_REPORTE_ALUMNOS_INSCRIPCIONTableAdapter.Fill(this.dSAlumnosInscripcion.PA_REPORTE_ALUMNOS_INSCRIPCION,1);
+            this.pA_REPORTE_ALUMNOS_INSCRIPCIONTableAdapter.Fill(this.dSAlumnosInscripcion.PA_REPORTE_ALUMNOS_INSCRIPCION, 1);
 
             this.rpvAlumnos.RefreshReport();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Desea Salir?", "Salir", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                this.Dispose();
+            }
         }
     }
 }

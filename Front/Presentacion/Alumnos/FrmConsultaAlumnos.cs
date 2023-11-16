@@ -24,6 +24,8 @@ namespace Front.Presentacion.Alumnos
         {
             await CargarComboAsync<EstadoCivil>(UrlCompleta("/estadosciviles"), cboEstadoCivil);
             await CargarComboAsync<SituacionLaboral>(UrlCompleta("/situacioneslab"), cboSituacionLaboral);
+            cboEstadoCivil.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboSituacionLaboral.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private async Task CargarComboAsync<T>(string url, ComboBox comboBox)

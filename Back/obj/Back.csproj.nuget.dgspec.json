@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\esteb\\Source\\Repos\\GestionTecnicaturas\\Back\\Back.csproj": {}
+    "C:\\Users\\esteb\\source\\repos\\GestionTecnicaturas\\Back\\Back.csproj": {}
   },
   "projects": {
-    "C:\\Users\\esteb\\Source\\Repos\\GestionTecnicaturas\\Back\\Back.csproj": {
+    "C:\\Users\\esteb\\source\\repos\\GestionTecnicaturas\\Back\\Back.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\esteb\\Source\\Repos\\GestionTecnicaturas\\Back\\Back.csproj",
+        "projectUniqueName": "C:\\Users\\esteb\\source\\repos\\GestionTecnicaturas\\Back\\Back.csproj",
         "projectName": "Back",
-        "projectPath": "C:\\Users\\esteb\\Source\\Repos\\GestionTecnicaturas\\Back\\Back.csproj",
+        "projectPath": "C:\\Users\\esteb\\source\\repos\\GestionTecnicaturas\\Back\\Back.csproj",
         "packagesPath": "C:\\Users\\esteb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\esteb\\Source\\Repos\\GestionTecnicaturas\\Back\\obj\\",
+        "outputPath": "C:\\Users\\esteb\\source\\repos\\GestionTecnicaturas\\Back\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\DevExpress\\Components\\Offline Packages"

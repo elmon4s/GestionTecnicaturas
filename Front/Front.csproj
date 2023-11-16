@@ -36,5 +36,9 @@
   <ItemGroup>
     <ProjectReference Include="..\Back\Back.csproj" />
   </ItemGroup>
+	
+  <ItemGroup>
+    <ProjectReference Include="..\SoporteReportes\SoporteReportes.csproj" />
+  </ItemGroup>
 
 </Project>

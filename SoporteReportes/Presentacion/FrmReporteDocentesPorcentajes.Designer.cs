@@ -28,98 +28,116 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.rpvDocentes = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dSDocentesPorcentajes = new SoporteReportes.DataSets.DSDocentesPorcentajes();
-            this.pAREPORTEDOCENTESPORCENTAJESBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pA_REPORTE_DOCENTES_PORCENTAJESTableAdapter = new SoporteReportes.DataSets.DSDocentesPorcentajesTableAdapters.PA_REPORTE_DOCENTES_PORCENTAJESTableAdapter();
-            this.PA_REPORTE_DOCENTES_PORCENTAJESBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lblTituloDocente = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btnGenerarReporte = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dSDocentesPorcentajes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pAREPORTEDOCENTESPORCENTAJESBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PA_REPORTE_DOCENTES_PORCENTAJESBindingSource)).BeginInit();
-            this.SuspendLayout();
+            PA_REPORTE_DOCENTES_PORCENTAJESBindingSource = new System.Windows.Forms.BindingSource(components);
+            dSDocentesPorcentajes = new DataSets.DSDocentesPorcentajes();
+            rpvDocentes = new Microsoft.Reporting.WinForms.ReportViewer();
+            pAREPORTEDOCENTESPORCENTAJESBindingSource = new System.Windows.Forms.BindingSource(components);
+            pA_REPORTE_DOCENTES_PORCENTAJESTableAdapter = new DataSets.DSDocentesPorcentajesTableAdapters.PA_REPORTE_DOCENTES_PORCENTAJESTableAdapter();
+            lblTituloDocente = new System.Windows.Forms.Label();
+            comboBox1 = new System.Windows.Forms.ComboBox();
+            btnGenerarReporte = new System.Windows.Forms.Button();
+            btnSalir = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)PA_REPORTE_DOCENTES_PORCENTAJESBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dSDocentesPorcentajes).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pAREPORTEDOCENTESPORCENTAJESBindingSource).BeginInit();
+            SuspendLayout();
+            // 
+            // PA_REPORTE_DOCENTES_PORCENTAJESBindingSource
+            // 
+            PA_REPORTE_DOCENTES_PORCENTAJESBindingSource.DataMember = "PA_REPORTE_DOCENTES_PORCENTAJES";
+            PA_REPORTE_DOCENTES_PORCENTAJESBindingSource.DataSource = dSDocentesPorcentajes;
+            // 
+            // dSDocentesPorcentajes
+            // 
+            dSDocentesPorcentajes.DataSetName = "DSDocentesPorcentajes";
+            dSDocentesPorcentajes.Namespace = "http://tempuri.org/DSDocentesPorcentajes.xsd";
+            dSDocentesPorcentajes.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // rpvDocentes
             // 
             reportDataSource1.Name = "DataSetReporteDocentesPorcentaje";
-            reportDataSource1.Value = this.PA_REPORTE_DOCENTES_PORCENTAJESBindingSource;
-            this.rpvDocentes.LocalReport.DataSources.Add(reportDataSource1);
-            this.rpvDocentes.LocalReport.ReportEmbeddedResource = "SoporteReportes.Reportes.ReportDocentesPorcentajes.rdlc";
-            this.rpvDocentes.Location = new System.Drawing.Point(13, 57);
-            this.rpvDocentes.Name = "rpvDocentes";
-            this.rpvDocentes.ServerReport.BearerToken = null;
-            this.rpvDocentes.Size = new System.Drawing.Size(739, 296);
-            this.rpvDocentes.TabIndex = 0;
-            // 
-            // dSDocentesPorcentajes
-            // 
-            this.dSDocentesPorcentajes.DataSetName = "DSDocentesPorcentajes";
-            this.dSDocentesPorcentajes.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            reportDataSource1.Value = PA_REPORTE_DOCENTES_PORCENTAJESBindingSource;
+            rpvDocentes.LocalReport.DataSources.Add(reportDataSource1);
+            rpvDocentes.LocalReport.ReportEmbeddedResource = "SoporteReportes.Reportes.ReportDocentesPorcentajes.rdlc";
+            rpvDocentes.Location = new System.Drawing.Point(15, 66);
+            rpvDocentes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            rpvDocentes.Name = "rpvDocentes";
+            rpvDocentes.ServerReport.BearerToken = null;
+            rpvDocentes.Size = new System.Drawing.Size(862, 341);
+            rpvDocentes.TabIndex = 0;
             // 
             // pAREPORTEDOCENTESPORCENTAJESBindingSource
             // 
-            this.pAREPORTEDOCENTESPORCENTAJESBindingSource.DataMember = "PA_REPORTE_DOCENTES_PORCENTAJES";
-            this.pAREPORTEDOCENTESPORCENTAJESBindingSource.DataSource = this.dSDocentesPorcentajes;
+            pAREPORTEDOCENTESPORCENTAJESBindingSource.DataMember = "PA_REPORTE_DOCENTES_PORCENTAJES";
+            pAREPORTEDOCENTESPORCENTAJESBindingSource.DataSource = dSDocentesPorcentajes;
             // 
             // pA_REPORTE_DOCENTES_PORCENTAJESTableAdapter
             // 
-            this.pA_REPORTE_DOCENTES_PORCENTAJESTableAdapter.ClearBeforeFill = true;
-            // 
-            // PA_REPORTE_DOCENTES_PORCENTAJESBindingSource
-            // 
-            this.PA_REPORTE_DOCENTES_PORCENTAJESBindingSource.DataMember = "PA_REPORTE_DOCENTES_PORCENTAJES";
-            this.PA_REPORTE_DOCENTES_PORCENTAJESBindingSource.DataSource = this.dSDocentesPorcentajes;
+            pA_REPORTE_DOCENTES_PORCENTAJESTableAdapter.ClearBeforeFill = true;
             // 
             // lblTituloDocente
             // 
-            this.lblTituloDocente.AutoSize = true;
-            this.lblTituloDocente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloDocente.Location = new System.Drawing.Point(168, 15);
-            this.lblTituloDocente.Name = "lblTituloDocente";
-            this.lblTituloDocente.Size = new System.Drawing.Size(114, 17);
-            this.lblTituloDocente.TabIndex = 1;
-            this.lblTituloDocente.Text = "Titulo de Docente:";
+            lblTituloDocente.AutoSize = true;
+            lblTituloDocente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblTituloDocente.Location = new System.Drawing.Point(16, 22);
+            lblTituloDocente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblTituloDocente.Name = "lblTituloDocente";
+            lblTituloDocente.Size = new System.Drawing.Size(114, 17);
+            lblTituloDocente.TabIndex = 1;
+            lblTituloDocente.Text = "Titulo de Docente:";
             // 
             // comboBox1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(288, 15);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(146, 21);
-            this.comboBox1.TabIndex = 2;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new System.Drawing.Point(156, 22);
+            comboBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new System.Drawing.Size(170, 23);
+            comboBox1.TabIndex = 2;
             // 
             // btnGenerarReporte
             // 
-            this.btnGenerarReporte.Location = new System.Drawing.Point(440, 15);
-            this.btnGenerarReporte.Name = "btnGenerarReporte";
-            this.btnGenerarReporte.Size = new System.Drawing.Size(125, 23);
-            this.btnGenerarReporte.TabIndex = 3;
-            this.btnGenerarReporte.Text = "Generar Reporte";
-            this.btnGenerarReporte.UseVisualStyleBackColor = true;
-            this.btnGenerarReporte.Click += new System.EventHandler(this.btnGenerarReporte_Click);
+            btnGenerarReporte.Location = new System.Drawing.Point(333, 22);
+            btnGenerarReporte.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnGenerarReporte.Name = "btnGenerarReporte";
+            btnGenerarReporte.Size = new System.Drawing.Size(146, 27);
+            btnGenerarReporte.TabIndex = 3;
+            btnGenerarReporte.Text = "Generar Reporte";
+            btnGenerarReporte.UseVisualStyleBackColor = true;
+            btnGenerarReporte.Click += btnGenerarReporte_Click;
+            // 
+            // btnSalir
+            // 
+            btnSalir.Location = new System.Drawing.Point(782, 22);
+            btnSalir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new System.Drawing.Size(96, 27);
+            btnSalir.TabIndex = 4;
+            btnSalir.Text = "Salir";
+            btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
             // 
             // FrmReporteDocentesPorcentajes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(764, 365);
-            this.Controls.Add(this.btnGenerarReporte);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.lblTituloDocente);
-            this.Controls.Add(this.rpvDocentes);
-            this.Name = "FrmReporteDocentesPorcentajes";
-            this.Text = "FrmReporteDocentesPorcentajes";
-            this.Load += new System.EventHandler(this.FrmReporteDocentesPorcentajes_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dSDocentesPorcentajes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pAREPORTEDOCENTESPORCENTAJESBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PA_REPORTE_DOCENTES_PORCENTAJESBindingSource)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(891, 421);
+            Controls.Add(btnSalir);
+            Controls.Add(btnGenerarReporte);
+            Controls.Add(comboBox1);
+            Controls.Add(lblTituloDocente);
+            Controls.Add(rpvDocentes);
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Name = "FrmReporteDocentesPorcentajes";
+            Text = "FrmReporteDocentesPorcentajes";
+            Load += FrmReporteDocentesPorcentajes_Load;
+            ((System.ComponentModel.ISupportInitialize)PA_REPORTE_DOCENTES_PORCENTAJESBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dSDocentesPorcentajes).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pAREPORTEDOCENTESPORCENTAJESBindingSource).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -132,5 +150,6 @@
         private System.Windows.Forms.Label lblTituloDocente;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button btnGenerarReporte;
+        private System.Windows.Forms.Button btnSalir;
     }
 }
