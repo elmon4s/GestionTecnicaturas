@@ -46,8 +46,12 @@ namespace Back.Fachada.Interfaz
         public List<Titulo> GetTitulos();
 
         //Usuarios
-
         public bool SaveUsuario(Usuario nuevoUsuario);
         public bool CheckUsuario(Usuario oUsuario);
+        public bool CheckNombreUsuario(Usuario oUsuario);
+
+        //Reportes
+        public List<Tecnicatura> GetTecnicaturas();
+        public List<Comision> GetComisiones();
     }
 }

@@ -18,6 +18,7 @@ namespace Back.Fachada.Implementacion
         IDocentesDAO docentesDAO;
         IExamenesDAO examenesDAO;
         IUsuariosDAO usuariosDAO;
+        IReportesDAO reportesDAO;
 
         public Aplicacion()
         {
@@ -25,6 +26,12 @@ namespace Back.Fachada.Implementacion
             docentesDAO = new DocentesDAO();
             examenesDAO = new ExamenesDAO();
             usuariosDAO = new UsuariosDAO();
+            reportesDAO = new ReportesDAO();
+        }
+
+        public bool CheckNombreUsuario(Usuario oUsuario)
+        {
+            return usuariosDAO.ComprobarNombreUsuario(oUsuario);
         }
 
         public bool CheckUsuario(Usuario oUsuario)
@@ -65,6 +72,11 @@ namespace Back.Fachada.Implementacion
         public List<Barrio> GetBarrios()
         {
             return docentesDAO.TraerBarrios();
+        }
+
+        public List<Comision> GetComisiones()
+        {
+            return reportesDAO.TraerComisiones();
         }
 
         public Docente GetDocente(int nroDocente)
@@ -125,6 +137,11 @@ namespace Back.Fachada.Implementacion
         public List<SituacionLaboral> GetSituacionesLaborales()
         {
             return alumnosDAO.TraerSituacionesLaborales();
+        }
+
+        public List<Tecnicatura> GetTecnicaturas()
+        {
+            return reportesDAO.TraerTecnicaturas();
         }
 
         public List<Titulo> GetTitulos()

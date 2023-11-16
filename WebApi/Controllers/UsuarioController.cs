@@ -11,7 +11,7 @@ namespace WebApi.Controllers
     [ApiController]
     public class UsuarioController : ControllerBase
     {
-        public IAplicacion app;
+        private IAplicacion app;
 
         public UsuarioController()
         {
@@ -41,6 +41,21 @@ namespace WebApi.Controllers
                 if (oUsuario == null)
                     return BadRequest("Se debe ingresar un usuario");
                 return Ok(app.CheckUsuario(oUsuario));
+            }
+            catch
+            {
+                return StatusCode(500, "Error interno. Intente más tarde");
+            }
+        }
+
+        [HttpPost("/verificarnombre")]
+        public IActionResult GetUsername(Usuario oUsuario)
+        {
+            try
+            {
+                if (oUsuario == null)
+                    return BadRequest("Se debe ingresar un usuario");
+                return Ok(app.CheckNombreUsuario(oUsuario));
             }
             catch
             {
