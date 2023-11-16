@@ -35,7 +35,7 @@ namespace Front
                 return;
             }
             Usuario oUsuario = new Usuario(txtUsuario.Text, txtContraseña.Text);
-            if(await ValidarUsuarioAsync(oUsuario))
+            if (await ValidarUsuarioAsync(oUsuario))
             {
                 MessageBox.Show("Logueado Exitosamente", "Bienvenido", MessageBoxButtons.OK);
                 this.Dispose();
@@ -60,7 +60,7 @@ namespace Front
             else if (chkMostrarContraseña.Checked)
             {
                 txtContraseña.UseSystemPasswordChar = false;
-            } 
+            }
         }
 
         private async Task<bool> ValidarUsuarioAsync(Usuario oUsuario)
@@ -70,6 +70,11 @@ namespace Front
             var dataJson = await ClienteSingleton.GetInstance().PostAsync(url, usuarioJson);
 
             return dataJson.Equals("true");
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+            txtContraseña.UseSystemPasswordChar = true;
         }
     }
 }

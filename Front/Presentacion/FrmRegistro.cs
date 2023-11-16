@@ -66,5 +66,22 @@ namespace Front
 
             return dataJson.Equals("true");
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkMostrarContraseña.Checked == false)
+            {
+                txtContraseña.UseSystemPasswordChar = true;
+            }
+            else if (chkMostrarContraseña.Checked)
+            {
+                txtContraseña.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void FrmRegistro_Load(object sender, EventArgs e)
+        {
+            txtContraseña.UseSystemPasswordChar = true;
+        }
     }
 }

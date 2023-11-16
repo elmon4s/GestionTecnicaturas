@@ -61,7 +61,7 @@ namespace Back.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Data Source=(localdb)\local;Initial Catalog=GRUPO3_TPI_LCII_1W1;Integrated Security=True.
+        ///   Busca una cadena traducida similar a Data Source=DESKTOP-BKGGIPD;Initial Catalog=GRUPO3_PRESENTACION;Integrated Security=True.
         /// </summary>
         internal static string CadenaConexion {
             get {

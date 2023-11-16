@@ -33,7 +33,7 @@
             lblUsuario = new Label();
             lblContraseña = new Label();
             label4 = new Label();
-            checkBox1 = new CheckBox();
+            chkMostrarContraseña = new CheckBox();
             btnConfirmar = new Button();
             btnCancelar = new Button();
             txtUsuario = new TextBox();
@@ -81,16 +81,17 @@
             label4.TabIndex = 3;
             label4.Text = "Repetir Contraseña:";
             // 
-            // checkBox1
+            // chkMostrarContraseña
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            checkBox1.Location = new Point(198, 186);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(151, 23);
-            checkBox1.TabIndex = 4;
-            checkBox1.Text = "Mostrar Contraseña";
-            checkBox1.UseVisualStyleBackColor = true;
+            chkMostrarContraseña.AutoSize = true;
+            chkMostrarContraseña.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            chkMostrarContraseña.Location = new Point(198, 186);
+            chkMostrarContraseña.Name = "chkMostrarContraseña";
+            chkMostrarContraseña.Size = new Size(151, 23);
+            chkMostrarContraseña.TabIndex = 4;
+            chkMostrarContraseña.Text = "Mostrar Contraseña";
+            chkMostrarContraseña.UseVisualStyleBackColor = true;
+            chkMostrarContraseña.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // btnConfirmar
             // 
@@ -144,7 +145,7 @@
             Controls.Add(txtUsuario);
             Controls.Add(btnCancelar);
             Controls.Add(btnConfirmar);
-            Controls.Add(checkBox1);
+            Controls.Add(chkMostrarContraseña);
             Controls.Add(label4);
             Controls.Add(lblContraseña);
             Controls.Add(lblUsuario);
@@ -152,6 +153,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmRegistro";
             Text = "Registro";
+            Load += FrmRegistro_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -162,7 +164,7 @@
         private Label lblUsuario;
         private Label lblContraseña;
         private Label label4;
-        private CheckBox checkBox1;
+        private CheckBox chkMostrarContraseña;
         private Button btnConfirmar;
         private Button btnCancelar;
         private TextBox txtUsuario;

@@ -36,3 +36,41 @@ C:\Users\ronim\OneDrive\Escritorio\Porgramacion Trabajo\GestionTecnicaturas\Fron
 C:\Users\ronim\OneDrive\Escritorio\Porgramacion Trabajo\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\Front.pdb
 C:\Users\ronim\OneDrive\Escritorio\Porgramacion Trabajo\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\Front.genruntimeconfig.cache
 C:\Users\ronim\OneDrive\Escritorio\Porgramacion Trabajo\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\ref\Front.dll
+C:\Users\esteb\Source\Repos\GestionTecnicaturas\Front\bin\Debug\net6.0-windows\Front.exe
+C:\Users\esteb\Source\Repos\GestionTecnicaturas\Front\bin\Debug\net6.0-windows\Front.deps.json
+C:\Users\esteb\Source\Repos\GestionTecnicaturas\Front\bin\Debug\net6.0-windows\Front.runtimeconfig.json
+C:\Users\esteb\Source\Repos\GestionTecnicaturas\Front\bin\Debug\net6.0-windows\Front.dll
+C:\Users\esteb\Source\Repos\GestionTecnicaturas\Front\bin\Debug\net6.0-windows\Front.pdb
+C:\Users\esteb\Source\Repos\GestionTecnicaturas\Front\bin\Debug\net6.0-windows\BCrypt.Net-Core.dll
+C:\Users\esteb\Source\Repos\GestionTecnicaturas\Front\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\esteb\Source\Repos\GestionTecnicaturas\Front\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Users\esteb\Source\Repos\GestionTecnicaturas\Front\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\esteb\Source\Repos\GestionTecnicaturas\Front\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\esteb\Source\Repos\GestionTecnicaturas\Front\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\esteb\Source\Repos\GestionTecnicaturas\Front\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\esteb\Source\Repos\GestionTecnicaturas\Front\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\esteb\Source\Repos\GestionTecnicaturas\Front\bin\Debug\net6.0-windows\Back.dll
+C:\Users\esteb\Source\Repos\GestionTecnicaturas\Front\bin\Debug\net6.0-windows\Back.pdb
+C:\Users\esteb\Source\Repos\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\Front.csproj.AssemblyReference.cache
+C:\Users\esteb\Source\Repos\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\Front.Presentacion.Alumnos.FrmConsultaAlumnos.resources
+C:\Users\esteb\Source\Repos\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\Front.Presentacion.Alumnos.FrmConsultarDetalleMateriaComision.resources
+C:\Users\esteb\Source\Repos\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\Front.Presentacion.Alumnos.FrmGestorAlumno.resources
+C:\Users\esteb\Source\Repos\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\Front.Presentacion.Docentes.FrmConsultaDocentes.resources
+C:\Users\esteb\Source\Repos\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\Front.FrmGestorDocente.resources
+C:\Users\esteb\Source\Repos\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\Front.Presentacion.Examenes.FrmConsultarExamenes.resources
+C:\Users\esteb\Source\Repos\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\Front.Presentacion.Examenes.FrmGestorExamen.resources
+C:\Users\esteb\Source\Repos\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\Front.FrmLogin.resources
+C:\Users\esteb\Source\Repos\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\Front.FrmPrincipal.resources
+C:\Users\esteb\Source\Repos\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\Front.FrmRegistro.resources
+C:\Users\esteb\Source\Repos\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\Front.Properties.Resources.resources
+C:\Users\esteb\Source\Repos\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\Front.csproj.GenerateResource.cache
+C:\Users\esteb\Source\Repos\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\Front.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\esteb\Source\Repos\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\Front.AssemblyInfoInputs.cache
+C:\Users\esteb\Source\Repos\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\Front.AssemblyInfo.cs
+C:\Users\esteb\Source\Repos\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\Front.csproj.CoreCompileInputs.cache
+C:\Users\esteb\Source\Repos\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\Front.csproj.CopyComplete
+C:\Users\esteb\Source\Repos\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\Front.dll
+C:\Users\esteb\Source\Repos\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\refint\Front.dll
+C:\Users\esteb\Source\Repos\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\Front.pdb
+C:\Users\esteb\Source\Repos\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\Front.genruntimeconfig.cache
+C:\Users\esteb\Source\Repos\GestionTecnicaturas\Front\obj\Debug\net6.0-windows\ref\Front.dll

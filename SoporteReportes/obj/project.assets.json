@@ -1533,30 +1533,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\danie\\.nuget\\packages\\": {},
-    "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\esteb\\.nuget\\packages\\": {},
+    "D:\\DevExpress\\Components\\Offline Packages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Code\\GestionTecnicaturas\\SoporteReportes\\SoporteReportes.csproj",
+      "projectUniqueName": "C:\\Users\\esteb\\Source\\Repos\\GestionTecnicaturas\\SoporteReportes\\SoporteReportes.csproj",
       "projectName": "SoporteReportes",
-      "projectPath": "D:\\Code\\GestionTecnicaturas\\SoporteReportes\\SoporteReportes.csproj",
-      "packagesPath": "C:\\Users\\danie\\.nuget\\packages\\",
-      "outputPath": "D:\\Code\\GestionTecnicaturas\\SoporteReportes\\obj\\",
+      "projectPath": "C:\\Users\\esteb\\Source\\Repos\\GestionTecnicaturas\\SoporteReportes\\SoporteReportes.csproj",
+      "packagesPath": "C:\\Users\\esteb\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\esteb\\Source\\Repos\\GestionTecnicaturas\\SoporteReportes\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "D:\\DevExpress\\Components\\Offline Packages"
       ],
       "configFilePaths": [
-        "C:\\Users\\danie\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "D:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config"
+        "C:\\Users\\esteb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 23.1.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0-windows"
       ],
       "sources": {
-        "D:\\Program Files\\dotnet\\library-packs": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "D:\\DevExpress\\Components\\System\\Components\\Packages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1615,7 +1617,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "D:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
