@@ -120,4 +120,7 @@
   <data name="CadenaConexion" xml:space="preserve">
     <value>Data Source=DESKTOP-BKGGIPD;Initial Catalog=GRUPO3_PRESENTACION;Integrated Security=True</value>
   </data>
+  <data name="CadenaConexion2" xml:space="preserve">
+    <value>Data Source=.\sqlexpress;Initial Catalog=GRUPO3_TPI_LCII_1W1;Integrated Security=True;</value>
+  </data>
 </root>

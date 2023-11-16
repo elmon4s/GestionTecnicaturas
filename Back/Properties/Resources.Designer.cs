@@ -68,5 +68,14 @@ namespace Back.Properties {
                 return ResourceManager.GetString("CadenaConexion", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Data Source=.\sqlexpress;Initial Catalog=GRUPO3_TPI_LCII_1W1;Integrated Security=True;.
+        /// </summary>
+        internal static string CadenaConexion2 {
+            get {
+                return ResourceManager.GetString("CadenaConexion2", resourceCulture);
+            }
+        }
     }
 }

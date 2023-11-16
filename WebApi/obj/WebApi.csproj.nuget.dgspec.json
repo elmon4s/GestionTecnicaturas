@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\esteb\\source\\repos\\GestionTecnicaturas\\WebApi\\WebApi.csproj": {}
+    "C:\\Users\\ronim\\OneDrive\\Escritorio\\Programacion\\GestionTecnicaturas\\WebApi\\WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\esteb\\source\\repos\\GestionTecnicaturas\\Back\\Back.csproj": {
+    "C:\\Users\\ronim\\OneDrive\\Escritorio\\Programacion\\GestionTecnicaturas\\Back\\Back.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\esteb\\source\\repos\\GestionTecnicaturas\\Back\\Back.csproj",
+        "projectUniqueName": "C:\\Users\\ronim\\OneDrive\\Escritorio\\Programacion\\GestionTecnicaturas\\Back\\Back.csproj",
         "projectName": "Back",
-        "projectPath": "C:\\Users\\esteb\\source\\repos\\GestionTecnicaturas\\Back\\Back.csproj",
-        "packagesPath": "C:\\Users\\esteb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\esteb\\source\\repos\\GestionTecnicaturas\\Back\\obj\\",
+        "projectPath": "C:\\Users\\ronim\\OneDrive\\Escritorio\\Programacion\\GestionTecnicaturas\\Back\\Back.csproj",
+        "packagesPath": "C:\\Users\\ronim\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ronim\\OneDrive\\Escritorio\\Programacion\\GestionTecnicaturas\\Back\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "D:\\DevExpress\\Components\\Offline Packages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\esteb\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 23.1.config",
+          "C:\\Users\\ronim\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "D:\\DevExpress\\Components\\System\\Components\\Packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -70,25 +65,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\esteb\\source\\repos\\GestionTecnicaturas\\WebApi\\WebApi.csproj": {
+    "C:\\Users\\ronim\\OneDrive\\Escritorio\\Programacion\\GestionTecnicaturas\\WebApi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\esteb\\source\\repos\\GestionTecnicaturas\\WebApi\\WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\ronim\\OneDrive\\Escritorio\\Programacion\\GestionTecnicaturas\\WebApi\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "C:\\Users\\esteb\\source\\repos\\GestionTecnicaturas\\WebApi\\WebApi.csproj",
-        "packagesPath": "C:\\Users\\esteb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\esteb\\source\\repos\\GestionTecnicaturas\\WebApi\\obj\\",
+        "projectPath": "C:\\Users\\ronim\\OneDrive\\Escritorio\\Programacion\\GestionTecnicaturas\\WebApi\\WebApi.csproj",
+        "packagesPath": "C:\\Users\\ronim\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ronim\\OneDrive\\Escritorio\\Programacion\\GestionTecnicaturas\\WebApi\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "D:\\DevExpress\\Components\\Offline Packages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\esteb\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 23.1.config",
+          "C:\\Users\\ronim\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -96,15 +87,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "D:\\DevExpress\\Components\\System\\Components\\Packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\esteb\\source\\repos\\GestionTecnicaturas\\Back\\Back.csproj": {
-                "projectPath": "C:\\Users\\esteb\\source\\repos\\GestionTecnicaturas\\Back\\Back.csproj"
+              "C:\\Users\\ronim\\OneDrive\\Escritorio\\Programacion\\GestionTecnicaturas\\Back\\Back.csproj": {
+                "projectPath": "C:\\Users\\ronim\\OneDrive\\Escritorio\\Programacion\\GestionTecnicaturas\\Back\\Back.csproj"
               }
             }
           }
@@ -143,7 +133,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

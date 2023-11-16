@@ -89,7 +89,7 @@ namespace Front.Presentacion.Examenes
         }
         private async void btnEditar_Click(object sender, EventArgs e)
         {
-            Habilitar(false);
+            Habilitar(true);
             await CargarDatosAsync<Materia>(Properties.Resources.URL + "/materias", cboMaterias, "NombreMateria", "IdMateria");
         }
 

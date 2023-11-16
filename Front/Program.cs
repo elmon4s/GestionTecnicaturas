@@ -16,6 +16,7 @@ namespace Front
 
             FrmLogin loginForm = new FrmLogin();
             Application.Run(loginForm);
+ 
         }
     }
 }

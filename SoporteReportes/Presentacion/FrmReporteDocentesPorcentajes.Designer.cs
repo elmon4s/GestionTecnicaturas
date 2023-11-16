@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             PA_REPORTE_DOCENTES_PORCENTAJESBindingSource = new System.Windows.Forms.BindingSource(components);
             dSDocentesPorcentajes = new DataSets.DSDocentesPorcentajes();
             rpvDocentes = new Microsoft.Reporting.WinForms.ReportViewer();
             pAREPORTEDOCENTESPORCENTAJESBindingSource = new System.Windows.Forms.BindingSource(components);
             pA_REPORTE_DOCENTES_PORCENTAJESTableAdapter = new DataSets.DSDocentesPorcentajesTableAdapters.PA_REPORTE_DOCENTES_PORCENTAJESTableAdapter();
             lblTituloDocente = new System.Windows.Forms.Label();
-            comboBox1 = new System.Windows.Forms.ComboBox();
+            cboTitulos = new System.Windows.Forms.ComboBox();
             btnGenerarReporte = new System.Windows.Forms.Button();
             btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)PA_REPORTE_DOCENTES_PORCENTAJESBindingSource).BeginInit();
@@ -57,9 +57,9 @@
             // 
             // rpvDocentes
             // 
-            reportDataSource1.Name = "DataSetReporteDocentesPorcentaje";
-            reportDataSource1.Value = PA_REPORTE_DOCENTES_PORCENTAJESBindingSource;
-            rpvDocentes.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource2.Name = "DataSetReporteDocentesPorcentaje";
+            reportDataSource2.Value = PA_REPORTE_DOCENTES_PORCENTAJESBindingSource;
+            rpvDocentes.LocalReport.DataSources.Add(reportDataSource2);
             rpvDocentes.LocalReport.ReportEmbeddedResource = "SoporteReportes.Reportes.ReportDocentesPorcentajes.rdlc";
             rpvDocentes.Location = new System.Drawing.Point(15, 66);
             rpvDocentes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -88,14 +88,14 @@
             lblTituloDocente.TabIndex = 1;
             lblTituloDocente.Text = "Titulo de Docente:";
             // 
-            // comboBox1
+            // cboTitulos
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new System.Drawing.Point(156, 22);
-            comboBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new System.Drawing.Size(170, 23);
-            comboBox1.TabIndex = 2;
+            cboTitulos.FormattingEnabled = true;
+            cboTitulos.Location = new System.Drawing.Point(156, 22);
+            cboTitulos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cboTitulos.Name = "cboTitulos";
+            cboTitulos.Size = new System.Drawing.Size(170, 23);
+            cboTitulos.TabIndex = 2;
             // 
             // btnGenerarReporte
             // 
@@ -126,7 +126,7 @@
             ClientSize = new System.Drawing.Size(891, 421);
             Controls.Add(btnSalir);
             Controls.Add(btnGenerarReporte);
-            Controls.Add(comboBox1);
+            Controls.Add(cboTitulos);
             Controls.Add(lblTituloDocente);
             Controls.Add(rpvDocentes);
             Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -148,7 +148,7 @@
         private System.Windows.Forms.BindingSource pAREPORTEDOCENTESPORCENTAJESBindingSource;
         private DataSets.DSDocentesPorcentajesTableAdapters.PA_REPORTE_DOCENTES_PORCENTAJESTableAdapter pA_REPORTE_DOCENTES_PORCENTAJESTableAdapter;
         private System.Windows.Forms.Label lblTituloDocente;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboTitulos;
         private System.Windows.Forms.Button btnGenerarReporte;
         private System.Windows.Forms.Button btnSalir;
     }

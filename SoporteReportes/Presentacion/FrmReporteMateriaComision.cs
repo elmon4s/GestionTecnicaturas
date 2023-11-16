@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Back.Dominio;
+using Newtonsoft.Json;
+using SoporteReportes.Cliente;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,9 +20,19 @@ namespace SoporteReportes.Presentacion
             InitializeComponent();
         }
 
-        private void FrmReporteMateriaComision_Load(object sender, EventArgs e)
+        private async void FrmReporteMateriaComision_Load(object sender, EventArgs e)
         {
+            await CargarDatosAsync($"{Properties.Resources.URL}/tecnicaturas", cboCarrera);
+        }
 
+        private async Task CargarDatosAsync(string apiUrl, ComboBox comboBox)
+        {
+            var resultado = await ClienteSingleton.GetInstance().GetAsync(apiUrl);
+            List<Tecnicatura> lst = JsonConvert.DeserializeObject<List<Tecnicatura>>(resultado);
+
+            comboBox.DataSource = lst;
+            comboBox.DisplayMember = "NombreTecnicatura";
+            comboBox.ValueMember = "IdTecnicatura";
         }
 
         private void button1_Click(object sender, EventArgs e)

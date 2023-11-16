@@ -41,5 +41,31 @@ namespace WebApi.Controllers
                 return StatusCode(500, "Error interno. Intente más tarde");
             }
         }
+
+        [HttpGet("/situacionLaboral")]
+        public IActionResult GetSituacionesLaborales()
+        {
+            try
+            {
+                return Ok(app.GetSituacionesLaborales());
+            }
+            catch
+            {
+                return StatusCode(500, "Error interno. Intente más tarde");
+            }
+        }
+
+        [HttpGet("/titulosDocentes")]
+        public IActionResult GetTitulosDocentes()
+        {
+            try
+            {
+                return Ok(app.GetTitulos());
+            }
+            catch
+            {
+                return StatusCode(500, "Error interno. Intente más tarde");
+            }
+        }
     }
 }

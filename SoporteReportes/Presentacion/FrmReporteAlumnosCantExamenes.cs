@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Back.Dominio;
+using Newtonsoft.Json;
+using SoporteReportes.Cliente;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,9 +20,19 @@ namespace SoporteReportes.Presentacion
             InitializeComponent();
         }
 
-        private void FrmReporteAlumnosCantExamenes_Load(object sender, EventArgs e)
+        private async void FrmReporteAlumnosCantExamenes_Load(object sender, EventArgs e)
         {
+            await CargarDatosAsync($"{Properties.Resources.URL}/situacionLaboral", cboSituacionLaboral);
+        }
 
+        private async Task CargarDatosAsync(string apiUrl, ComboBox comboBox)
+        {
+            var resultado = await ClienteSingleton.GetInstance().GetAsync(apiUrl);
+            List<SituacionLaboral> lst = JsonConvert.DeserializeObject<List<SituacionLaboral>>(resultado);
+
+            comboBox.DataSource = lst;
+            comboBox.DisplayMember = "Situacion";
+            comboBox.ValueMember = "IdSituacion";
         }
 
         private void btnGenerar_Click(object sender, EventArgs e)

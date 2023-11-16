@@ -23,9 +23,18 @@ namespace SoporteReportes
 
         private async void FrmReporteAlumnosCantAprobados_Load(object sender, EventArgs e)
         {
-
+            await CargarDatosAsync($"{Properties.Resources.URL}/situacionLaboral",cboSituacionLaboral);
         }
 
+        private async Task CargarDatosAsync(string apiUrl,ComboBox comboBox)
+        {
+            var resultado = await ClienteSingleton.GetInstance().GetAsync(apiUrl);
+            List<SituacionLaboral> lst = JsonConvert.DeserializeObject<List<SituacionLaboral>>(resultado);
+
+            comboBox.DataSource = lst;
+            comboBox.DisplayMember = "Situacion";
+            comboBox.ValueMember = "IdSituacion";
+        }
         private void btnGenerar_Click(object sender, EventArgs e)
         {
             int aux = 0;

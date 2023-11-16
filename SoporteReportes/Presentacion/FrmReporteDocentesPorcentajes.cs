@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Back.Dominio;
+using Newtonsoft.Json;
+using SoporteReportes.Cliente;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,11 +20,20 @@ namespace SoporteReportes.Presentacion
             InitializeComponent();
         }
 
-        private void FrmReporteDocentesPorcentajes_Load(object sender, EventArgs e)
+        private async void FrmReporteDocentesPorcentajes_Load(object sender, EventArgs e)
         {
-
+            await CargarDatosAsync($"{Properties.Resources.URL}/titulosDocentes", cboTitulos);
         }
 
+        private async Task CargarDatosAsync(string apiUrl, ComboBox comboBox)
+        {
+            var resultado = await ClienteSingleton.GetInstance().GetAsync(apiUrl);
+            List<Titulo> lst = JsonConvert.DeserializeObject<List<Titulo>>(resultado);
+
+            comboBox.DataSource = lst;
+            comboBox.DisplayMember = "DescripcionTitulo";
+            comboBox.ValueMember = "IdTitulo";
+        }
         private void btnGenerarReporte_Click(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'dSDocentesPorcentajes.PA_REPORTE_DOCENTES_PORCENTAJES' Puede moverla o quitarla según sea necesario.
