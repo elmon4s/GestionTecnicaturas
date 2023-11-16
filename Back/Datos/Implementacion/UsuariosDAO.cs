@@ -57,5 +57,18 @@ namespace Back.Datos.Implementacion
             }
             return aux;
         }
+
+        public bool ComprobarNombreUsuario(Usuario oUsuario)
+        {
+            bool aux = true;
+            List<Parametro> lParam = new List<Parametro>();
+            lParam.Add(new Parametro("@usuario", oUsuario.NomUsuario));
+            DataTable tabla = HelperDAO.ObtenerInstancia().Consultar("SP_CHECK_USER", lParam);
+            if (tabla.Rows.Count == 0)
+            {
+                aux = false;
+            }
+            return aux;
+        }
     }
 }

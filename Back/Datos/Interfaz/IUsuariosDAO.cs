@@ -11,5 +11,6 @@ namespace Back.Datos.Interfaz
     {
         public bool CrearUsuario(Usuario nuevoUsuario);
         public bool ComprobarUsuario(Usuario oUsuario);
+        public bool ComprobarNombreUsuario(Usuario oUsuario);
     }
 }
