@@ -1,0 +1,93 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <OutputType>WinExe</OutputType>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reportes\ReportAlumnosCantAprobados.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportAlumnosCantExamenes.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportAlumnosInscripcion.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportDocentesPorcentajes.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportMateriaComision.rdlc" />
+    <None Update="DataSets\DSAlumnosCantAprobados.xsc">
+      <DependentUpon>DSAlumnosCantAprobados.xsd</DependentUpon>
+    </None>
+    <None Update="DataSets\DSAlumnosCantAprobados.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSAlumnosCantAprobados.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="DataSets\DSAlumnosCantAprobados.xss">
+      <DependentUpon>DSAlumnosCantAprobados.xsd</DependentUpon>
+    </None>
+    <None Update="DataSets\DSAlumnosCantExamenes.xsc">
+      <DependentUpon>DSAlumnosCantExamenes.xsd</DependentUpon>
+    </None>
+    <None Update="DataSets\DSAlumnosCantExamenes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSAlumnosCantExamenes.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="DataSets\DSAlumnosCantExamenes.xss">
+      <DependentUpon>DSAlumnosCantExamenes.xsd</DependentUpon>
+    </None>
+    <None Update="DataSets\DSAlumnosInscripcion.xsc">
+      <DependentUpon>DSAlumnosInscripcion.xsd</DependentUpon>
+    </None>
+    <None Update="DataSets\DSAlumnosInscripcion.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSAlumnosInscripcion.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="DataSets\DSAlumnosInscripcion.xss">
+      <DependentUpon>DSAlumnosInscripcion.xsd</DependentUpon>
+    </None>
+    <None Update="DataSets\DSDocentesPorcentajes.xsc">
+      <DependentUpon>DSDocentesPorcentajes.xsd</DependentUpon>
+    </None>
+    <None Update="DataSets\DSDocentesPorcentajes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDocentesPorcentajes.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="DataSets\DSDocentesPorcentajes.xss">
+      <DependentUpon>DSDocentesPorcentajes.xsd</DependentUpon>
+    </None>
+    <None Update="DataSets\DSMateriaComision.xsc">
+      <DependentUpon>DSMateriaComision.xsd</DependentUpon>
+    </None>
+    <None Update="DataSets\DSMateriaComision.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSMateriaComision.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="DataSets\DSMateriaComision.xss">
+      <DependentUpon>DSMateriaComision.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="ReportViewerCore.NETCore" Version="15.1.18" />
+    <PackageReference Include="ReportViewerCore.WinForms" Version="15.1.18" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+  </ItemGroup>
+</Project>

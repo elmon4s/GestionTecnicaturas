@@ -951,19 +951,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ronim\\.nuget\\packages\\": {}
+    "C:\\Users\\esteb\\.nuget\\packages\\": {},
+    "D:\\DevExpress\\Components\\Offline Packages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ronim\\OneDrive\\Escritorio\\Porgramacion Trabajo\\GestionTecnicaturas\\WebApi\\WebApi.csproj",
+      "projectUniqueName": "C:\\Users\\esteb\\Source\\Repos\\GestionTecnicaturas\\WebApi\\WebApi.csproj",
       "projectName": "WebApi",
-      "projectPath": "C:\\Users\\ronim\\OneDrive\\Escritorio\\Porgramacion Trabajo\\GestionTecnicaturas\\WebApi\\WebApi.csproj",
-      "packagesPath": "C:\\Users\\ronim\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ronim\\OneDrive\\Escritorio\\Porgramacion Trabajo\\GestionTecnicaturas\\WebApi\\obj\\",
+      "projectPath": "C:\\Users\\esteb\\Source\\Repos\\GestionTecnicaturas\\WebApi\\WebApi.csproj",
+      "packagesPath": "C:\\Users\\esteb\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\esteb\\Source\\Repos\\GestionTecnicaturas\\WebApi\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "D:\\DevExpress\\Components\\Offline Packages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\ronim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\esteb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 23.1.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -971,14 +976,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "D:\\DevExpress\\Components\\System\\Components\\Packages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\ronim\\OneDrive\\Escritorio\\Porgramacion Trabajo\\GestionTecnicaturas\\Back\\Back.csproj": {
-              "projectPath": "C:\\Users\\ronim\\OneDrive\\Escritorio\\Porgramacion Trabajo\\GestionTecnicaturas\\Back\\Back.csproj"
+            "C:\\Users\\esteb\\Source\\Repos\\GestionTecnicaturas\\Back\\Back.csproj": {
+              "projectPath": "C:\\Users\\esteb\\Source\\Repos\\GestionTecnicaturas\\Back\\Back.csproj"
             }
           }
         }
