@@ -30,38 +30,34 @@ namespace Front
             }
             else d = new Docente();
         }
-        private void FrmNuevoDocente_Load_1(object sender, EventArgs e)
+        private async void FrmNuevoDocente_Load_1(object sender, EventArgs e)
         {
-            CargarBarrios();
-            CargarTitulos();
+            await CargarBarrios();
+            await CargarTitulos();
             btnEliminar.Enabled = false;
             if (lblABM.Text == "Modificar Docente")
             {
                 btnEliminar.Enabled = true;
-                TraerDocenteAsync();
+                await TraerDocenteAsync();
             }
             cboBarrio.DropDownStyle = ComboBoxStyle.DropDownList;
             cboTitulo.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
-        private async void CargarBarrios()
+
+        private async Task CargarBarrios()
         {
             string url = "https://localhost:7031/barrios"; //agregar url de api
             var dtosJson = await ClienteSingleton.GetInstance().GetAsync(url);
             List<Barrio> lBarrio = JsonConvert.DeserializeObject<List<Barrio>>(dtosJson);
             cboBarrio.DataSource = lBarrio;
-            cboBarrio.ValueMember = "IdBarrio";
-            cboBarrio.DisplayMember = "NombreBarrio";
-
         }
-        private async void CargarTitulos()
+        private async Task CargarTitulos()
         {
             string url = "https://localhost:7031/titulos"; //agegar url de api
             var dtosJson = await ClienteSingleton.GetInstance().GetAsync(url);
             List<Titulo> lTitulo = JsonConvert.DeserializeObject<List<Titulo>>(dtosJson);
             cboTitulo.DataSource = lTitulo;
-            cboTitulo.ValueMember = "IdTitulo";
-            cboTitulo.DisplayMember = "DescripcionTitulo";
         }
 
         private bool Validar()
@@ -127,13 +123,13 @@ namespace Front
                 this.Close();
         }
 
-        private void btnAceptar_Click_1(object sender, EventArgs e)
+        private async void btnAceptar_Click_1(object sender, EventArgs e)
         {
             if (lblABM.Text == "Creando Docente")
             {
                 if (Validar() == true)
                 {
-                    GrabarDocente();
+                    await GrabarDocente();
                 }
                 else
                 {
@@ -142,7 +138,7 @@ namespace Front
             }
             else
             {
-                EditarDocenteAsync(d.IdDocente);
+                await EditarDocenteAsync(d.IdDocente);
             }
         }
 
@@ -154,7 +150,7 @@ namespace Front
             return dataJson.Equals(true);
         }
 
-        private async void TraerDocenteAsync()
+        private async Task TraerDocenteAsync()
         {
             string url = "https://localhost:7031/docente"; //agregar url de api
             var dtosJson = await ClienteSingleton.GetInstance().GetAsync(url);
@@ -171,7 +167,7 @@ namespace Front
             cboTitulo.SelectedIndex = Convert.ToInt16(d.TituloDocente.IdTitulo.ToString());
         }
 
-        private async void GrabarDocente()
+        private async Task GrabarDocente()
         {
             if (await CrearDocenteAsync(CrearDocente()))
             {

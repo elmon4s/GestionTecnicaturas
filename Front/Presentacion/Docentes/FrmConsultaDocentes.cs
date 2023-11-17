@@ -22,12 +22,12 @@ namespace Front.Presentacion.Docentes
             }
         }
 
-        private void FrmConsultaDocentes_Load(object sender, EventArgs e)
+        private async void FrmConsultaDocentes_Load(object sender, EventArgs e)
         {
-            CargarBarrios();
-            CargarTitulos();
+            await CargarBarrios();
+            await CargarTitulos();
         }
-        private async void CargarBarrios()
+        private async Task CargarBarrios()
         {
             string url = "https://localhost:7031/barrios"; //agregar url de api
             var dtosJson = await ClienteSingleton.GetInstance().GetAsync(url);
@@ -37,7 +37,7 @@ namespace Front.Presentacion.Docentes
             cboBarrio.DisplayMember = "NombreBarrio";
             cboBarrio.DropDownStyle = ComboBoxStyle.DropDownList;
         }
-        private async void CargarTitulos()
+        private async Task CargarTitulos()
         {
             string url = "https://localhost:7031/titulos"; //agegar url de api
             var dtosJson = await ClienteSingleton.GetInstance().GetAsync(url);
@@ -48,7 +48,7 @@ namespace Front.Presentacion.Docentes
             cboTitulo.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
-        private void btnConsultar_Click(object sender, EventArgs e)
+        private async void btnConsultar_Click(object sender, EventArgs e)
         {
             //validar campos de carga!!!
             List<Parametro> lst = new List<Parametro>();
@@ -56,13 +56,13 @@ namespace Front.Presentacion.Docentes
             lst.Add(new Parametro("@barrio", int.Parse(cboBarrio.SelectedValue.ToString())));
             lst.Add(new Parametro("@nombre", txtNom.Text));
 
-            consultarAsync(lst);
+            await consultarAsync(lst);
         }
         private string UrlCompleta(string location)
         {
             return Properties.Resources.URL + location;
         }
-        private async void consultarAsync(List<Parametro> lst) //ahhhhhhhhhhhh
+        private async Task consultarAsync(List<Parametro> lst) //ahhhhhhhhhhhh
         {
             int t = int.Parse(cboTitulo.SelectedValue.ToString());
             int b = int.Parse(cboBarrio.SelectedValue.ToString());
