@@ -17,7 +17,7 @@ namespace SoporteReportes
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmReporteMateriaComision());
+            Application.Run(new FrmReporteAlumnosCantAprobados());
         }
     }
 }

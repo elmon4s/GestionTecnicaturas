@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7D0B7206-74F6-453F-809A-D9CA81BE3511}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HelperReportes</RootNamespace>
+    <AssemblyName>HelperReportes</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataSets\DSAlumnosCantAprobados.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSAlumnosCantAprobados.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DSAlumnosCantExamenes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSAlumnosCantExamenes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DSAlumnosMaterias.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSAlumnosMaterias.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DSDocentesPorcentajes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSDocentesPorcentajes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DSMateriaComision.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSMateriaComision.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FrmReporteAlumnosCantAprobados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmReporteAlumnosCantAprobados.Designer.cs">
+      <DependentUpon>FrmReporteAlumnosCantAprobados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FrmReporteAlumnosCantExamenes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmReporteAlumnosCantExamenes.Designer.cs">
+      <DependentUpon>FrmReporteAlumnosCantExamenes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FrmReporteAlumnosMaterias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmReporteAlumnosMaterias.Designer.cs">
+      <DependentUpon>FrmReporteAlumnosMaterias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FrmReporteDocentesPorcentaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmReporteDocentesPorcentaje.Designer.cs">
+      <DependentUpon>FrmReporteDocentesPorcentaje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FrmReporteMateriaComision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmReporteMateriaComision.Designer.cs">
+      <DependentUpon>FrmReporteMateriaComision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Presentacion\FrmReporteAlumnosCantAprobados.resx">
+      <DependentUpon>FrmReporteAlumnosCantAprobados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmReporteAlumnosCantExamenes.resx">
+      <DependentUpon>FrmReporteAlumnosCantExamenes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmReporteAlumnosMaterias.resx">
+      <DependentUpon>FrmReporteAlumnosMaterias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmReporteDocentesPorcentaje.resx">
+      <DependentUpon>FrmReporteDocentesPorcentaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmReporteMateriaComision.resx">
+      <DependentUpon>FrmReporteMateriaComision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Reportes\ReportAlumnosCantAprobados.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportAlumnosCantExamenes.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportAlumnosMaterias.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportDocentesPorcentaje.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportMateriaComision.rdlc" />
+    <None Include="DataSets\DSAlumnosCantAprobados.xsc">
+      <DependentUpon>DSAlumnosCantAprobados.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DSAlumnosCantAprobados.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSAlumnosCantAprobados.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DSAlumnosCantAprobados.xss">
+      <DependentUpon>DSAlumnosCantAprobados.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DSAlumnosCantExamenes.xsc">
+      <DependentUpon>DSAlumnosCantExamenes.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DSAlumnosCantExamenes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSAlumnosCantExamenes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DSAlumnosCantExamenes.xss">
+      <DependentUpon>DSAlumnosCantExamenes.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DSAlumnosMaterias.xsc">
+      <DependentUpon>DSAlumnosMaterias.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DSAlumnosMaterias.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSAlumnosMaterias.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DSAlumnosMaterias.xss">
+      <DependentUpon>DSAlumnosMaterias.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DSDocentesPorcentajes.xsc">
+      <DependentUpon>DSDocentesPorcentajes.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DSDocentesPorcentajes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDocentesPorcentajes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DSDocentesPorcentajes.xss">
+      <DependentUpon>DSDocentesPorcentajes.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DSMateriaComision.xsc">
+      <DependentUpon>DSMateriaComision.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DSMateriaComision.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSMateriaComision.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DSMateriaComision.xss">
+      <DependentUpon>DSMateriaComision.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Cliente\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

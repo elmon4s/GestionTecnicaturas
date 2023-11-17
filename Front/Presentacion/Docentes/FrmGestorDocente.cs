@@ -111,12 +111,6 @@ namespace Front
             }
         }
 
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Seguro que desea salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
-                this.Close();
-        }
-
         private void btnCancelar_Click_1(object sender, EventArgs e)
         {
             if (MessageBox.Show("Esta seguro que desea cancelar?", "Cancelar", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)

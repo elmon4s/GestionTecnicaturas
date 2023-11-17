@@ -175,7 +175,7 @@
             // 
             alumnosPorInscripcionToolStripMenuItem.Name = "alumnosPorInscripcionToolStripMenuItem";
             alumnosPorInscripcionToolStripMenuItem.Size = new Size(355, 22);
-            alumnosPorInscripcionToolStripMenuItem.Text = "Alumnos Por Inscripcion";
+            alumnosPorInscripcionToolStripMenuItem.Text = "Alumnos Cantidad de Materias Por Comision";
             alumnosPorInscripcionToolStripMenuItem.Click += alumnosPorInscripcionToolStripMenuItem_Click;
             // 
             // docentesPorcentajesLibresYAprobadosToolStripMenuItem
@@ -202,7 +202,7 @@
             // galloMateoToolStripMenuItem
             // 
             galloMateoToolStripMenuItem.Name = "galloMateoToolStripMenuItem";
-            galloMateoToolStripMenuItem.Size = new Size(180, 22);
+            galloMateoToolStripMenuItem.Size = new Size(107, 22);
             galloMateoToolStripMenuItem.Text = "Grupo";
             galloMateoToolStripMenuItem.Click += galloMateoToolStripMenuItem_Click;
             // 

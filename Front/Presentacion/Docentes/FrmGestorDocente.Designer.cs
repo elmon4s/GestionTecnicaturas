@@ -47,7 +47,6 @@
             label11 = new Label();
             label12 = new Label();
             btnLimpiar = new Button();
-            btnSalir = new Button();
             btnCancelar = new Button();
             btnAceptar = new Button();
             txtTel = new TextBox();
@@ -230,21 +229,10 @@
             btnLimpiar.UseVisualStyleBackColor = true;
             btnLimpiar.Click += btnLimpiar_Click_1;
             // 
-            // btnSalir
-            // 
-            btnSalir.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnSalir.Location = new Point(12, 304);
-            btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(79, 29);
-            btnSalir.TabIndex = 22;
-            btnSalir.Text = "Salir";
-            btnSalir.UseVisualStyleBackColor = true;
-            btnSalir.Click += btnSalir_Click;
-            // 
             // btnCancelar
             // 
             btnCancelar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCancelar.Location = new Point(97, 304);
+            btnCancelar.Location = new Point(12, 304);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(79, 29);
             btnCancelar.TabIndex = 23;
@@ -367,7 +355,6 @@
             Controls.Add(lblABM);
             Controls.Add(btnAceptar);
             Controls.Add(btnCancelar);
-            Controls.Add(btnSalir);
             Controls.Add(btnLimpiar);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmGestorDocente";
@@ -403,7 +390,6 @@
         private Label label11;
         private Label label12;
         private Button btnLimpiar;
-        private Button btnSalir;
         private Button btnCancelar;
         private Button btnAceptar;
         private TextBox txtTel;

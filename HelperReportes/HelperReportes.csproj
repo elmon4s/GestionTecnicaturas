@@ -1,0 +1,104 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <OutputType>WinExe</OutputType>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing.Design" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Reportes\ReportAlumnosCantAprobados.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportAlumnosCantExamenes.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportAlumnosMaterias.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportDocentesPorcentaje.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportMateriaComision.rdlc" />
+    <None Update="DataSets\DSAlumnosCantAprobados.xsc">
+      <DependentUpon>DSAlumnosCantAprobados.xsd</DependentUpon>
+    </None>
+    <None Update="DataSets\DSAlumnosCantAprobados.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSAlumnosCantAprobados.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="DataSets\DSAlumnosCantAprobados.xss">
+      <DependentUpon>DSAlumnosCantAprobados.xsd</DependentUpon>
+    </None>
+    <None Update="DataSets\DSAlumnosCantExamenes.xsc">
+      <DependentUpon>DSAlumnosCantExamenes.xsd</DependentUpon>
+    </None>
+    <None Update="DataSets\DSAlumnosCantExamenes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSAlumnosCantExamenes.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="DataSets\DSAlumnosCantExamenes.xss">
+      <DependentUpon>DSAlumnosCantExamenes.xsd</DependentUpon>
+    </None>
+    <None Update="DataSets\DSAlumnosMaterias.xsc">
+      <DependentUpon>DSAlumnosMaterias.xsd</DependentUpon>
+    </None>
+    <None Update="DataSets\DSAlumnosMaterias.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSAlumnosMaterias.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="DataSets\DSAlumnosMaterias.xss">
+      <DependentUpon>DSAlumnosMaterias.xsd</DependentUpon>
+    </None>
+    <None Update="DataSets\DSDocentesPorcentajes.xsc">
+      <DependentUpon>DSDocentesPorcentajes.xsd</DependentUpon>
+    </None>
+    <None Update="DataSets\DSDocentesPorcentajes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDocentesPorcentajes.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="DataSets\DSDocentesPorcentajes.xss">
+      <DependentUpon>DSDocentesPorcentajes.xsd</DependentUpon>
+    </None>
+    <None Update="DataSets\DSMateriaComision.xsc">
+      <DependentUpon>DSMateriaComision.xsd</DependentUpon>
+    </None>
+    <None Update="DataSets\DSMateriaComision.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSMateriaComision.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="DataSets\DSMateriaComision.xss">
+      <DependentUpon>DSMateriaComision.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="ReportViewerCore.NETCore" Version="15.1.18" />
+    <PackageReference Include="ReportViewerCore.WinForms" Version="15.1.18" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Back\Back.csproj" />
+  </ItemGroup>
+</Project>

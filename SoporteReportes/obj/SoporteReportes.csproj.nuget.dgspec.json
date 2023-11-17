@@ -81,7 +81,7 @@
         "projectName": "SoporteReportes",
         "projectPath": "C:\\Users\\esteb\\source\\repos\\GestionTecnicaturas\\SoporteReportes\\SoporteReportes.csproj",
         "packagesPath": "C:\\Users\\esteb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\esteb\\Source\\Repos\\GestionTecnicaturas\\SoporteReportes\\obj\\",
+        "outputPath": "C:\\Users\\esteb\\source\\repos\\GestionTecnicaturas\\SoporteReportes\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\DevExpress\\Components\\Offline Packages"

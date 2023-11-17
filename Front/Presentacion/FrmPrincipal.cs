@@ -2,6 +2,7 @@
 using Front.Presentacion.Alumnos;
 using Front.Presentacion.Docentes;
 using Front.Presentacion.Examenes;
+using HelperReportes.Presentacion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -62,27 +63,27 @@ namespace Front
 
         private void cantidadExamenesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //new FrmReporteAlumnosCantExamenes().ShowDialog();
+            new FrmReporteAlumnosCantExamenes().ShowDialog();
         }
 
         private void cantidadExamenesAprobadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //new FrmReporteAlumnosCantAprobados().ShowDialog();
+            new FrmReporteAlumnosCantAprobados().ShowDialog();
         }
 
         private void alumnosPorInscripcionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //new FrmReporteAlumnosInscripcion().ShowDialog();
+            new FrmReporteAlumnosMaterias().ShowDialog();
         }
 
         private void docentesPorcentajesLibresYAprobadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //new FrmReporteDocentesPorcentajes().ShowDialog();
+            new FrmReporteDocentesPorcentaje().ShowDialog();
         }
 
         private void detalleMateriaComisionCon15AlumnosLibrePromocionalORegularToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //new FrmReporteMateriaComision().ShowDialog();
+            new FrmReporteMateriaComision().ShowDialog();
         }
 
         private void galloMateoToolStripMenuItem_Click(object sender, EventArgs e)

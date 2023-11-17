@@ -37,4 +37,8 @@
     <ProjectReference Include="..\Back\Back.csproj" />
   </ItemGroup>
 
+	<ItemGroup>
+		<ProjectReference Include="..\HelperReportes\HelperReportes.csproj" />
+	</ItemGroup>
+
 </Project>
