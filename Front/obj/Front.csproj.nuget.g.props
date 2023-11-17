@@ -13,7 +13,4 @@
     <SourceRoot Include="C:\Users\esteb\.nuget\packages\" />
     <SourceRoot Include="D:\DevExpress\Components\Offline Packages\" />
   </ItemGroup>
-  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">C:\Users\esteb\.nuget\packages\microsoft.codeanalysis.analyzers\3.3.2</PkgMicrosoft_CodeAnalysis_Analyzers>
-  </PropertyGroup>
 </Project>

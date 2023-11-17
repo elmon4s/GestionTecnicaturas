@@ -192,6 +192,7 @@
             btnCancelar.TabIndex = 9;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click_1;
             // 
             // grpCriteriosBusqueda
             // 
@@ -230,6 +231,7 @@
             Name = "FrmConsultaAlumnos";
             SizeGripStyle = SizeGripStyle.Hide;
             Text = "Consultar Alumnos";
+            Load += FrmConsultaAlumnos_Load_1;
             ((System.ComponentModel.ISupportInitialize)dgvAlumnos).EndInit();
             grpCriteriosBusqueda.ResumeLayout(false);
             grpCriteriosBusqueda.PerformLayout();

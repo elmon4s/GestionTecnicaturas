@@ -20,14 +20,6 @@ namespace Front.Presentacion.Alumnos
             InitializeComponent();
         }
 
-        async private void FrmConsultaAlumnos_Load(object sender, EventArgs e)
-        {
-            await CargarComboAsync<EstadoCivil>(UrlCompleta("/estadosciviles"), cboEstadoCivil);
-            await CargarComboAsync<SituacionLaboral>(UrlCompleta("/situacioneslab"), cboSituacionLaboral);
-            cboEstadoCivil.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboSituacionLaboral.DropDownStyle = ComboBoxStyle.DropDownList;
-        }
-
         private async Task CargarComboAsync<T>(string url, ComboBox comboBox)
         {
             var res = await ClienteSingleton.GetInstance().GetAsync(url);
@@ -97,6 +89,22 @@ namespace Front.Presentacion.Alumnos
                 }
             }
 
+        }
+
+        private async void FrmConsultaAlumnos_Load_1(object sender, EventArgs e)
+        {
+            await CargarComboAsync<EstadoCivil>(UrlCompleta("/estadosciviles"), cboEstadoCivil);
+            await CargarComboAsync<SituacionLaboral>(UrlCompleta("/situacioneslab"), cboSituacionLaboral);
+            cboEstadoCivil.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboSituacionLaboral.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Desea Cancelar?", "Cancelar", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                this.Dispose();
+            }
         }
     }
 }

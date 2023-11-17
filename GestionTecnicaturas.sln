@@ -4,9 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Front", "Front\Front.csproj", "{26076D9E-F7F8-4F74-BCEB-FD143CF6998B}"
-	ProjectSection(ProjectDependencies) = postProject
-		{C8771113-C553-45AD-81D4-8D411F754867} = {C8771113-C553-45AD-81D4-8D411F754867}
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Back", "Back\Back.csproj", "{D11A36F9-2763-4A1C-92E1-FE8AA94343B9}"
 EndProject

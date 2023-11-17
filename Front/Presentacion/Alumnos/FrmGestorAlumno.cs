@@ -26,41 +26,6 @@ namespace Front.Presentacion.Alumnos
             oAlumno.IdAlumno = codAlumno;
         }
 
-        private async void FrmGestorAlumno_Load(object sender, EventArgs e)
-        {
-            numId.Controls[0].Visible = false;
-            numAltura.Controls[0].Visible = false;
-
-            await CargarComboAsync<Barrio>(UrlCompleta("/barrios"), cboBarrio);
-            await CargarComboAsync<EstadoCivil>(UrlCompleta("/estadosciviles"), cboEstadoCivil);
-            await CargarComboAsync<SituacionLaboral>(UrlCompleta("/situacioneslab"), cboSituacionLaboral);
-            await CargarComboAsync<EstadoAcademico>(UrlCompleta("/estadosacademicos"), cboEstado);
-
-
-            if (oAlumno.IdAlumno != 0)
-            {
-                var res = await ClienteSingleton.GetInstance().GetAsync(UrlCompleta("/alumno?nroAlumno=" + oAlumno.IdAlumno));
-                oAlumno = JsonConvert.DeserializeObject<Alumno>(res);
-
-                nuevo = false;
-
-                numId.Enabled = false;
-
-                numId.Value = oAlumno.IdAlumno;
-                txtNombre.Text = oAlumno.Nombre;
-                txtApellido.Text = oAlumno.Apellido;
-                cboEstadoCivil.SelectedItem = oAlumno.EstadoCivilAlumno;
-                cboSituacionLaboral.SelectedItem = oAlumno.SituacionAlumno;
-                cboBarrio.SelectedItem = oAlumno.Barrio;
-                txtDireccion.Text = oAlumno.Direccion;
-                numAltura.Value = oAlumno.Altura;
-                txtTel.Text = oAlumno.Telefono;
-                txtEmail.Text = oAlumno.Email;
-
-                ActualizarDgv();
-            }
-        }
-
         private async void btnAceptar_Click(object sender, EventArgs e)
         {
             var alumnoTexto = await ClienteSingleton.GetInstance().GetAsync(UrlCompleta("/alumno?nroAlumno=" + numId.Value));
@@ -186,6 +151,49 @@ namespace Front.Presentacion.Alumnos
             int selectionStart = txtTel.SelectionStart;
             txtTel.Text = txtTel.Text.Replace("[^0-9]", "");
             txtTel.SelectionStart = selectionStart;
+        }
+
+        private async void FrmGestorAlumno_Load_1(object sender, EventArgs e)
+        {
+            numId.Controls[0].Visible = false;
+            numAltura.Controls[0].Visible = false;
+
+            await CargarComboAsync<Barrio>(UrlCompleta("/barrios"), cboBarrio);
+            await CargarComboAsync<EstadoCivil>(UrlCompleta("/estadosciviles"), cboEstadoCivil);
+            await CargarComboAsync<SituacionLaboral>(UrlCompleta("/situacioneslab"), cboSituacionLaboral);
+            await CargarComboAsync<EstadoAcademico>(UrlCompleta("/estadosacademicos"), cboEstado);
+
+
+            if (oAlumno.IdAlumno != 0)
+            {
+                var res = await ClienteSingleton.GetInstance().GetAsync(UrlCompleta("/alumno?nroAlumno=" + oAlumno.IdAlumno));
+                oAlumno = JsonConvert.DeserializeObject<Alumno>(res);
+
+                nuevo = false;
+
+                numId.Enabled = false;
+
+                numId.Value = oAlumno.IdAlumno;
+                txtNombre.Text = oAlumno.Nombre;
+                txtApellido.Text = oAlumno.Apellido;
+                cboEstadoCivil.SelectedItem = oAlumno.EstadoCivilAlumno;
+                cboSituacionLaboral.SelectedItem = oAlumno.SituacionAlumno;
+                cboBarrio.SelectedItem = oAlumno.Barrio;
+                txtDireccion.Text = oAlumno.Direccion;
+                numAltura.Value = oAlumno.Altura;
+                txtTel.Text = oAlumno.Telefono;
+                txtEmail.Text = oAlumno.Email;
+
+                ActualizarDgv();
+            }
+        }
+
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Desea Cancelar?", "Cancelar", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                this.Dispose();
+            }
         }
     }
 }

@@ -430,6 +430,7 @@
             btnCancelar.TabIndex = 34;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click_1;
             // 
             // btnAgregar
             // 
@@ -511,6 +512,7 @@
             Name = "FrmGestorAlumno";
             SizeGripStyle = SizeGripStyle.Hide;
             Text = "Alumno";
+            Load += FrmGestorAlumno_Load_1;
             ((System.ComponentModel.ISupportInitialize)numId).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvMaterias).EndInit();
             ((System.ComponentModel.ISupportInitialize)numAltura).EndInit();
