@@ -122,6 +122,7 @@
             dgvMaterias.RowTemplate.Height = 25;
             dgvMaterias.Size = new Size(1018, 233);
             dgvMaterias.TabIndex = 3;
+            dgvMaterias.CellContentClick += dgvMaterias_CellContentClick;
             // 
             // IdMateria
             // 
@@ -348,6 +349,7 @@
             btnMateriaComision.TabIndex = 25;
             btnMateriaComision.Text = "Establecer";
             btnMateriaComision.UseVisualStyleBackColor = true;
+            btnMateriaComision.Click += btnMateriaComision_Click;
             // 
             // cboEstado
             // 
@@ -421,6 +423,7 @@
             btnAceptar.TabIndex = 33;
             btnAceptar.Text = "Aceptar";
             btnAceptar.UseVisualStyleBackColor = true;
+            btnAceptar.Click += btnAceptar_Click;
             // 
             // btnCancelar
             // 
@@ -430,7 +433,7 @@
             btnCancelar.TabIndex = 34;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
-            btnCancelar.Click += btnCancelar_Click_1;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // btnAgregar
             // 
@@ -441,6 +444,7 @@
             btnAgregar.TabIndex = 35;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // grpMateria
             // 

@@ -12,9 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\esteb\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\esteb\\.nuget\\packages",
-      "D:\\DevExpress\\Components\\Offline Packages"
+      "C:\\Users\\ronim\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\ronim\\.nuget\\packages"
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true

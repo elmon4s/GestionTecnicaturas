@@ -62,6 +62,7 @@
             dgvAlumnos.RowTemplate.Height = 25;
             dgvAlumnos.Size = new Size(859, 297);
             dgvAlumnos.TabIndex = 0;
+            dgvAlumnos.CellContentClick += dgvAlumnos_CellContentClick;
             // 
             // IdAlumno
             // 
@@ -183,6 +184,7 @@
             btnBuscar.TabIndex = 8;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // btnCancelar
             // 
@@ -192,7 +194,7 @@
             btnCancelar.TabIndex = 9;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
-            btnCancelar.Click += btnCancelar_Click_1;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // grpCriteriosBusqueda
             // 
@@ -231,7 +233,7 @@
             Name = "FrmConsultaAlumnos";
             SizeGripStyle = SizeGripStyle.Hide;
             Text = "Consultar Alumnos";
-            Load += FrmConsultaAlumnos_Load_1;
+            Load += FrmConsultaAlumnos_Load;
             ((System.ComponentModel.ISupportInitialize)dgvAlumnos).EndInit();
             grpCriteriosBusqueda.ResumeLayout(false);
             grpCriteriosBusqueda.PerformLayout();

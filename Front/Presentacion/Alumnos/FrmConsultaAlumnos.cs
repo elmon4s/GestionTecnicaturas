@@ -62,11 +62,6 @@ namespace Front.Presentacion.Alumnos
             ActualizarDgv();
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private async void dgvAlumnos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvAlumnos.CurrentCell.ColumnIndex == 5)
@@ -91,7 +86,7 @@ namespace Front.Presentacion.Alumnos
 
         }
 
-        private async void FrmConsultaAlumnos_Load_1(object sender, EventArgs e)
+        private async void FrmConsultaAlumnos_Load(object sender, EventArgs e)
         {
             await CargarComboAsync<EstadoCivil>(UrlCompleta("/estadosciviles"), cboEstadoCivil);
             await CargarComboAsync<SituacionLaboral>(UrlCompleta("/situacioneslab"), cboSituacionLaboral);
@@ -99,12 +94,13 @@ namespace Front.Presentacion.Alumnos
             cboSituacionLaboral.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
-        private void btnCancelar_Click_1(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Desea Cancelar?", "Cancelar", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (MessageBox.Show("Desea Cancelar?", "Cancelar", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 this.Dispose();
             }
         }
+
     }
 }

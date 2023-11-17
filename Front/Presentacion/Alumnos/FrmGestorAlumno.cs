@@ -69,11 +69,6 @@ namespace Front.Presentacion.Alumnos
 
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void btnMateriaComision_Click(object sender, EventArgs e)
         {
             FrmConsultarDetalleMateriaComision form = new FrmConsultarDetalleMateriaComision();
@@ -188,7 +183,7 @@ namespace Front.Presentacion.Alumnos
             }
         }
 
-        private void btnCancelar_Click_1(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Desea Cancelar?", "Cancelar", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {

@@ -68,3 +68,15 @@ C:\Users\esteb\source\repos\GestionTecnicaturas\HelperReportes\bin\Debug\net6.0-
 C:\Users\esteb\source\repos\GestionTecnicaturas\HelperReportes\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
 C:\Users\esteb\source\repos\GestionTecnicaturas\HelperReportes\bin\Debug\net6.0-windows\Back.dll
 C:\Users\esteb\source\repos\GestionTecnicaturas\HelperReportes\bin\Debug\net6.0-windows\Back.pdb
+C:\Users\ronim\OneDrive\Escritorio\Gestion de Tecnicaturas\GestionTecnicaturas\HelperReportes\obj\Debug\net6.0-windows\HelperReportes.csproj.AssemblyReference.cache
+C:\Users\ronim\OneDrive\Escritorio\Gestion de Tecnicaturas\GestionTecnicaturas\HelperReportes\obj\Debug\net6.0-windows\HelperReportes.Presentacion.FrmReporteAlumnosCantAprobados.resources
+C:\Users\ronim\OneDrive\Escritorio\Gestion de Tecnicaturas\GestionTecnicaturas\HelperReportes\obj\Debug\net6.0-windows\HelperReportes.Presentacion.FrmReporteAlumnosCantExamenes.resources
+C:\Users\ronim\OneDrive\Escritorio\Gestion de Tecnicaturas\GestionTecnicaturas\HelperReportes\obj\Debug\net6.0-windows\HelperReportes.Presentacion.FrmReporteAlumnosMaterias.resources
+C:\Users\ronim\OneDrive\Escritorio\Gestion de Tecnicaturas\GestionTecnicaturas\HelperReportes\obj\Debug\net6.0-windows\HelperReportes.Presentacion.FrmReporteDocentesPorcentaje.resources
+C:\Users\ronim\OneDrive\Escritorio\Gestion de Tecnicaturas\GestionTecnicaturas\HelperReportes\obj\Debug\net6.0-windows\HelperReportes.Presentacion.FrmReporteMateriaComision.resources
+C:\Users\ronim\OneDrive\Escritorio\Gestion de Tecnicaturas\GestionTecnicaturas\HelperReportes\obj\Debug\net6.0-windows\HelperReportes.Properties.Resources.resources
+C:\Users\ronim\OneDrive\Escritorio\Gestion de Tecnicaturas\GestionTecnicaturas\HelperReportes\obj\Debug\net6.0-windows\HelperReportes.csproj.GenerateResource.cache
+C:\Users\ronim\OneDrive\Escritorio\Gestion de Tecnicaturas\GestionTecnicaturas\HelperReportes\obj\Debug\net6.0-windows\HelperReportes.dll.licenses
+C:\Users\ronim\OneDrive\Escritorio\Gestion de Tecnicaturas\GestionTecnicaturas\HelperReportes\obj\Debug\net6.0-windows\HelperReportes.dll
+C:\Users\ronim\OneDrive\Escritorio\Gestion de Tecnicaturas\GestionTecnicaturas\HelperReportes\obj\Debug\net6.0-windows\refint\HelperReportes.dll
+C:\Users\ronim\OneDrive\Escritorio\Gestion de Tecnicaturas\GestionTecnicaturas\HelperReportes\obj\Debug\net6.0-windows\HelperReportes.pdb
