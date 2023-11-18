@@ -30,11 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultarDetalleMateriaComision));
             dgvDetalles = new DataGridView();
-            IdMateriaComision = new DataGridViewTextBoxColumn();
-            Docente = new DataGridViewTextBoxColumn();
-            Materia = new DataGridViewTextBoxColumn();
-            Comision = new DataGridViewTextBoxColumn();
-            Acciones = new DataGridViewButtonColumn();
             lblDocente = new Label();
             lblComision = new Label();
             lblMateria = new Label();
@@ -44,6 +39,12 @@
             btnCancelar = new Button();
             btnBuscar = new Button();
             grbCriteriosBusqueda = new GroupBox();
+            IdMateriaComision = new DataGridViewTextBoxColumn();
+            Docente = new DataGridViewTextBoxColumn();
+            Materia = new DataGridViewTextBoxColumn();
+            Comision = new DataGridViewTextBoxColumn();
+            AnioLectivo = new DataGridViewTextBoxColumn();
+            Acciones = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)dgvDetalles).BeginInit();
             grbCriteriosBusqueda.SuspendLayout();
             SuspendLayout();
@@ -54,8 +55,9 @@
             dgvDetalles.AllowUserToDeleteRows = false;
             dgvDetalles.AllowUserToResizeColumns = false;
             dgvDetalles.AllowUserToResizeRows = false;
+            dgvDetalles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvDetalles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvDetalles.Columns.AddRange(new DataGridViewColumn[] { IdMateriaComision, Docente, Materia, Comision, Acciones });
+            dgvDetalles.Columns.AddRange(new DataGridViewColumn[] { IdMateriaComision, Docente, Materia, Comision, AnioLectivo, Acciones });
             dgvDetalles.Location = new Point(33, 178);
             dgvDetalles.Name = "dgvDetalles";
             dgvDetalles.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -63,47 +65,6 @@
             dgvDetalles.Size = new Size(669, 295);
             dgvDetalles.TabIndex = 0;
             dgvDetalles.CellContentClick += dgvDetalles_CellContentClick;
-            // 
-            // IdMateriaComision
-            // 
-            IdMateriaComision.HeaderText = "IdMateriaComision";
-            IdMateriaComision.Name = "IdMateriaComision";
-            IdMateriaComision.ReadOnly = true;
-            IdMateriaComision.Visible = false;
-            // 
-            // Docente
-            // 
-            Docente.FillWeight = 122.6994F;
-            Docente.HeaderText = "Docente";
-            Docente.Name = "Docente";
-            Docente.ReadOnly = true;
-            Docente.Width = 200;
-            // 
-            // Materia
-            // 
-            Materia.FillWeight = 106.9883F;
-            Materia.HeaderText = "Materia";
-            Materia.Name = "Materia";
-            Materia.ReadOnly = true;
-            Materia.Width = 174;
-            // 
-            // Comision
-            // 
-            Comision.FillWeight = 55.50504F;
-            Comision.HeaderText = "Comisión";
-            Comision.Name = "Comision";
-            Comision.ReadOnly = true;
-            Comision.Width = 91;
-            // 
-            // Acciones
-            // 
-            Acciones.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Acciones.FillWeight = 114.8073F;
-            Acciones.HeaderText = "Acciones";
-            Acciones.Name = "Acciones";
-            Acciones.ReadOnly = true;
-            Acciones.Resizable = DataGridViewTriState.True;
-            Acciones.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
             // lblDocente
             // 
@@ -196,6 +157,51 @@
             grbCriteriosBusqueda.TabStop = false;
             grbCriteriosBusqueda.Text = "Criterios de Busqueda";
             // 
+            // IdMateriaComision
+            // 
+            IdMateriaComision.HeaderText = "IdMateriaComision";
+            IdMateriaComision.Name = "IdMateriaComision";
+            IdMateriaComision.ReadOnly = true;
+            IdMateriaComision.Visible = false;
+            // 
+            // Docente
+            // 
+            Docente.FillWeight = 122.6994F;
+            Docente.HeaderText = "Docente";
+            Docente.Name = "Docente";
+            Docente.ReadOnly = true;
+            // 
+            // Materia
+            // 
+            Materia.FillWeight = 106.9883F;
+            Materia.HeaderText = "Materia";
+            Materia.Name = "Materia";
+            Materia.ReadOnly = true;
+            // 
+            // Comision
+            // 
+            Comision.FillWeight = 70F;
+            Comision.HeaderText = "Comisión";
+            Comision.Name = "Comision";
+            Comision.ReadOnly = true;
+            // 
+            // AnioLectivo
+            // 
+            AnioLectivo.FillWeight = 70F;
+            AnioLectivo.HeaderText = "Año Lectivo";
+            AnioLectivo.Name = "AnioLectivo";
+            // 
+            // Acciones
+            // 
+            Acciones.FillWeight = 110F;
+            Acciones.HeaderText = "Acciones";
+            Acciones.Name = "Acciones";
+            Acciones.ReadOnly = true;
+            Acciones.Resizable = DataGridViewTriState.True;
+            Acciones.SortMode = DataGridViewColumnSortMode.Automatic;
+            Acciones.Text = "Seleccionar";
+            Acciones.UseColumnTextForButtonValue = true;
+            // 
             // FrmConsultarDetalleMateriaComision
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
@@ -232,11 +238,12 @@
         private TextBox txtMateria;
         private Button btnCancelar;
         private Button btnBuscar;
+        private GroupBox grbCriteriosBusqueda;
         private DataGridViewTextBoxColumn IdMateriaComision;
         private DataGridViewTextBoxColumn Docente;
         private DataGridViewTextBoxColumn Materia;
         private DataGridViewTextBoxColumn Comision;
+        private DataGridViewTextBoxColumn AnioLectivo;
         private DataGridViewButtonColumn Acciones;
-        private GroupBox grbCriteriosBusqueda;
     }
 }

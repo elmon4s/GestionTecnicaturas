@@ -39,7 +39,7 @@ namespace Front.Presentacion.Alumnos
                     dmc.DocenteMateriaComision.Apellido + " " + dmc.DocenteMateriaComision.Nombre,
                     dmc.MateriaDetalle.NombreMateria,
                     dmc.ComisionDetalle.DescripcionComision,
-                    "Seleccionar"
+                    dmc.AñoLectivoDetalle
                 });
             }
         }
@@ -52,7 +52,7 @@ namespace Front.Presentacion.Alumnos
 
         private void dgvDetalles_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvDetalles.CurrentCell.ColumnIndex == 4)
+            if (dgvDetalles.CurrentCell.ColumnIndex == 5)
             {
                 foreach (DetalleMateriaComision dmc in lMateriaComision)
                 {

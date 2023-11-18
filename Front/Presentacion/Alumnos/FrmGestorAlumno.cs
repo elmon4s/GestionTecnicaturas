@@ -86,14 +86,23 @@ namespace Front.Presentacion.Alumnos
             if (dmc == null)
             {
                 MessageBox.Show("Se debe seleccionar una Materia Comision");
+                return;
             }
-            else
+
+            foreach (DataGridViewRow fila in dgvMaterias.Rows)
             {
-                DetalleAlumnoMateria dam = new DetalleAlumnoMateria(oAlumno.DetallesAlumno.Count, dmc, (EstadoAcademico)cboEstado.SelectedItem, dtpFechaInsc.Value, dtpFechaEstado.Value, new List<Evaluacion>());
-                oAlumno.DetallesAlumno.Add(dam);
-                ActualizarDgv();
-                dmc = null;
+                if (Convert.ToUInt32(fila.Cells["IdMateria"].Value) == dmc.IdDetalleMateriaComision)
+                {
+                    MessageBox.Show("Esta materia y comision ya fueron seleccionadadas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
             }
+
+            DetalleAlumnoMateria dam = new DetalleAlumnoMateria(dmc.IdDetalleMateriaComision, dmc, (EstadoAcademico)cboEstado.SelectedItem, dtpFechaInsc.Value, dtpFechaEstado.Value, new List<Evaluacion>());
+            oAlumno.DetallesAlumno.Add(dam);
+            ActualizarDgv();
+            dmc = null;
+            
         }
 
         private async Task CargarComboAsync<T>(string url, ComboBox comboBox)
