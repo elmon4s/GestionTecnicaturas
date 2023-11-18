@@ -15,7 +15,10 @@ namespace Back.Dominio
         public string Telefono { get; set; }
         public string Email { get; set; }
         public Barrio Barrio { get; set; }
-
+        public string NombreCompleto
+        {
+            get { return $"{Apellido}, {Nombre}"; }
+        }
         public Persona()
         {
             Nombre = string.Empty;

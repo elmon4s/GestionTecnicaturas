@@ -29,15 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultarExamenes));
-            btnConsultar = new Button();
             dtpFechaHasta = new DateTimePicker();
             dtpFechaDesde = new DateTimePicker();
             btnSalir = new Button();
             dgvExamenes = new DataGridView();
-            ColIdExamen = new DataGridViewTextBoxColumn();
-            ColFecha = new DataGridViewTextBoxColumn();
-            ColDocente = new DataGridViewTextBoxColumn();
-            ColAcciones = new DataGridViewButtonColumn();
             lblFechaDesde = new Label();
             lblFechaHasta = new Label();
             cboMaterias = new ComboBox();
@@ -45,25 +40,20 @@
             cboDocentes = new ComboBox();
             lblDocentes = new Label();
             grpCriterios = new GroupBox();
-            ckbActivar = new CheckBox();
+            btnLimpiar = new Button();
+            ckbActivarFechas = new CheckBox();
             pnlFechas = new Panel();
+            btnConsultar = new Button();
             btnEliminar = new Button();
+            ColIdExamen = new DataGridViewTextBoxColumn();
+            ColFecha = new DataGridViewTextBoxColumn();
+            ColDocente = new DataGridViewTextBoxColumn();
+            ColMateria = new DataGridViewTextBoxColumn();
+            ColAcciones = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)dgvExamenes).BeginInit();
             grpCriterios.SuspendLayout();
             pnlFechas.SuspendLayout();
             SuspendLayout();
-            // 
-            // btnConsultar
-            // 
-            btnConsultar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnConsultar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnConsultar.Location = new Point(500, 83);
-            btnConsultar.Name = "btnConsultar";
-            btnConsultar.Size = new Size(79, 29);
-            btnConsultar.TabIndex = 25;
-            btnConsultar.Text = "Consultar";
-            btnConsultar.UseVisualStyleBackColor = true;
-            btnConsultar.Click += btnConsultar_Click;
             // 
             // dtpFechaHasta
             // 
@@ -87,7 +77,7 @@
             // 
             btnSalir.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnSalir.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnSalir.Location = new Point(597, 411);
+            btnSalir.Location = new Point(640, 442);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(79, 29);
             btnSalir.TabIndex = 18;
@@ -102,44 +92,16 @@
             dgvExamenes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvExamenes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvExamenes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dgvExamenes.Columns.AddRange(new DataGridViewColumn[] { ColIdExamen, ColFecha, ColDocente, ColAcciones });
-            dgvExamenes.Location = new Point(44, 161);
+            dgvExamenes.Columns.AddRange(new DataGridViewColumn[] { ColIdExamen, ColFecha, ColDocente, ColMateria, ColAcciones });
+            dgvExamenes.Location = new Point(44, 187);
             dgvExamenes.MaximumSize = new Size(880, 320);
             dgvExamenes.MultiSelect = false;
             dgvExamenes.Name = "dgvExamenes";
             dgvExamenes.ReadOnly = true;
             dgvExamenes.RowTemplate.Height = 25;
-            dgvExamenes.Size = new Size(632, 244);
+            dgvExamenes.Size = new Size(675, 249);
             dgvExamenes.TabIndex = 17;
             dgvExamenes.CellContentClick += dgvExamenes_CellContentClick;
-            // 
-            // ColIdExamen
-            // 
-            ColIdExamen.FillWeight = 25F;
-            ColIdExamen.HeaderText = "ColId";
-            ColIdExamen.Name = "ColIdExamen";
-            ColIdExamen.ReadOnly = true;
-            ColIdExamen.Visible = false;
-            // 
-            // ColFecha
-            // 
-            ColFecha.HeaderText = "Fecha del Examen";
-            ColFecha.Name = "ColFecha";
-            ColFecha.ReadOnly = true;
-            // 
-            // ColDocente
-            // 
-            ColDocente.HeaderText = "Docente";
-            ColDocente.Name = "ColDocente";
-            ColDocente.ReadOnly = true;
-            // 
-            // ColAcciones
-            // 
-            ColAcciones.HeaderText = "Acciones";
-            ColAcciones.Name = "ColAcciones";
-            ColAcciones.ReadOnly = true;
-            ColAcciones.Text = "Ver detalles del Examen";
-            ColAcciones.UseColumnTextForButtonValue = true;
             // 
             // lblFechaDesde
             // 
@@ -186,7 +148,7 @@
             // 
             cboDocentes.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             cboDocentes.FormattingEnabled = true;
-            cboDocentes.Location = new Point(68, 80);
+            cboDocentes.Location = new Point(68, 72);
             cboDocentes.Name = "cboDocentes";
             cboDocentes.Size = new Size(161, 25);
             cboDocentes.TabIndex = 28;
@@ -195,7 +157,7 @@
             // 
             lblDocentes.AutoSize = true;
             lblDocentes.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            lblDocentes.Location = new Point(11, 83);
+            lblDocentes.Location = new Point(11, 75);
             lblDocentes.Name = "lblDocentes";
             lblDocentes.Size = new Size(60, 19);
             lblDocentes.TabIndex = 29;
@@ -204,7 +166,8 @@
             // grpCriterios
             // 
             grpCriterios.BackColor = Color.WhiteSmoke;
-            grpCriterios.Controls.Add(ckbActivar);
+            grpCriterios.Controls.Add(btnLimpiar);
+            grpCriterios.Controls.Add(ckbActivarFechas);
             grpCriterios.Controls.Add(pnlFechas);
             grpCriterios.Controls.Add(cboMaterias);
             grpCriterios.Controls.Add(cboDocentes);
@@ -212,23 +175,35 @@
             grpCriterios.Controls.Add(lblMateria);
             grpCriterios.Controls.Add(btnConsultar);
             grpCriterios.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            grpCriterios.Location = new Point(63, 29);
+            grpCriterios.Location = new Point(62, 29);
             grpCriterios.Name = "grpCriterios";
-            grpCriterios.Size = new Size(595, 126);
+            grpCriterios.Size = new Size(644, 152);
             grpCriterios.TabIndex = 31;
             grpCriterios.TabStop = false;
             grpCriterios.Text = "Criterios de Búsqueda:";
             // 
-            // ckbActivar
+            // btnLimpiar
             // 
-            ckbActivar.AutoSize = true;
-            ckbActivar.Location = new Point(249, 59);
-            ckbActivar.Name = "ckbActivar";
-            ckbActivar.Size = new Size(115, 23);
-            ckbActivar.TabIndex = 31;
-            ckbActivar.Text = "Activar Fechas";
-            ckbActivar.UseVisualStyleBackColor = true;
-            ckbActivar.CheckedChanged += ckbActivar_CheckedChanged;
+            btnLimpiar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnLimpiar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLimpiar.Location = new Point(163, 103);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(66, 26);
+            btnLimpiar.TabIndex = 32;
+            btnLimpiar.Text = "Limpiar";
+            btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnLimpiar_Click;
+            // 
+            // ckbActivarFechas
+            // 
+            ckbActivarFechas.AutoSize = true;
+            ckbActivarFechas.Location = new Point(282, 58);
+            ckbActivarFechas.Name = "ckbActivarFechas";
+            ckbActivarFechas.Size = new Size(115, 23);
+            ckbActivarFechas.TabIndex = 31;
+            ckbActivarFechas.Text = "Activar Fechas";
+            ckbActivarFechas.UseVisualStyleBackColor = true;
+            ckbActivarFechas.CheckedChanged += ckbActivar_CheckedChanged;
             // 
             // pnlFechas
             // 
@@ -236,16 +211,28 @@
             pnlFechas.Controls.Add(dtpFechaDesde);
             pnlFechas.Controls.Add(dtpFechaHasta);
             pnlFechas.Controls.Add(lblFechaHasta);
-            pnlFechas.Location = new Point(245, 31);
+            pnlFechas.Location = new Point(278, 30);
             pnlFechas.Name = "pnlFechas";
             pnlFechas.Size = new Size(344, 28);
             pnlFechas.TabIndex = 30;
+            // 
+            // btnConsultar
+            // 
+            btnConsultar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnConsultar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnConsultar.Location = new Point(537, 91);
+            btnConsultar.Name = "btnConsultar";
+            btnConsultar.Size = new Size(79, 29);
+            btnConsultar.TabIndex = 25;
+            btnConsultar.Text = "Consultar";
+            btnConsultar.UseVisualStyleBackColor = true;
+            btnConsultar.Click += btnConsultar_Click;
             // 
             // btnEliminar
             // 
             btnEliminar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnEliminar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEliminar.Location = new Point(512, 411);
+            btnEliminar.Location = new Point(555, 442);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(79, 29);
             btnEliminar.TabIndex = 23;
@@ -253,12 +240,47 @@
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += btnEliminar_Click;
             // 
+            // ColIdExamen
+            // 
+            ColIdExamen.FillWeight = 25F;
+            ColIdExamen.HeaderText = "ColId";
+            ColIdExamen.Name = "ColIdExamen";
+            ColIdExamen.ReadOnly = true;
+            ColIdExamen.Visible = false;
+            // 
+            // ColFecha
+            // 
+            ColFecha.HeaderText = "Fecha del Examen";
+            ColFecha.Name = "ColFecha";
+            ColFecha.ReadOnly = true;
+            // 
+            // ColDocente
+            // 
+            ColDocente.HeaderText = "Docente";
+            ColDocente.Name = "ColDocente";
+            ColDocente.ReadOnly = true;
+            // 
+            // ColMateria
+            // 
+            ColMateria.HeaderText = "Materia";
+            ColMateria.Name = "ColMateria";
+            ColMateria.ReadOnly = true;
+            // 
+            // ColAcciones
+            // 
+            ColAcciones.FillWeight = 60F;
+            ColAcciones.HeaderText = "Acciones";
+            ColAcciones.Name = "ColAcciones";
+            ColAcciones.ReadOnly = true;
+            ColAcciones.Text = "Ver Examen";
+            ColAcciones.UseColumnTextForButtonValue = true;
+            // 
             // FrmConsultarExamenes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(725, 462);
+            ClientSize = new Size(768, 493);
             Controls.Add(grpCriterios);
             Controls.Add(btnEliminar);
             Controls.Add(btnSalir);
@@ -279,8 +301,6 @@
         }
 
         #endregion
-
-        private Button btnConsultar;
         private DateTimePicker dtpFechaHasta;
         private DateTimePicker dtpFechaDesde;
         private Button btnSalir;
@@ -294,11 +314,14 @@
         private GroupBox grpCriterios;
         private GroupBox groupBox1;
         private Panel pnlFechas;
-        private CheckBox ckbActivar;
+        private CheckBox ckbActivarFechas;
         private Button btnEliminar;
+        private Button btnLimpiar;
+        private Button btnConsultar;
         private DataGridViewTextBoxColumn ColIdExamen;
         private DataGridViewTextBoxColumn ColFecha;
         private DataGridViewTextBoxColumn ColDocente;
+        private DataGridViewTextBoxColumn ColMateria;
         private DataGridViewButtonColumn ColAcciones;
     }
 }

@@ -463,26 +463,6 @@ END
 --Hasta aca llega el archivo: ScriptBD-(CON Sentencias LCII(en formato SP) y COMANDOS GRUPO3.txt (Hr.21_02 - 11_11_2023))
 
 go
-ALTER PROCEDURE PA_CONSULTAR_EXAMENES
-    @id_docente INT=null,
-    @id_materia INT=null,
-    @fecha_desde DATETIME=null,
-    @fecha_hasta DATETIME=null
-AS
-BEGIN
-    SELECT id_examen, fecha_examen, e.id_docente, nom_docente, ape_docente, e.id_materia
-    FROM Examenes e
-    JOIN Docentes d ON e.id_docente = d.id_docente
-    JOIN Materias m ON m.id_materia = e.id_materia
-    WHERE (e.id_docente = @id_docente or @id_docente IS NULL)
-        AND (e.id_materia = @id_materia or @id_materia IS NULL)
-        AND e.fecha_baja IS NULL
-        AND (
-            (@fecha_desde IS NULL AND @fecha_hasta IS NULL) -- Ambas fechas son nulas
-            OR (e.fecha_examen >= @fecha_desde AND e.fecha_examen <= @fecha_hasta)); -- Fechas dentro del rango
-END
-
-go
 ALTER PROCEDURE PA_CONSULTAR_EXAMEN
 @id_examen int
 AS
@@ -599,3 +579,50 @@ ORDER BY 1, 2
 END;
 
 --EXEC sp_sentencia6
+
+--ULTIMAS MODIFICACNONES DE PROCEDIMIENTOS ALMACENADOS
+
+GO
+ALTER PROCEDURE [dbo].[PA_CONSULTAR_EXAMENES]
+    @id_docente INT=null,
+    @id_materia INT=null,
+    @fecha_desde DATETIME=null,
+    @fecha_hasta DATETIME=null
+AS
+BEGIN
+    SELECT id_examen, fecha_examen, e.id_docente, nom_docente, ape_docente, e.id_materia,m.nom_materia
+    FROM Examenes e
+    JOIN Docentes d ON e.id_docente = d.id_docente
+    JOIN Materias m ON m.id_materia = e.id_materia
+    WHERE (e.id_docente = @id_docente or @id_docente IS NULL)
+        AND (e.id_materia = @id_materia or @id_materia IS NULL)
+        AND e.fecha_baja IS NULL
+        AND (
+            (@fecha_desde IS NULL AND @fecha_hasta IS NULL) -- Ambas fechas son nulas
+            OR (e.fecha_examen >= @fecha_desde AND e.fecha_examen <= @fecha_hasta)) -- Fechas dentro del rango
+END
+
+GO
+ALTER PROCEDURE [dbo].[PA_CONSULTAR_DETALLES_ALUMNO]
+@id_alumno int
+AS
+BEGIN
+SELECT dam.id_detalle_alumno_materia,dam.fecha_inscripcion,dam.fecha_estado,dam.id_estado_academico,estado_academico,dmc.id_detalle_materia_comision,M.id_materia,M.nom_materia,c.id_comision,c.descripcion_comision
+		,dmc.id_docente, d.nom_docente, d.ape_docente
+FROM Materias M JOIN Tecnicaturas t
+	ON t.id_tecnicatura=m.id_materia
+	JOIN Detalle_materias_comisiones dmc
+	ON dmc.id_materia=m.id_materia
+	JOIN Comisiones c ON c.id_comision=dmc.id_comision
+	JOIN Detalles_alumnos_materias dam
+	ON dam.id_detalle_materia_comision=dmc.id_detalle_materia_comision
+	JOIN Estados_academicos e 
+	ON e.id_estado_academico=dam.id_estado_academico
+	JOIN Docentes d
+	ON d.id_docente=dmc.id_docente
+WHERE id_alumno=@id_alumno
+END
+
+--Eliminacion de la constraint de la tabla Evaluaciones
+ALTER TABLE Evaluaciones
+DROP CONSTRAINT fk_evaluacion_detalle_alumno_materia;

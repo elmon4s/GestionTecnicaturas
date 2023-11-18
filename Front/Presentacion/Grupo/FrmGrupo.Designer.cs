@@ -90,7 +90,7 @@
             label5.Name = "label5";
             label5.Size = new Size(204, 25);
             label5.TabIndex = 4;
-            label5.Text = "405513 Masera Gustavo";
+            label5.Text = "405153 Masera Gustavo";
             // 
             // label6
             // 

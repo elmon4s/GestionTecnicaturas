@@ -33,7 +33,7 @@ namespace Front.Presentacion.Alumnos
 
             if (numId.Value < 1)
                 MessageBox.Show("Se debe ingresar un legajo mayor o igual a 1", "LEGAJO INVALIDO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else if (alumnoObjeto.IdAlumno != 0)
+            else if (nuevo && alumnoObjeto.IdAlumno != 0)
                 MessageBox.Show("El legajo ingresado ya existe", "LEGAJO INVALIDO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else if (txtNombre.Text.Length < 1)
                 MessageBox.Show("Se debe ingresar un nombre", "NOMBRE INVALIDO", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -105,13 +105,15 @@ namespace Front.Presentacion.Alumnos
             
         }
 
-        private async Task CargarComboAsync<T>(string url, ComboBox comboBox)
+        private async Task CargarComboAsync<T>(string url, ComboBox comboBox,string displayMember, string valueMember)
         {
             var res = await ClienteSingleton.GetInstance().GetAsync(url);
 
             List<T> lst = JsonConvert.DeserializeObject<List<T>>(res);
 
             comboBox.DataSource = lst;
+            comboBox.DisplayMember = displayMember;
+            comboBox.ValueMember = valueMember;
         }
 
         private string UrlCompleta(string location)
@@ -162,10 +164,10 @@ namespace Front.Presentacion.Alumnos
             numId.Controls[0].Visible = false;
             numAltura.Controls[0].Visible = false;
 
-            await CargarComboAsync<Barrio>(UrlCompleta("/barrios"), cboBarrio);
-            await CargarComboAsync<EstadoCivil>(UrlCompleta("/estadosciviles"), cboEstadoCivil);
-            await CargarComboAsync<SituacionLaboral>(UrlCompleta("/situacioneslab"), cboSituacionLaboral);
-            await CargarComboAsync<EstadoAcademico>(UrlCompleta("/estadosacademicos"), cboEstado);
+            await CargarComboAsync<Barrio>(UrlCompleta("/barrios"), cboBarrio, "NombreBarrio","IdBarrio");
+            await CargarComboAsync<EstadoCivil>(UrlCompleta("/estadosciviles"), cboEstadoCivil,"DescripcionEstadoCivil","IdEstadoCivil");
+            await CargarComboAsync<SituacionLaboral>(UrlCompleta("/situacioneslab"), cboSituacionLaboral,"Situacion","IdSituacion");
+            await CargarComboAsync<EstadoAcademico>(UrlCompleta("/estadosacademicos"), cboEstado, "DescEstadoAcademico","IdEstadoAcademico");
 
 
             if (oAlumno.IdAlumno != 0)
@@ -180,9 +182,9 @@ namespace Front.Presentacion.Alumnos
                 numId.Value = oAlumno.IdAlumno;
                 txtNombre.Text = oAlumno.Nombre;
                 txtApellido.Text = oAlumno.Apellido;
-                cboEstadoCivil.SelectedItem = oAlumno.EstadoCivilAlumno;
-                cboSituacionLaboral.SelectedItem = oAlumno.SituacionAlumno;
-                cboBarrio.SelectedItem = oAlumno.Barrio;
+                cboEstadoCivil.SelectedValue = oAlumno.EstadoCivilAlumno.IdEstadoCivil;
+                cboSituacionLaboral.SelectedValue = oAlumno.SituacionAlumno.IdSituacion;
+                cboBarrio.SelectedValue = oAlumno.Barrio.IdBarrio;
                 txtDireccion.Text = oAlumno.Direccion;
                 numAltura.Value = oAlumno.Altura;
                 txtTel.Text = oAlumno.Telefono;

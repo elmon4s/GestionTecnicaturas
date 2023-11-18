@@ -200,6 +200,9 @@ namespace Back.Datos.Implementacion
                 auxDetMC.MateriaDetalle.NombreMateria = filaDet["nom_materia"].ToString();
                 auxDetMC.ComisionDetalle.IdComision = int.Parse(filaDet["id_comision"].ToString());
                 auxDetMC.ComisionDetalle.DescripcionComision = filaDet["descripcion_comision"].ToString();
+                auxDetMC.DocenteMateriaComision.IdDocente = int.Parse(filaDet["id_docente"].ToString());
+                auxDetMC.DocenteMateriaComision.Nombre = filaDet["nom_docente"].ToString();
+                auxDetMC.DocenteMateriaComision.Apellido = filaDet["ape_docente"].ToString();
                 det.DetalleMateriaComision = auxDetMC;
                 oAlumno.DetallesAlumno.Add(det);
             }

@@ -76,7 +76,7 @@ namespace Front.Presentacion.Examenes
                 cboMaterias.ValueMember = "IdMateria";
 
                 cboDocentes.DataSource = new List<Docente> { examenExistente.DocenteExamen };
-                cboDocentes.DisplayMember = "Apellido";
+                cboDocentes.DisplayMember = "NombreCompleto";
                 cboDocentes.ValueMember = "IdDocente";
 
 
@@ -90,7 +90,8 @@ namespace Front.Presentacion.Examenes
         private async void btnEditar_Click(object sender, EventArgs e)
         {
             Habilitar(true);
-            await CargarDatosAsync<Materia>(Properties.Resources.URL + "/materias", cboMaterias, "NombreMateria", "IdMateria");
+            int idMateria = (int)cboMaterias.SelectedValue;
+            await CargarDatosAsync<Alumno>($"{Properties.Resources.URL}/alumnosExamen?materia={idMateria}", cboAlumnos, "NombreCompleto", "IdAlumno");
         }
 
         private async Task<bool> EditarExamenAsync(Examen examen)
@@ -176,8 +177,8 @@ namespace Front.Presentacion.Examenes
                 return;
             }
             int idMateria = (int)cboMaterias.SelectedValue;
-            await CargarDatosAsync<Alumno>($"{Properties.Resources.URL}/alumnosExamen?materia={idMateria}", cboAlumnos, "Apellido", "IdAlumno");
-            await CargarDatosAsync<Docente>($"{Properties.Resources.URL}/docentesExamen?materia={idMateria}", cboDocentes, "Apellido", "IdDocente");
+            await CargarDatosAsync<Alumno>($"{Properties.Resources.URL}/alumnosExamen?materia={idMateria}", cboAlumnos, "NombreCompleto", "IdAlumno");
+            await CargarDatosAsync<Docente>($"{Properties.Resources.URL}/docentesExamen?materia={idMateria}", cboDocentes, "NombreCompleto", "IdDocente");
             Habilitar(true);
         }
 
@@ -220,8 +221,8 @@ namespace Front.Presentacion.Examenes
                 examenNuevo.AgregarDetalle(detalle);
             }
 
-            dgvDetalles.Rows.Add(new object[] { detalle.AlumnoDetalle.IdAlumno,detalle.AlumnoDetalle.Nombre,
-                                detalle.AlumnoDetalle.Apellido, detalle.NotaDetalle, "Quitar"});
+            dgvDetalles.Rows.Add(new object[] { detalle.AlumnoDetalle.IdAlumno,detalle.AlumnoDetalle.Apellido,
+                                detalle.AlumnoDetalle.Nombre, detalle.NotaDetalle, "Quitar"});
         }
 
         private void dgvDetalles_CellContentClick(object sender, DataGridViewCellEventArgs e)

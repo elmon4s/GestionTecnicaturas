@@ -36,11 +36,6 @@
             cboDocentes = new ComboBox();
             btnAceptar = new Button();
             dgvDetalles = new DataGridView();
-            ColID = new DataGridViewTextBoxColumn();
-            ColNombre = new DataGridViewTextBoxColumn();
-            ColApellido = new DataGridViewTextBoxColumn();
-            ColNota = new DataGridViewTextBoxColumn();
-            ColAcciones = new DataGridViewButtonColumn();
             lblAlumno = new Label();
             cboAlumnos = new ComboBox();
             lblNota = new Label();
@@ -51,6 +46,11 @@
             lblDocente = new Label();
             btnEditar = new Button();
             btnSalir = new Button();
+            ColID = new DataGridViewTextBoxColumn();
+            ColApellido = new DataGridViewTextBoxColumn();
+            ColNombre = new DataGridViewTextBoxColumn();
+            ColNota = new DataGridViewTextBoxColumn();
+            ColAcciones = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)dgvDetalles).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudNota).BeginInit();
             pnlExamen.SuspendLayout();
@@ -122,47 +122,13 @@
             dgvDetalles.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvDetalles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvDetalles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDetalles.Columns.AddRange(new DataGridViewColumn[] { ColID, ColNombre, ColApellido, ColNota, ColAcciones });
+            dgvDetalles.Columns.AddRange(new DataGridViewColumn[] { ColID, ColApellido, ColNombre, ColNota, ColAcciones });
             dgvDetalles.Location = new Point(36, 82);
             dgvDetalles.Name = "dgvDetalles";
             dgvDetalles.ReadOnly = true;
             dgvDetalles.Size = new Size(570, 196);
             dgvDetalles.TabIndex = 7;
             dgvDetalles.CellContentClick += dgvDetalles_CellContentClick;
-            // 
-            // ColID
-            // 
-            ColID.HeaderText = "ID";
-            ColID.Name = "ColID";
-            ColID.ReadOnly = true;
-            ColID.Visible = false;
-            // 
-            // ColNombre
-            // 
-            ColNombre.HeaderText = "Nombre";
-            ColNombre.Name = "ColNombre";
-            ColNombre.ReadOnly = true;
-            // 
-            // ColApellido
-            // 
-            ColApellido.HeaderText = "Apellido";
-            ColApellido.Name = "ColApellido";
-            ColApellido.ReadOnly = true;
-            // 
-            // ColNota
-            // 
-            ColNota.HeaderText = "Nota";
-            ColNota.Name = "ColNota";
-            ColNota.ReadOnly = true;
-            // 
-            // ColAcciones
-            // 
-            ColAcciones.FillWeight = 50F;
-            ColAcciones.HeaderText = "Quitar";
-            ColAcciones.Name = "ColAcciones";
-            ColAcciones.ReadOnly = true;
-            ColAcciones.Text = "Quitar";
-            ColAcciones.UseColumnTextForButtonValue = true;
             // 
             // lblAlumno
             // 
@@ -274,6 +240,40 @@
             btnSalir.UseVisualStyleBackColor = true;
             btnSalir.Click += btnSalir_Click;
             // 
+            // ColID
+            // 
+            ColID.HeaderText = "ID";
+            ColID.Name = "ColID";
+            ColID.ReadOnly = true;
+            ColID.Visible = false;
+            // 
+            // ColApellido
+            // 
+            ColApellido.HeaderText = "Apellido";
+            ColApellido.Name = "ColApellido";
+            ColApellido.ReadOnly = true;
+            // 
+            // ColNombre
+            // 
+            ColNombre.HeaderText = "Nombre";
+            ColNombre.Name = "ColNombre";
+            ColNombre.ReadOnly = true;
+            // 
+            // ColNota
+            // 
+            ColNota.HeaderText = "Nota";
+            ColNota.Name = "ColNota";
+            ColNota.ReadOnly = true;
+            // 
+            // ColAcciones
+            // 
+            ColAcciones.FillWeight = 50F;
+            ColAcciones.HeaderText = "Quitar";
+            ColAcciones.Name = "ColAcciones";
+            ColAcciones.ReadOnly = true;
+            ColAcciones.Text = "Quitar";
+            ColAcciones.UseColumnTextForButtonValue = true;
+            // 
             // FrmGestorExamen
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -317,13 +317,13 @@
         private Button btnAgregar;
         private Button btnConfirmar;
         private Panel pnlExamen;
-        private DataGridViewTextBoxColumn ColID;
-        private DataGridViewTextBoxColumn ColNombre;
-        private DataGridViewTextBoxColumn ColApellido;
-        private DataGridViewTextBoxColumn ColNota;
-        private DataGridViewButtonColumn ColAcciones;
         private Button btnEditar;
         private Label lblDocente;
         private Button btnSalir;
+        private DataGridViewTextBoxColumn ColID;
+        private DataGridViewTextBoxColumn ColApellido;
+        private DataGridViewTextBoxColumn ColNombre;
+        private DataGridViewTextBoxColumn ColNota;
+        private DataGridViewButtonColumn ColAcciones;
     }
 }

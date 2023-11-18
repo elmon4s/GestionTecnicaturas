@@ -30,6 +30,8 @@ namespace Front.Presentacion.Examenes
             await CargarDatosAsync<Materia>($"{Properties.Resources.URL}/materias", cboMaterias, "NombreMateria", "IdMateria");
             cboMaterias.DropDownStyle = ComboBoxStyle.DropDownList;
             cboDocentes.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboMaterias.SelectedIndex = -1;
+            cboDocentes.Enabled = false;
         }
 
         #region Cargar Combos y Acivar/Desactivar fechas
@@ -44,27 +46,24 @@ namespace Front.Presentacion.Examenes
         }
         private async void cboMaterias_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (cboMaterias.SelectedValue == null)
-            {
-                MessageBox.Show("Debe seleccionar una Materia!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
             int idMateria = Convert.ToInt32(cboMaterias.SelectedValue.ToString());
-            await CargarDatosAsync<Docente>($"{Properties.Resources.URL}/docentesExamen?materia={idMateria}", cboDocentes, "Apellido", "IdDocente");
+            await CargarDatosAsync<Docente>($"{Properties.Resources.URL}/docentesExamen?materia={idMateria}", cboDocentes, "NombreCompleto", "IdDocente");
+            cboDocentes.Enabled = true;
+            cboDocentes.SelectedIndex = -1;
         }
 
         private void ckbActivar_CheckedChanged(object sender, EventArgs e)
         {
-            if (ckbActivar.Checked)
+            if (ckbActivarFechas.Checked)
             {
                 pnlFechas.Enabled = true;
-                ckbActivar.Text = "Desactivar Fechas";
+                ckbActivarFechas.Text = "Desactivar Fechas";
             }
             else
             {
                 pnlFechas.Enabled = false;
 
-                ckbActivar.Text = "Activar Fechas";
+                ckbActivarFechas.Text = "Activar Fechas";
             }
         }
         #endregion
@@ -81,6 +80,10 @@ namespace Front.Presentacion.Examenes
                     lstParametros.Add(new Parametro("@id_docente", Convert.ToInt32(cboDocentes.SelectedValue.ToString())));
                 if (pnlFechas.Enabled)
                 {
+                    if (dtpFechaDesde.Value>=dtpFechaHasta.Value) {
+                        MessageBox.Show("La fecha 'Desde' debe ser menor a la fecha 'Hasta'", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
                     lstParametros.Add(new Parametro("@fecha_desde", dtpFechaDesde.Value.ToString("yyyy-MM-dd")));
                     lstParametros.Add(new Parametro("@fecha_hasta", dtpFechaHasta.Value.ToString("yyyy-MM-dd")));
                 }
@@ -102,7 +105,7 @@ namespace Front.Presentacion.Examenes
                 foreach (Examen examen in lstExamenes)
                 {
                     dgvExamenes.Rows.Add(new object[] { examen.IdExamen, examen.FechaExamen,
-                    $"{examen.DocenteExamen.Nombre},{examen.DocenteExamen.Apellido}"});
+                    $"{examen.DocenteExamen.Nombre},{examen.DocenteExamen.Apellido}",examen.MateriaExamen.NombreMateria });
                 }
             }
             catch (Exception ex)
@@ -153,7 +156,7 @@ namespace Front.Presentacion.Examenes
         #region Editar examenes
         private async void dgvExamenes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvExamenes.CurrentCell.ColumnIndex == 3)
+            if (dgvExamenes.CurrentCell.ColumnIndex == 4)
             {
                 int nro = Convert.ToInt32(dgvExamenes.CurrentRow.Cells["ColIdExamen"].Value.ToString());
                 Examen oExamen = await TraerExamenAsync(nro);
@@ -176,6 +179,11 @@ namespace Front.Presentacion.Examenes
                 this.Dispose();
         }
 
-
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            cboMaterias.SelectedIndex = -1;
+            cboDocentes.SelectedIndex = -1;
+            cboDocentes.Enabled = false;
+        }
     }
 }
