@@ -14,7 +14,7 @@ namespace Back.Datos
         private static HelperDAO? instancia;
         private HelperDAO()
         {
-            conexion = new SqlConnection(Properties.Resources.CadenaConexion2);//stringConexion);
+            conexion = new SqlConnection(Properties.Resources.CadenaConexion);//stringConexion);
         }
 
         public static HelperDAO ObtenerInstancia()
