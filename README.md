@@ -16,4 +16,4 @@ Integrantes:
 - Ademas el proyecto cuenta con el uso de patrones de diseño:
      Facade, DAO y Singleton
 - Para Gestionar los usuarios utilizamos el paquete NuGet [BCrypt .Net Core] para hasheo y verificacion de Usuarios
-- Para Reportes utilizamos (Completar)
+- Para Reportes utilizamos la herramienta [DevExpress] para migrar el proyecto de .Net Framework a .Net Core
