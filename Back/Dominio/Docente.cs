@@ -9,8 +9,6 @@ namespace Back.Dominio
 {
     public class Docente : Persona
     {
-        private int codDocente;
-
         public int IdDocente { get; set; }
         public Titulo TituloDocente { get; set; }
 
@@ -28,7 +26,7 @@ namespace Back.Dominio
 
         public Docente(int codDocente)
         {
-            this.codDocente = codDocente;
+            this.IdDocente = codDocente;
         }
 
         public override string ToString()

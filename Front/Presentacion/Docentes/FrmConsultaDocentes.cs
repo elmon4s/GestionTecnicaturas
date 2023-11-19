@@ -15,7 +15,7 @@ namespace Front.Presentacion.Docentes
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvDocentes.CurrentCell.RowIndex == 5)
+            if (dgvDocentes.CurrentCell.ColumnIndex == 5)
             {
                 int nro = Convert.ToInt32(dgvDocentes.CurrentRow.Cells["cIdDocente"].Value);
                 new FrmGestorDocente(nro).ShowDialog();  //llamada con constructor con parámetro.
@@ -34,7 +34,7 @@ namespace Front.Presentacion.Docentes
             List<Barrio> lBarrio = JsonConvert.DeserializeObject<List<Barrio>>(dtosJson);
             cboBarrio.DataSource = lBarrio;
             cboBarrio.ValueMember = "IdBarrio";
-            cboBarrio.DisplayMember = "NombreBarrio";
+            cboBarrio.DisplayMember = "NombreBarrioCompleto";
             cboBarrio.DropDownStyle = ComboBoxStyle.DropDownList;
         }
         private async Task CargarTitulos()
@@ -67,21 +67,24 @@ namespace Front.Presentacion.Docentes
             int t = int.Parse(cboTitulo.SelectedValue.ToString());
             int b = int.Parse(cboBarrio.SelectedValue.ToString());
             string n = txtNom.Text;
-            var dtosJson = await ClienteSingleton.GetInstance().GetAsync(UrlCompleta($"/lstDocentes?nombre={txtNom.Text}&titulo={t}&barrio={b}"));
+            var dtosJson = await ClienteSingleton.GetInstance().GetAsync(UrlCompleta($"/lstdocentes?nombre={n}&titulo={t}&barrio={b}"));
             List<Docente> lDocente = JsonConvert.DeserializeObject<List<Docente>>(dtosJson);
             if (lDocente != null)
             {
+                dgvDocentes.Rows.Clear();
                 foreach (Docente d in lDocente)
                 {
                     dgvDocentes.Rows.Add(new object[]
                     {
-                 d.IdDocente, d.ToString(), d.TituloDocente, d.Telefono, d.Email, "Gestionar"
+                 d.IdDocente, d.ToString(), d.TituloDocente, d.Email, d.Telefono, "Gestionar"
                     });
                 }
             }
-            else MessageBox.Show("No se encontro ningun docente con esas caracteristicas");
+            else
+            {
+                MessageBox.Show("No se encontro ningun docente con esas caracteristicas");
+            }
         }
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Desea Salir?", "Salir", MessageBoxButtons.OKCancel) == DialogResult.OK)

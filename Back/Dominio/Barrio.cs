@@ -8,6 +8,12 @@ namespace Back.Dominio
 {
     public class Barrio
     {
+        //Este se utiliza solo para poder cargar el displaymember de los combos
+        public string NombreBarrioCompleto
+        {
+            get { return $"{NombreBarrio} - {CiudadBarrio.NombreCiudad}"; }
+        }
+
         public int IdBarrio { get; set; }
         public string NombreBarrio { get; set; }
         public Ciudad CiudadBarrio { get; set; }

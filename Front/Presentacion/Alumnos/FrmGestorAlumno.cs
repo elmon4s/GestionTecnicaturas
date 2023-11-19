@@ -164,7 +164,7 @@ namespace Front.Presentacion.Alumnos
             numId.Controls[0].Visible = false;
             numAltura.Controls[0].Visible = false;
 
-            await CargarComboAsync<Barrio>(UrlCompleta("/barrios"), cboBarrio, "NombreBarrio","IdBarrio");
+            await CargarComboAsync<Barrio>(UrlCompleta("/barrios"), cboBarrio, "NombreBarrioCompleto","IdBarrio");
             await CargarComboAsync<EstadoCivil>(UrlCompleta("/estadosciviles"), cboEstadoCivil,"DescripcionEstadoCivil","IdEstadoCivil");
             await CargarComboAsync<SituacionLaboral>(UrlCompleta("/situacioneslab"), cboSituacionLaboral,"Situacion","IdSituacion");
             await CargarComboAsync<EstadoAcademico>(UrlCompleta("/estadosacademicos"), cboEstado, "DescEstadoAcademico","IdEstadoAcademico");

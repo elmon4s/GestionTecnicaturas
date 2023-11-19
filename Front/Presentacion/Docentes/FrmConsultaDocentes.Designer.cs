@@ -53,13 +53,14 @@
             // 
             dgvDocentes.AllowUserToAddRows = false;
             dgvDocentes.AllowUserToDeleteRows = false;
+            dgvDocentes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvDocentes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvDocentes.Columns.AddRange(new DataGridViewColumn[] { cIdDocente, cNomDocente, cTitulo, cEmail, cTelefono, cGestionar });
             dgvDocentes.Location = new Point(12, 118);
             dgvDocentes.Name = "dgvDocentes";
             dgvDocentes.ReadOnly = true;
             dgvDocentes.RowTemplate.Height = 25;
-            dgvDocentes.Size = new Size(755, 198);
+            dgvDocentes.Size = new Size(715, 198);
             dgvDocentes.TabIndex = 0;
             dgvDocentes.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -74,7 +75,7 @@
             // 
             // txtNom
             // 
-            txtNom.Location = new Point(296, 62);
+            txtNom.Location = new Point(394, 62);
             txtNom.Name = "txtNom";
             txtNom.Size = new Size(176, 25);
             txtNom.TabIndex = 2;
@@ -84,7 +85,7 @@
             cboBarrio.FormattingEnabled = true;
             cboBarrio.Location = new Point(68, 62);
             cboBarrio.Name = "cboBarrio";
-            cboBarrio.Size = new Size(150, 25);
+            cboBarrio.Size = new Size(248, 25);
             cboBarrio.TabIndex = 3;
             // 
             // cboTitulo
@@ -97,7 +98,7 @@
             // 
             // btnConsultar
             // 
-            btnConsultar.Location = new Point(497, 62);
+            btnConsultar.Location = new Point(595, 62);
             btnConsultar.Name = "btnConsultar";
             btnConsultar.Size = new Size(104, 26);
             btnConsultar.TabIndex = 5;
@@ -108,7 +109,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(224, 65);
+            label2.Location = new Point(322, 65);
             label2.Name = "label2";
             label2.Size = new Size(66, 19);
             label2.TabIndex = 6;
@@ -136,7 +137,7 @@
             groupBox1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(614, 100);
+            groupBox1.Size = new Size(715, 100);
             groupBox1.TabIndex = 8;
             groupBox1.TabStop = false;
             groupBox1.Text = "Criterios de Busqueda:";
@@ -144,7 +145,7 @@
             // btnSalir
             // 
             btnSalir.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnSalir.Location = new Point(663, 322);
+            btnSalir.Location = new Point(623, 322);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(104, 26);
             btnSalir.TabIndex = 8;
@@ -164,42 +165,39 @@
             cNomDocente.HeaderText = "Docente";
             cNomDocente.Name = "cNomDocente";
             cNomDocente.ReadOnly = true;
-            cNomDocente.Width = 160;
             // 
             // cTitulo
             // 
             cTitulo.HeaderText = "Titulo";
             cTitulo.Name = "cTitulo";
             cTitulo.ReadOnly = true;
-            cTitulo.Width = 130;
             // 
             // cEmail
             // 
+            cEmail.FillWeight = 110F;
             cEmail.HeaderText = "Email";
             cEmail.Name = "cEmail";
             cEmail.ReadOnly = true;
-            cEmail.Width = 170;
             // 
             // cTelefono
             // 
             cTelefono.HeaderText = "Telefono";
             cTelefono.Name = "cTelefono";
             cTelefono.ReadOnly = true;
-            cTelefono.Width = 130;
             // 
             // cGestionar
             // 
+            cGestionar.FillWeight = 60F;
             cGestionar.HeaderText = "Acciones";
             cGestionar.Name = "cGestionar";
             cGestionar.ReadOnly = true;
-            cGestionar.Width = 120;
             // 
             // FrmConsultaDocentes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(785, 354);
+            ClientSize = new Size(738, 354);
             Controls.Add(btnSalir);
             Controls.Add(groupBox1);
             Controls.Add(dgvDocentes);

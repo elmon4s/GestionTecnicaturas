@@ -53,7 +53,7 @@ namespace WebApi.Controllers
             try
             {
                 if (nroDocente == null)
-                    return BadRequest("Se debe ingresar un examen");
+                    return BadRequest("Se debe ingresar un docente");
                 return Ok(app.DeleteDocente(nroDocente));
             }
             catch
@@ -63,14 +63,14 @@ namespace WebApi.Controllers
         }
 
         [HttpGet("/lstdocentes")]
-        public IActionResult GetDocentes(string? nombre, int barrioId, int tituloId)
+        public IActionResult GetDocentes(string? nombre, int barrio, int titulo)
         {
             try
             {
                 List<Parametro> lParam = new List<Parametro>();
                 lParam.Add(new Parametro("@nombre", nombre ?? ""));
-                lParam.Add(new Parametro("@barrio", barrioId));
-                lParam.Add(new Parametro("@titulo", tituloId));
+                lParam.Add(new Parametro("@barrio", barrio));
+                lParam.Add(new Parametro("@titulo", titulo));
 
                 return Ok(app.GetDocentes(lParam));
             }
@@ -85,8 +85,6 @@ namespace WebApi.Controllers
         {
             try
             {
-                if (nroDocente == null)
-                    return BadRequest("Se debe ingresar un examen");
                 return Ok(app.GetDocente(nroDocente));
             }
             catch

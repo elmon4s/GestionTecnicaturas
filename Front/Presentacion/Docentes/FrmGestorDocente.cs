@@ -39,6 +39,7 @@ namespace Front
             {
                 btnEliminar.Enabled = true;
                 await TraerDocenteAsync();
+
             }
             cboBarrio.DropDownStyle = ComboBoxStyle.DropDownList;
             cboTitulo.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -51,6 +52,8 @@ namespace Front
             var dtosJson = await ClienteSingleton.GetInstance().GetAsync(url);
             List<Barrio> lBarrio = JsonConvert.DeserializeObject<List<Barrio>>(dtosJson);
             cboBarrio.DataSource = lBarrio;
+            cboBarrio.DisplayMember = "NombreBarrio";
+            cboBarrio.ValueMember = "IdBarrio";
         }
         private async Task CargarTitulos()
         {
@@ -58,6 +61,8 @@ namespace Front
             var dtosJson = await ClienteSingleton.GetInstance().GetAsync(url);
             List<Titulo> lTitulo = JsonConvert.DeserializeObject<List<Titulo>>(dtosJson);
             cboTitulo.DataSource = lTitulo;
+            cboTitulo.DisplayMember = "DescripcionTitulo";
+            cboTitulo.ValueMember = "IdTitulo";
         }
 
         private bool Validar()
@@ -146,10 +151,10 @@ namespace Front
 
         private async Task TraerDocenteAsync()
         {
-            string url = "https://localhost:7031/docente"; //agregar url de api
-            var dtosJson = await ClienteSingleton.GetInstance().GetAsync(url);
-            d = JsonConvert.DeserializeObject<Docente>(dtosJson);
+            var datosJson = await ClienteSingleton.GetInstance().GetAsync(UrlCompleta("/docente?nroDocente=" + d.IdDocente));
+            d = JsonConvert.DeserializeObject<Docente>(datosJson);
             if (d == null) { MessageBox.Show("Error interno"); }
+            
             txtAlt.Text = d.Altura.ToString();
             txtApe.Text = d.Apellido.ToString();
             txtDirec.Text = d.Direccion.ToString();
@@ -157,8 +162,8 @@ namespace Front
             txtMail.Text = d.Email.ToString();
             txtNom.Text = d.Nombre.ToString();
             txtTel.Text = d.Telefono.ToString();
-            cboBarrio.SelectedIndex = Convert.ToInt16(d.Barrio.IdBarrio.ToString());
-            cboTitulo.SelectedIndex = Convert.ToInt16(d.TituloDocente.IdTitulo.ToString());
+            cboBarrio.SelectedValue = d.Barrio.IdBarrio;
+            cboTitulo.SelectedValue = d.TituloDocente.IdTitulo;
         }
 
         private async Task GrabarDocente()
@@ -196,8 +201,24 @@ namespace Front
 
         private async void btnEliminar_Click(object sender, EventArgs e)
         {
-            string url = "https://localhost:7031/docente"; //agregar url de api
-            var docenteJson = await ClienteSingleton.GetInstance().DeleteAsync(url);
+            if (MessageBox.Show("¿Seguro que quiere eliminar este Docente?", "CONFIRMAR", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                string confirmar = await ClienteSingleton.GetInstance().DeleteAsync(UrlCompleta($"/docente?nroDocente={d.IdDocente}"));
+
+                if (JsonConvert.DeserializeObject<bool>(confirmar))
+                {
+                    MessageBox.Show("Docente borrado con éxito", "ÉXITO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Dispose();
+                }
+                else
+                {
+                    MessageBox.Show("Error al borrar Docente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        private string UrlCompleta(string location)
+        {
+            return Properties.Resources.URL + location;
         }
     }
 }
