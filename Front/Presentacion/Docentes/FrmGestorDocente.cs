@@ -67,22 +67,23 @@ namespace Front
 
         private bool Validar()
         {
+            bool primerMsj = true;
             bool x = true;
-            if (txtApe.Text == string.Empty)
-            { x = false; MessageBox.Show("Debe ingresar un apellido"); txtApe.Focus(); }
-            if (txtNom.Text == string.Empty)
-            { x = false; MessageBox.Show("Debe ingresar un Nombre"); txtNom.Focus(); }
-            if (txtMail.Text == string.Empty)
-            { x = false; MessageBox.Show("Debe ingresar un E-Mail"); txtMail.Focus(); }
-            if (txtDirec.Text == string.Empty)
-            { x = false; MessageBox.Show("Debe ingresar una Dirección"); txtApe.Focus(); }
-            if (txtTel.Text == string.Empty || EsInt(txtTel.Text) == false)
-            { x = false; MessageBox.Show("Debe indicar número de Telefono valido"); txtTel.Focus(); }
-            if (txtAlt.Text == string.Empty || EsInt(txtAlt.Text) == false)
-            { x = false; MessageBox.Show("Debe indicar una Altura valida"); txtAlt.Focus(); }
-            if (cboBarrio.SelectedIndex == -1)
-            { x = false; MessageBox.Show("Debe seleccionar un barrio"); cboBarrio.Focus(); }
-            if (cboTitulo.SelectedIndex == -1)
+            if (txtApe.Text == string.Empty && primerMsj == true)
+            { x = false; primerMsj = false; MessageBox.Show("Debe ingresar un apellido"); txtApe.Focus(); }
+            if (txtNom.Text == string.Empty && primerMsj == true)
+            { x = false; primerMsj = false; MessageBox.Show("Debe ingresar un Nombre"); txtNom.Focus(); }
+            if (txtMail.Text == string.Empty && primerMsj == true)
+            { x = false; primerMsj = false; MessageBox.Show("Debe ingresar un E-Mail"); txtMail.Focus(); }
+            if (txtDirec.Text == string.Empty && primerMsj == true)
+            { x = false; primerMsj = false; MessageBox.Show("Debe ingresar una Dirección"); txtApe.Focus(); }
+            if (txtTel.Text == string.Empty && primerMsj == true || EsInt(txtTel.Text) == false && primerMsj == true)
+            { x = false; primerMsj = false; MessageBox.Show("Debe indicar número de Telefono valido"); txtTel.Focus(); }
+            if (txtAlt.Text == string.Empty && primerMsj == true || EsInt(txtAlt.Text) == false && primerMsj == true)
+            { x = false; primerMsj = false; MessageBox.Show("Debe indicar una Altura valida"); txtAlt.Focus(); }
+            if (cboBarrio.SelectedIndex == -1 && primerMsj == true)
+            { x = false; primerMsj = false; MessageBox.Show("Debe seleccionar un barrio"); cboBarrio.Focus(); }
+            if (cboTitulo.SelectedIndex == -1 && primerMsj == true)
             { x = false; MessageBox.Show("Debe seleccionar un titulo"); cboTitulo.Focus(); }
             return x;
         }
@@ -139,7 +140,8 @@ namespace Front
             {
                 await EditarDocente();
             }
-            else {
+            else
+            {
                 MessageBox.Show("Datos invalidos");
             }
         }
@@ -157,7 +159,7 @@ namespace Front
             var datosJson = await ClienteSingleton.GetInstance().GetAsync(UrlCompleta("/docente?nroDocente=" + d.IdDocente));
             d = JsonConvert.DeserializeObject<Docente>(datosJson);
             if (d == null) { MessageBox.Show("Error interno"); }
-            
+
             txtAlt.Text = d.Altura.ToString();
             txtApe.Text = d.Apellido.ToString();
             txtDirec.Text = d.Direccion.ToString();

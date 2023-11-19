@@ -14,6 +14,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = HelperReportes
-build_property.ProjectDir = C:\Users\ronim\OneDrive\Escritorio\Gestion de Tecnicaturas\GestionTecnicaturas\HelperReportes\
-build_property.EnableComHosting = 
-build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.ProjectDir = C:\Users\esteb\source\repos\GestionTecnicaturas\HelperReportes\

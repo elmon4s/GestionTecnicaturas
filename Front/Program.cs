@@ -13,7 +13,6 @@ namespace Front
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-
             FrmLogin loginForm = new FrmLogin();
             Application.Run(loginForm);
         }

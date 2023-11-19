@@ -32,13 +32,21 @@ namespace Front.Presentacion.Alumnos
             Alumno alumnoObjeto = JsonConvert.DeserializeObject<Alumno>(alumnoTexto);
 
             if (numId.Value < 1)
-                MessageBox.Show("Se debe ingresar un legajo mayor o igual a 1", "LEGAJO INVALIDO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Se debe ingresar un legajo mayor o igual a 1", "Legajo Invalido", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else if (nuevo && alumnoObjeto.IdAlumno != 0)
-                MessageBox.Show("El legajo ingresado ya existe", "LEGAJO INVALIDO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else if (txtNombre.Text.Length < 1)
-                MessageBox.Show("Se debe ingresar un nombre", "NOMBRE INVALIDO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else if (txtApellido.Text.Length < 1)
-                MessageBox.Show("Se debe ingresar un apellido", "APELLIDO INVALIDO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El legajo ingresado ya existe", "Legajo Invalido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else if (string.IsNullOrEmpty(txtNombre.Text) &&txtNombre.Text.Length < 1)
+                MessageBox.Show("Debe ingresar un nombre", "Nombre Invalido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else if (string.IsNullOrEmpty(txtApellido.Text) &&txtApellido.Text.Length < 1)
+                MessageBox.Show("Debe ingresar un apellido", "Apellido Invalido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else if (string.IsNullOrEmpty(txtDireccion.Text))
+                MessageBox.Show("Debe ingresar una direccion!", "Direccion Invalido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else if (string.IsNullOrEmpty(txtTel.Text))
+                MessageBox.Show("Debe ingresar un telefono!", "Telefono Invalido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else if(string.IsNullOrEmpty(txtEmail.Text))
+                MessageBox.Show("Debe ingresar un correo electronico!", "Correo Invalido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else if(dgvMaterias.Rows.Count==0)
+                MessageBox.Show("El alumno debe estar inscrito en al menos una materia!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 oAlumno.IdAlumno = Convert.ToInt32(numId.Value);
@@ -89,6 +97,12 @@ namespace Front.Presentacion.Alumnos
                 return;
             }
 
+            if (dtpFechaInsc.Value > dtpFechaEstado.Value)
+            {
+                MessageBox.Show("La fecha de inscripcion no puede ser menor a la fecha de estado!");
+                return;
+            }
+
             foreach (DataGridViewRow fila in dgvMaterias.Rows)
             {
                 if (Convert.ToUInt32(fila.Cells["IdMateria"].Value) == dmc.IdDetalleMateriaComision)
@@ -98,6 +112,15 @@ namespace Front.Presentacion.Alumnos
                 }
             }
 
+            try
+            {
+                EstadoAcademico est= (EstadoAcademico)cboEstado.SelectedItem; 
+            }
+            catch
+            {
+                MessageBox.Show("Debe seleccionar un Estado Academico valido!");
+                return;
+            }
             DetalleAlumnoMateria dam = new DetalleAlumnoMateria(dmc.IdDetalleMateriaComision, dmc, (EstadoAcademico)cboEstado.SelectedItem, dtpFechaInsc.Value, dtpFechaEstado.Value, new List<Evaluacion>());
             oAlumno.DetallesAlumno.Add(dam);
             ActualizarDgv();
