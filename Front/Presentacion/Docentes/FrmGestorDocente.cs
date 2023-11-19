@@ -135,18 +135,21 @@ namespace Front
                     MessageBox.Show("Datos invalidos");
                 }
             }
-            else
+            else if (Validar())
             {
-                await EditarDocenteAsync(d.IdDocente);
+                await EditarDocente();
+            }
+            else {
+                MessageBox.Show("Datos invalidos");
             }
         }
 
-        private async Task<bool> EditarDocenteAsync(int idDocente)
+        private async Task<bool> EditarDocenteAsync(Docente d)
         {
-            string url = "https://localhost:7031/docente"; //agregar url de api
+            string url = "https://localhost:7031/docente";
             var docenteJson = JsonConvert.SerializeObject(d);
             var dataJson = await ClienteSingleton.GetInstance().PutAsync(url, docenteJson);
-            return dataJson.Equals(true);
+            return dataJson.Equals("true");
         }
 
         private async Task TraerDocenteAsync()
@@ -178,17 +181,30 @@ namespace Front
                 MessageBox.Show("No pudo registrarse el Nuevo Docente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private async Task EditarDocente()
+        {
+            if (await EditarDocenteAsync(CrearDocente()))
+            {
+                MessageBox.Show("Se Registraron los cambios con exito!!!");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("No se pudo editar el Docente");
+                this.Close();
+            }
+        }
         public Docente CrearDocente()
         {
             d.Nombre = txtNom.Text;
             d.Apellido = txtApe.Text;
             d.Direccion = txtDirec.Text;
             d.Altura = int.Parse(txtAlt.Text);
-            //d.IdDocente = int.Parse(txtId.Text);
+            d.IdDocente = int.Parse(txtId.Text);
             d.Telefono = txtTel.Text;
             d.Email = txtMail.Text;
-            d.Barrio.IdBarrio = int.Parse(cboBarrio.SelectedIndex.ToString());
-            d.TituloDocente.IdTitulo = int.Parse(cboTitulo.SelectedIndex.ToString());
+            d.Barrio.IdBarrio = (int)cboBarrio.SelectedValue;
+            d.TituloDocente.IdTitulo = (int)cboTitulo.SelectedValue;
             return d;
         }
         private async Task<bool> CrearDocenteAsync(Docente d)
