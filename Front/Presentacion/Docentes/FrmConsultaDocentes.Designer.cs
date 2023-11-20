@@ -30,6 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultaDocentes));
             dgvDocentes = new DataGridView();
+            cIdDocente = new DataGridViewTextBoxColumn();
+            cNomDocente = new DataGridViewTextBoxColumn();
+            cTitulo = new DataGridViewTextBoxColumn();
+            cEmail = new DataGridViewTextBoxColumn();
+            cTelefono = new DataGridViewTextBoxColumn();
+            cGestionar = new DataGridViewButtonColumn();
             label1 = new Label();
             txtNom = new TextBox();
             cboBarrio = new ComboBox();
@@ -39,12 +45,6 @@
             label3 = new Label();
             groupBox1 = new GroupBox();
             btnSalir = new Button();
-            cIdDocente = new DataGridViewTextBoxColumn();
-            cNomDocente = new DataGridViewTextBoxColumn();
-            cTitulo = new DataGridViewTextBoxColumn();
-            cEmail = new DataGridViewTextBoxColumn();
-            cTelefono = new DataGridViewTextBoxColumn();
-            cGestionar = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)dgvDocentes).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -61,97 +61,8 @@
             dgvDocentes.ReadOnly = true;
             dgvDocentes.RowTemplate.Height = 25;
             dgvDocentes.Size = new Size(715, 198);
-            dgvDocentes.TabIndex = 0;
+            dgvDocentes.TabIndex = 1;
             dgvDocentes.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(12, 33);
-            label1.Name = "label1";
-            label1.Size = new Size(50, 19);
-            label1.TabIndex = 1;
-            label1.Text = "Titulo :";
-            // 
-            // txtNom
-            // 
-            txtNom.Location = new Point(394, 62);
-            txtNom.Name = "txtNom";
-            txtNom.Size = new Size(176, 25);
-            txtNom.TabIndex = 2;
-            // 
-            // cboBarrio
-            // 
-            cboBarrio.FormattingEnabled = true;
-            cboBarrio.Location = new Point(68, 62);
-            cboBarrio.Name = "cboBarrio";
-            cboBarrio.Size = new Size(248, 25);
-            cboBarrio.TabIndex = 3;
-            // 
-            // cboTitulo
-            // 
-            cboTitulo.FormattingEnabled = true;
-            cboTitulo.Location = new Point(68, 30);
-            cboTitulo.Name = "cboTitulo";
-            cboTitulo.Size = new Size(150, 25);
-            cboTitulo.TabIndex = 4;
-            // 
-            // btnConsultar
-            // 
-            btnConsultar.Location = new Point(595, 62);
-            btnConsultar.Name = "btnConsultar";
-            btnConsultar.Size = new Size(104, 26);
-            btnConsultar.TabIndex = 5;
-            btnConsultar.Text = "Consultar";
-            btnConsultar.UseVisualStyleBackColor = true;
-            btnConsultar.Click += btnConsultar_Click;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(322, 65);
-            label2.Name = "label2";
-            label2.Size = new Size(66, 19);
-            label2.TabIndex = 6;
-            label2.Text = "Nombre :";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(12, 65);
-            label3.Name = "label3";
-            label3.Size = new Size(52, 19);
-            label3.TabIndex = 7;
-            label3.Text = "Barrio :";
-            // 
-            // groupBox1
-            // 
-            groupBox1.BackColor = Color.WhiteSmoke;
-            groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(btnConsultar);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(txtNom);
-            groupBox1.Controls.Add(cboTitulo);
-            groupBox1.Controls.Add(cboBarrio);
-            groupBox1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox1.Location = new Point(12, 12);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(715, 100);
-            groupBox1.TabIndex = 8;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Criterios de Busqueda:";
-            // 
-            // btnSalir
-            // 
-            btnSalir.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnSalir.Location = new Point(623, 322);
-            btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(104, 26);
-            btnSalir.TabIndex = 8;
-            btnSalir.Text = "Salir";
-            btnSalir.UseVisualStyleBackColor = true;
-            btnSalir.Click += btnSalir_Click;
             // 
             // cIdDocente
             // 
@@ -191,6 +102,95 @@
             cGestionar.HeaderText = "Acciones";
             cGestionar.Name = "cGestionar";
             cGestionar.ReadOnly = true;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(12, 33);
+            label1.Name = "label1";
+            label1.Size = new Size(50, 19);
+            label1.TabIndex = 0;
+            label1.Text = "Titulo :";
+            // 
+            // txtNom
+            // 
+            txtNom.Location = new Point(394, 62);
+            txtNom.Name = "txtNom";
+            txtNom.Size = new Size(176, 25);
+            txtNom.TabIndex = 5;
+            // 
+            // cboBarrio
+            // 
+            cboBarrio.FormattingEnabled = true;
+            cboBarrio.Location = new Point(68, 62);
+            cboBarrio.Name = "cboBarrio";
+            cboBarrio.Size = new Size(248, 25);
+            cboBarrio.TabIndex = 3;
+            // 
+            // cboTitulo
+            // 
+            cboTitulo.FormattingEnabled = true;
+            cboTitulo.Location = new Point(68, 30);
+            cboTitulo.Name = "cboTitulo";
+            cboTitulo.Size = new Size(150, 25);
+            cboTitulo.TabIndex = 1;
+            // 
+            // btnConsultar
+            // 
+            btnConsultar.Location = new Point(595, 62);
+            btnConsultar.Name = "btnConsultar";
+            btnConsultar.Size = new Size(104, 26);
+            btnConsultar.TabIndex = 6;
+            btnConsultar.Text = "Consultar";
+            btnConsultar.UseVisualStyleBackColor = true;
+            btnConsultar.Click += btnConsultar_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(322, 65);
+            label2.Name = "label2";
+            label2.Size = new Size(66, 19);
+            label2.TabIndex = 4;
+            label2.Text = "Nombre :";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(12, 65);
+            label3.Name = "label3";
+            label3.Size = new Size(52, 19);
+            label3.TabIndex = 2;
+            label3.Text = "Barrio :";
+            // 
+            // groupBox1
+            // 
+            groupBox1.BackColor = Color.WhiteSmoke;
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(btnConsultar);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(txtNom);
+            groupBox1.Controls.Add(cboTitulo);
+            groupBox1.Controls.Add(cboBarrio);
+            groupBox1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox1.Location = new Point(12, 12);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(715, 100);
+            groupBox1.TabIndex = 0;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Criterios de Busqueda:";
+            // 
+            // btnSalir
+            // 
+            btnSalir.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSalir.Location = new Point(623, 322);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(104, 26);
+            btnSalir.TabIndex = 2;
+            btnSalir.Text = "Salir";
+            btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
             // 
             // FrmConsultaDocentes
             // 

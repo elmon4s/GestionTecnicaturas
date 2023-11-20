@@ -33,6 +33,11 @@
             dtpFechaDesde = new DateTimePicker();
             btnSalir = new Button();
             dgvExamenes = new DataGridView();
+            ColIdExamen = new DataGridViewTextBoxColumn();
+            ColFecha = new DataGridViewTextBoxColumn();
+            ColDocente = new DataGridViewTextBoxColumn();
+            ColMateria = new DataGridViewTextBoxColumn();
+            ColAcciones = new DataGridViewButtonColumn();
             lblFechaDesde = new Label();
             lblFechaHasta = new Label();
             cboMaterias = new ComboBox();
@@ -45,11 +50,6 @@
             pnlFechas = new Panel();
             btnConsultar = new Button();
             btnEliminar = new Button();
-            ColIdExamen = new DataGridViewTextBoxColumn();
-            ColFecha = new DataGridViewTextBoxColumn();
-            ColDocente = new DataGridViewTextBoxColumn();
-            ColMateria = new DataGridViewTextBoxColumn();
-            ColAcciones = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)dgvExamenes).BeginInit();
             grpCriterios.SuspendLayout();
             pnlFechas.SuspendLayout();
@@ -62,7 +62,7 @@
             dtpFechaHasta.Location = new Point(226, 3);
             dtpFechaHasta.Name = "dtpFechaHasta";
             dtpFechaHasta.Size = new Size(111, 25);
-            dtpFechaHasta.TabIndex = 20;
+            dtpFechaHasta.TabIndex = 3;
             // 
             // dtpFechaDesde
             // 
@@ -71,7 +71,7 @@
             dtpFechaDesde.Location = new Point(60, 3);
             dtpFechaDesde.Name = "dtpFechaDesde";
             dtpFechaDesde.Size = new Size(111, 25);
-            dtpFechaDesde.TabIndex = 19;
+            dtpFechaDesde.TabIndex = 1;
             // 
             // btnSalir
             // 
@@ -80,7 +80,7 @@
             btnSalir.Location = new Point(640, 442);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(79, 29);
-            btnSalir.TabIndex = 18;
+            btnSalir.TabIndex = 3;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = true;
             btnSalir.Click += btnSalir_Click;
@@ -100,145 +100,8 @@
             dgvExamenes.ReadOnly = true;
             dgvExamenes.RowTemplate.Height = 25;
             dgvExamenes.Size = new Size(675, 249);
-            dgvExamenes.TabIndex = 17;
+            dgvExamenes.TabIndex = 1;
             dgvExamenes.CellContentClick += dgvExamenes_CellContentClick;
-            // 
-            // lblFechaDesde
-            // 
-            lblFechaDesde.AutoSize = true;
-            lblFechaDesde.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            lblFechaDesde.Location = new Point(4, 6);
-            lblFechaDesde.Name = "lblFechaDesde";
-            lblFechaDesde.Size = new Size(50, 19);
-            lblFechaDesde.TabIndex = 21;
-            lblFechaDesde.Text = "Desde:";
-            // 
-            // lblFechaHasta
-            // 
-            lblFechaHasta.AutoSize = true;
-            lblFechaHasta.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            lblFechaHasta.Location = new Point(177, 6);
-            lblFechaHasta.Name = "lblFechaHasta";
-            lblFechaHasta.Size = new Size(47, 19);
-            lblFechaHasta.TabIndex = 22;
-            lblFechaHasta.Text = "Hasta:";
-            // 
-            // cboMaterias
-            // 
-            cboMaterias.BackColor = SystemColors.Window;
-            cboMaterias.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            cboMaterias.FormattingEnabled = true;
-            cboMaterias.Location = new Point(68, 31);
-            cboMaterias.Name = "cboMaterias";
-            cboMaterias.Size = new Size(161, 25);
-            cboMaterias.TabIndex = 26;
-            cboMaterias.SelectionChangeCommitted += cboMaterias_SelectionChangeCommitted;
-            // 
-            // lblMateria
-            // 
-            lblMateria.AutoSize = true;
-            lblMateria.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            lblMateria.Location = new Point(15, 35);
-            lblMateria.Name = "lblMateria";
-            lblMateria.Size = new Size(56, 19);
-            lblMateria.TabIndex = 27;
-            lblMateria.Text = "Materia";
-            // 
-            // cboDocentes
-            // 
-            cboDocentes.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            cboDocentes.FormattingEnabled = true;
-            cboDocentes.Location = new Point(68, 72);
-            cboDocentes.Name = "cboDocentes";
-            cboDocentes.Size = new Size(161, 25);
-            cboDocentes.TabIndex = 28;
-            // 
-            // lblDocentes
-            // 
-            lblDocentes.AutoSize = true;
-            lblDocentes.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            lblDocentes.Location = new Point(11, 75);
-            lblDocentes.Name = "lblDocentes";
-            lblDocentes.Size = new Size(60, 19);
-            lblDocentes.TabIndex = 29;
-            lblDocentes.Text = "Docente";
-            // 
-            // grpCriterios
-            // 
-            grpCriterios.BackColor = Color.WhiteSmoke;
-            grpCriterios.Controls.Add(btnLimpiar);
-            grpCriterios.Controls.Add(ckbActivarFechas);
-            grpCriterios.Controls.Add(pnlFechas);
-            grpCriterios.Controls.Add(cboMaterias);
-            grpCriterios.Controls.Add(cboDocentes);
-            grpCriterios.Controls.Add(lblDocentes);
-            grpCriterios.Controls.Add(lblMateria);
-            grpCriterios.Controls.Add(btnConsultar);
-            grpCriterios.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            grpCriterios.Location = new Point(62, 29);
-            grpCriterios.Name = "grpCriterios";
-            grpCriterios.Size = new Size(644, 152);
-            grpCriterios.TabIndex = 31;
-            grpCriterios.TabStop = false;
-            grpCriterios.Text = "Criterios de Búsqueda:";
-            // 
-            // btnLimpiar
-            // 
-            btnLimpiar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnLimpiar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnLimpiar.Location = new Point(163, 103);
-            btnLimpiar.Name = "btnLimpiar";
-            btnLimpiar.Size = new Size(66, 26);
-            btnLimpiar.TabIndex = 32;
-            btnLimpiar.Text = "Limpiar";
-            btnLimpiar.UseVisualStyleBackColor = true;
-            btnLimpiar.Click += btnLimpiar_Click;
-            // 
-            // ckbActivarFechas
-            // 
-            ckbActivarFechas.AutoSize = true;
-            ckbActivarFechas.Location = new Point(282, 58);
-            ckbActivarFechas.Name = "ckbActivarFechas";
-            ckbActivarFechas.Size = new Size(115, 23);
-            ckbActivarFechas.TabIndex = 31;
-            ckbActivarFechas.Text = "Activar Fechas";
-            ckbActivarFechas.UseVisualStyleBackColor = true;
-            ckbActivarFechas.CheckedChanged += ckbActivar_CheckedChanged;
-            // 
-            // pnlFechas
-            // 
-            pnlFechas.Controls.Add(lblFechaDesde);
-            pnlFechas.Controls.Add(dtpFechaDesde);
-            pnlFechas.Controls.Add(dtpFechaHasta);
-            pnlFechas.Controls.Add(lblFechaHasta);
-            pnlFechas.Location = new Point(278, 30);
-            pnlFechas.Name = "pnlFechas";
-            pnlFechas.Size = new Size(344, 28);
-            pnlFechas.TabIndex = 30;
-            // 
-            // btnConsultar
-            // 
-            btnConsultar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnConsultar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnConsultar.Location = new Point(537, 91);
-            btnConsultar.Name = "btnConsultar";
-            btnConsultar.Size = new Size(79, 29);
-            btnConsultar.TabIndex = 25;
-            btnConsultar.Text = "Consultar";
-            btnConsultar.UseVisualStyleBackColor = true;
-            btnConsultar.Click += btnConsultar_Click;
-            // 
-            // btnEliminar
-            // 
-            btnEliminar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnEliminar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEliminar.Location = new Point(555, 442);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(79, 29);
-            btnEliminar.TabIndex = 23;
-            btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = true;
-            btnEliminar.Click += btnEliminar_Click;
             // 
             // ColIdExamen
             // 
@@ -274,6 +137,143 @@
             ColAcciones.ReadOnly = true;
             ColAcciones.Text = "Ver Examen";
             ColAcciones.UseColumnTextForButtonValue = true;
+            // 
+            // lblFechaDesde
+            // 
+            lblFechaDesde.AutoSize = true;
+            lblFechaDesde.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblFechaDesde.Location = new Point(4, 6);
+            lblFechaDesde.Name = "lblFechaDesde";
+            lblFechaDesde.Size = new Size(50, 19);
+            lblFechaDesde.TabIndex = 0;
+            lblFechaDesde.Text = "Desde:";
+            // 
+            // lblFechaHasta
+            // 
+            lblFechaHasta.AutoSize = true;
+            lblFechaHasta.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblFechaHasta.Location = new Point(177, 6);
+            lblFechaHasta.Name = "lblFechaHasta";
+            lblFechaHasta.Size = new Size(47, 19);
+            lblFechaHasta.TabIndex = 2;
+            lblFechaHasta.Text = "Hasta:";
+            // 
+            // cboMaterias
+            // 
+            cboMaterias.BackColor = SystemColors.Window;
+            cboMaterias.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            cboMaterias.FormattingEnabled = true;
+            cboMaterias.Location = new Point(68, 31);
+            cboMaterias.Name = "cboMaterias";
+            cboMaterias.Size = new Size(161, 25);
+            cboMaterias.TabIndex = 1;
+            cboMaterias.SelectionChangeCommitted += cboMaterias_SelectionChangeCommitted;
+            // 
+            // lblMateria
+            // 
+            lblMateria.AutoSize = true;
+            lblMateria.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblMateria.Location = new Point(15, 35);
+            lblMateria.Name = "lblMateria";
+            lblMateria.Size = new Size(56, 19);
+            lblMateria.TabIndex = 0;
+            lblMateria.Text = "Materia";
+            // 
+            // cboDocentes
+            // 
+            cboDocentes.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            cboDocentes.FormattingEnabled = true;
+            cboDocentes.Location = new Point(68, 72);
+            cboDocentes.Name = "cboDocentes";
+            cboDocentes.Size = new Size(161, 25);
+            cboDocentes.TabIndex = 3;
+            // 
+            // lblDocentes
+            // 
+            lblDocentes.AutoSize = true;
+            lblDocentes.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblDocentes.Location = new Point(11, 75);
+            lblDocentes.Name = "lblDocentes";
+            lblDocentes.Size = new Size(60, 19);
+            lblDocentes.TabIndex = 2;
+            lblDocentes.Text = "Docente";
+            // 
+            // grpCriterios
+            // 
+            grpCriterios.BackColor = Color.WhiteSmoke;
+            grpCriterios.Controls.Add(btnLimpiar);
+            grpCriterios.Controls.Add(ckbActivarFechas);
+            grpCriterios.Controls.Add(pnlFechas);
+            grpCriterios.Controls.Add(cboMaterias);
+            grpCriterios.Controls.Add(cboDocentes);
+            grpCriterios.Controls.Add(lblDocentes);
+            grpCriterios.Controls.Add(lblMateria);
+            grpCriterios.Controls.Add(btnConsultar);
+            grpCriterios.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            grpCriterios.Location = new Point(62, 29);
+            grpCriterios.Name = "grpCriterios";
+            grpCriterios.Size = new Size(644, 152);
+            grpCriterios.TabIndex = 0;
+            grpCriterios.TabStop = false;
+            grpCriterios.Text = "Criterios de Búsqueda:";
+            // 
+            // btnLimpiar
+            // 
+            btnLimpiar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnLimpiar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLimpiar.Location = new Point(163, 103);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(66, 26);
+            btnLimpiar.TabIndex = 6;
+            btnLimpiar.Text = "Limpiar";
+            btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnLimpiar_Click;
+            // 
+            // ckbActivarFechas
+            // 
+            ckbActivarFechas.AutoSize = true;
+            ckbActivarFechas.Location = new Point(282, 58);
+            ckbActivarFechas.Name = "ckbActivarFechas";
+            ckbActivarFechas.Size = new Size(115, 23);
+            ckbActivarFechas.TabIndex = 5;
+            ckbActivarFechas.Text = "Activar Fechas";
+            ckbActivarFechas.UseVisualStyleBackColor = true;
+            ckbActivarFechas.CheckedChanged += ckbActivar_CheckedChanged;
+            // 
+            // pnlFechas
+            // 
+            pnlFechas.Controls.Add(lblFechaDesde);
+            pnlFechas.Controls.Add(dtpFechaDesde);
+            pnlFechas.Controls.Add(dtpFechaHasta);
+            pnlFechas.Controls.Add(lblFechaHasta);
+            pnlFechas.Location = new Point(278, 30);
+            pnlFechas.Name = "pnlFechas";
+            pnlFechas.Size = new Size(344, 28);
+            pnlFechas.TabIndex = 4;
+            // 
+            // btnConsultar
+            // 
+            btnConsultar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnConsultar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnConsultar.Location = new Point(537, 91);
+            btnConsultar.Name = "btnConsultar";
+            btnConsultar.Size = new Size(79, 29);
+            btnConsultar.TabIndex = 7;
+            btnConsultar.Text = "Consultar";
+            btnConsultar.UseVisualStyleBackColor = true;
+            btnConsultar.Click += btnConsultar_Click;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnEliminar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEliminar.Location = new Point(555, 442);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(79, 29);
+            btnEliminar.TabIndex = 2;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // FrmConsultarExamenes
             // 

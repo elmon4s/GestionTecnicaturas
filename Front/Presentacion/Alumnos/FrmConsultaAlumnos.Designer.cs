@@ -61,7 +61,7 @@
             dgvAlumnos.ReadOnly = true;
             dgvAlumnos.RowTemplate.Height = 25;
             dgvAlumnos.Size = new Size(859, 297);
-            dgvAlumnos.TabIndex = 0;
+            dgvAlumnos.TabIndex = 8;
             dgvAlumnos.CellContentClick += dgvAlumnos_CellContentClick;
             // 
             // IdAlumno
@@ -125,7 +125,7 @@
             cboSituacionLaboral.Location = new Point(141, 78);
             cboSituacionLaboral.Name = "cboSituacionLaboral";
             cboSituacionLaboral.Size = new Size(174, 25);
-            cboSituacionLaboral.TabIndex = 1;
+            cboSituacionLaboral.TabIndex = 4;
             // 
             // cboEstadoCivil
             // 
@@ -135,7 +135,7 @@
             cboEstadoCivil.Location = new Point(141, 113);
             cboEstadoCivil.Name = "cboEstadoCivil";
             cboEstadoCivil.Size = new Size(174, 25);
-            cboEstadoCivil.TabIndex = 2;
+            cboEstadoCivil.TabIndex = 6;
             // 
             // txtNombre
             // 
@@ -143,7 +143,7 @@
             txtNombre.Location = new Point(141, 43);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(551, 25);
-            txtNombre.TabIndex = 3;
+            txtNombre.TabIndex = 2;
             // 
             // lblNombre
             // 
@@ -152,7 +152,7 @@
             lblNombre.Location = new Point(73, 47);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(62, 19);
-            lblNombre.TabIndex = 5;
+            lblNombre.TabIndex = 1;
             lblNombre.Text = "Nombre:";
             // 
             // lblSituacionLab
@@ -162,7 +162,7 @@
             lblSituacionLab.Location = new Point(23, 81);
             lblSituacionLab.Name = "lblSituacionLab";
             lblSituacionLab.Size = new Size(112, 19);
-            lblSituacionLab.TabIndex = 6;
+            lblSituacionLab.TabIndex = 3;
             lblSituacionLab.Text = "Situación laboral:";
             // 
             // lblEstadoCivil
@@ -172,7 +172,7 @@
             lblEstadoCivil.Location = new Point(56, 116);
             lblEstadoCivil.Name = "lblEstadoCivil";
             lblEstadoCivil.Size = new Size(79, 19);
-            lblEstadoCivil.TabIndex = 7;
+            lblEstadoCivil.TabIndex = 5;
             lblEstadoCivil.Text = "Estado civil:";
             // 
             // btnBuscar
@@ -181,7 +181,7 @@
             btnBuscar.Location = new Point(740, 133);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(79, 31);
-            btnBuscar.TabIndex = 8;
+            btnBuscar.TabIndex = 7;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
             btnBuscar.Click += btnBuscar_Click;
@@ -191,7 +191,7 @@
             btnCancelar.Location = new Point(24, 491);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(79, 31);
-            btnCancelar.TabIndex = 9;
+            btnCancelar.TabIndex = 10;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             btnCancelar.Click += btnCancelar_Click;
@@ -210,7 +210,7 @@
             grpCriteriosBusqueda.Location = new Point(43, 12);
             grpCriteriosBusqueda.Name = "grpCriteriosBusqueda";
             grpCriteriosBusqueda.Size = new Size(825, 170);
-            grpCriteriosBusqueda.TabIndex = 10;
+            grpCriteriosBusqueda.TabIndex = 0;
             grpCriteriosBusqueda.TabStop = false;
             grpCriteriosBusqueda.Text = "Criterios de Busqueda";
             // 

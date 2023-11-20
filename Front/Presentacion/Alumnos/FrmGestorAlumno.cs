@@ -35,17 +35,17 @@ namespace Front.Presentacion.Alumnos
                 MessageBox.Show("Se debe ingresar un legajo mayor o igual a 1", "Legajo Invalido", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else if (nuevo && alumnoObjeto.IdAlumno != 0)
                 MessageBox.Show("El legajo ingresado ya existe", "Legajo Invalido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else if (string.IsNullOrEmpty(txtNombre.Text) &&txtNombre.Text.Length < 1)
+            else if (string.IsNullOrEmpty(txtNombre.Text) && txtNombre.Text.Length < 1)
                 MessageBox.Show("Debe ingresar un nombre", "Nombre Invalido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else if (string.IsNullOrEmpty(txtApellido.Text) &&txtApellido.Text.Length < 1)
+            else if (string.IsNullOrEmpty(txtApellido.Text) && txtApellido.Text.Length < 1)
                 MessageBox.Show("Debe ingresar un apellido", "Apellido Invalido", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else if (string.IsNullOrEmpty(txtDireccion.Text))
                 MessageBox.Show("Debe ingresar una direccion!", "Direccion Invalido", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else if (string.IsNullOrEmpty(txtTel.Text))
                 MessageBox.Show("Debe ingresar un telefono!", "Telefono Invalido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else if(string.IsNullOrEmpty(txtEmail.Text))
+            else if (string.IsNullOrEmpty(txtEmail.Text))
                 MessageBox.Show("Debe ingresar un correo electronico!", "Correo Invalido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else if(dgvMaterias.Rows.Count==0)
+            else if (dgvMaterias.Rows.Count == 0)
                 MessageBox.Show("El alumno debe estar inscrito en al menos una materia!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
@@ -114,7 +114,7 @@ namespace Front.Presentacion.Alumnos
 
             try
             {
-                EstadoAcademico est= (EstadoAcademico)cboEstado.SelectedItem; 
+                EstadoAcademico est = (EstadoAcademico)cboEstado.SelectedItem;
             }
             catch
             {
@@ -125,10 +125,10 @@ namespace Front.Presentacion.Alumnos
             oAlumno.DetallesAlumno.Add(dam);
             ActualizarDgv();
             dmc = null;
-            
+
         }
 
-        private async Task CargarComboAsync<T>(string url, ComboBox comboBox,string displayMember, string valueMember)
+        private async Task CargarComboAsync<T>(string url, ComboBox comboBox, string displayMember, string valueMember)
         {
             var res = await ClienteSingleton.GetInstance().GetAsync(url);
 
@@ -187,10 +187,10 @@ namespace Front.Presentacion.Alumnos
             numId.Controls[0].Visible = false;
             numAltura.Controls[0].Visible = false;
 
-            await CargarComboAsync<Barrio>(UrlCompleta("/barrios"), cboBarrio, "NombreBarrioCompleto","IdBarrio");
-            await CargarComboAsync<EstadoCivil>(UrlCompleta("/estadosciviles"), cboEstadoCivil,"DescripcionEstadoCivil","IdEstadoCivil");
-            await CargarComboAsync<SituacionLaboral>(UrlCompleta("/situacioneslab"), cboSituacionLaboral,"Situacion","IdSituacion");
-            await CargarComboAsync<EstadoAcademico>(UrlCompleta("/estadosacademicos"), cboEstado, "DescEstadoAcademico","IdEstadoAcademico");
+            await CargarComboAsync<Barrio>(UrlCompleta("/barrios"), cboBarrio, "NombreBarrioCompleto", "IdBarrio");
+            await CargarComboAsync<EstadoCivil>(UrlCompleta("/estadosciviles"), cboEstadoCivil, "DescripcionEstadoCivil", "IdEstadoCivil");
+            await CargarComboAsync<SituacionLaboral>(UrlCompleta("/situacioneslab"), cboSituacionLaboral, "Situacion", "IdSituacion");
+            await CargarComboAsync<EstadoAcademico>(UrlCompleta("/estadosacademicos"), cboEstado, "DescEstadoAcademico", "IdEstadoAcademico");
 
 
             if (oAlumno.IdAlumno != 0)

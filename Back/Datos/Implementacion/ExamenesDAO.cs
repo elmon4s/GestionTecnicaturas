@@ -31,7 +31,7 @@ namespace Back.Datos.Implementacion
                 SqlParameter param = new SqlParameter("@proxExamen", SqlDbType.Int);
                 param.Direction = ParameterDirection.Output;
                 comando.Parameters.Add(param);
-                comando.Parameters.AddWithValue("@fecha",oExamen.FechaExamen);
+                comando.Parameters.AddWithValue("@fecha",oExamen.FechaExamen.ToString("yyyy-MM-dd"));
                 comando.Parameters.AddWithValue("@id_materia", oExamen.MateriaExamen.IdMateria);
                 comando.Parameters.AddWithValue("@id_docente", oExamen.DocenteExamen.IdDocente);
                 comando.ExecuteNonQuery();
@@ -67,6 +67,7 @@ namespace Back.Datos.Implementacion
             return aux;
 
         }
+
         public bool ActualizarExamen(Examen oExamen)
         {
             bool aux = true;

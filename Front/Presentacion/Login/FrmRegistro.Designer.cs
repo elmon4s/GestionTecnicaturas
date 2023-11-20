@@ -68,7 +68,7 @@
             lblContraseña.Location = new Point(110, 102);
             lblContraseña.Name = "lblContraseña";
             lblContraseña.Size = new Size(82, 19);
-            lblContraseña.TabIndex = 2;
+            lblContraseña.TabIndex = 3;
             lblContraseña.Text = "Contraseña:";
             // 
             // label4
@@ -78,7 +78,7 @@
             label4.Location = new Point(63, 148);
             label4.Name = "label4";
             label4.Size = new Size(129, 19);
-            label4.TabIndex = 3;
+            label4.TabIndex = 5;
             label4.Text = "Repetir Contraseña:";
             // 
             // chkMostrarContraseña
@@ -88,7 +88,7 @@
             chkMostrarContraseña.Location = new Point(198, 186);
             chkMostrarContraseña.Name = "chkMostrarContraseña";
             chkMostrarContraseña.Size = new Size(151, 23);
-            chkMostrarContraseña.TabIndex = 4;
+            chkMostrarContraseña.TabIndex = 7;
             chkMostrarContraseña.Text = "Mostrar Contraseña";
             chkMostrarContraseña.UseVisualStyleBackColor = true;
             chkMostrarContraseña.CheckedChanged += checkBox1_CheckedChanged;
@@ -99,7 +99,7 @@
             btnConfirmar.Location = new Point(126, 225);
             btnConfirmar.Name = "btnConfirmar";
             btnConfirmar.Size = new Size(119, 28);
-            btnConfirmar.TabIndex = 5;
+            btnConfirmar.TabIndex = 8;
             btnConfirmar.Text = "Confirmar";
             btnConfirmar.UseVisualStyleBackColor = true;
             btnConfirmar.Click += btnConfirmar_Click;
@@ -110,7 +110,7 @@
             btnCancelar.Location = new Point(317, 225);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(119, 28);
-            btnCancelar.TabIndex = 6;
+            btnCancelar.TabIndex = 9;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             btnCancelar.Click += btnCancelar_Click;
@@ -120,21 +120,21 @@
             txtUsuario.Location = new Point(198, 57);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(210, 23);
-            txtUsuario.TabIndex = 7;
+            txtUsuario.TabIndex = 2;
             // 
             // txtContraseña
             // 
             txtContraseña.Location = new Point(198, 100);
             txtContraseña.Name = "txtContraseña";
             txtContraseña.Size = new Size(210, 23);
-            txtContraseña.TabIndex = 8;
+            txtContraseña.TabIndex = 4;
             // 
             // txtRepetirContraseña
             // 
             txtRepetirContraseña.Location = new Point(198, 146);
             txtRepetirContraseña.Name = "txtRepetirContraseña";
             txtRepetirContraseña.Size = new Size(210, 23);
-            txtRepetirContraseña.TabIndex = 9;
+            txtRepetirContraseña.TabIndex = 6;
             // 
             // FrmRegistro
             // 

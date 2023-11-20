@@ -51,7 +51,7 @@ namespace Front
                 return;
             }
             Usuario nUsuario = new Usuario(txtUsuario.Text, txtContraseña.Text);
-            if(await ComprobarNombreUsuarioAsync(nUsuario)==false)
+            if (await ComprobarNombreUsuarioAsync(nUsuario) == false)
             {
                 MessageBox.Show("Nombre de usuario en uso!", "Error", MessageBoxButtons.OK);
                 return;

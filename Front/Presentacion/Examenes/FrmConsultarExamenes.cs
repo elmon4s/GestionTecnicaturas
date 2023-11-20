@@ -80,7 +80,8 @@ namespace Front.Presentacion.Examenes
                     lstParametros.Add(new Parametro("@id_docente", Convert.ToInt32(cboDocentes.SelectedValue.ToString())));
                 if (pnlFechas.Enabled)
                 {
-                    if (dtpFechaDesde.Value>=dtpFechaHasta.Value) {
+                    if (dtpFechaDesde.Value >= dtpFechaHasta.Value)
+                    {
                         MessageBox.Show("La fecha 'Desde' debe ser menor a la fecha 'Hasta'", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }

@@ -30,6 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultarDetalleMateriaComision));
             dgvDetalles = new DataGridView();
+            IdMateriaComision = new DataGridViewTextBoxColumn();
+            Docente = new DataGridViewTextBoxColumn();
+            Materia = new DataGridViewTextBoxColumn();
+            Comision = new DataGridViewTextBoxColumn();
+            AnioLectivo = new DataGridViewTextBoxColumn();
+            Acciones = new DataGridViewButtonColumn();
             lblDocente = new Label();
             lblComision = new Label();
             lblMateria = new Label();
@@ -39,12 +45,6 @@
             btnCancelar = new Button();
             btnBuscar = new Button();
             grbCriteriosBusqueda = new GroupBox();
-            IdMateriaComision = new DataGridViewTextBoxColumn();
-            Docente = new DataGridViewTextBoxColumn();
-            Materia = new DataGridViewTextBoxColumn();
-            Comision = new DataGridViewTextBoxColumn();
-            AnioLectivo = new DataGridViewTextBoxColumn();
-            Acciones = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)dgvDetalles).BeginInit();
             grbCriteriosBusqueda.SuspendLayout();
             SuspendLayout();
@@ -63,99 +63,8 @@
             dgvDetalles.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dgvDetalles.RowTemplate.Height = 25;
             dgvDetalles.Size = new Size(669, 295);
-            dgvDetalles.TabIndex = 0;
+            dgvDetalles.TabIndex = 8;
             dgvDetalles.CellContentClick += dgvDetalles_CellContentClick;
-            // 
-            // lblDocente
-            // 
-            lblDocente.AutoSize = true;
-            lblDocente.Location = new Point(27, 42);
-            lblDocente.Name = "lblDocente";
-            lblDocente.Size = new Size(63, 19);
-            lblDocente.TabIndex = 1;
-            lblDocente.Text = "Docente:";
-            // 
-            // lblComision
-            // 
-            lblComision.AutoSize = true;
-            lblComision.Location = new Point(21, 115);
-            lblComision.Name = "lblComision";
-            lblComision.Size = new Size(69, 19);
-            lblComision.TabIndex = 2;
-            lblComision.Text = "Comision:";
-            // 
-            // lblMateria
-            // 
-            lblMateria.AutoSize = true;
-            lblMateria.Location = new Point(31, 79);
-            lblMateria.Name = "lblMateria";
-            lblMateria.Size = new Size(59, 19);
-            lblMateria.TabIndex = 3;
-            lblMateria.Text = "Materia:";
-            // 
-            // txtDocente
-            // 
-            txtDocente.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txtDocente.Location = new Point(96, 42);
-            txtDocente.MaximumSize = new Size(523, 23);
-            txtDocente.Name = "txtDocente";
-            txtDocente.Size = new Size(347, 23);
-            txtDocente.TabIndex = 4;
-            // 
-            // txtComision
-            // 
-            txtComision.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txtComision.Location = new Point(96, 112);
-            txtComision.Name = "txtComision";
-            txtComision.Size = new Size(347, 25);
-            txtComision.TabIndex = 5;
-            // 
-            // txtMateria
-            // 
-            txtMateria.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txtMateria.Location = new Point(96, 75);
-            txtMateria.Name = "txtMateria";
-            txtMateria.Size = new Size(347, 25);
-            txtMateria.TabIndex = 6;
-            // 
-            // btnCancelar
-            // 
-            btnCancelar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCancelar.Location = new Point(33, 479);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(79, 35);
-            btnCancelar.TabIndex = 7;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
-            btnCancelar.Click += btnCancelar_Click;
-            // 
-            // btnBuscar
-            // 
-            btnBuscar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnBuscar.Location = new Point(552, 109);
-            btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(79, 35);
-            btnBuscar.TabIndex = 8;
-            btnBuscar.Text = "Buscar";
-            btnBuscar.UseVisualStyleBackColor = true;
-            btnBuscar.Click += btnBuscar_Click;
-            // 
-            // grbCriteriosBusqueda
-            // 
-            grbCriteriosBusqueda.BackColor = Color.WhiteSmoke;
-            grbCriteriosBusqueda.Controls.Add(txtDocente);
-            grbCriteriosBusqueda.Controls.Add(btnBuscar);
-            grbCriteriosBusqueda.Controls.Add(lblDocente);
-            grbCriteriosBusqueda.Controls.Add(lblComision);
-            grbCriteriosBusqueda.Controls.Add(txtMateria);
-            grbCriteriosBusqueda.Controls.Add(lblMateria);
-            grbCriteriosBusqueda.Controls.Add(txtComision);
-            grbCriteriosBusqueda.Location = new Point(51, 14);
-            grbCriteriosBusqueda.Name = "grbCriteriosBusqueda";
-            grbCriteriosBusqueda.Size = new Size(637, 158);
-            grbCriteriosBusqueda.TabIndex = 9;
-            grbCriteriosBusqueda.TabStop = false;
-            grbCriteriosBusqueda.Text = "Criterios de Busqueda";
             // 
             // IdMateriaComision
             // 
@@ -201,6 +110,97 @@
             Acciones.SortMode = DataGridViewColumnSortMode.Automatic;
             Acciones.Text = "Seleccionar";
             Acciones.UseColumnTextForButtonValue = true;
+            // 
+            // lblDocente
+            // 
+            lblDocente.AutoSize = true;
+            lblDocente.Location = new Point(27, 42);
+            lblDocente.Name = "lblDocente";
+            lblDocente.Size = new Size(63, 19);
+            lblDocente.TabIndex = 1;
+            lblDocente.Text = "Docente:";
+            // 
+            // lblComision
+            // 
+            lblComision.AutoSize = true;
+            lblComision.Location = new Point(21, 115);
+            lblComision.Name = "lblComision";
+            lblComision.Size = new Size(69, 19);
+            lblComision.TabIndex = 5;
+            lblComision.Text = "Comision:";
+            // 
+            // lblMateria
+            // 
+            lblMateria.AutoSize = true;
+            lblMateria.Location = new Point(31, 79);
+            lblMateria.Name = "lblMateria";
+            lblMateria.Size = new Size(59, 19);
+            lblMateria.TabIndex = 3;
+            lblMateria.Text = "Materia:";
+            // 
+            // txtDocente
+            // 
+            txtDocente.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            txtDocente.Location = new Point(96, 42);
+            txtDocente.MaximumSize = new Size(523, 23);
+            txtDocente.Name = "txtDocente";
+            txtDocente.Size = new Size(347, 23);
+            txtDocente.TabIndex = 2;
+            // 
+            // txtComision
+            // 
+            txtComision.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            txtComision.Location = new Point(96, 112);
+            txtComision.Name = "txtComision";
+            txtComision.Size = new Size(347, 25);
+            txtComision.TabIndex = 6;
+            // 
+            // txtMateria
+            // 
+            txtMateria.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            txtMateria.Location = new Point(96, 75);
+            txtMateria.Name = "txtMateria";
+            txtMateria.Size = new Size(347, 25);
+            txtMateria.TabIndex = 4;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCancelar.Location = new Point(33, 479);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(79, 35);
+            btnCancelar.TabIndex = 9;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
+            // 
+            // btnBuscar
+            // 
+            btnBuscar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnBuscar.Location = new Point(552, 109);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(79, 35);
+            btnBuscar.TabIndex = 7;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += btnBuscar_Click;
+            // 
+            // grbCriteriosBusqueda
+            // 
+            grbCriteriosBusqueda.BackColor = Color.WhiteSmoke;
+            grbCriteriosBusqueda.Controls.Add(txtDocente);
+            grbCriteriosBusqueda.Controls.Add(btnBuscar);
+            grbCriteriosBusqueda.Controls.Add(lblDocente);
+            grbCriteriosBusqueda.Controls.Add(lblComision);
+            grbCriteriosBusqueda.Controls.Add(txtMateria);
+            grbCriteriosBusqueda.Controls.Add(lblMateria);
+            grbCriteriosBusqueda.Controls.Add(txtComision);
+            grbCriteriosBusqueda.Location = new Point(51, 14);
+            grbCriteriosBusqueda.Name = "grbCriteriosBusqueda";
+            grbCriteriosBusqueda.Size = new Size(637, 158);
+            grbCriteriosBusqueda.TabIndex = 0;
+            grbCriteriosBusqueda.TabStop = false;
+            grbCriteriosBusqueda.Text = "Criterios de Busqueda";
             // 
             // FrmConsultarDetalleMateriaComision
             // 

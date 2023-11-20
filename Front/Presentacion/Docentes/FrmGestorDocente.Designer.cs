@@ -68,7 +68,7 @@
             txtAlt.Location = new Point(91, 78);
             txtAlt.Name = "txtAlt";
             txtAlt.Size = new Size(152, 25);
-            txtAlt.TabIndex = 1;
+            txtAlt.TabIndex = 3;
             // 
             // cboTitulo
             // 
@@ -77,7 +77,7 @@
             cboTitulo.Location = new Point(85, 160);
             cboTitulo.Name = "cboTitulo";
             cboTitulo.Size = new Size(152, 25);
-            cboTitulo.TabIndex = 2;
+            cboTitulo.TabIndex = 7;
             // 
             // cboBarrio
             // 
@@ -86,7 +86,7 @@
             cboBarrio.Location = new Point(91, 116);
             cboBarrio.Name = "cboBarrio";
             cboBarrio.Size = new Size(152, 25);
-            cboBarrio.TabIndex = 3;
+            cboBarrio.TabIndex = 5;
             // 
             // txtDirec
             // 
@@ -94,7 +94,7 @@
             txtDirec.Location = new Point(91, 40);
             txtDirec.Name = "txtDirec";
             txtDirec.Size = new Size(152, 25);
-            txtDirec.TabIndex = 6;
+            txtDirec.TabIndex = 1;
             // 
             // txtMail
             // 
@@ -102,7 +102,7 @@
             txtMail.Location = new Point(89, 75);
             txtMail.Name = "txtMail";
             txtMail.Size = new Size(152, 25);
-            txtMail.TabIndex = 8;
+            txtMail.TabIndex = 3;
             // 
             // txtApe
             // 
@@ -110,7 +110,7 @@
             txtApe.Location = new Point(85, 117);
             txtApe.Name = "txtApe";
             txtApe.Size = new Size(152, 25);
-            txtApe.TabIndex = 9;
+            txtApe.TabIndex = 5;
             // 
             // txtNom
             // 
@@ -118,7 +118,7 @@
             txtNom.Location = new Point(85, 76);
             txtNom.Name = "txtNom";
             txtNom.Size = new Size(152, 25);
-            txtNom.TabIndex = 10;
+            txtNom.TabIndex = 3;
             // 
             // txtId
             // 
@@ -126,7 +126,7 @@
             txtId.Location = new Point(85, 37);
             txtId.Name = "txtId";
             txtId.Size = new Size(152, 25);
-            txtId.TabIndex = 11;
+            txtId.TabIndex = 1;
             // 
             // label4
             // 
@@ -135,7 +135,7 @@
             label4.Location = new Point(24, 40);
             label4.Name = "label4";
             label4.Size = new Size(59, 19);
-            label4.TabIndex = 12;
+            label4.TabIndex = 0;
             label4.Text = "Nro Tel :";
             // 
             // label5
@@ -145,7 +145,7 @@
             label5.Location = new Point(28, 78);
             label5.Name = "label5";
             label5.Size = new Size(55, 19);
-            label5.TabIndex = 13;
+            label5.TabIndex = 2;
             label5.Text = "E-Mail :";
             // 
             // label6
@@ -155,7 +155,7 @@
             label6.Location = new Point(13, 43);
             label6.Name = "label6";
             label6.Size = new Size(72, 19);
-            label6.TabIndex = 14;
+            label6.TabIndex = 0;
             label6.Text = "Direccion :";
             // 
             // label7
@@ -165,7 +165,7 @@
             label7.Location = new Point(32, 79);
             label7.Name = "label7";
             label7.Size = new Size(53, 19);
-            label7.TabIndex = 15;
+            label7.TabIndex = 2;
             label7.Text = "Altura :";
             // 
             // label8
@@ -175,7 +175,7 @@
             label8.Location = new Point(33, 119);
             label8.Name = "label8";
             label8.Size = new Size(52, 19);
-            label8.TabIndex = 16;
+            label8.TabIndex = 4;
             label8.Text = "Barrio :";
             // 
             // label9
@@ -185,7 +185,7 @@
             label9.Location = new Point(49, 40);
             label9.Name = "label9";
             label9.Size = new Size(30, 19);
-            label9.TabIndex = 17;
+            label9.TabIndex = 0;
             label9.Text = "ID :";
             // 
             // label10
@@ -195,7 +195,7 @@
             label10.Location = new Point(13, 76);
             label10.Name = "label10";
             label10.Size = new Size(66, 19);
-            label10.TabIndex = 18;
+            label10.TabIndex = 2;
             label10.Text = "Nombre :";
             // 
             // label11
@@ -205,7 +205,7 @@
             label11.Location = new Point(14, 120);
             label11.Name = "label11";
             label11.Size = new Size(65, 19);
-            label11.TabIndex = 19;
+            label11.TabIndex = 4;
             label11.Text = "Apellido :";
             // 
             // label12
@@ -215,7 +215,7 @@
             label12.Location = new Point(29, 163);
             label12.Name = "label12";
             label12.Size = new Size(50, 19);
-            label12.TabIndex = 20;
+            label12.TabIndex = 6;
             label12.Text = "Título :";
             // 
             // btnLimpiar
@@ -224,7 +224,7 @@
             btnLimpiar.Location = new Point(608, 294);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(79, 29);
-            btnLimpiar.TabIndex = 21;
+            btnLimpiar.TabIndex = 3;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = true;
             btnLimpiar.Click += btnLimpiar_Click_1;
@@ -235,7 +235,7 @@
             btnCancelar.Location = new Point(36, 294);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(79, 29);
-            btnCancelar.TabIndex = 23;
+            btnCancelar.TabIndex = 2;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             btnCancelar.Click += btnCancelar_Click_1;
@@ -246,7 +246,7 @@
             btnAceptar.Location = new Point(693, 294);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new Size(79, 29);
-            btnAceptar.TabIndex = 24;
+            btnAceptar.TabIndex = 4;
             btnAceptar.Text = "Aceptar";
             btnAceptar.UseVisualStyleBackColor = true;
             btnAceptar.Click += btnAceptar_Click_1;
@@ -257,7 +257,7 @@
             txtTel.Location = new Point(89, 37);
             txtTel.Name = "txtTel";
             txtTel.Size = new Size(152, 25);
-            txtTel.TabIndex = 25;
+            txtTel.TabIndex = 1;
             // 
             // lblABM
             // 
@@ -267,7 +267,7 @@
             lblABM.Location = new Point(328, 9);
             lblABM.Name = "lblABM";
             lblABM.Size = new Size(164, 28);
-            lblABM.TabIndex = 26;
+            lblABM.TabIndex = 0;
             lblABM.Text = "Creando Docente";
             // 
             // btnEliminar
@@ -276,7 +276,7 @@
             btnEliminar.Location = new Point(778, 294);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(79, 29);
-            btnEliminar.TabIndex = 27;
+            btnEliminar.TabIndex = 5;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += btnEliminar_Click;
@@ -296,7 +296,7 @@
             grbDatosPersonales.Location = new Point(37, 13);
             grbDatosPersonales.Name = "grbDatosPersonales";
             grbDatosPersonales.Size = new Size(264, 204);
-            grbDatosPersonales.TabIndex = 28;
+            grbDatosPersonales.TabIndex = 0;
             grbDatosPersonales.TabStop = false;
             grbDatosPersonales.Text = "Datos Personales";
             // 
@@ -311,7 +311,7 @@
             grbComunicaciones.Location = new Point(315, 13);
             grbComunicaciones.Name = "grbComunicaciones";
             grbComunicaciones.Size = new Size(264, 204);
-            grbComunicaciones.TabIndex = 29;
+            grbComunicaciones.TabIndex = 1;
             grbComunicaciones.TabStop = false;
             grbComunicaciones.Text = "Comunicación";
             // 
@@ -328,7 +328,7 @@
             grbUbicacion.Location = new Point(594, 13);
             grbUbicacion.Name = "grbUbicacion";
             grbUbicacion.Size = new Size(264, 204);
-            grbUbicacion.TabIndex = 30;
+            grbUbicacion.TabIndex = 2;
             grbUbicacion.TabStop = false;
             grbUbicacion.Text = "Ubicación";
             // 
@@ -342,7 +342,7 @@
             pnlDatosDocente.Location = new Point(-1, 49);
             pnlDatosDocente.Name = "pnlDatosDocente";
             pnlDatosDocente.Size = new Size(892, 239);
-            pnlDatosDocente.TabIndex = 31;
+            pnlDatosDocente.TabIndex = 1;
             // 
             // FrmGestorDocente
             // 

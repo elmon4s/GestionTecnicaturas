@@ -36,6 +36,11 @@
             cboDocentes = new ComboBox();
             btnAceptar = new Button();
             dgvDetalles = new DataGridView();
+            ColID = new DataGridViewTextBoxColumn();
+            ColApellido = new DataGridViewTextBoxColumn();
+            ColNombre = new DataGridViewTextBoxColumn();
+            ColNota = new DataGridViewTextBoxColumn();
+            ColAcciones = new DataGridViewButtonColumn();
             lblAlumno = new Label();
             cboAlumnos = new ComboBox();
             lblNota = new Label();
@@ -46,11 +51,6 @@
             lblDocente = new Label();
             btnEditar = new Button();
             btnSalir = new Button();
-            ColID = new DataGridViewTextBoxColumn();
-            ColApellido = new DataGridViewTextBoxColumn();
-            ColNombre = new DataGridViewTextBoxColumn();
-            ColNota = new DataGridViewTextBoxColumn();
-            ColAcciones = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)dgvDetalles).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudNota).BeginInit();
             pnlExamen.SuspendLayout();
@@ -63,7 +63,7 @@
             cboMaterias.Location = new Point(88, 53);
             cboMaterias.Name = "cboMaterias";
             cboMaterias.Size = new Size(161, 25);
-            cboMaterias.TabIndex = 1;
+            cboMaterias.TabIndex = 3;
             // 
             // lblFecha
             // 
@@ -72,7 +72,7 @@
             lblFecha.Location = new Point(47, 21);
             lblFecha.Name = "lblFecha";
             lblFecha.Size = new Size(44, 19);
-            lblFecha.TabIndex = 2;
+            lblFecha.TabIndex = 0;
             lblFecha.Text = "Fecha";
             // 
             // lblMateria
@@ -82,7 +82,7 @@
             lblMateria.Location = new Point(35, 57);
             lblMateria.Name = "lblMateria";
             lblMateria.Size = new Size(56, 19);
-            lblMateria.TabIndex = 3;
+            lblMateria.TabIndex = 2;
             lblMateria.Text = "Materia";
             // 
             // dtpFecha
@@ -92,7 +92,7 @@
             dtpFecha.Location = new Point(91, 15);
             dtpFecha.Name = "dtpFecha";
             dtpFecha.Size = new Size(104, 25);
-            dtpFecha.TabIndex = 5;
+            dtpFecha.TabIndex = 1;
             // 
             // cboDocentes
             // 
@@ -101,7 +101,7 @@
             cboDocentes.Location = new Point(90, 17);
             cboDocentes.Name = "cboDocentes";
             cboDocentes.Size = new Size(161, 25);
-            cboDocentes.TabIndex = 6;
+            cboDocentes.TabIndex = 1;
             // 
             // btnAceptar
             // 
@@ -110,7 +110,7 @@
             btnAceptar.Location = new Point(357, 376);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new Size(79, 29);
-            btnAceptar.TabIndex = 0;
+            btnAceptar.TabIndex = 6;
             btnAceptar.Text = "Aceptar";
             btnAceptar.UseVisualStyleBackColor = true;
             btnAceptar.Click += btnAceptar_Click;
@@ -129,116 +129,6 @@
             dgvDetalles.Size = new Size(570, 196);
             dgvDetalles.TabIndex = 7;
             dgvDetalles.CellContentClick += dgvDetalles_CellContentClick;
-            // 
-            // lblAlumno
-            // 
-            lblAlumno.AutoSize = true;
-            lblAlumno.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            lblAlumno.Location = new Point(27, 51);
-            lblAlumno.Name = "lblAlumno";
-            lblAlumno.Size = new Size(57, 19);
-            lblAlumno.TabIndex = 9;
-            lblAlumno.Text = "Alumno";
-            // 
-            // cboAlumnos
-            // 
-            cboAlumnos.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            cboAlumnos.FormattingEnabled = true;
-            cboAlumnos.Location = new Point(90, 51);
-            cboAlumnos.Name = "cboAlumnos";
-            cboAlumnos.Size = new Size(161, 25);
-            cboAlumnos.TabIndex = 10;
-            // 
-            // lblNota
-            // 
-            lblNota.AutoSize = true;
-            lblNota.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            lblNota.Location = new Point(282, 51);
-            lblNota.Name = "lblNota";
-            lblNota.Size = new Size(39, 19);
-            lblNota.TabIndex = 12;
-            lblNota.Text = "Nota";
-            // 
-            // nudNota
-            // 
-            nudNota.Location = new Point(317, 50);
-            nudNota.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
-            nudNota.Name = "nudNota";
-            nudNota.Size = new Size(78, 25);
-            nudNota.TabIndex = 13;
-            // 
-            // btnAgregar
-            // 
-            btnAgregar.Location = new Point(531, 50);
-            btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(75, 29);
-            btnAgregar.TabIndex = 14;
-            btnAgregar.Text = "Agregar";
-            btnAgregar.UseVisualStyleBackColor = true;
-            btnAgregar.Click += btnAgregar_Click;
-            // 
-            // btnConfirmar
-            // 
-            btnConfirmar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnConfirmar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnConfirmar.Location = new Point(255, 50);
-            btnConfirmar.Name = "btnConfirmar";
-            btnConfirmar.Size = new Size(84, 29);
-            btnConfirmar.TabIndex = 15;
-            btnConfirmar.Text = "Confirmar";
-            btnConfirmar.UseVisualStyleBackColor = true;
-            btnConfirmar.Click += btnConfirmar_Click;
-            // 
-            // pnlExamen
-            // 
-            pnlExamen.BackColor = SystemColors.ActiveCaption;
-            pnlExamen.Controls.Add(lblDocente);
-            pnlExamen.Controls.Add(cboDocentes);
-            pnlExamen.Controls.Add(btnAgregar);
-            pnlExamen.Controls.Add(dgvDetalles);
-            pnlExamen.Controls.Add(nudNota);
-            pnlExamen.Controls.Add(cboAlumnos);
-            pnlExamen.Controls.Add(lblNota);
-            pnlExamen.Controls.Add(lblAlumno);
-            pnlExamen.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            pnlExamen.Location = new Point(-2, 89);
-            pnlExamen.Name = "pnlExamen";
-            pnlExamen.Size = new Size(635, 281);
-            pnlExamen.TabIndex = 16;
-            // 
-            // lblDocente
-            // 
-            lblDocente.AutoSize = true;
-            lblDocente.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            lblDocente.Location = new Point(27, 20);
-            lblDocente.Name = "lblDocente";
-            lblDocente.Size = new Size(60, 19);
-            lblDocente.TabIndex = 15;
-            lblDocente.Text = "Docente";
-            // 
-            // btnEditar
-            // 
-            btnEditar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnEditar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEditar.Location = new Point(442, 376);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(79, 29);
-            btnEditar.TabIndex = 17;
-            btnEditar.Text = "Editar";
-            btnEditar.UseVisualStyleBackColor = true;
-            btnEditar.Click += btnEditar_Click;
-            // 
-            // btnSalir
-            // 
-            btnSalir.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnSalir.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnSalir.Location = new Point(525, 376);
-            btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(79, 29);
-            btnSalir.TabIndex = 18;
-            btnSalir.Text = "Salir";
-            btnSalir.UseVisualStyleBackColor = true;
-            btnSalir.Click += btnSalir_Click;
             // 
             // ColID
             // 
@@ -273,6 +163,116 @@
             ColAcciones.ReadOnly = true;
             ColAcciones.Text = "Quitar";
             ColAcciones.UseColumnTextForButtonValue = true;
+            // 
+            // lblAlumno
+            // 
+            lblAlumno.AutoSize = true;
+            lblAlumno.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAlumno.Location = new Point(27, 51);
+            lblAlumno.Name = "lblAlumno";
+            lblAlumno.Size = new Size(57, 19);
+            lblAlumno.TabIndex = 2;
+            lblAlumno.Text = "Alumno";
+            // 
+            // cboAlumnos
+            // 
+            cboAlumnos.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            cboAlumnos.FormattingEnabled = true;
+            cboAlumnos.Location = new Point(90, 51);
+            cboAlumnos.Name = "cboAlumnos";
+            cboAlumnos.Size = new Size(161, 25);
+            cboAlumnos.TabIndex = 3;
+            // 
+            // lblNota
+            // 
+            lblNota.AutoSize = true;
+            lblNota.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblNota.Location = new Point(282, 51);
+            lblNota.Name = "lblNota";
+            lblNota.Size = new Size(39, 19);
+            lblNota.TabIndex = 4;
+            lblNota.Text = "Nota";
+            // 
+            // nudNota
+            // 
+            nudNota.Location = new Point(317, 50);
+            nudNota.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            nudNota.Name = "nudNota";
+            nudNota.Size = new Size(78, 25);
+            nudNota.TabIndex = 5;
+            // 
+            // btnAgregar
+            // 
+            btnAgregar.Location = new Point(531, 50);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(75, 29);
+            btnAgregar.TabIndex = 6;
+            btnAgregar.Text = "Agregar";
+            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
+            // 
+            // btnConfirmar
+            // 
+            btnConfirmar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnConfirmar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnConfirmar.Location = new Point(255, 50);
+            btnConfirmar.Name = "btnConfirmar";
+            btnConfirmar.Size = new Size(84, 29);
+            btnConfirmar.TabIndex = 4;
+            btnConfirmar.Text = "Confirmar";
+            btnConfirmar.UseVisualStyleBackColor = true;
+            btnConfirmar.Click += btnConfirmar_Click;
+            // 
+            // pnlExamen
+            // 
+            pnlExamen.BackColor = SystemColors.ActiveCaption;
+            pnlExamen.Controls.Add(lblDocente);
+            pnlExamen.Controls.Add(cboDocentes);
+            pnlExamen.Controls.Add(btnAgregar);
+            pnlExamen.Controls.Add(dgvDetalles);
+            pnlExamen.Controls.Add(nudNota);
+            pnlExamen.Controls.Add(cboAlumnos);
+            pnlExamen.Controls.Add(lblNota);
+            pnlExamen.Controls.Add(lblAlumno);
+            pnlExamen.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            pnlExamen.Location = new Point(-2, 89);
+            pnlExamen.Name = "pnlExamen";
+            pnlExamen.Size = new Size(635, 281);
+            pnlExamen.TabIndex = 5;
+            // 
+            // lblDocente
+            // 
+            lblDocente.AutoSize = true;
+            lblDocente.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblDocente.Location = new Point(27, 20);
+            lblDocente.Name = "lblDocente";
+            lblDocente.Size = new Size(60, 19);
+            lblDocente.TabIndex = 0;
+            lblDocente.Text = "Docente";
+            // 
+            // btnEditar
+            // 
+            btnEditar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnEditar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEditar.Location = new Point(442, 376);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(79, 29);
+            btnEditar.TabIndex = 7;
+            btnEditar.Text = "Editar";
+            btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
+            // 
+            // btnSalir
+            // 
+            btnSalir.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnSalir.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSalir.Location = new Point(525, 376);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(79, 29);
+            btnSalir.TabIndex = 8;
+            btnSalir.Text = "Salir";
+            btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
             // 
             // FrmGestorExamen
             // 
