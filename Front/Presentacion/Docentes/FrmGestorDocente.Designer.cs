@@ -67,7 +67,7 @@
             txtAlt.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txtAlt.Location = new Point(91, 78);
             txtAlt.Name = "txtAlt";
-            txtAlt.Size = new Size(121, 25);
+            txtAlt.Size = new Size(152, 25);
             txtAlt.TabIndex = 1;
             // 
             // cboTitulo
@@ -76,7 +76,7 @@
             cboTitulo.FormattingEnabled = true;
             cboTitulo.Location = new Point(85, 160);
             cboTitulo.Name = "cboTitulo";
-            cboTitulo.Size = new Size(121, 25);
+            cboTitulo.Size = new Size(152, 25);
             cboTitulo.TabIndex = 2;
             // 
             // cboBarrio
@@ -85,7 +85,7 @@
             cboBarrio.FormattingEnabled = true;
             cboBarrio.Location = new Point(91, 116);
             cboBarrio.Name = "cboBarrio";
-            cboBarrio.Size = new Size(121, 25);
+            cboBarrio.Size = new Size(152, 25);
             cboBarrio.TabIndex = 3;
             // 
             // txtDirec
@@ -93,7 +93,7 @@
             txtDirec.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txtDirec.Location = new Point(91, 40);
             txtDirec.Name = "txtDirec";
-            txtDirec.Size = new Size(121, 25);
+            txtDirec.Size = new Size(152, 25);
             txtDirec.TabIndex = 6;
             // 
             // txtMail
@@ -101,7 +101,7 @@
             txtMail.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txtMail.Location = new Point(89, 75);
             txtMail.Name = "txtMail";
-            txtMail.Size = new Size(122, 25);
+            txtMail.Size = new Size(152, 25);
             txtMail.TabIndex = 8;
             // 
             // txtApe
@@ -109,7 +109,7 @@
             txtApe.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txtApe.Location = new Point(85, 117);
             txtApe.Name = "txtApe";
-            txtApe.Size = new Size(121, 25);
+            txtApe.Size = new Size(152, 25);
             txtApe.TabIndex = 9;
             // 
             // txtNom
@@ -117,7 +117,7 @@
             txtNom.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txtNom.Location = new Point(85, 76);
             txtNom.Name = "txtNom";
-            txtNom.Size = new Size(121, 25);
+            txtNom.Size = new Size(152, 25);
             txtNom.TabIndex = 10;
             // 
             // txtId
@@ -125,7 +125,7 @@
             txtId.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txtId.Location = new Point(85, 37);
             txtId.Name = "txtId";
-            txtId.Size = new Size(121, 25);
+            txtId.Size = new Size(152, 25);
             txtId.TabIndex = 11;
             // 
             // label4
@@ -221,7 +221,7 @@
             // btnLimpiar
             // 
             btnLimpiar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnLimpiar.Location = new Point(529, 304);
+            btnLimpiar.Location = new Point(608, 294);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(79, 29);
             btnLimpiar.TabIndex = 21;
@@ -232,7 +232,7 @@
             // btnCancelar
             // 
             btnCancelar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCancelar.Location = new Point(12, 304);
+            btnCancelar.Location = new Point(36, 294);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(79, 29);
             btnCancelar.TabIndex = 23;
@@ -243,7 +243,7 @@
             // btnAceptar
             // 
             btnAceptar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAceptar.Location = new Point(614, 304);
+            btnAceptar.Location = new Point(693, 294);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new Size(79, 29);
             btnAceptar.TabIndex = 24;
@@ -256,7 +256,7 @@
             txtTel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txtTel.Location = new Point(89, 37);
             txtTel.Name = "txtTel";
-            txtTel.Size = new Size(122, 25);
+            txtTel.Size = new Size(152, 25);
             txtTel.TabIndex = 25;
             // 
             // lblABM
@@ -273,7 +273,7 @@
             // btnEliminar
             // 
             btnEliminar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEliminar.Location = new Point(699, 304);
+            btnEliminar.Location = new Point(778, 294);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(79, 29);
             btnEliminar.TabIndex = 27;
@@ -295,7 +295,7 @@
             grbDatosPersonales.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             grbDatosPersonales.Location = new Point(37, 13);
             grbDatosPersonales.Name = "grbDatosPersonales";
-            grbDatosPersonales.Size = new Size(230, 208);
+            grbDatosPersonales.Size = new Size(264, 204);
             grbDatosPersonales.TabIndex = 28;
             grbDatosPersonales.TabStop = false;
             grbDatosPersonales.Text = "Datos Personales";
@@ -308,9 +308,9 @@
             grbComunicaciones.Controls.Add(label4);
             grbComunicaciones.Controls.Add(label5);
             grbComunicaciones.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            grbComunicaciones.Location = new Point(288, 13);
+            grbComunicaciones.Location = new Point(315, 13);
             grbComunicaciones.Name = "grbComunicaciones";
-            grbComunicaciones.Size = new Size(230, 208);
+            grbComunicaciones.Size = new Size(264, 204);
             grbComunicaciones.TabIndex = 29;
             grbComunicaciones.TabStop = false;
             grbComunicaciones.Text = "Comunicación";
@@ -325,9 +325,9 @@
             grbUbicacion.Controls.Add(label7);
             grbUbicacion.Controls.Add(label8);
             grbUbicacion.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            grbUbicacion.Location = new Point(538, 13);
+            grbUbicacion.Location = new Point(594, 13);
             grbUbicacion.Name = "grbUbicacion";
-            grbUbicacion.Size = new Size(230, 208);
+            grbUbicacion.Size = new Size(264, 204);
             grbUbicacion.TabIndex = 30;
             grbUbicacion.TabStop = false;
             grbUbicacion.Text = "Ubicación";
@@ -341,7 +341,7 @@
             pnlDatosDocente.Controls.Add(grbComunicaciones);
             pnlDatosDocente.Location = new Point(-1, 49);
             pnlDatosDocente.Name = "pnlDatosDocente";
-            pnlDatosDocente.Size = new Size(796, 239);
+            pnlDatosDocente.Size = new Size(892, 239);
             pnlDatosDocente.TabIndex = 31;
             // 
             // FrmGestorDocente
@@ -349,7 +349,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AliceBlue;
-            ClientSize = new Size(794, 345);
+            ClientSize = new Size(890, 333);
             Controls.Add(pnlDatosDocente);
             Controls.Add(btnEliminar);
             Controls.Add(lblABM);
@@ -357,6 +357,8 @@
             Controls.Add(btnCancelar);
             Controls.Add(btnLimpiar);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximumSize = new Size(906, 372);
+            MinimumSize = new Size(906, 372);
             Name = "FrmGestorDocente";
             Text = "Docente";
             Load += FrmNuevoDocente_Load_1;

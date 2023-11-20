@@ -34,6 +34,7 @@ namespace Front
         {
             await CargarBarrios();
             await CargarTitulos();
+            txtId.Enabled = false;
             btnEliminar.Enabled = false;
             if (lblABM.Text == "Modificar Docente")
             {
@@ -52,7 +53,7 @@ namespace Front
             var dtosJson = await ClienteSingleton.GetInstance().GetAsync(url);
             List<Barrio> lBarrio = JsonConvert.DeserializeObject<List<Barrio>>(dtosJson);
             cboBarrio.DataSource = lBarrio;
-            cboBarrio.DisplayMember = "NombreBarrio";
+            cboBarrio.DisplayMember = "NombreBarrioCompleto";
             cboBarrio.ValueMember = "IdBarrio";
         }
         private async Task CargarTitulos()
@@ -202,7 +203,6 @@ namespace Front
             d.Apellido = txtApe.Text;
             d.Direccion = txtDirec.Text;
             d.Altura = int.Parse(txtAlt.Text);
-            d.IdDocente = int.Parse(txtId.Text);
             d.Telefono = txtTel.Text;
             d.Email = txtMail.Text;
             d.Barrio.IdBarrio = (int)cboBarrio.SelectedValue;

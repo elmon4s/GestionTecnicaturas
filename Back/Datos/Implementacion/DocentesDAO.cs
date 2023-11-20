@@ -62,6 +62,7 @@ namespace Back.Datos.Implementacion
                 transaccion = conexion.BeginTransaction();
                 SqlCommand comando = new SqlCommand("PA_ACTUALIZAR_DOCENTE", conexion, transaccion);
                 comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@id_docente", oDocente.IdDocente);
                 comando.Parameters.AddWithValue("@nom_docente", oDocente.Nombre);
                 comando.Parameters.AddWithValue("@ape_docente", oDocente.Apellido);
                 comando.Parameters.AddWithValue("@direccion", oDocente.Direccion);
