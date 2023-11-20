@@ -80,3 +80,15 @@ C:\Users\ronim\OneDrive\Escritorio\Gestion de Tecnicaturas\GestionTecnicaturas\H
 C:\Users\ronim\OneDrive\Escritorio\Gestion de Tecnicaturas\GestionTecnicaturas\HelperReportes\obj\Debug\net6.0-windows\HelperReportes.dll
 C:\Users\ronim\OneDrive\Escritorio\Gestion de Tecnicaturas\GestionTecnicaturas\HelperReportes\obj\Debug\net6.0-windows\refint\HelperReportes.dll
 C:\Users\ronim\OneDrive\Escritorio\Gestion de Tecnicaturas\GestionTecnicaturas\HelperReportes\obj\Debug\net6.0-windows\HelperReportes.pdb
+D:\Code\GestionTecnicaturas\HelperReportes\obj\Debug\net6.0-windows\HelperReportes.csproj.AssemblyReference.cache
+D:\Code\GestionTecnicaturas\HelperReportes\obj\Debug\net6.0-windows\HelperReportes.Presentacion.FrmReporteAlumnosCantAprobados.resources
+D:\Code\GestionTecnicaturas\HelperReportes\obj\Debug\net6.0-windows\HelperReportes.Presentacion.FrmReporteAlumnosCantExamenes.resources
+D:\Code\GestionTecnicaturas\HelperReportes\obj\Debug\net6.0-windows\HelperReportes.Presentacion.FrmReporteAlumnosMaterias.resources
+D:\Code\GestionTecnicaturas\HelperReportes\obj\Debug\net6.0-windows\HelperReportes.Presentacion.FrmReporteDocentesPorcentaje.resources
+D:\Code\GestionTecnicaturas\HelperReportes\obj\Debug\net6.0-windows\HelperReportes.Presentacion.FrmReporteMateriaComision.resources
+D:\Code\GestionTecnicaturas\HelperReportes\obj\Debug\net6.0-windows\HelperReportes.Properties.Resources.resources
+D:\Code\GestionTecnicaturas\HelperReportes\obj\Debug\net6.0-windows\HelperReportes.csproj.GenerateResource.cache
+D:\Code\GestionTecnicaturas\HelperReportes\obj\Debug\net6.0-windows\HelperReportes.dll.licenses
+D:\Code\GestionTecnicaturas\HelperReportes\obj\Debug\net6.0-windows\HelperReportes.dll
+D:\Code\GestionTecnicaturas\HelperReportes\obj\Debug\net6.0-windows\refint\HelperReportes.dll
+D:\Code\GestionTecnicaturas\HelperReportes\obj\Debug\net6.0-windows\HelperReportes.pdb

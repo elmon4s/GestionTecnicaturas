@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -43,7 +44,7 @@ namespace Front.Presentacion.Alumnos
                 MessageBox.Show("Debe ingresar una direccion!", "Direccion Invalido", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else if (string.IsNullOrEmpty(txtTel.Text))
                 MessageBox.Show("Debe ingresar un telefono!", "Telefono Invalido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else if (string.IsNullOrEmpty(txtEmail.Text))
+            else if (string.IsNullOrEmpty(txtEmail.Text) || !ValidarEmail(txtEmail.Text))
                 MessageBox.Show("Debe ingresar un correo electronico!", "Correo Invalido", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else if (dgvMaterias.Rows.Count == 0)
                 MessageBox.Show("El alumno debe estar inscrito en al menos una materia!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -175,13 +176,6 @@ namespace Front.Presentacion.Alumnos
             }
         }
 
-        private void txtTel_TextChanged(object sender, EventArgs e)
-        {
-            int selectionStart = txtTel.SelectionStart;
-            txtTel.Text = txtTel.Text.Replace("[^0-9]", "");
-            txtTel.SelectionStart = selectionStart;
-        }
-
         private async void FrmGestorAlumno_Load_1(object sender, EventArgs e)
         {
             numId.Controls[0].Visible = false;
@@ -223,6 +217,24 @@ namespace Front.Presentacion.Alumnos
             {
                 this.Dispose();
             }
+        }
+
+        private void txtTel_TextChanged_1(object sender, EventArgs e)
+        {
+            int selectionStart = txtTel.SelectionStart;
+            int oldLenght = txtTel.Text.Length;
+            txtTel.Text = Regex.Replace(txtTel.Text, "[^0-9]", "");
+            if (oldLenght > txtTel.Text.Length)
+                selectionStart--;
+            txtTel.SelectionStart = selectionStart;
+        }
+
+        private bool ValidarEmail(string valor)
+        {
+            bool res = false;
+            if (valor.Split('@').Length > 1)
+                res = true;
+            return res;
         }
     }
 }

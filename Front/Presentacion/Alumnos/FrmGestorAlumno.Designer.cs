@@ -414,6 +414,7 @@
             txtTel.Name = "txtTel";
             txtTel.Size = new Size(256, 25);
             txtTel.TabIndex = 17;
+            txtTel.TextChanged += txtTel_TextChanged_1;
             // 
             // btnAceptar
             // 

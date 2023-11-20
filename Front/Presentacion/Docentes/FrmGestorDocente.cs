@@ -10,6 +10,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -74,12 +75,12 @@ namespace Front
             { x = false; primerMsj = false; MessageBox.Show("Debe ingresar un apellido"); txtApe.Focus(); }
             if (txtNom.Text == string.Empty && primerMsj == true)
             { x = false; primerMsj = false; MessageBox.Show("Debe ingresar un Nombre"); txtNom.Focus(); }
-            if (txtMail.Text == string.Empty && primerMsj == true)
-            { x = false; primerMsj = false; MessageBox.Show("Debe ingresar un E-Mail"); txtMail.Focus(); }
+            if (txtMail.Text == string.Empty && primerMsj == true || !ValidarEmail(txtMail.Text))
+            { x = false; primerMsj = false; MessageBox.Show("Debe ingresar un E-Mail válido"); txtMail.Focus(); }
             if (txtDirec.Text == string.Empty && primerMsj == true)
             { x = false; primerMsj = false; MessageBox.Show("Debe ingresar una Dirección"); txtApe.Focus(); }
             if (txtTel.Text == string.Empty && primerMsj == true || EsInt(txtTel.Text) == false && primerMsj == true)
-            { x = false; primerMsj = false; MessageBox.Show("Debe indicar número de Telefono valido"); txtTel.Focus(); }
+            { x = false; primerMsj = false; MessageBox.Show("Debe indicar número de Telefono válido"); txtTel.Focus(); }
             if (txtAlt.Text == string.Empty && primerMsj == true || EsInt(txtAlt.Text) == false && primerMsj == true)
             { x = false; primerMsj = false; MessageBox.Show("Debe indicar una Altura valida"); txtAlt.Focus(); }
             if (cboBarrio.SelectedIndex == -1 && primerMsj == true)
@@ -237,6 +238,24 @@ namespace Front
         private string UrlCompleta(string location)
         {
             return Properties.Resources.URL + location;
+        }
+
+        private void txtTel_TextChanged(object sender, EventArgs e)
+        {
+            int selectionStart = txtTel.SelectionStart;
+            int oldLenght = txtTel.Text.Length;
+            txtTel.Text = Regex.Replace(txtTel.Text, "[^0-9]", "");
+            if (oldLenght > txtTel.Text.Length)
+                selectionStart--;
+            txtTel.SelectionStart = selectionStart;
+        }
+
+        private bool ValidarEmail(string valor)
+        {
+            bool res = false;
+            if (valor.Split('@').Length > 1)
+                res = true;
+            return res;
         }
     }
 }

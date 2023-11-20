@@ -258,6 +258,7 @@
             txtTel.Name = "txtTel";
             txtTel.Size = new Size(152, 25);
             txtTel.TabIndex = 1;
+            txtTel.TextChanged += txtTel_TextChanged;
             // 
             // lblABM
             // 
